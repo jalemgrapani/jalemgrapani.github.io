@@ -38,7 +38,7 @@
     }
 
     footer {
-      background-color: #d0d5a8cb;
+      background-color: #c0a011cb;
       padding: 40px 0;
       text-align: center;
     }
@@ -51,7 +51,7 @@
 
     .social-icons a:hover {
       color: #00aced;
-      /* Change color on hover */
+      
     }
 
     .footer-links a {
@@ -62,19 +62,47 @@
 
     .footer-links a:hover {
       color: #00aced;
-      /* Change color on hover */
+      
     }
   </style>
 </head>
 
 <body data-bs-theme="light" id="body">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow"
-    style="position: fixed; top: 0; width: 100%; z-index: 1000">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow" style="position: fixed; top: 0; width: 100%; z-index: 1000">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Filipino Dishes</a>
-      <button class="btn btn-outline-secondary" id="btnColor" onclick="changeColorMode()">Dark Mode</button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dishes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Adobo</a></li>
+              <li><a class="dropdown-item" href="#">Sinigang</a></li>
+              <li><a class="dropdown-item" href="#">Lechon</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">More Dishes</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <button class="btn btn-outline-secondary ms-auto" id="btnColor" onclick="changeColorMode()">Dark Mode</button>
+      </div>
     </div>
   </nav>
+  
 
   <div class="container">
     <div class="row mt-5">
@@ -147,7 +175,6 @@
     </div>
 
 
-
     <div class="row mt-5">
       <div class="col">
         <h1 class="display-3 text-center"
@@ -156,14 +183,13 @@
           Gallery</h1>
       </div>
     </div>
-    <!-- This is where the JS appends the card components -->
     <div class="row" id="cardContainer">
     </div>
 
     <div class="row mt-5">
       <div class="col text-center">
         <h1 class="display"
-          style="border: 5px solid black; border-radius: 10px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 36px; display: inline-block; padding: 15px; background-color: rgba(255, 255, 255, 0.8);">
+          style="border: 5px solid black; border-radius: 10px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 36px; display: inline-block; padding: 15px;">
           Join us on a culinary adventure as we explore the vibrant and diverse world of Filipino dishes! 🍽️
         </h1>
         <p style="font-size: 18px; margin-top: 10px;">Join us on a culinary adventure as we explore the vibrant and
@@ -178,14 +204,12 @@
       </div>
     </div>
 
-
     <div class="container-fluid" id="footer" style="display: none;">
       <div class="row mt-3">
         <div class="col ml-2">
         </div>
       </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -204,7 +228,6 @@
         "sinigang.jpg", "sisig.jpg", "tinola.jpg",
         "sinigang2.jpg", "laing.jpg", "ginataangAlimango.jpg", "lechongPaksiw.jpg", "beefBulalo.jpg"];
 
-      // This loop creates and appends cards to the cardContainer element (line 33)
       for (var i = 0; i < names.length; i++) {
         var myContainer = document.getElementById("cardContainer");
         myContainer.innerHTML += `<div class="col-xl-3 col-md-4 col-sm-6 col-12">
@@ -220,27 +243,23 @@
   </div>`;
       }
 
-      // Adds a shadow Boostrap class to the element with the given id
       function addHoverEffect(id) {
         var card = document.getElementById(id);
-        card.style.transform = "scale(1.05)"; // Slightly scale up the card
-        card.style.transition = "transform 0.3s ease"; // Smooth transition
+        card.style.transform = "scale(1.05)"; 
+        card.style.transition = "transform 0.3s ease"; 
         card.style.border = "5px solid #0b8c02";
       }
 
-      // Removes the shadow Boostrap class to the element with the given id
       function removeHoverEffect(id) {
         var card = document.getElementById(id);
-        card.style.transform = "scale(1)"; // Revert to original size
-        card.style.border = "none"; // Remove the border
+        card.style.transform = "scale(1)"; 
+        card.style.border = "none"; 
       }
 
-      // Switch between display none and block
       var display = "none";
       function expandContent() {
         var footer = document.getElementById("footer");
         var btnExpand = document.getElementById("btnExpand");
-
 
         if (display == "none") {
           footer.style.display = "block";
@@ -268,7 +287,6 @@
         }
       }
     </script>
-
 
     <div class="container-fluid" id="footerExpand" style="display: none;">
       <div class="row mt-3">
@@ -306,3 +324,4 @@
 </body>
 
 </html>
+
