@@ -1,33 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Jalem's Web Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6; 
+            background-color: #f0f4f8; /* Light background for a clean look */
+            color: #333; 
+            margin: 0; 
+        }
 
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #007bff 50%, #6c757d 100%);
+            color: #fff; 
+            padding: 30px 0; /* Increased padding for a spacious feel */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+        }
+
+        header h1 {
+            font-size: 2.8rem; /* Adjusted size for impact */
+            font-weight: 700;
+            margin: 0; 
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            padding: 1rem; 
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 1.1rem; 
+            transition: color 0.3s ease-in-out;
+            padding: 0.5rem 1rem; /* Added padding for better click area */
+        }
+
+        .nav-link:hover {
+            color: #ffc107; /* Emphasized hover effect */
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 40px 0; 
+        }
+
+        main p {
+            font-size: 1.2rem; 
+            color: #555; /* Darker text for better readability */
+            margin-bottom: 20px; /* Spacing for better flow */
+        }
+
+        .btn {
+            font-weight: 600; /* Emphasized button text */
+            border-radius: 25px; /* Rounded buttons */
+            padding: 10px 20px; /* Increased padding for button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+            transition: all 0.3s ease; /* Smooth transition for effects */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Button background color */
+            border-color: #007bff; /* Border color */
+        }
+
+        /* Hover Effects */
+        .btn:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0; 
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem; 
+        }
+
+        /* Button Hover Effects */
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker background on hover */
+            border-color: #0056b3; /* Darker border on hover */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem; /* Smaller font for mobile */
+            }
+            .btn {
+                width: 100%; /* Full-width buttons on small screens */
+            }
+        }
+    </style>
+</head>
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 text-center">
-                <h1> Welcome to Jalem Louise Grapani's Web Page</h1>
-                <p>Click the button to be redirected to a specific page of your choice.</p>
-                <div class="d-flex flex-column flex-md-row justify-content-center">
-                    <a href="description.html" class="btn btn-primary m-2">Activity 4</a>
-                    <a href="Activity 5/indexx.html" class="btn btn-primary m-2">Activity 5</a>
-                    <a href="Activity 6/index.html" class="btn btn-primary m-2">Activity 6</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Jalem's Web</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container text-center">
+            <h1>Welcome to Jalem Louise Grapani's Web Page</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <p>Click the buttons below to be redirected to specific pages of your choice.</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center">
+                        <a href="description.html" class="btn btn-primary btn-lg m-2">Activity 4</a>
+                        <a href="Activity 5/indexx.html" class="btn btn-primary btn-lg m-2">Activity 5</a>
+                        <a href="Activity 6/index.html" class="btn btn-primary btn-lg m-2">Activity 6</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <section class="container mt-5">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga sequi necessitatibus asperiores officia eos tenetur a voluptatem ducimus, ut quisquam od, quia et minima tempora excepturi cumque earum, laudantium ipsum.</p>
+                    <a href="#" class="btn btn-outline-primary">Read more</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jalem Louise Grapani | All rights reserved</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
