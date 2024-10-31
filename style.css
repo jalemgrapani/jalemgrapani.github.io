@@ -87,11 +87,12 @@ a {
 }
 
 .battery-description {
-    font-size: 1.1em;
+    font-size: 20px;
     color: rgb(255, 252, 252);
     font-weight: lighter;
-    font-family: 'Courier New', Courier, monospace;
+    
     text-align: center;
+    
 }
 
 .img-battery {
@@ -139,7 +140,6 @@ th, td {
     border: 1px solid white;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 800px) {
     .realme-description, .specification-border {
         padding: 10px;
@@ -158,3 +158,5 @@ th, td {
         font-size: 0.9em;
     }
 }
+
+
