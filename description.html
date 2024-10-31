@@ -7,12 +7,82 @@
     <title>Cellphone Description</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            padding: 15px 20px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            padding: 10px 15px;
+            color: #f8f9fa;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+
+        .container {
+            padding-top: 0;
+        }
+
+        table {
+            color: white; /* Set text color of the table to white */
+        }
+
+        th {
+            background-color: #343a40; /* Dark background for table headers */
+            color: white; /* White text for table headers */
+        }
+
+        td {
+            background-color: #495057; /* Slightly lighter background for table cells */
+            color: white; /* Ensure table cell text is white */
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Realme C33 Showcase</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#specifications">Specifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#battery">Battery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#colors">Colors</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container mt-5">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="about">
             <div class="col-12 text-center">
                 <div class="specification-header">
                     <p>Realme C33 Specification</p>
@@ -35,9 +105,9 @@
             </div>
         </div>
 
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5" id="specifications">
             <div class="col-12 col-md-6 text-center">
-                <img class="product-image" src="realme.png" alt="Realme C33" width="350px">
+                <img class="product-image" src="pictures/realme.png" alt="Realme C33" width="350px">
             </div>
 
             <div class="col-12 col-md-6">
@@ -93,24 +163,34 @@
             </div>
         </div>
 
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5" id="battery">
             <div class="col-12 text-center">
                 <div class="battery-title"> Battery: 5000mAh </div>
                 <p class="battery-description"> The Realme C33 packs a massive 5000mAh battery that keeps you powered up
                     all day, whether you're gaming or streaming. Say goodbye to frequent charging with its long-lasting
                     battery life, perfect for non-stop entertainment. With the Realme C33, you're always ready for the
                     next adventure without worrying about running out of juice!</p>
-                <img class="img-battery" src="battery1.png" alt="Realme C33" width="600px">
+                <img class="img-battery" src="pictures/battery1.png" alt="Realme C33" width="600px">
             </div>
         </div>
 
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5" id="colors">
             <div class="col-12 text-center">
                 <div class="color-description"> Variety of Colors</div>
-                <img class="img-phone" src="phone1.png" alt="Realme C33" width="600px">
+                <img class="img-phone" src="pictures/phone1.png" alt="Realme C33" width="600px">
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Realme C33 Showcase. All Rights Reserved.</p>
+            <p>Follow us on:</p>
+            <a href="#" class="text-light">Facebook</a> |
+            <a href="#" class="text-light">Twitter</a> |
+            <a href="#" class="text-light">Instagram</a>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -118,3 +198,4 @@
 </body>
 
 </html>
+
