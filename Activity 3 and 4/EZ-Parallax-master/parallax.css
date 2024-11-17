@@ -35,28 +35,29 @@
 /*ADD OR REMOVE LAYERS AS NEEDED*/
 
 #keyart-0 {
-	background-image: url(img/background.png);
+    background-image: url(img/background.png);
 }
 
 #keyart-1 {
-	background-image: url(img/Layer\ 1.png);
+    background-image: url(img/Layer\ 1.png);
 }
 
 #keyart-2 {
-	background-image: url(img/Layer\ 2.png);
+    background-image: url(img/Layer\ 2.png);
 }
 
 #keyart-3 {
-	background-image: url(img/leftCloud.png);
+    background-image: url(img/leftCloud.png);
 }
 
 #keyart-4 {
-	background-image: url(img/rightCloud.png);
+    background-image: url(img/rightCloud.png);
 }
 
 #keyart-5 {
-	background-image: url(img/mainCloud.png);
+    background-image: url(img/mainCloud.png);
 }
+
 
 #keyart-6 {
 	background-image: url(img/parallax6.png);

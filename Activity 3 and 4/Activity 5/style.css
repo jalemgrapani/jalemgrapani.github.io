@@ -1,256 +1,223 @@
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: auto;   /* Allow vertical scrolling if needed */
+  height: 100%; /* Ensure full-height */
+}
+
+* {
+  box-sizing: border-box; /* Prevent padding/margin from causing overflow */
+}
+
+
 .navbar {
-  padding: 15px;
+  margin-bottom: 0px;
 }
 
 .navbar-brand {
-  font-size: 24px;
-  font-weight: lighter;
+  font-size: 1.8rem;
 }
 
 .navbar-nav .nav-link {
-  font-size: 18px;
-}
-
-.navbar-nav .nav-item {
-  margin-right: 20px;
- 
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  text-transform: uppercase;
 }
 
 .navbar-nav .nav-link:hover {
-  text-decoration: underline;
+  background-color: #007bff;
 }
 
-.navbar {
-  background-color: rgba(0, 0, 0, 0.8);
-  font-family: Arial, Helvetica, sans-serif;
+.container-fluid {
+  padding: 0;
 }
 
-.navbar-toggler {
-  border-color: white;
-}
-
+/* Image Container */
 .imageContainer {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .japan {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.imageText,
-.description {
-  position: absolute;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  height: auto;
 }
 
 .imageText {
-  top: 10%;
-  font-size: 10vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
   font-weight: bold;
   color: white;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .description {
-  top: 55%;
-  font-size: 4vw;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
   color: white;
-  padding: 0 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 768px) {
-  .imageText {
-    font-size: 8vw;
-    top: 12%;
-  }
-
-  .description {
-    top: 58%;
-    font-size: 4.5vw;
-  }
-}
-
-@media (max-width: 576px) {
-  .imageText {
-    font-size: 6vw;
-    top: 15%;
-  }
-
-  .description {
-    top: 62%;
-    font-size: 4vw;
-  }
-}
-
-
-
-.historicalPlaces {
-  margin-top: 70px;
-  text-align: center;
-  color: black;
-  font-size: 50px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* Historical Places Section */
+.historicalPlaces1 {
+  font-size: 2.5rem;
   font-weight: bold;
+  color: #343a40;
 }
 
 .historicalDescription {
-  padding: 0 20px;
-  margin-top: 50px;
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
 }
 
-.card {
-  margin-top: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #343a40;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .card-text {
-  font-size: 20px;
-  color: black;
-  margin: 0;
-  padding: 10px 0;
-  text-align: justify;
-}
-
-.cardTitle5 {
-  font-size: 30px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
   font-weight: bold;
 }
 
-.cardBody5 {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 200;
-}
-
-.popularPlaces1 {
-  margin-top: 60px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 60px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-}
-
-.carousel-item.active {
-  margin-bottom: 100px;
-  margin-top: 0px;
-}
-
-.carousel-item {
-  margin-bottom: 100px;
-  margin-top: 0px;
-}
-
-.carousel-control-prev {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  top: 43%;
-  transform: translateY(-50%);
-}
-
-.carousel-control-next {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  top: 43%;
-  transform: translateY(-50%);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1);
-  width: 20px;
-  height: 20px;
-}
-
-.popularPlaces2 {
-  margin-top: 100px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 40px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-}
-
-.card-image {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
-  margin-top: 70px;
-}
-
-.card5,
-.card6,
-.card7 {
-  margin-left: 0;
-}
-
-.card-title1,
-.card-title2,
-.card-title3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.card-body1,
-.card-body2,
-.card-body3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  margin-left: 20px;
-  margin-top: 30px;
-}
-
-.line3 {
-  margin-top: 100px;
-}
-
-.japaneseOrganization {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
-  font-size: 50px;
-  margin-left: 50px;
-  margin-top: 50px;
-}
-
-@media (max-width: 768px) {
-  .carousel-item img {
-    height: 400px;
-  }
-}
-
+/* Carousel Section */
 .carousel-item img {
   object-fit: cover;
   height: 800px;
 }
-body {
-  overflow-x: hidden;
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #000;
 }
+
+/* Line Separator */
+.line2 {
+  margin: 50px 0;
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid red;
+}
+
+/* Popular Places Section */
+.popularPlaces1, .popularPlaces2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #343a40;
+  margin: 30px 0;
+}
+
+.card5, .card6, .card7 {
+  margin-bottom: 30px;
+}
+
+.card-body2 {
+  padding: 15px;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .imageText {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .carousel-item img {
+    height: 500px;
+  }
+
+  .card-img {
+    height: 200px;
+  }
+}
+/* Line Separator */
+.line3 {
+  margin: 50px 0;
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid red;
+  width: 100%;
+}
+
+/* Japanese Organization Section */
+.japaneseOrganization {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #343a40;
+  margin: 30px 0;
+}
+
+.row.text-center .col-12 {
+  padding: 0;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Design for the Japanese Organization Images */
+@media (max-width: 768px) {
+  .japaneseOrganization {
+    font-size: 2rem;
+  }
+
+  .img-fluid {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+.card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.card-body:hover {
+  background-color: #f8f9fa; /* Light background change */
+}
+
+.card-title, .card-text {
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.card:hover .card-title, .card:hover .card-text {
+  color: #007bff; /* Change text color on hover */
+}
+

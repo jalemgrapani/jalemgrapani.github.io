@@ -9,25 +9,28 @@
 
 #keyart-1 {
     background-image: url(img/Layer\ 1.png);
-    height: 450px; /* Set the desired height */
-    width: 1200px; /* Set the desired width */
-    background-size: cover; /* Ensures the background covers the element */
-    background-position: center; /* Centers the background image */
+    height: 450px; /* Keep the desired height */
+    width: 80%; /* Adjust the width to 80% of the container */
+    max-width: 1200px; /* Ensure it does not exceed 1200px */
+    background-size: contain; /* Adjust the image scaling */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Keep the image centered */
     position: absolute; /* Allows positioning relative to its parent */
-    left: 50%; /* Move to the center horizontally */
-    transform: translateX(-50%); /* Correctly centers by shifting it back by half its width */
-    top: 200px; /* Position the element slightly down from the top */
+    top: 220px; /* Position the element slightly down from the top */
+    left: 50%; /* Move the left edge to the middle of the container */
+    margin-left: -40%; /* Offset half the width to center it */
 }
+
 #keyart-2 {
     background-image: url(img/Layer\ 2.png);
-    height: 600px; /* Set the desired height */
-    width: 1340px; /* Set the desired width */
+    height: 1500px; /* Set the desired height to 1000px */
+    width: 1343px; /* Set the desired width */
     background-size: cover; /* Ensures the background covers the element */
     background-position: center; /* Centers the background image */
     position: absolute; /* Allows positioning relative to its parent */
-    left: 50%; /* Move to the center horizontally */
-    transform: translateX(-50%); /* Correctly centers by shifting it back by half its width */
-    top: 50px; /* Position the element slightly down from the top */
+    left: 0; /* Move to the left */
+    top: -600px; /* Position the element slightly down from the top */
+    margin-right: 1000px; /* You can adjust this if needed */
 }
 
 #keyart-3 {
@@ -39,7 +42,7 @@
     background-position: center; 
     position: absolute; 
     right: 0px; 
-    top: 0; 
+    top: 50px; 
     left: 0%;
 }
 #keyart-4 {
@@ -51,7 +54,7 @@
     background-position: center; 
     position: absolute; 
     right: 50px; 
-    top: 0; 
+    top: 50px; 
 }
 #keyart-5 {
     background-image: url(img/mainCloud.png);
@@ -61,9 +64,8 @@
     background-repeat: no-repeat; 
     background-position: center; 
     position: absolute; 
-    top: -90px; 
-    left: 50%; 
-    transform: translateX(-50%); 
+    top: 10px; 
+    left: 40%; 
 }
 
 
