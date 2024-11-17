@@ -205,8 +205,8 @@
             justify-content: center;
             align-items: center;
             border: 5px solid #7872d1;
-            margin: 45px auto;
-            margin-inline-start: 240px;
+            margin: 0 auto 20px auto;
+            /* Adjust margin for spacing */
         }
 
         .profile-image {
@@ -222,16 +222,19 @@
         }
 
         .aboutContent {
-            text-align: justify;
+            text-align: center;
+            /* Center text horizontally */
             font-size: 20px;
             color: #ffffff;
             font-family: Arial, sans-serif;
             line-height: 1.8;
-            margin-inline-start: -300px;
-            margin-right: 20px;
-            padding: 0 15px;
             max-width: 90%;
-
+            padding: 0 15px;
+            /* Center content vertically with flexbox */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
         .btn-slide-left {
@@ -301,13 +304,14 @@
     <div id="about" class="container">
         <h1 class="title1">About</h1>
         <div class="row g-0">
-
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <!-- Profile Image Section -->
+            <div class="col-12 d-flex justify-content-center align-items-center mb-4 mb-md-0">
                 <div class="profile-image-container">
                     <img src="pictures/2_Grapani_Jalem_Pic.jpg" alt="Profile Image" class="profile-image">
                 </div>
             </div>
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <!-- About Text Section -->
+            <div class="col-12 d-flex justify-content-center align-items-center">
                 <div class="aboutContent">
                     <p>
                         I'm Jalem Louise Grapani, a 3rd-year Bachelor of Science in Information Technology student at
@@ -317,6 +321,9 @@
             </div>
         </div>
     </div>
+
+
+
 
     <div id="projects" class="container">
         <h1 class="title1">Projects</h1>
