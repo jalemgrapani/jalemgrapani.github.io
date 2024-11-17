@@ -1,14 +1,14 @@
-/* Global Styles */
+
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  overflow-y: auto;   /* Allow vertical scrolling if needed */
-  height: 100%; /* Ensure full-height */
+  overflow-x: hidden;
+  overflow-y: auto;  
+  height: 100%;
 }
 
 * {
-  box-sizing: border-box; /* Prevent padding/margin from causing overflow */
+  box-sizing: border-box;
 }
 
 
@@ -23,7 +23,7 @@ html, body {
 .navbar-nav .nav-link {
   font-size: 1.1rem;
   padding: 10px 15px;
-  text-transform: uppercase;
+  
 }
 
 .navbar-nav .nav-link:hover {
@@ -34,7 +34,7 @@ html, body {
   padding: 0;
 }
 
-/* Image Container */
+
 .imageContainer {
   position: relative;
 }
@@ -65,7 +65,7 @@ html, body {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Historical Places Section */
+
 .historicalPlaces1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -97,7 +97,7 @@ html, body {
   font-weight: bold;
 }
 
-/* Carousel Section */
+
 .carousel-item img {
   object-fit: cover;
   height: 800px;
@@ -107,7 +107,7 @@ html, body {
   background-color: #000;
 }
 
-/* Line Separator */
+
 .line2 {
   margin: 50px 0;
 }
@@ -117,7 +117,7 @@ hr {
   border-top: 3px solid red;
 }
 
-/* Popular Places Section */
+
 .popularPlaces1, .popularPlaces2 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -145,7 +145,7 @@ hr {
   object-fit: cover;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .imageText {
     font-size: 2rem;
@@ -163,7 +163,7 @@ hr {
     height: 200px;
   }
 }
-/* Line Separator */
+
 .line3 {
   margin: 50px 0;
 }
@@ -174,7 +174,7 @@ hr {
   width: 100%;
 }
 
-/* Japanese Organization Section */
+
 .japaneseOrganization {
   font-size: 2.5rem;
   font-weight: bold;
@@ -192,7 +192,6 @@ hr {
   border-radius: 8px;
 }
 
-/* Responsive Design for the Japanese Organization Images */
 @media (max-width: 768px) {
   .japaneseOrganization {
     font-size: 2rem;
@@ -204,20 +203,20 @@ hr {
   }
 }
 .card:hover {
-  transform: translateY(-5px); /* Slightly lift the card */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
-  transition: all 0.3s ease; /* Smooth transition */
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .card-body:hover {
-  background-color: #f8f9fa; /* Light background change */
+  background-color: #f8f9fa; 
 }
 
 .card-title, .card-text {
-  transition: color 0.3s ease; /* Smooth text color transition */
+  transition: color 0.3s ease; 
 }
 
 .card:hover .card-title, .card:hover .card-text {
-  color: #007bff; /* Change text color on hover */
+  color: #007bff; 
 }
 
