@@ -35,41 +35,42 @@
 /*ADD OR REMOVE LAYERS AS NEEDED*/
 
 #keyart-0 {
-    background-image: url(img/background.png);
+	background-image: url(img/parallax1.png);
+	background-size: cover; /* Ensures the image covers the screen */
+	background-position: center; /* Centers the image */
 }
 
 #keyart-1 {
-    background-image: url(img/Layer\ 1.png);
+	background-image: url(img/parallax2.png);
+	background-size: cover;
+	background-position: center;
 }
 
 #keyart-2 {
-    background-image: url(img/Layer\ 2.png);
+	background-image: url(img/parallax3.png);
+	background-size: cover;
+	background-position: center;
 }
 
 #keyart-3 {
-    background-image: url(img/leftCloud.png);
+	background-image: url(img/parallax4.png);
+	background-size: cover;
+	background-position: center;
 }
 
 #keyart-4 {
-    background-image: url(img/rightCloud.png);
+	background-image: url(img/parallax5.png);
+	background-size: cover;
+	background-position: center;
 }
 
 #keyart-5 {
-    background-image: url(img/mainCloud.png);
-}
-
-
-#keyart-6 {
 	background-image: url(img/parallax6.png);
+	background-size: cover;
+	background-position: center;
 }
 
-#keyart-7 {
-	background-image: url(img/parallax7.png);
-}
 
-#keyart-8 {
-	background-image: url(img/parallax8.png);
-}
 
 #keyart-scrim {
 	opacity: 0;

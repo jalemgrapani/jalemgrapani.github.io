@@ -17,8 +17,11 @@ html, body {
 }
 
 .navbar-brand {
-  font-size: 1.8rem;
+  font-size: 20px; /* Adjust font size as needed */
+  inset-inline-start: 20px; /* Moves it 10px from the inline start (left in LTR) */
+  position: relative; /* Required for `inset-inline-start` to take effect */
 }
+
 
 .navbar-nav .nav-link {
   font-size: 1.1rem;
