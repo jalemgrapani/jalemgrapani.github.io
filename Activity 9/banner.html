@@ -6,38 +6,290 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" href="parallax.css" />
-	<title>EZ | Banner</title>
+	<title>Building | Parallax</title>
+
+	<style>
+		.keyart {
+			position: relative;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.keyart_layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.main-content {
+			background-color: white;
+			padding: 0;
+		}
+
+
+		.container-title {
+			background-color: pink;
+			padding: 0;
+			height: 200px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+
+		.row-title {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.col-title {
+			padding: 10px;
+		}
+
+		.title-text {
+			font-size: 50px;
+			font-family: 'Arial', sans-serif;
+			font-weight: bold;
+			text-align: center;
+			margin: 0;
+
+		}
+
+		.container-image {
+			background-color: pink;
+			padding: 20px;
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		.row-image {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		.col-image {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.image-title {
+			margin-bottom: 10px;
+			font-size: xx-large;
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
+			margin: 0;
+		}
+
+		.image-desc {
+			margin-top: 20px;
+			font-size: large;
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			line-height: 1.6;
+			margin-bottom: 40px;
+		}
+
+		.image {
+			max-width: 100%;
+			height: auto;
+			object-fit: cover;
+			border-radius: 8px;
+		}
+
+		@media (max-width: 600px) {
+			.card-row {
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+
+			.card {
+				width: 100%;
+			}
+		}
+
+		.card-title {
+			font-size: 20px;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			margin-top: 20px;
+		}
+
+		.navbar {
+			background-color: #333;
+			overflow: hidden;
+			position: sticky;
+			top: 0;
+			width: 100%;
+			z-index: 9999;
+			font-family: Arial, sans-serif;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.navbar a {
+			display: inline-block;
+			color: white;
+			padding: 14px 20px;
+			text-decoration: none;
+			text-align: center;
+		}
+
+		.navbar a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		
+		@media (max-width: 600px) {
+			.navbar a {
+				display: block;
+				width: 100%;
+				text-align: center;
+				padding: 10px;
+			}
+		}
+	</style>
 </head>
 
-<body>
-	<section>
-		<div class="keyart" id="parallax">
-			<div class="keyart_layer parallax" id="keyart-0" data-speed="5"></div>
-			<div class="keyart_layer parallax" id="keyart-1" data-speed="10"></div>
-			<div class="keyart_layer parallax" id="keyart-2" data-speed="15"></div>
-			<div class="keyart_layer parallax" id="keyart-3" data-speed="20"></div>
-			<div class="keyart_layer parallax" id="keyart-4" data-speed="30"></div>
-			<div class="keyart_layer" id="keyart-5" data-speed="50"></div>
-			<!--Front image, in sync with scroll, no need to parallax-->
-			<!--Add or Remove layers as needed - check Parallax.css for refrence-->
-		</div>
-	</section>
 
-	<section class="main-content">
-		<div style="height: 2000px; background-color:white;">
-			<div class="container" style="background-color: pink; padding: 0; height: 300px;">
-				<div class="row text-center" style="height: 100%; display: flex; align-items: center; justify-content: center;">
-					<div class="col" style="padding: 10px;">
-						<h1 style="font-size: 80px; font-family: 'Arial', sans-serif; font-weight: bold;">Architectural Buildings in the Philippines</h1>
-					</div>
+<body>
+	<div class="navbar">
+		<a href="#home">Home</a>
+		<a href="#others">Others</a>
+		<a href="#contact">Contact</a>
+	</div>
+
+	<div class="keyart" id="parallax">
+		<div class="keyart_layer parallax" id="keyart-0" data-speed="5"></div>
+		<div class="keyart_layer parallax" id="keyart-1" data-speed="10"></div>
+		<div class="keyart_layer parallax" id="keyart-2" data-speed="15"></div>
+		<div class="keyart_layer parallax" id="keyart-3" data-speed="20"></div>
+		<div class="keyart_layer parallax" id="keyart-4" data-speed="30"></div>
+		<div class="keyart_layer" id="keyart-5" data-speed="50"></div>
+	</div>
+
+	<div class="main-content">
+		<div class="container-title">
+			<div class="row-title">
+				<div class="col-title">
+					<h1 class="title-text">Buildings and Architecture of the Philippines</h1>
 				</div>
 			</div>
 		</div>
-	</section>
-	
-	<!--Uses JQuery-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="js/parallax.js"></script>
+
+		<div style="height: auto; background-color: white;">
+			<div class="container-image">
+				<div class="row-image">
+					<div class="col-image">
+						<h1 class="image-title">The Ruins</h1>
+						<img src="pictures/theRuins.jpg" alt="Architectural Building" class="image">
+						<p class="image-desc">
+							The Ruins, located in Talisay City, Negros Occidental, Philippines, is a historic mansion
+							that has
+							become one of the country's most iconic landmarks. Built in the early 1900s by the wealthy
+							sugar
+							baron, Don Mariano Ledesma Lacson, the mansion was designed as a symbol of luxury and
+							grandeur. The
+							structure was partially destroyed during World War II by the Japanese forces to prevent it
+							from being
+							used by the American soldiers. Despite the devastation, the mansion’s skeletal remains, with
+							its
+							towering columns and intricate architecture, have stood the test of time and become a
+							popular tourist
+							attraction.
+						</p>
+
+						<h1 class="image-title">Our Lady of Atonement Cathedral</h1>
+						<img src="pictures/cathedral.jpg" alt="Architectural Building" class="image">
+						<p class="image-desc">
+							The Our Lady of Atonement Cathedral, also known as Baguio Cathedral, is one of the most
+							prominent
+							landmarks in Baguio City, Philippines. Located on a hilltop, this Roman Catholic cathedral
+							is renowned
+							for its stunning neo-gothic architecture, featuring twin spires that rise dramatically
+							against the
+							city’s skyline. The cathedral is dedicated to the Our Lady of Atonement and serves as the
+							seat of the
+							Diocese of Baguio.
+						</p>
+
+						<h1 class="image-title">St. Augustine's Church</h1>
+						<img src="pictures/stAugustine.jpg" alt="Architectural Building" class="image">
+						<p class="image-desc">
+							St. Augustine's Church, also known as Paoay Church, is a UNESCO World Heritage Site located
+							in Paoay,
+							Ilocos Norte, Philippines. Famous for its unique architectural style, the church is a prime
+							example of
+							the Baroque architecture found in the Philippines, specifically the "Earthquake Baroque"
+							style, which
+							was developed to withstand the frequent earthquakes in the region.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Row for cards -->
+			<div class="container-fluid" style="background-color: pink; padding: 2rem;">
+				<div class="card-row" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+					<!-- First Card -->
+					<div class="card"
+						style="width: 24rem; padding: 1rem; text-align: center; background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+						<img src="pictures/mmt.jpg" class="card-img-top" alt="Card Image 1"
+							style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;">
+						<div class="card-body">
+							<h5 class="card-title">Manila Metropolitan Theater</h5>
+						</div>
+					</div>
+					<!-- Second Card -->
+					<div class="card"
+						style="width: 24rem; padding: 1rem; text-align: center; background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+						<img src="pictures/makiling.png" class="card-img-top" alt="Card Image 2"
+							style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;">
+						<div class="card-body">
+							<h5 class="card-title">Tanghalang Maria Makiling of the National Arts Center</h5>
+						</div>
+					</div>
+					<!-- Third Card -->
+					<div class="card"
+						style="width: 24rem; padding: 1rem; text-align: center; background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+						<img src="pictures/manila.jpg" class="card-img-top" alt="Card Image 3"
+							style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;">
+						<div class="card-body">
+							<h5 class="card-title">Manila Central Post Office</h5>
+						</div>
+					</div>
+					<!-- Fourth Card -->
+					<div class="card"
+						style="width: 24rem; padding: 1rem; text-align: center; background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+						<img src="pictures/philArena.jpg" class="card-img-top" alt="Card Image 4"
+							style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;">
+						<div class="card-body">
+							<h5 class="card-title">Philippine Arena</h5>
+						</div>
+					</div>
+					<div class="container-fluid" style="display: flex; justify-content: center; align-items: center; width: 100%; background-color: #333; padding: 10px;">
+						<div class="footer" style="font-size: 1.2em; color: white;">
+							<p>&copy; 2024 Jalem Louise Grapani. All Rights Reserved.</p>
+						</div>
+					</div>
+					
+			<!-- Uses JQuery -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+			<script type="text/javascript" src="js/parallax.js"></script>
 
 </body>
 
