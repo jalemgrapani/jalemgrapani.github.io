@@ -1,9 +1,9 @@
-
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto;  
+  overflow-y: auto;
   height: 100%;
 }
 
@@ -11,22 +11,24 @@ html, body {
   box-sizing: border-box;
 }
 
-
 .navbar {
   margin-bottom: 0px;
+  background: linear-gradient(to right, rgba(138, 43, 226, 0.8), rgba(255, 105, 180, 0.8));
 }
 
 .navbar-brand {
-  font-size: 20px; /* Adjust font size as needed */
-  inset-inline-start: 20px; /* Moves it 10px from the inline start (left in LTR) */
-  position: relative; /* Required for `inset-inline-start` to take effect */
+  font-size: 20px;
+  inset-inline-start: 20px;
+  position: relative;
+  font-weight: 700;
 }
 
 
 .navbar-nav .nav-link {
   font-size: 1.1rem;
   padding: 10px 15px;
-  
+  font-weight: 500;
+  margin-right: 20px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -107,7 +109,8 @@ html, body {
   height: 800px;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   background-color: #000;
 }
 
@@ -122,14 +125,17 @@ hr {
 }
 
 
-.popularPlaces1, .popularPlaces2 {
+.popularPlaces1,
+.popularPlaces2 {
   font-size: 2.5rem;
   font-weight: bold;
   color: #343a40;
   margin: 30px 0;
 }
 
-.card5, .card6, .card7 {
+.card5,
+.card6,
+.card7 {
   margin-bottom: 30px;
 }
 
@@ -206,21 +212,23 @@ hr {
     object-fit: cover;
   }
 }
+
 .card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .card-body:hover {
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
 }
 
-.card-title, .card-text {
-  transition: color 0.3s ease; 
+.card-title,
+.card-text {
+  transition: color 0.3s ease;
 }
 
-.card:hover .card-title, .card:hover .card-text {
-  color: #007bff; 
+.card:hover .card-title,
+.card:hover .card-text {
+  color: #007bff;
 }
-

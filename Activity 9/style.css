@@ -1,9 +1,9 @@
 /*PUT YOUR CUSTOM STYLE HERE*/
 #keyart-0, #keyart-1, #keyart-2, #keyart-3, #keyart-4, #keyart-5{
-	background-size: contain; /* Prevent stretching by fitting the image fully */
-	background-repeat: no-repeat; /* Avoid tiling */
-	background-position: center; /* Center the image */
-	image-rendering: crisp-edges; /* Attempt to render images more sharply */
+	background-size: contain; 
+	background-repeat: no-repeat; 
+	background-position: center; 
+	image-rendering: crisp-edges; 
 }
 
 /*!This style is important, do not override!*/
