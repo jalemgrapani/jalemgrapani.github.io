@@ -36,7 +36,6 @@
       z-index: 100;
       display: flex;
       justify-content: center;
-      /* Center the items horizontally */
       align-items: center;
     }
 
@@ -153,8 +152,10 @@
     }
 
     .button {
-      display: inline-block;
-      padding: 12px 25px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 25px;
       background-color: #629584;
       color: #fff;
       text-decoration: none;
@@ -169,6 +170,12 @@
       transform: translateX(-50%);
       transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
       z-index: 10;
+      width: auto;
+      max-width: 400px;
+      height: 50px;
+      text-align: center;
+      white-space: nowrap;
+      box-sizing: border-box;
     }
 
     .button:hover {
@@ -176,6 +183,17 @@
       color: #243642;
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
       transform: scale(1.1) translateX(-50%);
+    }
+
+    @media (max-width: 576px) {
+      .button {
+        font-size: 14px;
+        padding: 8px 20px;
+        width: auto;
+        max-width: 90%;
+        height: 50px;
+        line-height: normal;
+      }
     }
   </style>
 

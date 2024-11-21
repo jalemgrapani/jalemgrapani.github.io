@@ -13,7 +13,7 @@
         }
 
         .card {
-            background-color: rgb(36, 10, 184);
+            background-color: #008080;
             color: white;
             transition: transform 0.3s;
             padding: 2rem; 
@@ -113,16 +113,16 @@
     </div>
 
     <div class="container">
-        <div class="row mt-3">
-            <div class="col">
-                <div class="card p-2 text-center">
+        <div class="row mt-3 gy-4"> <!-- Added gy-4 for vertical spacing -->
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="card p-2 text-center w-100"> <!-- Added w-100 for full-width on small screens -->
                     <a href="champions.html">
                         <div class="h3">Champions List</div>
                     </a>
                 </div>
             </div>
-            <div class="col">
-                <div class="card p-2 text-center">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="card p-2 text-center w-100"> <!-- Added w-100 for full-width on small screens -->
                     <a href="search.html">
                         <div class="h3">Search Champion</div>
                     </a>
@@ -130,6 +130,7 @@
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 </body>

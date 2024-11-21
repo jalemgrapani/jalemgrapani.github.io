@@ -45,6 +45,7 @@ html, body {
 .japan {
   width: 100%;
   height: auto;
+  border-radius: 0 !important;
 }
 
 .imageText {

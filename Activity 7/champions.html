@@ -89,13 +89,13 @@
             color: #ffffff;
             font-size: 1.1rem;
             padding: 10px 15px;
-            transition: transform 0.3s, color 0.3s; 
+            transition: transform 0.3s, color 0.3s;
         }
 
         .navbar-nav .nav-item .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            transform: scale(1.1); 
+            transform: scale(1.1);
         }
 
         .navbar-nav .nav-item .nav-link.active {
@@ -133,7 +133,6 @@
             </div>
         </div>
         <div class="row" id="championContainer"></div>
-        <!-- Pagination -->
         <div class="row my-5">
             <div class="col">
                 <nav aria-label="Page navigation example">
@@ -186,16 +185,16 @@
 
                 championContainer.innerHTML += `
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                        <a href="view.html?championName=${champion.id}">
-                            <div class="card rounded-5 my-3 ${bgColorClass}">
-                                <div class="imgcontainer">
-                                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${champion.id}_0.jpg">
-                                </div>
-                                <div class="championname">${champion.name}</div>
-                                <div class="text-muted">${roles}</div>
-                            </div>
-                        </a>
-                    </div>
+    <a href="view.html?championName=${champion.id}">
+        <div class="card rounded-5 my-3 ${bgColorClass}">
+            <div class="imgcontainer">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${champion.id}_0.jpg">
+            </div>
+            <div class="championname fs-4 fs-sm-3 fs-md-2 fs-lg-1">${champion.name}</div>
+            <div class="text-muted fs-6 fs-sm-5 fs-md-4 fs-lg-3">${roles}</div>
+        </div>
+    </a>
+</div>
                 `;
             });
         };
@@ -220,4 +219,3 @@
 </body>
 
 </html>
-
