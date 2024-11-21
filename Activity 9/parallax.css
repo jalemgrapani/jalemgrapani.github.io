@@ -7,11 +7,17 @@
 .keyart,
 .keyart_layer {
 	height: 1000px;
+	overflow: hidden;
 }
 
 .keyart {
 	position: relative;
 	z-index: 10;
+}
+@media (max-width: 600px) {
+    .keyart {
+        overflow: hidden;
+    }
 }
 
 .keyart_layer {

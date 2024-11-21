@@ -4,6 +4,7 @@
 	background-repeat: no-repeat; 
 	background-position: center; 
 	image-rendering: crisp-edges; 
+	width: 100vw;
 }
 .keyart {
 	position: relative;
@@ -18,6 +19,11 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+@media (max-width: 600px) {
+    .keyart {
+        overflow: hidden;
+    }
 }
 
 body {
