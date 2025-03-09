@@ -28,7 +28,6 @@
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
-                <li class="nav-item"><a class="nav-link" href="#embed">Spotify Widget</a></li>
             </ul>
         </div>
     </nav>
@@ -50,7 +49,8 @@
             <div class="col-12 d-flex justify-content-center align-items-center">
                 <div class="aboutContent">
                     <p>
-                        I'm Jalem Louise Grapani, a 3rd-year Bachelor of Science in Information <br> Technology student at
+                        I'm Jalem Louise Grapani, a 3rd-year Bachelor of Science in Information <br> Technology student
+                        at
                         the Polytechnic University of the Philippines.
                     </p>
                 </div>
@@ -60,7 +60,8 @@
 
     <div class="container" id="projects">
         <h1 class="title1">Web Development</h1>
-        <button class="btn btn-primary my-3" id="btnExpand1" onclick="viewProjects(1)" style="font-size: 20px;">Show Projects</button>
+        <button class="btn" id="btnExpand1" onclick="viewProjects(1)" style="font-size: 20px;">Show
+            Projects</button>
         <div class="d-flex justify-content-center flex-wrap gap-3 my-5" id="projectsExpand1" style="display: none;">
             <a href="Activity 4/index.html"
                 class="btn btn-light btn-lg bg-transparent text-black border-black btn-slide-left project-btn"
@@ -97,7 +98,8 @@
 
     <div class="container">
         <h1 class="title1">Applications Development <br>and Emerging Technologies</h1>
-        <button class="btn btn-primary my-3" id="btnExpand2" onclick="viewProjects(2)" style="font-size: 20px;">Show Projects</button>
+        <button class="btn" id="btnExpand2" onclick="viewProjects(2)" style="font-size: 20px;">Show
+            Projects</button>
         <div class="d-flex justify-content-center flex-wrap gap-3 my-5" id="projectsExpand2" style="display: none;">
             <a href="/index.html"
                 class="btn btn-light btn-lg bg-transparent text-black border-black btn-slide-left project-btn"
@@ -155,20 +157,11 @@
         </div>
     </div>
 
-    <div class="container" style="max-width: 1000px; margin: 0 auto; margin-bottom: 30px;">
-        <iframe id="embed" style="border-radius:12px; margin-bottom: 20px;"
-            src="https://open.spotify.com/embed/playlist/1GyatgIlt1uFqvTfgHbVRy?utm_source=generator&loop=true"
-            width="100%" height="352" frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-    </div>
-
     <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
         <div class="footer">
             <p>&copy; 2024 Jalem Louise Grapani. All Rights Reserved.</p>
         </div>
     </div>
-
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -193,11 +186,6 @@
             btnExpand.innerHTML = "Show Projects";
         }
     }
-
 </script>
-
-
-
-
 
 </html>
