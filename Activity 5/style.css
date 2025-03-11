@@ -13,26 +13,27 @@ body {
 
 .navbar {
   margin-bottom: 0px;
-  background: linear-gradient(to right, rgba(138, 43, 226, 0.8), rgba(255, 105, 180, 0.8));
+  background-color: #ffffff;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
 .navbar-brand {
-  font-size: 20px;
+  font-size: 30px;
   inset-inline-start: 20px;
   position: relative;
-  font-weight: 700;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 
 .navbar-nav .nav-link {
-  font-size: 1.1rem;
+  font-size: 23px;
   padding: 10px 15px;
   font-weight: 500;
   margin-right: 20px;
-}
-
-.navbar-nav .nav-link:hover {
-  background-color: #007bff;
+  color: #ffffff;
 }
 
 .container-fluid {
@@ -52,36 +53,39 @@ body {
 
 .imageText {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .description {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.5rem;
-  color: white;
+  font-size: 3rem;
+  color: rgb(0, 0, 0);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
 }
 
 
 .historicalPlaces1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #343a40;
 }
 
 .historicalDescription {
   font-size: 1.2rem;
-  color: #555;
+  color: #020202;
   line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 100px;
 }
 
 .card-img-top {
@@ -100,7 +104,9 @@ body {
 
 .card-text {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 
@@ -119,18 +125,14 @@ body {
   margin: 50px 0;
 }
 
-hr {
-  border: 0;
-  border-top: 3px solid red;
-}
-
-
 .popularPlaces1,
 .popularPlaces2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #343a40;
+  color: #000000;
   margin: 30px 0;
+  margin-top: 100px;
+  margin-bottom: 80px;
 }
 
 .card5,
@@ -144,9 +146,9 @@ hr {
 }
 
 .card-text {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
-  color: #555;
+  color: #000000;
 }
 
 .card-img {
