@@ -5,6 +5,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
+  background-color: pink;
 }
 
 * {
@@ -13,7 +14,7 @@ body {
 
 .navbar {
   margin-bottom: 0px;
-  background-color: #ffffff;
+  background-color: pink;
   padding: 15px 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -86,6 +87,7 @@ body {
   line-height: 1.6;
   text-align: justify;
   margin-bottom: 100px;
+  font-weight: 600;
 }
 
 .card-img-top {
@@ -95,6 +97,7 @@ body {
 
 .card-body {
   padding: 15px;
+  background-color: rgb(226, 171, 180);
 }
 
 .card-title {
@@ -232,5 +235,5 @@ hr {
 
 .card:hover .card-title,
 .card:hover .card-text {
-  color: #007bff;
+  color: #000000;
 }
