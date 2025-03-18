@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>League Of Legends</title>
+    <link rel="icon" type="image/png" href="pictures/Jalem's logo (2).png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .navbar-brand:hover {
+            color: red;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f39c12;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        .card {
+            border: none;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .card-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .card-text small {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        h3.mb-4 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .container {
+            margin-top: 2rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        ul {
+            font-size: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 250px;
+        }
+
+        .img-long {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        .card-img-top:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .card:hover .card-img-top {
+            filter: brightness(0.7);
+        }
+
+        .card {
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">League Of Legends</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Champions">Champions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#News">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Support">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid p-0" style="position: relative; width: 100%; overflow: hidden;">
+        <div class="row">
+            <div class="col" style="height: 75vh;">
+                <iframe style="pointer-events: none; margin-left: 50%; transform: translateX(-50%);" width="4000px"
+                    height="100%"
+                    src="https://www.youtube.com/embed/ZHhqwBwmRkI?si=v5Wmx-QGUG1ZIUdF&controls=0&autoplay=1&mute=1&rel=0&disablekb=1&loop=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="About" class="container">
+        <div class="row my-5">
+            <div class="col">
+                <div class="card p-5 shadow">
+                    <div class="h3">What is League of Legends?</div>
+                    <p>League of Legends (LoL) is a multiplayer online battle arena (MOBA) game developed by Riot Games
+                        in 2009. This PC-only game is free to play and boasts more than 150 million players. It is one
+                        of the world’s most popular esports, with both professional and amateur leagues competing
+                        worldwide. League of Legends is rated "T for Teen."</p>
+                    <p>League of Legends is a team-based strategy game where two teams of five powerful champions face
+                        off to destroy each other’s base. Choose from over 140 champions to make epic plays, secure
+                        kills, and take down towers as you battle your way to victory.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col">
+                <div class="card p-5 shadow">
+                    <div class="h3">Game Details</div>
+                    <p><strong>What’s the game objective of League of Legends?</strong></p>
+                    <p>Two teams of five players battle to destroy the opposing team’s base, known as the Nexus. The
+                        map, known as Summoner’s Rift, is split into two sides (Red and Blue). Each side has its own
+                        Nexus with two attack towers for additional defense. The two sides are connected by three Lanes
+                        (known as Top Lane, Mid Lane, and Bottom Lane) with additional attack towers. As the game
+                        begins, each team’s Nexus will spawn sets of minions that will automatically march towards their
+                        opponent’s side and attack opponents in their range.</p>
+                    <p>Each player will spawn in their team’s Fountain (a protected area just behind the Nexus), where
+                        players can return at any time to buy items, replenish their resources, and respawn if they were
+                        eliminated.</p>
+                    <p>Throughout the match, each player will pilot their own unique Champion and become more powerful
+                        by collecting experience points to level up, earning gold to purchase items that enhance their
+                        champion's abilities.</p>
+                    <p>Teams will strategize before the game and adapt as the match goes on to push through the lanes,
+                        take down their opponent’s towers, and ultimately destroy their opponent’s Nexus to win the
+                        game.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col">
+                <div class="card p-5 shadow">
+                    <div class="h3">How to Download League of Legends</div>
+                    <p>League of Legends is a free-to-play game. To get it on your school’s computers, follow these
+                        simple steps:</p>
+                    <ol>
+                        <li>Before you begin, check to ensure your computer has enough storage (at least 22GB) to
+                            complete the installer.</li>
+                        <li>Click the link: <a href="https://signup.na.leagueoflegends.com/en/signup/redownload"
+                                target="_blank">League of Legends Download</a>.</li>
+                        <li>Once installed, your students can launch the client from a desktop shortcut or by searching
+                            the computer for League of Legends. They’ll sign in through their League of Legends accounts
+                            and can begin to set up their in-game accounts.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="News" class="container mt-5">
+        <h3 class="mb-4">Featured News</h3>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card mb-4">
+                    <img src="pictures/lol1.avif" class="card-img-top" alt="Blood Sweat & Tears">
+                    <div class="card-body">
+                        <h5 class="card-title">Blood Sweat & Tears</h5>
+                        <p class="card-text">Wounded and near death, Ambessa sees a vision of what awaits her as a
+                            follower of the Wolf.</p>
+                        <p class="card-text"><small class="text-muted">MEDIA 10/26/2024</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card mb-4">
+                    <img src="pictures/lol2.avif" class="card-img-top" alt="Ambessa Abilities Rundown">
+                    <div class="card-body">
+                        <h5 class="card-title">Ambessa Abilities Rundown</h5>
+                        <p class="card-text">Show no mercy with Ambessa in 14.22.</p>
+                        <p class="card-text"><small class="text-muted">GAME UPDATES 10/22/2024</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card mb-4">
+                    <img src="pictures/lol3.avif" class="card-img-top" alt="Arcane: 'Come Play' Series Trailer">
+                    <div class="card-body">
+                        <h5 class="card-title">Arcane: "Come Play" Series Trailer</h5>
+                        <p class="card-text">Progress has a price.</p>
+                        <p class="card-text"><small class="text-muted">MEDIA 10/16/2024</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Champions" class="container mt-5">
+        <h3 class="mb-4">Champions</h3>
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card mb-4">
+                    <img src="pictures/ahri.avif" class="card-img-top img-long" alt="Ahri">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 0); font-size: larger; font-weight: bold;">Ahri -
+                            The
+                            Nine-Tailed Fox</h5>
+                        <p class="card-text">Ahri is a mage champion with abilities that charm and deceive enemies. She
+                            excels in mobility and sustained damage.</p>
+                        <ul>
+                            <li><strong>Passive:</strong> Essence Theft</li>
+                            <li><strong>Q:</strong> Orb of Deception</li>
+                            <li><strong>W:</strong> Fox-Fire</li>
+                            <li><strong>E:</strong> Charm</li>
+                            <li><strong>R:</strong> Spirit Rush</li>
+                        </ul>
+                        <p class="card-text"><small class="text-muted">ROLE: Mage</small></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card mb-4">
+                    <img src="pictures/zed.avif" class="card-img-top img-long" alt="Zed">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 0); font-size: larger; font-weight: bold;">Zed -
+                            The
+                            Master of Shadows</h5>
+                        <p class="card-text">Zed is a deadly assassin who uses shadows to outmaneuver his enemies. His
+                            burst damage makes him a top-tier champion.</p>
+                        <ul>
+                            <li><strong>Passive:</strong> Contempt for the Weak</li>
+                            <li><strong>Q:</strong> Razor Shuriken</li>
+                            <li><strong>W:</strong> Living Shadow</li>
+                            <li><strong>E:</strong> Shadow Slash</li>
+                            <li><strong>R:</strong> Death Mark</li>
+                        </ul>
+                        <p class="card-text"><small class="text-muted">ROLE: Assassin</small></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="card mb-4">
+                    <img src="pictures/jinx.avif" class="card-img-top img-long" alt="Jinx">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 0); font-size: larger; font-weight: bold;">Jinx -
+                            The
+                            Loose Cannon</h5>
+                        <p class="card-text">Jinx is a marksman champion known for her chaotic and explosive playstyle.
+                            She excels at dealing consistent damage from a safe distance.</p>
+                        <ul>
+                            <li><strong>Passive:</strong> Get Excited!</li>
+                            <li><strong>Q:</strong> Switcheroo!</li>
+                            <li><strong>W:</strong> Zap!</li>
+                            <li><strong>E:</strong> Flame Chompers!</li>
+                            <li><strong>R:</strong> Super Mega Death Rocket!</li>
+                        </ul>
+                        <p class="card-text"><small class="text-muted">ROLE: Marksman</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Support" class="container">
+        <div class="row my-5">
+            <div class="col">
+                <h3 class="mb-4">Our Games</h3>
+                <p>Get help for a specific game.</p>
+                <p>Click the image to be redirected to the download site.</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="https://signup.na.leagueoflegends.com/en/signup/redownload" target="_blank">
+                        <img src="pictures/lolGame.webp" class="card-img-top" alt="Game Image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">League Of Legends</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="https://playvalorant.com/" target="_blank">
+                        <img src="pictures/valoGame.jpg" class="card-img-top" alt="Game Image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Valorant</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="https://teamfighttactics.leagueoflegends.com/" target="_blank">
+                        <img src="pictures/tftGame.jpg" class="card-img-top" alt="Game Image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Teamfight Tactics</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="https://wildrift.leagueoflegends.com/" target="_blank">
+                        <img src="pictures/wrGame.avif" class="card-img-top" alt="Game Image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">League Of Legends: Wildrift</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="https://playruneterra.com/" target="_blank">
+                        <img src="pictures/lorGame.jpg" class="card-img-top" alt="Game Image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Legends Of Runeterra</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="background-color: #000; color: #fff; padding: 20px; z-index: 100;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center;">
+                <img src="pictures/riotLogo.png" alt="Riot Games Logo" style="width: 50px; border-radius: 50%;">
+
+                <p>© 2024 Riot Games Inc. All rights reserved. League of Legends and Riot Games Inc. are trademarks or
+                    registered trademarks of Riot Games, Inc.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
