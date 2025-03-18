@@ -214,6 +214,7 @@
 
  .footer p {
      font-size: 16px;
+     font-weight: 600;
  }
 
  .profile-image-container {
@@ -317,7 +318,6 @@
      transform: scale(1.05);
 
  }
-
 
  .projectButton {
      font-size: 40px;
