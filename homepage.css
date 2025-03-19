@@ -320,18 +320,24 @@
  }
 
  .projectButton {
-     font-size: 40px;
-     padding: 20px 80px;
-     border-radius: 999px;
-     background-color: #504B38;
-     color: #ffffff;
-     border: none;
-     font-weight: bold;
-     transition: all 0.3s ease;
- }
+    font-size: 40px;
+    padding: 20px 80px;
+    border-radius: 999px;
+    background-color: #504B38;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
 
  .projectButton:hover {
      background-color: #6A644D;
      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
      transform: scale(1.05);
  }
+
+ .projectButton:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
