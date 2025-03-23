@@ -54,7 +54,7 @@
      animation: slide-up 1.5s ease forwards;
      opacity: 0;
      transform: translateY(100%);
-     font-weight: 700;
+     font-weight: 800;
  }
 
  .intro2 {
@@ -66,6 +66,11 @@
      opacity: 0;
      transform: translateY(100%);
  }
+
+ .normalText {
+    font-weight: 100;
+}
+
 
  .container {
      text-align: center;
@@ -213,7 +218,7 @@
  }
 
  .footer p {
-     font-size: 16px;
+     font-size: 20px;
      font-weight: 600;
  }
 
@@ -337,7 +342,4 @@
      transform: scale(1.05);
  }
 
- .projectButton:active {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(2px);
-}
+ 
