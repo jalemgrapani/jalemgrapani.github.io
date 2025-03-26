@@ -44,7 +44,7 @@ body, html {
 }
 
 .container-title {
-	background-color: 	#f4b8da;
+	background-color: 	#ffffff;
 	padding: 0;
 	height: 200px;
 	display: flex;
@@ -72,7 +72,7 @@ body, html {
 }
 
 .container-image {
-	background-color: 	#f4b8da;
+	background-color: 	#ffffff;
 	padding: 20px;
 	min-height: 100%;
 	display: flex;

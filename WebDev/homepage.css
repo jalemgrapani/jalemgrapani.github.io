@@ -24,6 +24,21 @@
  }
 
 
+ .project-btn {
+    background-color: transparent !important;
+    color: #504B38 !important;
+    border: 2px solid #504B38 !important;
+    transition: background-color 0.3s, color 0.3s, border 0.3s !important;
+}
+
+.project-btn:hover {
+    background-color: #B9B28A !important; 
+    color: #504B38 !important;
+    border-color: #504B38 !important;
+}
+
+
+
  @keyframes slideInLeft {
      0% {
          transform: translateX(-100%);

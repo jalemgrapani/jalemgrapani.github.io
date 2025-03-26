@@ -100,7 +100,8 @@ body {
 
 .card-body {
   padding: 15px;
-  background-color: #f9cee7;
+  background-color: #ffffff;
+  text-align: center;
 }
 
 .card-title {
