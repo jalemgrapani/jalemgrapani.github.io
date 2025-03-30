@@ -54,7 +54,7 @@
      animation: slide-up 1.5s ease forwards;
      opacity: 0;
      transform: translateY(100%);
-     font-weight: 800;
+     font-weight: 700;
  }
 
  .intro2 {
