@@ -6,28 +6,31 @@
 
 .keyart,
 .keyart_layer {
-	height: 1000px;
+	height: 650px;
 	overflow: hidden;
 }
 
-body, html {
+body,
+html {
 	overflow-x: hidden;
 	margin: 0;
-    padding: 0;
+	padding: 0;
 }
+
 * {
-    max-width: 100vw;
-    overflow-x: hidden !important; 
+	max-width: 100vw;
+	overflow-x: hidden !important;
 }
 
 .keyart {
 	position: relative;
 	z-index: 10;
 }
+
 @media (max-width: 600px) {
-    .keyart {
-        overflow: hidden;
-    }
+	.keyart {
+		overflow: hidden;
+	}
 }
 
 .keyart_layer {
@@ -52,7 +55,7 @@ body, html {
 
 #keyart-0 {
 	background-image: url(img/parallax1.png);
-	background-size: cover; 
+	background-size: cover;
 	background-position: center;
 }
 
