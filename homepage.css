@@ -21,7 +21,7 @@
      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
      pointer-events: auto;
      z-index: 1050;
-     padding: 10px;
+     padding: 5px;
  }
 
  .navbar-light .navbar-nav .nav-link {
@@ -77,88 +77,20 @@
      padding: 40px;
  }
 
- #about,
- #education,
- #skills,
- #projects,
- #contact {
-     background-color: #F8F3D9;
-     padding: 50px 0;
-
- }
-
- .title1 {
-     font-size: 60px;
-     font-family: 'Roboto', sans-serif;
-     color: #000000;
-     margin-bottom: 20px;
-     text-align: center;
-     font-size: clamp(40px, 2.5vw, 20rem);
-     margin: 20px 0;
-     font-weight: bolder;
- }
-
- @keyframes slide-up {
-     0% {
-         opacity: 0;
-         transform: translateY(100%);
-     }
-
-     100% {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
-
- .btn-light:hover,
- .btn-light:focus,
- .btn-light:active {
-     background-color: #B9B28A !important;
-     color: rgb(0, 0, 0) !important;
-     transform: scale(1.1) !important;
-     transition: all 0.3s ease !important;
- }
-
  .navbar-nav .nav-link {
      position: relative;
      text-decoration: none;
  }
 
- .navbar-nav .nav-link::after {
-     content: "";
-     position: absolute;
-     left: 50%;
-     bottom: 0;
-     width: 0;
-     height: 2px;
-     background-color: currentColor;
-     transition: width 0.3s ease, left 0.3s ease;
- }
 
- .navbar-nav .nav-link:hover::after {
-     width: 50%;
-     left: 25%;
- }
+ .navbar-nav .nav-item {
+    transition: transform 0.3s ease;
+}
 
-
- @keyframes jump {
-     0% {
-         transform: translateY(0);
-     }
-
-     30% {
-         transform: translateY(-10px);
-     }
-
-     50% {
-         transform: translateY(0);
-     }
-
-     100% {
-         transform: translateY(-5px);
-     }
- }
-
+.navbar-nav .nav-item:hover {
+    transform: scale(1.1);
+}
+ 
  .contact-btn {
      border-radius: 50%;
      width: 70px;
@@ -175,38 +107,6 @@
      color: rgb(255, 255, 255);
  }
 
- .row {
-     margin-bottom: 20px;
- }
-
- .btn-lg {
-     font-size: 18px;
- }
-
- @media (max-width: 768px) {
-     .intro {
-         font-size: 50px;
-         margin-top: 100px;
-     }
-
-     .intro2 {
-         font-size: 30px;
-         margin-bottom: 200px;
-     }
-
-     .btn-lg {
-         font-size: 16px;
-         margin: 5px;
-     }
-
-     .contact-btn {
-         width: 60px;
-         height: 60px;
-         font-size: 25px;
-     }
-
- }
-
  .footer {
      background-color: #B9B28A;
      color: #000000;
@@ -219,102 +119,13 @@
 
  .footer p {
      font-size: 20px;
-     font-weight: 600;
- }
-
- .profile-image-container {
-     width: 200px;
-     height: 200px;
-     overflow: hidden;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin: 0 auto 20px auto;
-     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
-     border-radius: 50%;
- }
-
-
- .profile-image {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
- }
-
- #about {
-     background-color: #F8F3D9;
-     padding: 50px 0;
-     margin-bottom: 40px;
- }
-
- .aboutContent {
-     text-align: center;
-     font-size: 20px;
-     color: #000000;
-     font-family: Arial, sans-serif;
-     line-height: 1.8;
-     max-width: 90%;
-     padding: 0 15px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100%;
+     font-weight: 400;
  }
 
  .btn-slide-left {
      transform: translateX(-100%);
      opacity: 0;
      animation: slideInLeft 2s ease-out forwards;
-
- }
-
-
- @keyframes slideInLeft {
-     0% {
-         transform: translateX(-100%);
-         opacity: 0;
-     }
-
-     100% {
-         transform: translateX(0);
-         opacity: 1;
-     }
- }
-
- .btn-slide-left {
-     transform: translateX(-100%);
-     opacity: 0;
-     animation: slideInLeft 2s ease-out forwards;
- }
-
- @keyframes slideInLeft {
-     0% {
-         transform: translateX(-100%);
-         opacity: 0;
-     }
-
-     100% {
-         transform: translateX(0);
-         opacity: 1;
-     }
- }
-
- #btnExpand1,
- #btnExpand2 {
-     font-size: 20px;
-     background-color: #504B38;
-     color: #ffffff;
-     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-     border-radius: 30px;
-     padding: 10px 30px;
-     transition: 0.3s ease-in-out;
- }
-
- #btnExpand1:hover,
- #btnExpand2:hover {
-     background-color: #6A644D;
-     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-     transform: scale(1.05);
  }
 
  .contact-btn:hover {
@@ -324,20 +135,26 @@
 
  }
 
- .projectButton {
-     font-size: 25px;
-     padding: 20px 80px;
-     border-radius: 999px;
-     background-color: #504B38;
-     color: #ffffff;
-     border: none;
-     font-weight: bold;
-     transition: all 0.3s ease;
-     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
- }
+ @keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
- .projectButton:hover {
-     background-color: #6A644D;
-     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-     transform: scale(1.05);
- }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
