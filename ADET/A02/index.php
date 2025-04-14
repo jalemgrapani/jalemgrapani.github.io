@@ -1,6 +1,6 @@
 <?php
 
-$page = "index";
+$page = "outlet";
 
 if (isset($_GET['page'])) {
   $page = $_GET['page'];
