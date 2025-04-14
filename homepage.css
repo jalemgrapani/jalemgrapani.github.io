@@ -1,11 +1,7 @@
- body {
+ body, html {
      background-color: #F8F3D9;
      margin: 0;
      padding: 0;
- }
-
- body,
- html {
      overflow-x: hidden;
  }
 
@@ -14,6 +10,7 @@
      padding-left: 0;
      padding-right: 0;
      margin: 0 auto;
+     margin-top: -120px;
  }
 
  .navbar {
@@ -90,7 +87,7 @@
 .navbar-nav .nav-item:hover {
     transform: scale(1.1);
 }
- 
+
  .contact-btn {
      border-radius: 50%;
      width: 70px;
@@ -135,6 +132,9 @@
 
  }
 
+ .contacts {
+    margin-top: -60px;
+ }
  @keyframes slide-up {
     0% {
         opacity: 0;
