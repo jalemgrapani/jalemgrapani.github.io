@@ -84,10 +84,13 @@
     transition: transform 0.3s ease;
 }
 
-.navbar-nav .nav-item:hover {
+/* .navbar-nav .nav-item:hover {
     transform: scale(1.1);
-}
+} */
 
+.dropdown-menu {
+    background-color: #B9B28A;
+}
  .contact-btn {
      border-radius: 50%;
      width: 70px;
@@ -133,7 +136,7 @@
  }
 
  .contacts {
-    margin-top: -60px;
+    margin-top: -50px;
  }
  @keyframes slide-up {
     0% {
