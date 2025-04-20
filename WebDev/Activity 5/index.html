@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-transparent">
+  <!-- <nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container-fluid">
       <a class="navbar-brand text-black" href="#">Japan</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -39,12 +39,12 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 
   <div id=home class="container-fluid imageContainer">
     <div class="row">
-      <div class="col-12 text-center">
+      <div class="col text-center">
         <img class="img-fluid japan" src="pictures/japan.jpg" alt="Japan">
         <div class="imageText">Japan</div>
         <div class="description">Exploring the Land of the Rising Sun</div>
@@ -58,16 +58,14 @@
         <div class="historicalPlaces1 mb-4 mt-5">About Japan</div>
         <div class="historicalDescription">
           <p>
-            Japan is an island nation in East Asia, consisting of four main islands: Honshu, Hokkaido, Kyushu, and
-            Shikoku. It features a mountainous landscape, with Mount Fuji as a notable landmark. The country has a rich
-            cultural heritage, blending traditional arts and cuisine—such as sushi and ramen—with modern influences.
-            Its history includes significant periods, from ancient influences to the samurai era and rapid modernization
-            during
-            the Meiji Restoration. Today, Japan has the third-largest economy globally, known for advanced technology
-            and key
-            industries like automobiles and electronics. With a population of about 125 million, Japan faces challenges
-            like
-            an aging demographic.
+            Japan is an island nation located in East Asia, made up of four main islands: Honshu, Hokkaido, Kyushu, and
+            Shikoku. The country is known for its mountainous terrain, with Mount Fuji standing out as a prominent
+            landmark. Japan boasts a rich cultural heritage, combining traditional arts and cuisine such as sushi and
+            ramen with modern elements. Its history spans from ancient times through the era of the samurai to the rapid
+            modernization that occurred during the Meiji Restoration. Today, Japan has the world’s third-largest economy
+            and is recognized for its advancements in technology and its major industries, including automobiles and
+            electronics. With a population of around 125 million, Japan also faces challenges such as an aging
+            population.
           </p>
         </div>
       </div>
@@ -78,31 +76,30 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 col-sm-12 mb-4">
-        <div class="card" style="width: 100%;">
-          <img id=places src="pictures/japan2.jpg" class="card-img-top img-fluid">
-          <div class="card-body">
+        <div class="card h-100 d-flex flex-column">
+          <img id="places" src="pictures/japan2.jpg" class="card-img-top img-fluid">
+          <div class="card-body mt-auto">
             <h5 class="card-title">Osaka Castle</h5>
             <p class="card-text">It's a famous historical landmark known for its white exterior and golden roof. The
               castle is surrounded by beautiful cherry blossoms, which are often associated with Japan.</p>
           </div>
         </div>
       </div>
+  
       <div class="col-md-6 col-sm-12 mb-4">
-        <div class="card" style="width: 100%;">
+        <div class="card h-100 d-flex flex-column">
           <img src="pictures/japan4.jpg" class="card-img-top img-fluid">
-          <div class="card-body">
+          <div class="card-body mt-auto">
             <h5 class="card-title">Akihabara: Tokyo's Electric Town</h5>
-            <p class="card-text">Akihabara, known as "Akiba," is a lively Tokyo district
-              famous for electronics and anime. This area is a hub for unique subcultures, offering a colorful blend of
-              modern technology and traditional Japanese entertainment.</p>
-
+            <p class="card-text">Akihabara, known as "Akiba," is a lively Tokyo district famous for electronics and anime. This area is a hub for unique subcultures, offering a colorful blend of modern technology and traditional Japanese entertainment.</p>
           </div>
         </div>
       </div>
+  
       <div class="col-md-6 col-sm-12 mb-4">
-        <div class="card" style="width: 100%;">
+        <div class="card h-100 d-flex flex-column">
           <img src="pictures/japan5.jpg" class="card-img-top img-fluid">
-          <div class="card-body">
+          <div class="card-body mt-auto">
             <h5 class="card-title">Cherry Blossoms in Japan</h5>
             <p class="card-text">A beautiful display of cherry blossoms along a canal in Japan. The pink blossoms are
               illuminated by lanterns, creating a magical and romantic atmosphere. This is a common sight during the
@@ -110,10 +107,11 @@
           </div>
         </div>
       </div>
+  
       <div class="col-md-6 col-sm-12 mb-4">
-        <div class="card" style="width: 100%;">
+        <div class="card h-100 d-flex flex-column">
           <img src="pictures/japan6.jpeg" class="card-img-top img-fluid">
-          <div class="card-body">
+          <div class="card-body mt-auto">
             <h5 class="card-title">Oyama Senmaida: Rice Terraces</h5>
             <p class="card-text">Oyama Senmaida is a breathtaking landscape of terraced rice paddies located in the
               Chiba Prefecture of Japan. Renowned for its 1,000-step terraced fields, it's a testament to the ingenuity
@@ -123,6 +121,7 @@
       </div>
     </div>
   </div>
+  
 
   <div class="container">
     <div class="row justify-content-center">
@@ -135,31 +134,20 @@
   </div>
 
 
-  <!-- Carousel -->
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="pictures/1.jpeg" class="d-block w-100" alt="Image 1">
+        <img src="pictures/1.jpeg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="pictures/2.jpeg" class="d-block w-100" alt="Image 2">
+        <img src="pictures/2.jpeg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="pictures/3.jpg" class="d-block w-100" alt="Image 3">
+        <img src="pictures/3.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
+  
 
   <div id="others" class="container">
     <div class="row justify-content-center">
