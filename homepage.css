@@ -1,4 +1,5 @@
- body, html {
+ body,
+ html {
      background-color: #F8F3D9;
      margin: 0;
      padding: 0;
@@ -10,8 +11,8 @@
      padding-left: 0;
      padding-right: 0;
      margin: 0 auto;
-     margin-top: -120px;
  }
+
 
  .navbar {
      background-color: #B9B28A;
@@ -52,6 +53,7 @@
      opacity: 0;
      transform: translateY(100%);
      font-weight: 700;
+     font-size: clamp(3rem, 7vw, 6rem);
  }
 
  .intro2 {
@@ -68,7 +70,6 @@
      font-weight: 100;
  }
 
-
  .container {
      text-align: center;
      padding: 40px;
@@ -81,16 +82,13 @@
 
 
  .navbar-nav .nav-item {
-    transition: transform 0.3s ease;
-}
+     transition: transform 0.3s ease;
+ }
 
-/* .navbar-nav .nav-item:hover {
-    transform: scale(1.1);
-} */
+ .dropdown-menu {
+     background-color: #B9B28A;
+ }
 
-.dropdown-menu {
-    background-color: #B9B28A;
-}
  .contact-btn {
      border-radius: 50%;
      width: 70px;
@@ -115,6 +113,7 @@
      width: 100%;
      bottom: 0;
      left: 0;
+     margin-top: 150px;
  }
 
  .footer p {
@@ -136,28 +135,29 @@
  }
 
  .contacts {
-    margin-top: -50px;
+     margin-top: -50px;
  }
+
  @keyframes slide-up {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
+     0% {
+         opacity: 0;
+         transform: translateY(100%);
+     }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+     100% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
 
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+ @keyframes slideInLeft {
+     0% {
+         transform: translateX(-100%);
+         opacity: 0;
+     }
 
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+     100% {
+         transform: translateX(0);
+         opacity: 1;
+     }
+ }
