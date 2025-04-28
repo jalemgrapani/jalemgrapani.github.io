@@ -135,24 +135,23 @@
                     price: "₱11,400.00"
                 }
             ];
+        
             var container = document.getElementById("watchCardContainer");
-
-            watches.forEach(function (watch, index) {
-                var cardHTML = `
-                    <div class="col-xl-4 col-md-4 col-sm-6 col-12 d-flex justify-content-center">
-                        <div class="cardBrand rounded-5 d-flex flex-column align-items-center my-2"
-                            style="height: auto; max-width: 300px; overflow: hidden;">
-                            <img src="${watch.img}" class="watchImage3 p-3 img-fluid">
-                            <div class="card-description text-center p-3">
-                                <h5 class="text-white">${watch.title}</h5>
-                                <h3 class="price text-white">${watch.price}</h3>
-                            </div>
+        
+            for (var i = 0; i < watches.length; i++) {
+                container.innerHTML += `<div class="col-xl-4 col-md-4 col-sm-6 col-12 d-flex justify-content-center">
+                    <div class="cardBrand rounded-5 d-flex flex-column align-items-center my-2"
+                        style="height: auto; max-width: 300px; overflow: hidden;">
+                        <img src="${watches[i].img}" class="watchImage3 p-3 img-fluid">
+                        <div class="card-description text-center p-3">
+                            <h5 class="text-white">${watches[i].title}</h5>
+                            <h3 class="price text-white">${watches[i].price}</h3>
                         </div>
                     </div>
-                `;
-                container.innerHTML += cardHTML;
-            });
+                </div>`;
+            }
         </script>
+        
 
         <div class="row my-5">
             <h2 class="text-white text-center">Customer Reviews</h2>
