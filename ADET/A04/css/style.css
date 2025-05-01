@@ -23,7 +23,7 @@
 }
 
 .topcontainer {
-  height: 15dvh;
+  height: 18dvh;
   background-color: #fff4e5 !important;
   border-radius: 10px;
   border: 2px solid #D4AF37;
@@ -59,7 +59,7 @@
   font-family: 'Cal Sans', sans-serif;
 }
 
-.recieptcontainer {
+.receiptcontainer {
   background-color: #fff4e5;
   color: #5c3017;
   border-radius: 15px;
@@ -77,23 +77,34 @@
   color: #5c3017;
 }
 
-.overflow-scroll {
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #68200d #f1f1f1;
+/* Hide the arrows in scrollbar */
+.topcontainer::-webkit-scrollbar,
+.maincontainer::-webkit-scrollbar,
+.receiptcontainer::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-.overflow-scroll::-webkit-scrollbar {
-  width: 8px;
+.topcontainer::-webkit-scrollbar-track,
+.maincontainer::-webkit-scrollbar-track,
+.receiptcontainer::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
 }
 
-.overflow-scroll::-webkit-scrollbar-thumb {
-  background-color: #68200d;
-  border-radius: 10px;
+.topcontainer::-webkit-scrollbar-thumb,
+.maincontainer::-webkit-scrollbar-thumb,
+.receiptcontainer::-webkit-scrollbar-thumb {
+    background-color: #c7a17a;
+    border-radius: 8px;
 }
 
-.overflow-scroll::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+.topcontainer::-webkit-scrollbar-button,
+.maincontainer::-webkit-scrollbar-button,
+.receiptcontainer::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
 }
 
 /* Reciept will go down */

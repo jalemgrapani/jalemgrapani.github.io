@@ -46,7 +46,7 @@ function addToReceipt(price, name) {
     total = parseFloat(total) + parseFloat(price);
 
     totalValueElement = document.getElementById("totalValue");
-    totalValueElement.innerHTML = total;
+    totalValueElement.innerHTML = "₱" + total;  // Added ₱ symbol
 
     receiptContainer.innerHTML += `
         <div class="d-flex flex-row justify-content-between">
@@ -55,6 +55,7 @@ function addToReceipt(price, name) {
         </div>
     `;
 }
+
 
 loadCategories();
 
