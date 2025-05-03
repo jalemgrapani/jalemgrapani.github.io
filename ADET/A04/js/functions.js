@@ -21,7 +21,7 @@ function loadProducts(categoryIndex) {
                 <div onclick="addToReceipt(` + content.price + `, '` + content.name + `')" 
                      class="card mx-1 my-2 custom-button content p-3 text-center" 
                      style="width: 180px; background-color: #D9B99A">
-                    <img src="` + content.image + `" alt="` + content.name + `" 
+                   <img src="img/`+ content.image + `.png"  
                          class="img-fluid" 
                          style="height: 200px; width: 150px; object-fit: contain; margin: 0;">
                     <small style="color: #68200d; font-size: 18px; font-weight: bold; display: block; margin: 0;">
@@ -46,7 +46,7 @@ function addToReceipt(price, name) {
     total = parseFloat(total) + parseFloat(price);
 
     totalValueElement = document.getElementById("totalValue");
-    totalValueElement.innerHTML = "₱" + total;  // Added ₱ symbol
+    totalValueElement.innerHTML = "₱" + total;  
 
     receiptContainer.innerHTML += `
         <div class="d-flex flex-row justify-content-between">
@@ -55,7 +55,6 @@ function addToReceipt(price, name) {
         </div>
     `;
 }
-
 
 loadCategories();
 
