@@ -173,32 +173,32 @@
             displayChampions();
         };
 
-        const displayChampions = () => {
+        const displayChampions = function () {
             championContainer.innerHTML = '';
             const startIndex = (currentPage - 1) * championsPerPage;
             const endIndex = startIndex + championsPerPage;
             const paginatedChampions = champions.slice(startIndex, endIndex);
 
-            paginatedChampions.forEach(champion => {
+            paginatedChampions.forEach(function (champion) {
                 const championType = champion.tags[0];
                 const bgColorClass = typeClass[championType] || '';
                 const roles = champion.tags.join(', ');
 
-                championContainer.innerHTML += `
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-    <a href="view.html?championName=${champion.id}">
-        <div class="card rounded-5 my-3 ${bgColorClass}">
-            <div class="imgcontainer">
-                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${champion.id}_0.jpg">
-            </div>
-            <div class="championname fs-4 fs-sm-3 fs-md-2 fs-lg-1">${champion.name}</div>
-            <div class="text-muted fs-6 fs-sm-5 fs-md-4 fs-lg-3">${roles}</div>
-        </div>
-    </a>
-</div>
-                `;
+                championContainer.innerHTML +=
+                    '<div class="col-6 col-sm-6 col-md-4 col-lg-3">' +
+                    '<a href="view.html?championName=' + champion.id + '">' +
+                    '<div class="card rounded-5 my-3 ' + bgColorClass + '">' +
+                    '<div class="imgcontainer">' +
+                    '<img src="https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/' + champion.id + '_0.jpg">' +
+                    '</div>' +
+                    '<div class="championname fs-4 fs-sm-3 fs-md-2 fs-lg-1">' + champion.name + '</div>' +
+                    '<div class="text-muted fs-6 fs-sm-5 fs-md-4 fs-lg-3">' + roles + '</div>' +
+                    '</div>' +
+                    '</a>' +
+                    '</div>';
             });
         };
+
 
         const nextPage = () => {
             const totalPages = Math.ceil(champions.length / championsPerPage);

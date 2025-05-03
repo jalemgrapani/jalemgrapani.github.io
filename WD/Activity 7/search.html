@@ -194,22 +194,22 @@
                 'Marksman': 'marksman-bg'
             };
 
-            filtered.forEach(champion => {
+            filtered.forEach(function (champion) {
                 const championType = champion.tags[0];
                 const bgColorClass = typeClass[championType] || '';
                 const roles = champion.tags.join(', ');
 
-                resultContainer.innerHTML += `
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="champion-info ${bgColorClass}">
-                        <img id="championImage" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg" alt="${champion.name}">
-                        <h2 id="championName">${champion.name}</h2>
-                        <p id="championDescription">${champion.title}</p>
-                        <div id="championRoles"><strong>Role: </strong>${roles}</div>
-                    </div>
-                </div>
-                `;
+                resultContainer.innerHTML +=
+                    '<div class="col-12 col-md-6 col-lg-4">' +
+                    '<div class="champion-info ' + bgColorClass + '">' +
+                    '<img id="championImage" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champion.id + '_0.jpg" alt="' + champion.name + '">' +
+                    '<h2 id="championName">' + champion.name + '</h2>' +
+                    '<p id="championDescription">' + champion.title + '</p>' +
+                    '<div id="championRoles"><strong>Role: </strong>' + roles + '</div>' +
+                    '</div>' +
+                    '</div>';
             });
+
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

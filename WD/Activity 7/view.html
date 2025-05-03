@@ -148,21 +148,22 @@
         const urlParams = new URLSearchParams(window.location.search);
         const championName = urlParams.get('championName');
 
-        const loadChampion = async () => {
-            const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion/${championName}.json`);
+        const loadChampion = async function () {
+            const response = await fetch('https://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion/' + championName + '.json');
             const data = await response.json();
             const champion = data.data[championName];
 
             document.getElementById('championName').innerHTML = champion.name;
-            document.getElementById('championImage').src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`;
+            document.getElementById('championImage').src = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champion.id + '_0.jpg';
             document.getElementById('championDescription').innerHTML = champion.lore;
-            document.getElementById('championRole').innerHTML = `Role: ${champion.tags[0]}`;
+            document.getElementById('championRole').innerHTML = 'Role: ' + champion.tags[0];
 
-            const roleClass = `${champion.tags[0].toLowerCase()}-bg`;
+            const roleClass = champion.tags[0].toLowerCase() + '-bg';
             document.body.classList.add(roleClass);
         };
 
         loadChampion();
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         crossorigin="anonymous"></script>
