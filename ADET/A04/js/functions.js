@@ -128,22 +128,20 @@ function changeQuantity(name, change) {
 }
 
 function confirmPurchase() {
-    var hasItems = false;
-
-    receiptItems.forEach(function (item) {
-        if (item.quantity > 0) {
-            hasItems = true;
-        }
-    });
+    var hasItems = receiptItems.some(item => item.quantity > 0);
+    var purchaseMessage = document.getElementById("purchaseMessage");
 
     if (hasItems) {
-        alert('Purchase confirmed!\nThank you for ordering!');
+        purchaseMessage.innerText = "Purchase confirmed!\nThank you for ordering!";
         receiptItems = [];
         total = 0;
         updateReceipt();
     } else {
-        alert('No items to purchase!');
+        purchaseMessage.innerText = "No items to purchase!";
     }
+
+    var purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+    purchaseModal.show();
 }
 
 loadCategories();

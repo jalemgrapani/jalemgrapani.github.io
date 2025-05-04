@@ -170,4 +170,31 @@
   border-color: #5c3017 ;
 }
 
+.modal-content {
+  background-color: #fcebd5;
+  border: 2px solid #68200d;
+}
+
+.modal-header {
+  background-color: #68200d;
+}
+
+.modal-title {
+  color: #fcebd5;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.modal-body {
+  color: #68200d;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal-footer .btn {
+  background-color: #f47c20;
+  color: white;
+}
 
