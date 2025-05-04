@@ -64,6 +64,8 @@
   color: #5c3017;
   border-radius: 15px;
   border: 2px solid #D4AF37;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .topcontainer .card {
