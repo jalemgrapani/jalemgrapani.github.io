@@ -10,6 +10,7 @@
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -44,6 +45,9 @@
           <div class="mt-2 d-flex flex-row justify-content-between" style="color: #f47c20;">
             <div><b>TOTAL</b></div>
             <div><b id="totalValue">0</b></div>
+          </div>
+          <div class="mt-3 text-center" id="confirmContainer" style="display: none;">
+            <button class="btn btn-success" onclick="confirmPurchase()">Confirm Purchase</button>
           </div>
         </div>
       </div>
