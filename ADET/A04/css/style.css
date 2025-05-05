@@ -66,6 +66,7 @@
   border: 2px solid #D4AF37;
   max-height: 500px;
   overflow-y: auto;
+  max-height: 95vh;
 }
 
 .topcontainer .card {
@@ -79,34 +80,51 @@
   color: #5c3017;
 }
 
+.totalValue {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  border-top: 1px solid #5c3017;
+  background-color: #ca9166;
+  padding: 20px;
+}
+
+.confirmPurchase {
+  background-color: #f47c20;
+  max-width: fit-content;
+  margin: 0 auto; 
+  padding: 5px;
+  border-radius: 8px; 
+}
+
 /* Hide the arrows in scrollbar */
 .topcontainer::-webkit-scrollbar,
 .maincontainer::-webkit-scrollbar,
 .receiptcontainer::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
 .topcontainer::-webkit-scrollbar-track,
 .maincontainer::-webkit-scrollbar-track,
 .receiptcontainer::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 10px;
+  background: transparent;
+  border-radius: 10px;
 }
 
 .topcontainer::-webkit-scrollbar-thumb,
 .maincontainer::-webkit-scrollbar-thumb,
 .receiptcontainer::-webkit-scrollbar-thumb {
-    background-color: #c7a17a;
-    border-radius: 8px;
+  background-color: #c7a17a;
+  border-radius: 8px;
 }
 
 .topcontainer::-webkit-scrollbar-button,
 .maincontainer::-webkit-scrollbar-button,
 .receiptcontainer::-webkit-scrollbar-button {
-    display: none;
-    height: 0;
-    width: 0;
+  display: none;
+  height: 0;
+  width: 0;
 }
 
 /* Reciept will go down */
@@ -162,12 +180,12 @@
 }
 
 .iconButton {
-  font-size: 15px;  
+  font-size: 15px;
   color: #5c3017;
 }
 
 .buttonIcon {
-  border-color: #5c3017 ;
+  border-color: #5c3017;
 }
 
 .modal-content {
@@ -197,4 +215,3 @@
   background-color: #f47c20;
   color: white;
 }
-
