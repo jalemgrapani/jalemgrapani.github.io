@@ -71,7 +71,7 @@
   </div>
   <script>
     var categories = [];
-    var products = [];
+    var products = []; 
 
     const getAllCategories = async () => {
       fetch('http://localhost/ADET_WD/jalemgrapani.github.io/ADET/A04_BE/categories.php'
@@ -101,7 +101,7 @@
           products = data;
           loadProducts();
         });
-    }
+    } 
 
     getAllCategories();
 
