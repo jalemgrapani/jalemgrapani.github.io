@@ -10,7 +10,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 switch ($method) {
   case 'POST':
-    handleGet($pdo,$input);
+    handleGet($pdo, $input);
     break;
   default:
     echo json_encode(['message' => 'Invalid request method']);

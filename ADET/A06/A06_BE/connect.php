@@ -15,7 +15,7 @@ try {
 
 if (!$conn) {
 	die("Connection Failed. " . mysqli_connect_error());
-	echo "can't connect to database"; 
+	echo "can't connect to database";
 }
 
 function executeQuery($query)
