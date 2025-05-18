@@ -88,6 +88,10 @@
      background-color: #B9B28A;
  }
 
+ .dropdown-item {
+    font-weight: 550;
+ }
+
  .contact-btn {
      border-radius: 50%;
      width: 70px;
