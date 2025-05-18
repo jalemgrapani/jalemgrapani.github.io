@@ -1,21 +1,19 @@
 body {
-    background-image: url("../img/SVGGG\ \(1\).svg");
-
+    background: linear-gradient(150deg, #0f2027, #203a43, #2c5364)
 }
 
 .navbar {
-    background-image: url("../img/SVGGG\ \(1\).svg");
-
+     background: linear-gradient(50deg, #0f2027, #203a43, #15323f)
 }
 
 /* Cards */
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25); 
+    backdrop-filter: blur(2px); 
+    -webkit-backdrop-filter: blur(2px);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .watchImage1,
