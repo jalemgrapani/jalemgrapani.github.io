@@ -1,13 +1,13 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide my-3 mb-5" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="2000">
-      <img src="img/banner.svg" class="d-block w-100" alt="...">
+      <img src="assets/img/banner.svg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="img/banner2.svg" class="d-block w-100" alt="...">
+      <img src="assets/img/banner2.svg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="img/banner3.svg" class="d-block w-100" alt="...">
+      <img src="assets/img/banner3.svg" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
@@ -26,7 +26,7 @@ $featuredWatches = [
   <?php foreach ($featuredWatches as $watch) { ?>
     <div class="col-12 col-md-6 col-lg-3 mb-4">
       <div class="card h-100">
-        <img src="<?php echo $watch[0]; ?>" class="card-img-top" alt="Watch image">
+        <img src="assets/<?php echo $watch[0]; ?>" class="card-img-top" alt="Watch image">
         <div class="card-body d-flex flex-column">
           <p class="h6 card-text flex-grow-1"><?php echo $watch[1]; ?></p>
           <div class="h4"><?php echo $watch[2]; ?></div>
@@ -63,7 +63,7 @@ $browseCollections = [
     <?php foreach ($browseCollections as $collection) { ?>
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="box1 card" style="width: 100%;">
-          <img src="<?php echo $collection[0]; ?>" class="card-img-top" alt="<?php echo $collection[1]; ?>">
+          <img src="assets/<?php echo $collection[0]; ?>" class="card-img-top" alt="<?php echo $collection[1]; ?>">
         </div>
       </div>
     <?php } ?>

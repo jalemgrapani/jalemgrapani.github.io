@@ -39,7 +39,7 @@ $alpinaWatches = [
   <?php foreach ($alpinaWatches as $watch) { ?>
     <div class="col-lg-4 col-md-6 col-12 mb-4 d-flex">
       <div class="card equal-card w-100">
-        <img src="<?php echo $watch[0]; ?>" class="card-img-top" alt="Watch image">
+        <img src="assets/<?php echo $watch[0]; ?>" class="card-img-top" alt="Watch image">
         <div class="card-body">
           <p class="h6 card-text"><?php echo $watch[1]; ?></p>
           <div class="h4"><?php echo $watch[2]; ?></div>

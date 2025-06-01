@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../../../img/JL Logo.svg">
+    <link rel="icon" type="image/png" href="../../../homepage/assets/img/JL Logo.svg">
     <title>About Us | Watch Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../assets/css/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -22,7 +22,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="../img/JW1.svg" alt="Logo" style="height: 60px; width: 60px;" class="me-2 ms-3">
+            <img src="../assets/img/JW1.svg" alt="Logo" style="height: 60px; width: 60px;" class="me-2 ms-3">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center text-md-end">
-                <img src="../img/watch1.1.png" class="watchImage1 p-5 img-fluid mb-5">
+                <img src="../assets/img/watch1.1.png" class="watchImage1 p-5 img-fluid mb-5">
             </div>
         </div>
     </div>
@@ -88,11 +88,11 @@
 
     <script>
         var brands = [
-            { img: "../img/alpinaaa.png", name: "ALPINA" },
-            { img: "../img/tommyy.png", name: "TOMMY HILFIGER" },
-            { img: "../img/calvinn.png", name: "CALVIN KLEIN" },
-            { img: "../img/coachh.png", name: "COACH" },
-            { img: "../img/tissottt.png", name: "TISSOT" }
+            { img: "alpinaaa.png", name: "ALPINA" },
+            { img: "tommyy.png", name: "TOMMY HILFIGER" },
+            { img: "calvinn.png", name: "CALVIN KLEIN" },
+            { img: "coachh.png", name: "COACH" },
+            { img: "tissottt.png", name: "TISSOT" }
         ];
     
         var container = document.getElementById("brandCardContainer");
@@ -100,7 +100,7 @@
         for (var i = 0; i < brands.length; i++) {
             container.innerHTML += `<div class="col-6 col-md-4 col-lg-4 mb-4">
                 <div class="cardBrand d-flex flex-column align-items-center justify-content-center text-center p-4" style="border-radius: 10px;">
-                    <img src="${brands[i].img}" class="watchImage img-fluid" style="max-width: 150px; height: auto;">
+                    <img src="../assets/img/${brands[i].img}" class="watchImage img-fluid" style="max-width: 150px; height: auto;">
                     <h4 class="brand text-white mt-3" style="font-size: 1.5rem;">${brands[i].name}</h4>
                 </div>
             </div>`;

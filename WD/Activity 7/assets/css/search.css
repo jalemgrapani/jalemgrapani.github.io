@@ -1,0 +1,126 @@
+body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        h1.display-3 {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .champion-info {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: rgb(0, 0, 0);
+            margin-bottom: 20px;
+        }
+
+        .champion-info:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        #championImage {
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #championName {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 1.9rem;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        #championDescription {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.1rem;
+            color: #000000;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+
+        #championRoles {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #030101;
+            margin-top: 5px;
+        }
+
+        .search-input {
+            height: 50px;
+            font-size: 1.25rem;
+            width: 40%;
+            display: inline-block;
+            border: 2px solid #ddd;
+            text-align: center;
+        }
+
+        .search-button {
+            height: 50px;
+            font-size: 1.25rem;
+            margin-left: 5px;
+            margin-bottom: 10px;
+        }
+
+        .navbar {
+            background-color: rgb(44, 62, 80);
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-item .nav-link.active {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .fighter-bg {
+            background-color: #94db86;
+        }
+
+        .mage-bg {
+            background-color: #dad87e;
+        }
+
+        .assassin-bg {
+            background-color: #ce82c1;
+        }
+
+        .tank-bg {
+            background-color: #cf9066;
+        }
+
+        .support-bg {
+            background-color: #6a74d1;
+        }
+
+        .marksman-bg {
+            background-color: #cc7272;
+        }

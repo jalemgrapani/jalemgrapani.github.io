@@ -1,0 +1,74 @@
+ body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .card {
+            background-color: #008080;
+            color: white;
+            transition: transform 0.3s;
+            padding: 2rem;
+        }
+
+        .card:hover {
+            box-shadow: 8px 8px 8px;
+            transform: scale(1.05);
+        }
+
+        h1.display-3 {
+            font-family: Arial, sans-serif;
+            font-size: 90px;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            transition: color 0.3s, transform 0.3s;
+            font-size: 30px;
+        }
+
+        .navbar {
+            background-color: rgb(44, 62, 80);
+            font-family: Arial, sans-serif;
+            height: 60px;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+            padding: 15px 20px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-item .nav-link.active {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card a:hover .h3 {
+            color: #ffdd57;
+            transform: scale(1.2);
+        }
+
+        .card a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }

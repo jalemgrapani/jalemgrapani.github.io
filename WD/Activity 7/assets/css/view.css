@@ -1,0 +1,102 @@
+body {
+            color: #ffffff;
+        }
+
+        .fighter-bg {
+            background-color: #94db86;
+        }
+
+        .mage-bg {
+            background-color: #dad87e;
+        }
+
+        .assassin-bg {
+            background-color: #ce82c1;
+        }
+
+        .tank-bg {
+            background-color: #cf9066;
+        }
+
+        .support-bg {
+            background-color: #6a74d1;
+        }
+
+        .marksman-bg {
+            background-color: #cc7272;
+        }
+
+        .champion-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: auto;
+            color: rgb(0, 0, 0);
+        }
+
+        #championImage {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #championName {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 60px;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        #championDescription {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .champion-attributes {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: larger;
+            font-weight: 600;
+        }
+
+        .attribute-box {
+            padding: 10px 20px;
+            border: 5px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: rgb(44, 62, 80);
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-item .nav-link.active {
+            font-weight: bold;
+            color: #3498db;
+        }

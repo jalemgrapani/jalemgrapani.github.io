@@ -1,0 +1,68 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.nav-item {
+  font-size: large;
+  font-weight: 600;
+}
+
+.shop-brands-card {
+  height: 85vh;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shop-brands-title {
+  color: #000;
+  padding-bottom: 30px;
+}
+
+.shopBrand {
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: large;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.shopBrand:hover {
+  background-color: gray;
+}
+
+.bg-dark a,
+.shopBrand,
+.viewAll {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bg-dark a:hover,
+.shopBrand:hover,
+.viewAll:hover {
+  transform: scale(1.1);
+}
+
+.box1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.box1 .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.box1:hover .card-img-top {
+  transform: scale(1.05);
+}
