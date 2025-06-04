@@ -1,0 +1,25 @@
+<div class="row my-5">
+        <h2 class="text-black text-center">Feedback Reviews</h2>
+        <div class="col-12 text-center mt-3">
+          <h5 class="text-black">Be the first to write a review</h5>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center text-center">
+          <form class="w-100" style="max-width: 600px;">
+
+            <div class="p-3 d-flex justify-content-center" id="star-rating">
+              <i class="fa-solid fa-star star" starValue="1"></i>
+              <i class="fa-solid fa-star star" starValue="2"></i>
+              <i class="fa-solid fa-star star" starValue="3"></i>
+              <i class="fa-solid fa-star star" starValue="4"></i>
+              <i class="fa-solid fa-star star" starValue="5"></i>
+            </div>
+
+            <input type="hidden" name="rating" id="rating" required>
+            <div class="mb-3">
+              <textarea name="review" class="form-control" placeholder="Write your review here..." required></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn fs-5 fw-bold btn-outline-secondary">Submit Review</button>
+            </div>
+          </form>
+        </div>

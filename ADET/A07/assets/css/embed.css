@@ -76,3 +76,15 @@
   .card-img-wrapper {
     position: relative;
   }
+
+  /* index */
+   .star {
+    font-size: 2rem;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .star.selected {
+    color: gold;
+  }
