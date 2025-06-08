@@ -7,6 +7,7 @@
  }
 
  .container {
+     padding: min(5em, 8%);
      max-width: 100%;
      padding-left: 0;
      padding-right: 0;
@@ -52,7 +53,7 @@
      opacity: 0;
      transform: translateY(100%);
      font-weight: 700;
-     font-size: clamp(3rem, 7vw, 6rem);
+     font-size: clamp(2.5rem, 7vw, 6rem);
  }
 
  .intro2 {
@@ -63,6 +64,7 @@
      animation: slide-up 1.5s ease 0.5s forwards;
      opacity: 0;
      transform: translateY(100%);
+     font-size: clamp(1.6rem, 5vw, 3rem);
  }
 
  .normalText {
@@ -89,7 +91,7 @@
  }
 
  .dropdown-item {
-    font-weight: 550;
+     font-weight: 550;
  }
 
  .contact-btn {
@@ -122,6 +124,7 @@
  .footer p {
      font-size: 20px;
      font-weight: 400;
+     font-size: clamp(1rem, 4vw, 1.5rem);
  }
 
  .btn-slide-left {
@@ -134,7 +137,10 @@
      background-color: #6A644D;
      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
      transform: scale(1.05);
+ }
 
+ .contactNote {
+     font-size: clamp(1rem, 2vw, 1.5rem);
  }
 
  .contacts {
@@ -166,5 +172,5 @@
  }
 
  .navbar-brand {
-    font-size: clamp(1.2rem, 5vw, 1.8rem); 
-}
+     font-size: clamp(1.2rem, 5vw, 1.8rem);
+ }
