@@ -61,20 +61,7 @@
             integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
             crossorigin="anonymous"></script>
 
-        <script>
-            const stars = document.querySelectorAll('.star');
-            const ratingInput = document.getElementById('rating');
-
-            stars.forEach(star => {
-                star.addEventListener('click', () => {
-                    const rating = star.getAttribute('starValue');
-
-                    for (let i = 0; i < rating; i++) {
-                        stars[i].classList.add('selected');
-                    }
-                });
-            });
-        </script>
+        <script src="assets/js/animate.js"></script>
 </body>
 
 </html>

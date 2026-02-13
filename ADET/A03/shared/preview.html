@@ -29,10 +29,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto mx-5">
-                    <a class="fs-5 nav-link text-white active" aria-current="page"
+                    <a class="fs-5 nav-link text-dark active" aria-current="page"
                         href="https://thewatchstore.ph/collections/outlet">Outlet</a>
-                    <a class="fs-5 nav-link text-white" href="about.html">About Us</a>
-                    <a class="fs-5 nav-link text-white" href="https://thewatchstore.ph/pages/stores">Our Stores</a>
+                    <a class="fs-5 nav-link text-dark" href="about.html">About Us</a>
+                    <a class="fs-5 nav-link text-dark" href="https://thewatchstore.ph/pages/stores">Our Stores</a>
                 </div>
             </div>
         </div>
@@ -47,21 +47,21 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 text-center text-md-start">
-                <h2 class="title text-white mt-3">Tommy Hilfiger 1710690 Men's Ionic Plated Black Steel & Black Silicone
-                    Watch</h2>
-                <h1 class="price text-white my-4">₱14,700.00</h1>
-                <a href="https://thewatchstore.ph/cart"><button class="btn fs-5 fw-bold glass-button-white mb-3">ADD TO
+                <h4 class="title text-dark mt-4">Tommy Hilfiger 1710690 Men's Ionic Plated Black Steel & Black Silicone
+                    Watch</h4>
+                <h2 class="price text-dark my-4 mb-5">₱14,700.00</h2>
+                <a href="https://thewatchstore.ph/cart"><button class="btn fs-5 fw-bold add-button mb-3 mt-5">ADD TO
                         CART</button></a><br>
                 <a
                     href="https://thewatchstore.ph/checkouts/cn/Z2NwLWFzaWEtc291dGhlYXN0MTowMUpTVFlDVFpCQ1ZNTkRTR1RLNk03MzU0Sw"><button
-                        class="btn fs-5 fw-bold glass-button-colored">BUY IT NOW</button></a>
+                        class="btn fs-5 fw-bold buy-button">BUY IT NOW</button></a>
             </div>
         </div>
 
         <div class="row my-5 justify-content-center text-center text-md-start">
             <div class="col-xl-3 col-md-4 col-sm-12 col-12 d-flex flex-column align-items-center align-items-md-start">
-                <h1 class="details text-white mt-4 mb-4">Details</h1>
-                <h4 class="detailsBody text-white">
+                <h3 class="details text-dark mt-5 mb-2">Details</h3>
+                <h5 class="detailsBody text-dark mt-5">
                     <strong>Gender:</strong> Men <br>
                     <strong>Case color:</strong> Ionic Plated Black Steel <br>
                     <strong>Strap color:</strong> Ionic Plated Black Steel <br>
@@ -72,7 +72,7 @@
                     <strong>Glass:</strong> Mineral glass <br>
                     <strong>Case form:</strong> Round <br>
                     <strong>Water resistant:</strong> 5 bar
-                </h4>
+                </h5>
             </div>
 
             <!-- First card -->
@@ -94,80 +94,28 @@
 
         <div class="row">
             <div class="col-12">
-                <h2 class="title my-5 text-white">More for you</h2>
+                <h3 class="title my-5 text-dark">More for you</h3>
             </div>
         </div>
 
-        <div class="row" id="watchCardContainer">
-        </div>
-
-        <script>
-            var watches = [
-                {
-                    img: "tommy1.png",
-                    title: "Tommy Hilfiger 1710701 Men's Ionic Plated Gold Zinc Alloy Watch",
-                    price: "₱11,400.00"
-                },
-                {
-                    img: "tommy2.png",
-                    title: "Tommy Hilfiger 1710682 Men's Stainless Steel and White Dial Watch",
-                    price: "₱11,400.00"
-                },
-                {
-                    img: "tommy3.png",
-                    title: "Tommy Hilfiger 1710702 Men's Ionic Plated Gold Zinc Alloy Watch",
-                    price: "₱9,400.00"
-                },
-                {
-                    img: "tommy4.png",
-                    title: "Tommy Hilfiger 1710686 Men's Stainless Steel and Green Dial Watch",
-                    price: "₱11,400.00"
-                },
-                {
-                    img: "tommy5.png",
-                    title: "Tommy Hilfiger 1792192 Men's Two Tone Stainless Steel Watch",
-                    price: "₱8,700.00"
-                },
-                {
-                    img: "tommy6.png",
-                    title: "Tommy Hilfiger 1710700 Men's Two Tone Zinc Alloy Watch",
-                    price: "₱11,400.00"
-                }
-            ];
-
-            var container = document.getElementById("watchCardContainer");
-
-            for (var i = 0; i < watches.length; i++) {
-                container.innerHTML += `<div class="col-xl-4 col-md-4 col-sm-6 col-12 d-flex justify-content-center">
-                    <div class="cardBrand rounded-5 d-flex flex-column align-items-center my-2"
-                        style="height: auto; max-width: 300px; overflow: hidden;">
-                        <img src="../assets/img/${watches[i].img}" class="watchImage3 p-3 img-fluid">
-                        <div class="card-description text-center p-3">
-                            <h5 class="text-white">${watches[i].title}</h5>
-                            <h3 class="price text-white">${watches[i].price}</h3>
-                        </div>
-                    </div>
-                </div>`;
-            }
-        </script>
-
+        <div class="row" id="watchCardContainer"></div>
 
         <div class="row my-5">
-            <h2 class="text-white text-center">Customer Reviews</h2>
+            <h3 class="text-dark text-center mt-5">Customer Reviews</h3>
             <div class="col-12 d-flex flex-column flex-md-row justify-content-center align-items-center text-center">
                 <div class="p-3">
-                    <i class="fa-regular fa-star fs-1 text-white"></i>
-                    <i class="fa-regular fa-star fs-1 text-white"></i>
-                    <i class="fa-regular fa-star fs-1 text-white"></i>
-                    <i class="fa-regular fa-star fs-1 text-white"></i>
-                    <i class="fa-regular fa-star fs-1 text-white"></i>
+                    <i class="fa-regular fa-star fs-1 text-dark"></i>
+                    <i class="fa-regular fa-star fs-1 text-dark"></i>
+                    <i class="fa-regular fa-star fs-1 text-dark"></i>
+                    <i class="fa-regular fa-star fs-1 text-dark"></i>
+                    <i class="fa-regular fa-star fs-1 text-dark"></i>
                 </div>
                 <div class="ms-md-3">
-                    <a href=""><button class="btn fs-5 fw-bold glass-button-white btn-wide">Write a review</button></a>
+                    <a href=""><button class="btn fs-5 fw-bold review-button btn-wide">Write a review</button></a>
                 </div>
             </div>
             <div class="col-12 text-center mt-3">
-                <h5 class="text-white">Be the first to write a review</h5>
+                <h5 class="text-dark">Be the first to write a review</h5>
             </div>
         </div>
     </div>
@@ -175,4 +123,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+        <script src="../assets/js/preview.js"></script>
     <script>

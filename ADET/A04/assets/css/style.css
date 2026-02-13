@@ -27,8 +27,8 @@
   background-color: #fff4e5 !important;
   border-radius: 10px;
   border: 2px solid #D4AF37;
+  overflow-x: auto;
 }
-
 
 .categories {
   width: fit-content;
@@ -39,6 +39,7 @@
   border-radius: 15px;
   background: #fff4e5 !important;
   border: 2px solid #D4AF37;
+  overflow-y: auto;
 }
 
 .container-fluid {
@@ -64,9 +65,8 @@
   color: #5c3017;
   border-radius: 15px;
   border: 2px solid #D4AF37;
-  max-height: 500px;
-  overflow-y: auto;
   max-height: 95vh;
+  overflow-y: auto;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -99,91 +99,25 @@
   border-radius: 8px;
 }
 
-.topcontainer::-webkit-scrollbar,
-.maincontainer::-webkit-scrollbar,
-.receiptcontainer::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-.topcontainer::-webkit-scrollbar-track,
-.maincontainer::-webkit-scrollbar-track,
-.receiptcontainer::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 10px;
-}
-
-.topcontainer::-webkit-scrollbar-thumb,
-.maincontainer::-webkit-scrollbar-thumb,
-.receiptcontainer::-webkit-scrollbar-thumb {
-  background-color: #c7a17a;
-  border-radius: 8px;
-}
-
-.topcontainer::-webkit-scrollbar-button,
-.maincontainer::-webkit-scrollbar-button,
-.receiptcontainer::-webkit-scrollbar-button {
-  display: none;
-  height: 0;
-  width: 0;
-}
-
-@media (max-width: 768px) {
-  .container-fluid .row {
-    flex-direction: column;
-  }
-
-  .col-9 {
-    order: 1;
-  }
-
-  .col-3 {
-    order: 2;
-    margin-top: 20px;
-  }
-
-  .topcontainer,
-  .maincontainer {
-    overflow-x: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .container-fluid .row {
-    flex-direction: column;
-  }
-
-  .col-9 {
-    order: 1;
-    width: 100%;
-  }
-
-  .col-3 {
-    order: 2;
-    margin-top: 20px;
-    width: 100%;/
-  }
-
-  .topcontainer,
-  .maincontainer {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .categories,
-  .d-flex {
-    width: 100%;
-  }
-}
-
 .iconButton {
   font-size: 15px;
   color: #5c3017;
 }
 
 .buttonIcon {
-  border-color: #5c3017;
+  border: 1px solid #5c3017; 
+  background-color: #fcebd5;  
+  color: #5c3017;             
+  padding: 2px 6px;           
+  border-radius: 5px;         
+  transition: 0.2s ease;
 }
+
+.buttonIcon:hover {
+  background-color: #f47c20;  
+  color: #ffffff;            
+}
+
 
 .modal-content {
   background-color: #fcebd5;
@@ -211,4 +145,107 @@
 .modal-footer .btn {
   background-color: #f47c20;
   color: white;
+}
+
+.custom-button,
+button {
+  transition: 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .container-fluid .row {
+    flex-direction: column;
+  }
+
+  .col-9 {
+    order: 1;
+    width: 100%;
+  }
+
+  .col-3 {
+    order: 2;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .topcontainer,
+  .maincontainer {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .categories,
+  .d-flex {
+    width: 100%;
+  }
+}
+
+/* -------- SCROLLBARS -------- */
+
+/* Horizontal scrollbar for topcontainer */
+.topcontainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.topcontainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.topcontainer::-webkit-scrollbar-thumb {
+  background-color: #c7a17a;
+  border-radius: 8px;
+}
+
+/* Hide arrows */
+.topcontainer::-webkit-scrollbar-button:single-button {
+  display: none;
+}
+
+/* Vertical scrollbar for maincontainer */
+.maincontainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.maincontainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.maincontainer::-webkit-scrollbar-thumb {
+  background-color: #c7a17a;
+  border-radius: 8px;
+}
+
+/* Hide arrows */
+.maincontainer::-webkit-scrollbar-button:single-button {
+  display: none;
+}
+
+/* Vertical scrollbar for receiptcontainer */
+.receiptcontainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.receiptcontainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.receiptcontainer::-webkit-scrollbar-thumb {
+  background-color: #c7a17a;
+  border-radius: 8px;
+}
+
+/* Hide arrows */
+.receiptcontainer::-webkit-scrollbar-button:single-button {
+  display: none;
+}
+
+/* Firefox scrollbars (no arrows by default) */
+.topcontainer,
+.maincontainer,
+.receiptcontainer {
+  scrollbar-width: thin;
+  scrollbar-color: #c7a17a transparent;
 }

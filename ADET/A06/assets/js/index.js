@@ -1,31 +1,63 @@
+var categories = [];
+var products = [];
+
+const getAllCategories = async () => {
+    fetch("http://localhost/Jalem's Portfolio/jalemgrapani.github.io/ADET/A06/A06_BE/categories.php"
+    )
+        .then(response => response.json())
+        .then(data => {
+            categories = data
+            loadCategories();
+        });
+}
+
+const getAllProducts = async (categoryID) => {
+    const categoryData = {
+        categoryID: categoryID
+    };
+
+    fetch("http://localhost/Jalem's Portfolio/jalemgrapani.github.io/ADET/A06/A06_BE/products.php", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(categoryData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            products = data;
+            loadProducts();
+        });
+}
+
+getAllCategories();
+
 var total = 0;
 var receiptItems = [];
 
 function loadCategories() {
     var categoriesContainer = document.getElementById("categories");
 
-    products.forEach(function (product, index) {
+    categories.forEach(function (category) {
         categoriesContainer.innerHTML += `
-      <div onclick="loadProducts(` + index + `)" class="card mx-1 custom-button p-3 text-center category-card" style="min-width: 120px; max-width: 200px; width: auto;">
-        <small class="category-label">` + product.category + `</small>
+      <div onclick="getAllProducts(` + category.categoryID + `)" class="card mx-1 custom-button p-3 text-center category-card" style="min-width: 120px; max-width: 200px; width: auto;">
+        <small class="category-label">` + category.name + `</small>
       </div>
     `;
     });
 }
 
-function loadProducts(categoryIndex) {
+function loadProducts(categoryID) {
     var maincontainer = document.getElementById("maincontainer");
     maincontainer.innerHTML = "";
 
-    var contents = products[categoryIndex].contents;
-
-    contents.forEach(function (content) {
-        if (content.isAvailable) {
+    products.forEach(function (product) {
+        if (product.isAvailable) {
             maincontainer.innerHTML += `
-        <div onclick="addToReceipt(` + content.price + `, '` + content.name + `')" class="card mx-1 my-2 custom-button content p-3 text-center" style="width: 185px; background-color: #D9B99A">
-          <img src="assets/img/` + content.image + `.png" class="img-fluid" style="height: 200px; width: 150px; object-fit: contain; margin: 0;">
-          <small style="color: #68200d; font-size: 18px; font-weight: bold;">` + content.name + `</small><br>
-          <small style="color: #68200d; font-size: 18px;">₱` + content.price + `</small>
+        <div onclick="addToReceipt(` + product.price + `, '` + product.name + `')" class="card mx-1 my-2 custom-button content p-3 text-center" style="width: 180px; background-color: #D9B99A">
+          <img src="../../A04/assets/img/` + product.image + `.png" class="img-fluid" style="height: 200px; width: 150px; object-fit: contain; margin: 0;">
+          <small style="color: #68200d; font-size: 18px; font-weight: bold;">` + product.name + `</small><br>
+          <small style="color: #68200d; font-size: 18px;">₱` + product.price + `</small>
         </div>
       `;
         }
@@ -143,5 +175,3 @@ function confirmPurchase() {
     var purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
     purchaseModal.show();
 }
-
-loadCategories();

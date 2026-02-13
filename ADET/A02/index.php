@@ -61,7 +61,7 @@ if (isset($_GET['page'])) {
     </div>
   </nav>
 
-  <div class="container-fluid d-block d-md-none mt-2">
+  <div class="container-fluid d-block d-lg-none mt-2">
     <div class="d-flex justify-content-around bg-dark text-white py-2 rounded">
       <a href="?page=tissot" class="text-white text-decoration-none">Tissot</a>
       <a href="?page=coach" class="text-white text-decoration-none">Coach</a>
@@ -71,7 +71,7 @@ if (isset($_GET['page'])) {
 
   <div class="container-fluid mt-3" style="background-color:rgb(255, 255, 255);">
     <div class="row">
-      <div class="col-1 col-sm-1 col-md-2 col-lg-3 d-none d-md-block">
+      <div class="col-1 col-sm-1 col-md-2 col-lg-3 d-none d-lg-block">
         <div class="card shadow p-3 shop-brands-card border-0 rounded-3">
           <div class="h2 text-center shop-brands-title">Shop Brands</div>
           <a href="?page=tissot" class="text-decoration-none text-white">
@@ -86,7 +86,7 @@ if (isset($_GET['page'])) {
         </div>
       </div>
 
-      <div class="col-12 col-sm-12 col-md-10 col-lg-9">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9">
         <div class="card shadow p-4 border-0 rounded-3"
           style="height: 85vh; max-height: 85vh; overflow: scroll; background-color:rgb(255, 255, 255);">
           <div class="titles h1 text-center">

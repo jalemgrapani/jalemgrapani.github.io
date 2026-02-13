@@ -12,3 +12,18 @@ carousel.addEventListener('slide.bs.carousel', (event) => {
     }, 500);
   }
 });
+
+const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = star.getAttribute('starValue');
+
+        for (let i = 0; i < rating; i++) {
+          stars[i].classList.add('selected');
+        }
+      });
+    });
+
+    

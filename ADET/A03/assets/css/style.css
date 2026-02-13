@@ -1,19 +1,20 @@
 body {
-    background: linear-gradient(150deg, #0f2027, #203a43, #2c5364)
+    background-color: #FFFFFF;
 }
 
 .navbar {
-     background: linear-gradient(50deg, #0f2027, #203a43, #15323f)
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 /* Cards */
 .card {
-    background: rgba(255, 255, 255, 0.15); 
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25); 
-    backdrop-filter: blur(2px); 
-    -webkit-backdrop-filter: blur(2px);
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .watchImage1,
@@ -26,12 +27,6 @@ body {
     height: auto;
     object-fit: cover;
     transform-origin: center center;
-}
-
-
-.card {
-    position: relative;
-    overflow: hidden;
 }
 
 .watchImage1:hover,
@@ -65,17 +60,17 @@ body {
     border-radius: 12px;
     color: white;
     padding: 0.6rem 1.5rem;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    transition: 0.3s ease, transform 0.3s ease;
     cursor: pointer;
     font-weight: normal;
 }
 
 .glass-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(46, 41, 41, 0.2);
     color: black;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); 
+    transform: translateY(-3px); 
 }
 
 
@@ -85,9 +80,7 @@ body {
     border: 2px solid white;
     color: white;
     border-radius: 12px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
     transition: 0.3s ease;
 }
 
@@ -96,15 +89,13 @@ body {
     color: black;
 }
 
-/* BUY IT NOW  */
+/* BUY IT NOW */
 .glass-button-colored {
     background: rgba(32, 31, 56, 0.35);
     border: 2px solid white;
     color: rgb(255, 255, 255);
     border-radius: 12px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
     transition: 0.3s ease;
 }
 
