@@ -1,5 +1,36 @@
-html,
-body {
+:root {
+    /* MAIN THEME COLORS */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+
+    /* NAVBAR */
+    --navbar-bg: #ffffff;
+    --navbar-text: #333333;
+    --navbar-hover: #ffc107;
+
+    /* SECTIONS / BOXES */
+    --section-bg: #ffffff;
+
+    /* TABLE COLORS */
+    --table-th-bg: #f1f1f1;
+    --table-td-bg: #fafafa;
+    --table-bg: #f2f2f2;
+
+    /* FOOTER */
+    --footer-bg: #ffffff;
+    --footer-text: #000000;
+
+    /* ACCENT */
+    --yellow-accent: #ffc107;
+
+    --spec-border: #000000;
+
+    /* REALME BRANDING COLOR */
+    --realme-brand: #f7d300;
+}
+
+/* BASE */
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,164 +39,159 @@ body {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0a1b26;
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
-
 }
 
+/* REUSABLE RESPONSIVE TEXT */
+h1, h2, h3, h4, h5, h6, p, td, th, a, li {
+    line-height: 1.4;
+}
+
+/* NAVBAR */
 .navbar {
-    margin-bottom: 0;
     padding: 10px 20px;
+    background-color: var(--navbar-bg) !important;
+    border: none !important;
 }
 
 .navbar-nav .nav-link {
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px);
     padding: 10px 15px;
-
+    color: var(--navbar-text) !important;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffc107;
+    color: var(--navbar-hover) !important;
 }
 
+/* CONTAINER */
 .container {
     flex: 1;
-    padding-top: 0;
 }
 
+/* TABLE */
 table {
-    color: white;
     width: 100%;
     border-collapse: collapse;
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 0;
+    font-size: clamp(12px, 1.4vw, 18px);
+    background-color: var(--table-bg);
 }
 
 th {
-    background-color: #343a40;
-    color: white;
+    background-color: var(--table-th-bg);
+    color: var(--text-color);
+    border: none !important;
+    font-size: clamp(13px, 1.5vw, 18px);
 }
 
 td {
-    background-color: #495057;
-    color: white;
+    background-color: var(--table-td-bg);
+    color: var(--text-color);
+    border: none !important;
+    font-size: clamp(13px, 1.4vw, 18px);
 }
 
+/* FOOTER */
 footer {
-    background-color: #343a40;
-    color: #f8f9fa;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     padding: 20px 0;
     text-align: center;
     margin-top: auto;
+    font-size: clamp(12px, 1.3vw, 16px);
 }
 
-.realme-description,
-.specification-border {
-    margin: 0;
-    padding: 15px;
-}
-
+/* DESCRIPTION BOX */
 .realme-description {
-    margin-top: 30px;
+    margin-top: 80px;
     margin-bottom: 30px;
-    background-color: rgba(194, 173, 173, 0.1);
-    border: 5px solid #ffcc00;
+    background-color: var(--section-bg);
     border-radius: 15px;
     max-width: 90%;
     text-align: center;
-    font-size: 23px;
+    font-size: clamp(16px, 2vw, 23px);
+    color: var(--text-color);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
 }
 
+/* SPECIFICATION BOX */
 .specification-border {
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 5px solid #ffcc00;
+    background-color: var(--section-bg);
+    border: 2px solid var(--spec-border);
     border-radius: 15px;
     text-align: left;
 }
 
+.about-text {
+    font-size: clamp(14px, 2vw, 20px);
+    text-align: center;
+    max-width: 700px;
+    margin: 40px auto 50px;
+    margin-top: 20px; 
+}
+
+/* HEADERS */
 .specification-header {
     text-align: center;
-    font-size: 40px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(20px, 3vw, 32px);
+    color: var(--realme-brand);
 }
 
 .battery-title,
 .color-description {
-    font-size: 30px;
-    color: rgb(255, 255, 255);
+    font-size: clamp(20px, 3vw, 30px);
     font-weight: bolder;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    margin-top: 30px;
     text-align: center;
+    color: var(--realme-brand);
 }
 
 .battery-description {
-    font-size: 25px;
+    font-size: clamp(14px, 2vw, 20px);
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 50px;
+    max-width: 700px;
+    margin: 40px auto 50px;
 }
 
-
+/* IMAGES */
 .product-image,
 .img-battery,
 .img-phone {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
-.img-battery,
-.img-phone {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+/* ACCENT TEXT */
+.yellow-text {
+    color: var(--realme-brand);
+    font-size: clamp(24px, 4vw, 50px);
+    font-weight: bold;
 }
 
+/* MOBILE */
 @media (max-width: 800px) {
-
     .realme-description,
     .specification-border {
         padding: 10px;
     }
 
-    .battery-title,
-    .color-description {
-        font-size: 24px;
-    }
-
-    .product-image,
-    .img-battery,
-    .img-phone {
-        width: 90%;
-        margin: auto;
-    }
-
     table {
-        font-size: 0.9em;
-        overflow-x: auto;
+        font-size: clamp(12px, 3vw, 16px);
     }
 
-    th,
-    td {
+    th, td {
         padding: 8px;
     }
 
     .navbar {
         padding: 10px;
     }
-}
-
-.yellow-text {
-    color: #ffc107;
-    font-size: 50px;
-
 }

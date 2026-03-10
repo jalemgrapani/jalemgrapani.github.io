@@ -194,6 +194,10 @@ a {
     animation: bounce 2s infinite;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @keyframes bounce {
 
     0%,
@@ -263,19 +267,19 @@ a {
 
 .card-title {
     color: var(--foreground);
-     font-size: clamp(1rem, 2vw, 1.2rem);
+     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .card-text {
     color: var(--muted-foreground);
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
 .badge {
     color: var(--foreground);
     background-color: var(--muted);
     border-radius: 10px;
-    padding: 10px;
+    padding: 8px;
     margin: 3px;
     border: 1px solid var(--primary);
     font-weight: 100;

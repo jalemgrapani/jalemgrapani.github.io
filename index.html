@@ -16,28 +16,30 @@
 
 <body>
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row mt-2">
             <div class="col">
-                <div class="navbar d-flex align-items-center px-5">
-                    <div class="d-flex align-items-center me-5">
-                        <img src="homepage/assets/img/J1.svg" class="logo ms-5">
-                        <div class="logo-text h4 fw-bold">Jalem</div>
+                <nav class="navbar navbar-expand-md d-flex align-items-center px-3 px-lg-5">
+                    <div class="d-flex align-items-center me-3 me-lg-5">
+                        <img src="homepage/assets/img/J1.svg" class="img-fluid" style="max-width:50px;">
+                        <div class="logo-text h5 h-lg4 fw-bold ms-2 m-0">Jalem</div>
                     </div>
+                    <button class="navbar-toggler ms-auto d-md-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                        <div class="d-flex flex-column flex-md-row align-items-end align-items-md-center mt-3 mt-md-0">
 
-                    <div class="d-flex align-items-center ms-auto me-5 d-none d-lg-flex">
-                        <a href="#about">
-                            <div class="nav-item h5 mx-3">About</div>
-                        </a>
-                        <div class="nav-item h6 mx-3">|</div>
-                        <a href="#projects">
-                            <div class="nav-item h5 mx-3">Projects</div>
-                        </a>
-                        <div class="nav-item h6 mx-3">|</div>
-                        <a href="#contact">
-                            <div class="nav-item h5 mx-3">Contact</div>
-                        </a>
+                            <a href="#about" class="nav-item nav-link h6 h-lg5 mx-2 mx-md-3 text-end">About</a>
+                            <div class="nav-item h6 mx-1 d-none d-md-flex">|</div>
+
+                            <a href="#projects" class="nav-item nav-link h6 h-lg5 mx-2 mx-md-3 text-end">Projects</a>
+                            <div class="nav-item h6 mx-1 d-none d-md-flex">|</div>
+
+                            <a href="#contact" class="nav-item nav-link h6 h-lg5 mx-2 mx-md-3 text-end">Contact</a>
+                        </div>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
 
@@ -82,7 +84,9 @@
         <div class="row">
             <div class="col">
                 <div class="d-flex arrow-down justify-content-center align-items-center my-5">
-                    <i class="fa-solid fa-arrow-down text-white"></i>
+                    <a href="#about" class="text-white">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,3 +1,52 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Root variables */
+:root {
+  /* Fonts */
+  --font-main: 'Poppins', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font sizes */
+  --fs-imageText: 5rem;
+  --fs-description: 2.3rem;
+  --fs-historicalTitle: 3rem;
+  --fs-historicalText: 1.1rem;
+  --fs-cardTitle: 1.3rem;
+  --fs-cardText: 17px;
+  --fs-popularPlaces: 2.5rem;
+  --fs-japaneseOrg: 2.5rem;
+
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-darkText: #020202;
+  --color-grayText: #343a40;
+  --color-cardBg: #ffffff;
+  --color-cardBgAlt: rgb(145, 98, 41);
+
+  /* Shadows */
+  --shadow-imageText: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  --shadow-description: 2px 2px 8px rgba(0, 0, 0, 0.6);
+
+  /* Heights */
+  --imgJapan-maxHeight: 570px;
+  --carouselHeight-desktop: 600px;
+  --carouselHeight-mobile: 400px;
+  --cardImg-height: 250px;
+  --cardImg-height-mobile: 200px;
+  --cardImg-altHeight: 300px;
+  --cardImg-altHeight-mobile: 250px;
+}
+
+/* Apply main font globally */
+html, body, * {
+  font-family: var(--font-main);
+}
+
+/* Existing CSS using root variables */
 html,
 body {
   margin: 0;
@@ -5,7 +54,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 * {
@@ -16,98 +65,103 @@ body {
   padding: 0;
 }
 
-
 .imageContainer {
   position: relative;
 }
 
 .japan {
   width: 100%;
-  height: auto;
+  max-height: var(--imgJapan-maxHeight);
+  object-fit: cover;
   border-radius: 0 !important;
 }
 
 .imageText {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: var(--fs-imageText);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  text-shadow: var(--shadow-imageText);
 }
 
 .description {
   position: absolute;
-  top: 40%;
+  top: 55%;
   left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.3rem;
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-  font-weight: 600;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: var(--fs-description);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  text-shadow: var(--shadow-description);
 }
 
-
 .historicalPlaces1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #343a40;
+  font-size: var(--fs-historicalTitle);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-grayText);
 }
 
 .historicalDescription {
-  font-size: 1.2rem;
-  color: #020202;
+  font-size: var(--fs-historicalText);
+  color: var(--color-darkText);
   line-height: 1.6;
   text-align: justify;
   margin-bottom: 100px;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
+}
+
+.card {
+  border: none; /* removes default Bootstrap border */
+  border-radius: 0; /* optional: remove rounded corners if any */
 }
 
 .card-img-top {
-  height: 250px;
-  object-fit: cover;
+  height: 220px; /* slightly smaller than default 250px */
+  object-fit: cover; /* keeps image proportion while filling the space */
 }
 
 .card-body {
   padding: 15px;
-  background-color: #ffffff;
+  background-color: var(--color-cardBg);
   text-align: center;
 }
 
 .card-title {
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: var(--fs-cardTitle);
+  font-weight: var(--font-weight-bold);
 }
 
 .card-text {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: var(--fs-cardText);
+  font-weight: var(--font-weight-regular);
   margin-top: 20px;
   margin-bottom: 40px;
+  line-height: 1.6;
+  color: var(--color-black);
 }
-
 
 .carousel-item img {
   object-fit: cover;
-  height: 800px;
+  height: var(--carouselHeight-desktop);
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #000;
+  background-color: var(--color-black);
 }
-
 
 .popularPlaces1,
 .popularPlaces2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000000;
+  font-size: var(--fs-popularPlaces);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
   margin: 30px 0;
   margin-top: 100px;
-  margin-bottom: 10px;
 }
 
 .card5,
@@ -120,48 +174,16 @@ body {
   padding: 15px;
 }
 
-.card-text {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: #000000;
-}
-
 .card-img {
   width: 100%;
-  height: 300px;
+  height: var(--cardImg-altHeight);
   object-fit: cover;
 }
 
-
-@media (max-width: 768px) {
-  .imageText {
-    font-size: 2rem;
-  }
-
-  .description {
-    font-size: 1.2rem;
-  }
-
-  .carousel-item img {
-    height: 500px;
-  }
-
-  .card-img {
-    height: 200px;
-  }
-}
-
-hr {
-  border: 0;
-  border-top: 3px solid rgb(0, 0, 0);
-  width: 100%;
-}
-
-
 .japaneseOrganization {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #343a40;
+  font-size: var(--fs-japaneseOrg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-grayText);
   margin: 30px 0;
 }
 
@@ -173,17 +195,6 @@ hr {
   width: 100%;
   height: auto;
   border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .japaneseOrganization {
-    font-size: 2rem;
-  }
-
-  .img-fluid {
-    height: 250px;
-    object-fit: cover;
-  }
 }
 
 .card:hover {
@@ -199,5 +210,44 @@ hr {
 
 .card:hover .card-title,
 .card:hover .card-text {
-  color: #000000;
+  color: var(--color-black);
+}
+
+/* Uniform image height for cards */
+.uniform-img {
+  height: 250px; /* adjust as needed */
+  object-fit: cover;
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid var(--color-black);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .imageText {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .carousel-item img {
+    height: var(--carouselHeight-mobile);
+  }
+
+  .card-img {
+    height: var(--cardImg-height-mobile);
+  }
+
+  .japaneseOrganization {
+    font-size: 2rem;
+  }
+
+  .img-fluid {
+    height: var(--cardImg-altHeight-mobile);
+    object-fit: cover;
+  }
 }

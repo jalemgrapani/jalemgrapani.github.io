@@ -45,7 +45,7 @@ function loadSkills() {
                     <div class="card w-100" style="max-width: 550px;">
                         <div class="card-body">
                             <div class="skill-box"><i class="` + skill.icon + `"></i></div>
-                            <h5 class="card-title">` + skill.title + `</h5>
+                            <h1 class="card-title">` + skill.title + `</h1>
                             <p class="card-text">` + skill.desc + `</p>
                             <div>` + tagHTML + `</div>
                         </div>
