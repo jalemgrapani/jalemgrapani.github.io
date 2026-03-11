@@ -1,94 +1,117 @@
 body {
-            background-color: rgb(255, 255, 255);
-            text-decoration: none;
-        }
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+}
 
-        h1.display-3 {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+h1.display-3 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
 
-        .card {
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.card {
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
 
-        .imgcontainer {
-            background-color: #D9D9D9;
-            border-radius: 20px;
-        }
+.imgcontainer {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
 
-        .imgcontainer img {
-            width: 100%;
-        }
+.imgcontainer img {
+    width: 100%;
+}
 
-        a {
-            text-decoration: none;
-        }
+a {
+    text-decoration: none;
+}
 
-        .championname {
-            font-weight: bold;
-            font-size: 30px;
-        }
+.championname {
+    font-weight: bold;
+    font-size: 30px;
+}
 
-        .text-muted {
-            text-decoration: none;
-            font-size: 20px;
-        }
+.text-muted {
+    text-decoration: none;
+    font-size: 20px;
+}
 
-        .fighter-bg {
-            background-color: #94db86;
-        }
+.fighter-bg {
+    background-color: #94db86;
+}
 
-        .mage-bg {
-            background-color: #dad87e;
-        }
+.mage-bg {
+    background-color: #dad87e;
+}
 
-        .assassin-bg {
-            background-color: #ce82c1;
-        }
+.assassin-bg {
+    background-color: #ce82c1;
+}
 
-        .tank-bg {
-            background-color: #cf9066;
-        }
+.tank-bg {
+    background-color: #cf9066;
+}
 
-        .support-bg {
-            background-color: #6a74d1;
-        }
+.support-bg {
+    background-color: #6a74d1;
+}
 
-        .marksman-bg {
-            background-color: #cc7272;
-        }
+.marksman-bg {
+    background-color: #cc7272;
+}
 
-        .navbar {
-            background-color: rgb(44, 62, 80);
-            font-family: Arial, sans-serif;
-        }
+.navbar {
+    background-color: rgb(44, 62, 80);
+    font-family: Arial, sans-serif;
+}
 
-        .navbar-brand img {
-            margin-right: 10px;
-        }
+.navbar-brand img {
+    margin-right: 10px;
+}
 
-        .navbar-nav .nav-item .nav-link {
-            color: #ffffff;
-            font-size: 1.1rem;
-            padding: 10px 15px;
-            transition: transform 0.3s, color 0.3s;
-        }
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: transform 0.3s, color 0.3s;
+}
 
-        .navbar-nav .nav-item .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            transform: scale(1.1);
-        }
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transform: scale(1.1);
+}
 
-        .navbar-nav .nav-item .nav-link.active {
-            font-weight: bold;
-            color: #3498db;
-        }
+.navbar-nav .nav-item .nav-link.active {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.pagination .page-item .page-link {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    margin: 0 2px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #000000;
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #2980b9; /* darker blue instead of gray */
+    cursor: not-allowed;
+}

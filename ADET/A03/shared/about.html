@@ -20,9 +20,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg sticky-top">
         <div class="container-fluid">
-            <img src="../assets/img/JW1.svg" alt="Logo" style="height: 60px; width: 60px;" class="me-2 ms-3">
+            <img src="../assets/img/JW1.svg" alt="Logo" class="me-2 ms-3" style="height:60px;width:60px;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,62 +33,62 @@
                     <a class="fs-5 nav-link text-dark active" aria-current="page"
                         href="https://thewatchstore.ph/collections/outlet">Outlet</a>
                     <a class="fs-5 nav-link text-dark" href="about.html">About Us</a>
-                    <a class="fs-5 nav-link text-dark" href="https://thewatchstore.ph/pages/stores">Our Stores</a>
+                    <a class="fs-5 nav-link text-dark"
+                        href="https://thewatchstore.ph/pages/stores">Our Stores</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row align-items-center" style="min-height: 100vh;">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 mb-md-0">
+    <!-- Hero Section -->
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
                 <h1 class="title mb-3 text-dark">Your Watch, Your Style</h1>
                 <p class="titleDesc text-dark">Experience the perfect blend of elegance and performance with our latest
                     collection.</p>
                 <div class="mt-4">
                     <a href="https://thewatchstore.ph/products/tommy-hilfiger-1710685-mens-ionic-plated-black-steel-watch?srsltid=AfmBOopWYWUvYDhg9HRvcc5lBKeUSPioZePcpq9ILrYRycSs9hQgMHFF"
-                        class="btn text-dark px-4 py-2 fs-5 fw-bold shop-button me-3">Shop Now</a>
+                        class="btn text-dark px-4 py-2 fs-5 fw-bold shop-button me-3 mb-2">Shop Now</a>
                     <a href="https://thewatchstore.ph/pages/tommy-hilfiger?srsltid=AfmBOooO_7MU05bGxUGlSDSbrXtDZDzeEjDRqHLucR0qN0U3angJpgAq"
-                        class="btn my-3 px-4 py-2 fs-5 fw-bold learn-button">Learn More</a>
+                        class="btn my-2 px-4 py-2 fs-5 fw-bold learn-button">Learn More</a>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center text-md-end">
-                <img src="../assets/img/watch1.1.png" class="watchImage1 p-5 img-fluid mb-5">
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <img src="../assets/img/watch1.1.png" class="watchImage1 img-fluid mb-4">
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            <h2 class="about text-dark text-center my-5">About Watch Store</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-8 mx-auto">
-            <p class="description text-dark text-justify custom-description">
-                We are a retail company specializing in high-quality timepieces offered at
-                affordable prices. Our wide range of collections is thoughtfully curated for individuals seeking
-                watches that reflect their personal style. While timekeeping remains essential, we also focus on
-                select features and aesthetics to meet the unique tastes and needs of our customers. <br><br>
-                At The Watch Store, we take pride in delivering the ideal balance of competitive pricing and
-                exceptional customer service. We showcase renowned brands such as Tissot, Alpina, Tommy Hilfiger,
-                Calvin Klein, Leonard Montres, Bering, and Coach.
-            </p>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-12">
-            <h2 class="brands text-dark text-center my-5 display-4 display-sm-3 display-md-2 display-lg-1">Shop by
-                Brands</h2>
+    <!-- About Section -->
+    <div class="container">
+        <h2 class="about text-dark text-center my-5">About Watch Store</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <p class="description text-dark text-justify">
+                    We are a retail company specializing in high-quality timepieces offered at affordable prices. Our
+                    wide range of collections is thoughtfully curated for individuals seeking watches that reflect their
+                    personal style. While timekeeping remains essential, we also focus on select features and aesthetics
+                    to meet the unique tastes and needs of our customers.<br><br>
+                    At The Watch Store, we take pride in delivering the ideal balance of competitive pricing and
+                    exceptional customer service. We showcase renowned brands such as Tissot, Alpina, Tommy Hilfiger,
+                    Calvin Klein, Leonard Montres, Bering, and Coach.
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="row justify-content-center" id="brandCardContainer">
+    <!-- Brands Section -->
+    <div class="container">
+        <h2 class="brands text-dark text-center my-5">Shop by Brands</h2>
+        <div class="row justify-content-center" id="brandCardContainer">
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-        <script src="../assets/js/about.js"></script>
-    <script>
+    <script src="../assets/js/about.js"></script>
+</body>
+
+</html>

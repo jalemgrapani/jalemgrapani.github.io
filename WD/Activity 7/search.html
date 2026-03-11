@@ -72,15 +72,17 @@
                 const bgColorClass = typeClass[championType] || '';
                 const roles = champion.tags.join(', ');
 
-                resultContainer.innerHTML +=
-                    '<div class="col-12 col-md-6 col-lg-4">' +
-                    '<div class="champion-info ' + bgColorClass + '">' +
-                    '<img id="championImage" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champion.id + '_0.jpg" alt="' + champion.name + '">' +
-                    '<h2 id="championName">' + champion.name + '</h2>' +
-                    '<p id="championDescription">' + champion.title + '</p>' +
-                    '<div id="championRoles"><strong>Role: </strong>' + roles + '</div>' +
-                    '</div>' +
-                    '</div>';
+                resultContainer.innerHTML += `
+    <div class="col-12 col-md-6 col-lg-4">
+        <a href="view.html?championName=` + champion.id + `">
+            <div class="champion-info ` + bgColorClass + `">
+                <img id="championImage" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/` + champion.id + `_0.jpg" alt="` + champion.name + `">
+                <h2 id="championName">` + champion.name + `</h2>
+                <p id="championDescription">` + champion.title + `</p>
+                <div id="championRoles"><strong>Role: </strong>` + roles + `</div>
+            </div>
+        </a>
+    </div>`;
             });
 
         }
