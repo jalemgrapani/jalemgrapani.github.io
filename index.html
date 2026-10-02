@@ -1,193 +1,362 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jalem Louise Grapani — Web Developer</title>
+    <link rel="icon" type="image/svg+xml" href="homepage/assets/img/J2.1.svg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="homepage/assets/css/style.css" />
+  </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jalem's Portfolio</title>
-    <link rel="icon" type="image/png" href="homepage/assets/img/J1.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="homepage/assets/css/homepage.css">
-</head>
-
-<body>
+  <body>
     <div class="container-fluid p-0">
-        <div class="row mt-2 sticky-top">
-            <div class="col">
-                <nav class="navbar navbar-expand-md d-flex align-items-center px-3 px-lg-5">
-                    <div class="d-flex align-items-center me-3 me-lg-5">
-                        <img src="homepage/assets/img/J1.svg" class="img-fluid" style="max-width:50px;">
-                        <div class="logo-text h5 h-lg4 fw-bold ms-2 m-0">Jalem</div>
-                    </div>
-                    <button class="navbar-toggler ms-auto d-md-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#mainNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                        <div class="d-flex flex-column flex-md-row align-items-end align-items-md-center mt-3 mt-md-0">
+      <div class="row g-0">
+        <!-- Sidebar -->
+        <div class="col-auto">
+          <aside class="site-sidebar">
+            <div class="sidebar-logo">
+              <img
+                src="homepage/assets/img/J2.svg"
+                alt="Jalem Louise Grapani logo"
+              />
+            </div>
+            <nav class="site-navigation" id="siteNavigation">
+              <a href="#about">
+                <i class="bi bi-person"></i>
+                <span>About</span>
+              </a>
+              <a href="#skills">
+                <i class="bi bi-code-slash"></i>
+                <span>Skills</span>
+              </a>
+              <a href="#experience">
+                <i class="bi bi-briefcase"></i>
+                <span>Experience</span>
+              </a>
+              <a href="#projects">
+                <i class="bi bi-kanban"></i>
+                <span>Projects</span>
+              </a>
+              <a href="#contact">
+                <i class="bi bi-envelope"></i>
+                <span>Contact</span>
+              </a>
+            </nav>
 
-                            <a href="#about" class="nav-item nav-link h6 h-lg5 mx-2 mx-md-3 text-end">About</a>
-                            <div class="nav-item h6 mx-1 d-none d-md-flex">|</div>
+            <div class="sidebar-bottom">
+              <button type="button" class="theme-button" id="themeButton">
+                <i id="themeIcon" class="bi bi-brightness-high-fill"></i>
+                <span id="themeText">Dark mode</span>
+              </button>
 
-                            <a href="#projects" class="nav-item nav-link h6 h-lg5 mx-2 mx-md-3 text-end">Projects</a>
-                            <div class="nav-item h6 mx-1 d-none d-md-flex">|</div>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/jalem-louise-grapani-b81715314/"
+                >
+                  <i class="bi bi-linkedin"></i>
+                </a>
 
-                            <a href="#contact" class="nav-item nav-link h6 h-lg5 mx-2 mx-md-3 text-end">Contact</a>
+                <a href="mailto:jalemgrapani354@gmail.com">
+                  <i class="bi bi-envelope"></i>
+                </a>
+
+                <a href="https://github.com/jalemgrapani">
+                  <i class="bi bi-github"></i>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="col">
+          <main class="site-main">
+            <div class="container site-container">
+              <!-- About -->
+              <section id="about" class="content-section main-section">
+                <div class="container-fluid p-0">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-label">about</div>
+                      <h1 class="main-title">Jalem Louise Grapani</h1>
+                      <p class="main-role">Web Developer</p>
+
+                      <p class="main-description">
+                        Hands-on experience in web development, software
+                        testing, UI/UX design, and technical support — through
+                        academic projects and an internship. Now looking for a
+                        full-time role where I can keep building with HTML, CSS,
+                        JavaScript, PHP, MySQL, WordPress, and Git.
+                      </p>
+
+                      <div class="main-buttons">
+                        <a
+                          href="#projects"
+                          class="action-btn action-btn-primary"
+                        >
+                          View projects
+                        </a>
+
+                        <a
+                          href="#contact"
+                          class="action-btn action-btn-secondary"
+                        >
+                          Get in touch
+                        </a>
+                      </div>
+
+                      <div class="information-box">
+                        <div class="information-row">
+                          <span class="information-label">Education</span>
+                          <span class="information-value">
+                            BS Information Technology — Polytechnic University
+                            of the Philippines, 2022–2026
+                          </span>
                         </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col">
-                <div class="d-flex flex-column justify-content-center align-items-center text-center mt-5">
-                    <div class="hello">Hello, I'm</div>
-                    <span class="fname">Jalem Louise</span>
-                    <span class="lname">Grapani</span>
-                    <div class="role">Web Developer</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-5">
-                    <a href="#projects" class="view-button btn mx-md-2 mb-2 mb-md-0">View My Projects</a>
-                    <a href="#contact" class="get-button btn btn-outline-secondary mx-md-2">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="d-flex justify-content-center align-items-center">
-                    <a href="https://github.com/jalemgrapani" target="_blank" class="social-btn me-3">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jalem-grapani-b81715314/" target="_blank"
-                        class="social-btn me-3">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:https://myaccount.google.com/?hl=en_GB&utm_source=OGB&utm_medium=act&gar=WzEyMF0"
-                        class="social-btn">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="d-flex arrow-down justify-content-center align-items-center my-5">
-                    <a href="#about" class="text-white">
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid d-flex justify-content-center align-items-center flex-column mt-5" id="about">
-            <div class="row justify-content-center text-center mb-4 mt-5">
-                <div class="col-12">
-                    <div class="tech-title">Technologies I Use</div>
-                    <span class="skills">Skills</span>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="container px-3" id="skillsContainer"></div>
-                </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col">
-                    <div class="row justify-content-center text-center mb-4 mt-5" id="projects">
-                        <div class="col-12">
-                            <div class="recent-title">My Recent Work</div>
-                            <span class="projects">Projects</span>
-
-                            <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
-                                <button id="appBtn" class="app-button btn btn-outline-secondary"
-                                    onclick="loadAppProjects()">App Dev</button>
-                                <button id="webBtn" class="web-button btn btn-outline-secondary"
-                                    onclick="loadWebProjects()">Web Dev</button>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row justify-content-center px-3" id="projectContainer"></div>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center text-center mb-4 mt-5 px-3">
-                                <div class="col-12 mt-5">
-                                    <div class="tech-title mt-5">Get In Touch</div>
-                                    <span class="skills">Contact Me</span>
-                                    <p class="description mb-5">
-                                        Have a project in mind or want to collaborate? I'd love to hear from you.
-                                        <br> Let's create something amazing together!
-                                    </p>
-
-                                    <div class="container-fluid" id="contact">
-                                        <div class="row mt-5 justify-content-center">
-
-                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                                <div class="card p-4 text-center contact-card">
-                                                    <div class="contact-box mb-2">
-                                                        <i class="bi fs-4 bi-envelope-fill"></i>
-                                                    </div>
-                                                    <div class="contact-title h6 text-white">Email</div>
-                                                    <p class="contact-text text-white text-break small-text">
-                                                        jalemgrapani354@gmail.com</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                                <div class="card p-4 text-center contact-card">
-                                                    <div class="contact-box mb-2">
-                                                        <i class="bi fs-4 bi-telephone-fill"></i>
-                                                    </div>
-                                                    <div class="contact-title h6 text-white">Phone</div>
-                                                    <p class="contact-text text-white small-text">+63 912 345 6789</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                                <div class="card p-4 text-center contact-card">
-                                                    <div class="contact-box mb-2">
-                                                        <i class="bi fs-4 bi-geo-alt-fill"></i>
-                                                    </div>
-                                                    <div class="contact-title h6 text-white">Location</div>
-                                                    <p class="contact-text text-white small-text">Philippines</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                        <div class="information-row">
+                          <span class="information-label">Location</span>
+                          <span class="information-value">
+                            Calamba City, Laguna, Philippines
+                          </span>
                         </div>
+                      </div>
+
+                      <div class="information-box certification-box">
+                        <span class="information-label certification-label"
+                          >Certifications</span
+                        >
+
+                        <div class="tag-list">
+                          <span class="skill-tag">Gen AI Fundamentals</span>
+                          <span class="skill-tag">AI &amp; ML Foundations</span>
+                          <span class="skill-tag"
+                            >Salesforce Virtual Internship</span
+                          >
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </section>
+
+              <!-- Skills -->
+              <section id="skills" class="content-section">
+                <div class="container-fluid p-0">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-label">skills</div>
+                      <h2 class="section-heading">What I work with</h2>
+
+                      <div id="skillsList"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Experience -->
+              <section id="experience" class="content-section">
+                <div class="container-fluid p-0">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-label">experience</div>
+                      <h2 class="section-heading">Where I've worked</h2>
+
+                      <div class="experience-box">
+                        <div class="row">
+                          <div class="col-12 col-md-8">
+                            <h3 class="experience-title">
+                              IT Intern — BoxHive Digital Solutions Co.
+                            </h3>
+                          </div>
+
+                          <div class="col-12 col-md-4 text-md-end">
+                            <span class="experience-date">
+                              Feb 2026 – May 2026 · Quezon City
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="row mt-2">
+                          <div class="col-12">
+                            <ul class="experience-list">
+                              <li>
+                                Performed manual and functional QA testing for
+                                the IceBreaker web portal and mobile app.
+                              </li>
+                              <li>
+                                Provided technical support during Philippine
+                                Tech Show registration, helping attendees use
+                                the IceBreaker app.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="experience-box">
+                        <div class="row">
+                          <div class="col-12 col-md-8">
+                            <h3 class="experience-title">
+                              Full-Stack Developer — Easechedemy (capstone
+                              project)
+                            </h3>
+                          </div>
+
+                          <div class="col-12 col-md-4 text-md-end">
+                            <span class="experience-date">
+                              2025 – 2026 · PUP
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="row mt-2">
+                          <div class="col-12">
+                            <ul class="experience-list">
+                              <li>
+                                Built a web-based class scheduling system with
+                                automated schedule generation for Almond Academy
+                                Foundation Inc.
+                              </li>
+                              <li>
+                                Handled UI/UX design and end-to-end development
+                                with HTML, CSS, JavaScript, PHP, Bootstrap, and
+                                MySQL.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Projects -->
+              <section id="projects" class="content-section">
+                <div class="container-fluid p-0">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-label">projects</div>
+                      <h2 class="section-heading">Selected work</h2>
+
+                      <div class="project-grid" id="projectGrid"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Contact -->
+              <section id="contact" class="content-section">
+                <div class="container-fluid p-0">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-label">contact</div>
+                      <h2 class="section-heading">Let's talk</h2>
+
+                      <p class="contact-description">
+                        Open to junior developer roles and freelance projects.
+                        The fastest way to reach me is email.
+                      </p>
+
+                      <div class="contact-box">
+                        <div>
+                          <div class="contact-label">Email</div>
+                          <div class="contact-value" id="emailText">
+                            jalemgrapani354@gmail.com
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=jalemgrapani354@gmail.com"
+                          target="_blank"
+                          rel="noopener"
+                          class="small-action"
+                        >
+                          Email
+                        </a>
+                      </div>
+
+                      <div class="contact-box">
+                        <div>
+                          <div class="contact-label">Phone</div>
+                          <div class="contact-value">+63 967 018 5414</div>
+                        </div>
+                      </div>
+
+                      <div class="contact-box">
+                        <div>
+                          <div class="contact-label">Location</div>
+                          <div class="contact-value">
+                            Calamba City, Laguna, PH
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="contact-box">
+                        <div>
+                          <div class="contact-label">LinkedIn</div>
+                          <div class="contact-value">
+                            linkedin.com/in/jalemgrapani
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://www.linkedin.com/in/jalem-louise-grapani-b81715314/"
+                          target="_blank"
+                          rel="noopener"
+                          class="small-action"
+                        >
+                          Visit
+                        </a>
+                      </div>
+
+                      <div class="contact-box">
+                        <div>
+                          <div class="contact-label">GitHub</div>
+                          <div class="contact-value">
+                            github.com/jalemgrapani
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://github.com/jalemgrapani"
+                          target="_blank"
+                          rel="noopener"
+                          class="small-action"
+                        >
+                          Visit
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
+          </main>
         </div>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="homepage/assets/js/function.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="homepage/assets/js/theme.js"></script>
     <script src="homepage/assets/js/skills.js"></script>
-    <script src="homepage/assets/js/appDev.js"></script>
-    <script src="homepage/assets/js/webDev.js"></script>
-    <script src="homepage/assets/js/contacts.js"></script>
-
-</body>
-
+    <script src="homepage/assets/js/projects.js"></script>
+    <script src="homepage/assets/js/active-navigation.js"></script>
+    <script src="homepage/assets/js/reveal-sections.js"></script>
+  </body>
 </html>

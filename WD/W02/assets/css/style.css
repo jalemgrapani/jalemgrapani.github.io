@@ -1,0 +1,102 @@
+:root {
+  --japan-red: #bc002d;
+  --bs-danger: #bc002d;
+  --bs-danger-rgb: 188, 0, 45;
+  --bs-body-font-family: "Poppins", sans-serif;
+  --bs-body-color: #1c1c1c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Base */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+  font-family: "Shippori Mincho", serif;
+}
+
+/* Navbar */
+
+.sun {
+  width: 1rem;
+  height: 1rem;
+  background: var(--japan-red);
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--japan-red);
+}
+
+/* Hero */
+
+.hero {
+  min-height: 75vh;
+}
+
+/* Section Title */
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.3rem;
+  margin-top: 0.75rem;
+  background: var(--japan-red);
+  border-radius: 1rem;
+}
+
+.section-title.text-center::after {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Cards */
+
+.place-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Carousel */
+
+.carousel-img {
+  height: 320px;
+}
+
+@media (min-width: 768px) {
+  .carousel-img {
+    height: 520px;
+  }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .place-card {
+    transition: none;
+  }
+}

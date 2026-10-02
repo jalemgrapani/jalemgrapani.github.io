@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Mulish:wght@400;500;600;700&display=swap");
+
+:root {
+    --navy-950: #05070c;
+    --navy-900: #0a1428;
+    --card-bg: #1e2328;
+    --card-border: #2c3540;
+    --gold-500: #c89b3c;
+    --gold-300: #e8c877;
+    --parchment: #f0e6d2;
+    --ink-300: #a7a2ab;
+    --ink-500: #786f8c;
+    --fighter: #c6763f;
+    --mage: #5e9edb;
+    --assassin: #c4527a;
+    --tank: #5f8b6e;
+    --support: #9b8ad6;
+    --marksman: #4fb8a8;
+    --font-display: "Cinzel", "Georgia", serif;
+    --font-body: "Mulish", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base */
+
+body {
+    background: var(--navy-950);
+    color: var(--parchment);
+    font-family: var(--font-body);
+}
+
+/* Navbar */
+
+.navbar {
+    background: rgba(10, 20, 40, 0.92) !important;
+    border-bottom: 1px solid var(--gold-500);
+    backdrop-filter: blur(6px);
+}
+
+.navbar-brand {
+    color: var(--parchment) !important;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 12px 18px;
+    color: var(--ink-300) !important;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--gold-300) !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--gold-500) !important;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--gold-500);
+}
+
+.navbar-toggler {
+    border-color: var(--gold-500);
+}
+
+/* Champion */
+
+.champion-info {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--parchment);
+    text-align: left;
+}
+
+#championImage {
+    width: 100%;
+    max-height: 480px;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 0 0 6px 6px;
+    mask-image: linear-gradient(180deg, #000 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 75%, transparent 100%);
+}
+
+#championName {
+    margin: 0 0 0.5rem;
+    padding: 0 1.5rem;
+    color: var(--parchment);
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 700;
+}
+
+#championDescription {
+    max-width: 760px;
+    margin: 0 0 1.5rem;
+    padding: 0 1.5rem;
+    color: var(--ink-300);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.champion-attributes {
+    display: flex;
+    gap: 15px;
+    margin-top: 0.5rem;
+    padding: 0 1.5rem;
+}
+
+.attribute-box {
+    padding: 10px 22px;
+    background: rgba(200, 155, 60, 0.08);
+    border: 1px solid var(--gold-500);
+    border-radius: 4px;
+    color: var(--gold-300);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Role Backgrounds */
+
+.fighter-bg {
+    background: var(--navy-950);
+}
+
+.mage-bg {
+    background: var(--navy-950);
+}
+
+.assassin-bg {
+    background: var(--navy-950);
+}
+
+.tank-bg {
+    background: var(--navy-950);
+}
+
+.support-bg {
+    background: var(--navy-950);
+}
+
+.marksman-bg {
+    background: var(--navy-950);
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--card-border);
+    color: var(--ink-500);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    #championImage {
+        max-height: 300px;
+        margin-bottom: 1.5rem;
+        border-radius: 0;
+    }
+
+    .champion-attributes {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,294 @@
+:root {
+    --ink: #14151a;
+    --paper: #f6f5f1;
+    --paper-alt: #ffffff;
+    --slate: #5b5e68;
+    --line: #e4e2dc;
+    --yellow: #ffde00;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
+h1,
+h2,
+.navbar-brand,
+.price-tag,
+.battery-number,
+.btn-hero,
+.btn-cta {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: var(--paper-alt);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--ink);
+}
+
+.navbar-nav .nav-link {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: var(--slate);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--ink);
+}
+
+/* Sections */
+
+section {
+    padding: 90px 0;
+}
+
+.section-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--slate);
+}
+
+.section-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 3.5vw, 40px);
+}
+
+/* Hero */
+
+.hero-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.price-tag {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 15px;
+    background: var(--yellow);
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.hero-title {
+    font-weight: 700;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.15;
+    max-width: 560px;
+}
+
+.hero-text {
+    font-size: 17px;
+    color: var(--slate);
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper-alt);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 28px;
+    border-radius: 8px;
+}
+
+.btn-hero:hover {
+    background: #2a2c33;
+    color: var(--paper-alt);
+}
+
+.hero-image-wrap {
+    display: inline-block;
+    background: radial-gradient(
+        circle at 50% 45%,
+        var(--yellow) 0%,
+        rgba(255, 222, 0, 0.35) 55%,
+        rgba(255, 222, 0, 0) 75%
+    );
+    border-radius: 50%;
+    padding: 40px;
+}
+
+.hero-image {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+}
+
+/* Specifications */
+
+.specs-section {
+    background: var(--paper-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.specs-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.spec-row {
+    border-bottom: 1px solid var(--line);
+}
+
+.spec-list dt {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--slate);
+}
+
+.spec-list dd {
+    font-size: 15px;
+    color: var(--ink);
+}
+
+/* Battery */
+
+.battery-number {
+    font-weight: 700;
+    font-size: clamp(56px, 8vw, 96px);
+    line-height: 1;
+}
+
+.battery-unit {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--slate);
+}
+
+.battery-text {
+    font-size: 16px;
+    color: var(--slate);
+    max-width: 460px;
+    line-height: 1.6;
+}
+
+.battery-image {
+    max-width: 520px;
+    width: 100%;
+    height: auto;
+}
+
+/* Colors */
+
+.colors-section {
+    background: var(--paper);
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+}
+
+.color-name {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.phone-image {
+    max-width: 100%;
+    width: 480px;
+    height: auto;
+}
+
+/* CTA */
+
+.cta-section {
+    background: var(--ink);
+    padding: 50px 0;
+}
+
+.cta-title {
+    color: var(--paper-alt);
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.btn-cta {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 26px;
+    border-radius: 8px;
+}
+
+.btn-cta:hover {
+    background: #ffe94d;
+    color: var(--ink);
+}
+
+/* Footer */
+
+footer {
+    background: var(--paper-alt);
+    border-top: 1px solid var(--line);
+    color: var(--slate);
+    font-size: 14px;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        max-width: 100%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .spec-list dt,
+    .spec-list dd {
+        font-size: 14px;
+    }
+}

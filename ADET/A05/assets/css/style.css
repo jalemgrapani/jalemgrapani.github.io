@@ -1,0 +1,384 @@
+:root {
+  --navy: #0b2545;
+  --blue: #0077b6;
+  --aqua: #48cae4;
+  --tint: #e6f4fb;
+  --sand: #fff8ec;
+  --gray: #5f6f7f;
+}
+
+/* Base */
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--navy);
+  background: #ffffff;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: "Cal Sans", "Roboto", sans-serif;
+}
+
+.embed-page {
+  background: transparent;
+}
+
+/* Navbar */
+
+.navbar-brand {
+  color: var(--blue);
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.nav-link:hover {
+  color: var(--blue);
+}
+
+/* Hero */
+
+.hero {
+  padding: 140px 0 170px;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(11, 37, 69, 0.85), rgba(11, 37, 69, 0.2)),
+    url("../img/elnido.jpg") center / cover;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.btn-main {
+  background: var(--aqua);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 12px 30px;
+  border: 0;
+}
+
+.btn-main:hover {
+  background: #ffffff;
+  color: var(--navy);
+}
+
+.btn-ghost {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px 30px;
+}
+
+.btn-ghost:hover {
+  background: #ffffff;
+  color: var(--navy);
+}
+
+/* Facts */
+
+.facts {
+  margin-top: -80px;
+  position: relative;
+  z-index: 3;
+}
+
+.fact {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(11, 37, 69, 0.15);
+}
+
+.fact-number {
+  font-family: "Cal Sans", sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
+  color: var(--blue);
+}
+
+/* Sections */
+
+.section {
+  padding: 80px 0;
+}
+
+.section-tint {
+  background: var(--tint);
+  margin-top: -50px;
+}
+
+.section-sand {
+  background: var(--sand);
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  text-align: center;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.title-bar {
+  width: 70px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--aqua);
+  margin: 12px auto 16px;
+}
+
+/* Spot Cards */
+
+.spot-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(11, 37, 69, 0.12);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spot-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 119, 182, 0.28);
+}
+
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.spot-img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.spot-img.short {
+  height: 300px;
+}
+
+.spot-card:hover .spot-img {
+  transform: scale(1.06);
+  filter: blur(2px) brightness(0.65);
+}
+
+.view-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.spot-card:hover .view-overlay {
+  opacity: 1;
+}
+
+.spot-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #ffffff;
+  color: var(--blue);
+  border-radius: 50px;
+  padding: 7px 14px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.spot-body {
+  padding: 24px;
+  text-align: center;
+}
+
+.spot-title {
+  font-size: 1.3rem;
+  color: var(--blue);
+}
+
+.spot-text {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+/* Carousel */
+
+.category-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--blue);
+  background-size: 55%;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+  width: 6%;
+}
+
+.carousel-indicators {
+  position: static;
+  margin-top: 10px;
+}
+
+.carousel-indicators button {
+  background-color: var(--blue);
+}
+
+/* Tips and Seasons */
+
+.tip-card,
+.season-card {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(11, 37, 69, 0.1);
+}
+
+.tip-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--tint);
+  color: var(--blue);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.season-months {
+  font-family: "Cal Sans", sans-serif;
+  font-size: 1.25rem;
+  color: var(--blue);
+}
+
+/* Footer */
+
+.footer {
+  background: var(--navy);
+  color: #cfe0f0;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Embed */
+
+.spots-frame {
+  height: 780px;
+}
+
+/* Tablet */
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 110px 0 150px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .spot-img {
+    height: 300px;
+  }
+
+  .spot-img.short {
+    height: 260px;
+  }
+}
+
+/*  Mobile */
+@media (max-width: 767px) {
+  .hero {
+    padding: 80px 0 110px;
+    text-align: center;
+  }
+
+  .facts {
+    margin-top: -60px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-tint {
+    margin-top: -230px;
+  }
+
+  .spot-img,
+  .spot-img.short {
+    height: 230px;
+  }
+
+  .spot-body {
+    padding: 18px;
+  }
+
+  .category-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .spots-frame {
+    height: 1080px;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-main,
+  .btn-ghost {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .spots-frame {
+    height: 1160px;
+  }
+
+}

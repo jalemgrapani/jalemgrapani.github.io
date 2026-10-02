@@ -1,63 +1,53 @@
 var skills = [
     {
-        title: "Web Development",
-        desc: "Building responsive and interactive web applications using modern technologies.",
-        icon: "fa-solid fa-code",
-        tags: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap"]
+        title: "Programming & web development",
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "WordPress"]
     },
     {
-        title: "Database Technologies",
-        desc: "Designing and managing relational databases to store, retrieve, and manipulate data efficiently.",
-        icon: "fa-solid fa-database",
-        tags: ["MySQL", "SQL"]
+        title: "Database",
+        tags: ["MySQL"]
     },
     {
-        title: "Tools & Environments",
-        desc: "Leveraging industry-standard development tools and version control systems for efficient workflow.",
-        icon: "fa-solid fa-wrench",
-        tags: ["XAMPP", "VS Code", "Git", "GitHub"]
+        title: "Development tools",
+        tags: ["Git", "GitHub", "Visual Studio Code", "XAMPP", "Docker", "LocalWP"]
     },
     {
-        title: "Design Tools",
-        desc: "Creating visually appealing designs and prototypes that enhance user interface and experience.",
-        icon: "fa-solid fa-palette",
+        title: "UI/UX & design",
         tags: ["Figma", "Canva"]
+    },
+    {
+        title: "Testing & QA",
+        tags: ["Manual QA testing", "Functional testing"]
     }
 ];
 
-function loadSkills() {
-    var container = document.getElementById("skillsContainer");
-    container.innerHTML = "";
-    var html = "";
+function displaySkills() {
+    var skillsList = document.getElementById("skillsList");
 
-    for (var i = 0; i < skills.length; i += 2) {
-        html += `<div class="row justify-content-center g-4 mb-3">`;
+    for (var i = 0; i < skills.length; i++) {
+        var skillBox = document.createElement("div");
+        skillBox.className = "skill-box";
 
-        for (var j = 0; j < 2; j++) {
-            if (i + j < skills.length) {
-                var skill = skills[i + j];
-                var tagHTML = "";
-                for (var k = 0; k < skill.tags.length; k++) {
-                    tagHTML += `<span class="badge">` + skill.tags[k] + `</span>`;
-                }
+        var skillTitle = document.createElement("h3");
+        skillTitle.className = "skill-title";
+        skillTitle.textContent = skills[i].title;
 
-                html += `<div class="col-xl-5 col-lg-5 col-md-6 col-sm-9 d-flex justify-content-center">
-                    <div class="card w-100" style="max-width: 550px;">
-                        <div class="card-body">
-                            <div class="skill-box"><i class="` + skill.icon + `"></i></div>
-                            <h1 class="card-title">` + skill.title + `</h1>
-                            <p class="card-text">` + skill.desc + `</p>
-                            <div>` + tagHTML + `</div>
-                        </div>
-                    </div>
-                </div>`;
-            }
+        var tagList = document.createElement("div");
+        tagList.className = "tag-list";
+
+        for (var j = 0; j < skills[i].tags.length; j++) {
+            var skillTag = document.createElement("span");
+            skillTag.className = "skill-tag";
+            skillTag.textContent = skills[i].tags[j];
+
+            tagList.appendChild(skillTag);
         }
 
-        html += `</div>`;
+        skillBox.appendChild(skillTitle);
+        skillBox.appendChild(tagList);
+        skillsList.appendChild(skillBox);
     }
-
-    container.innerHTML = html;
 }
 
-loadSkills();
+document.addEventListener("DOMContentLoaded", displaySkills);
+
