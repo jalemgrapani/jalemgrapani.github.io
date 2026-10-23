@@ -1,377 +1,627 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Explore Japan: popular places, scenery and timeless treasures.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore Japan: popular places, scenery and timeless treasures."
+    />
     <title>Japan</title>
-    <link rel="icon" href="../../homepage/assets/img/JL%20Logo.svg">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Shippori+Mincho:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Vendor -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="icon" href="../../homepage/assets/img/JL%20Logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Shippori+Mincho:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <div class="container-fluid px-0">
-        <div id="progressBar"></div>
+      <div id="progressBar"></div>
 
-        <!-- Navbar -->
-        <div class="row g-0">
-            <div class="col-12">
-                <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
-                    <div class="container">
-                        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
-                            <span class="sun bg-danger rounded-circle"></span>
-                            Japan
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                            <ul class="navbar-nav gap-md-2">
-                                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#places">Places</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#others">Treasures</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+      <!-- Navbar -->
+      <div class="row g-0">
+        <div class="col-12">
+          <nav
+            id="navbar"
+            class="navbar navbar-expand-md navbar-dark fixed-top"
+          >
+            <div class="container">
+              <a
+                class="navbar-brand d-flex align-items-center gap-2"
+                href="#home"
+              >
+                <span class="sun bg-danger rounded-circle"></span>
+                Japan
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav"
+              >
+                <ul class="navbar-nav gap-md-2">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#places">Places</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#others">Treasures</a>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </nav>
         </div>
+      </div>
 
-        <!-- Hero -->
-        <div class="row g-0">
-            <header id="home" class="col-12 hero position-relative text-white d-flex align-items-center">
-                <img class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" src="assets/img/japan.jpg" alt="Japan">
-                <div class="hero-shade position-absolute top-0 start-0 w-100 h-100"></div>
-                <div class="container position-relative">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-8 text-center">
-                            <p class="hero-kanji mb-0" lang="ja">日本</p>
-                            <h1 class="display-1 fw-bold">Japan</h1>
-                            <p class="fs-4 mb-4">Exploring the Land of the Rising Sun</p>
-                            <a href="#places" class="btn btn-danger btn-lg px-4">Explore Places</a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-
-        <!-- About -->
-        <div class="row g-0">
-            <div id="about" class="col-12 py-5">
-                <div class="container py-md-4">
-                    <div class="row row-cols-2 row-cols-md-4 g-4 mb-5 facts">
-                        <div class="col fact">
-                            <p class="fact-value">4</p>
-                            <p class="fact-label">Main Islands</p>
-                        </div>
-                        <div class="col fact">
-                            <p class="fact-value">120M+</p>
-                            <p class="fact-label">People</p>
-                        </div>
-                        <div class="col fact">
-                            <p class="fact-value">Top 5</p>
-                            <p class="fact-label">World Economy</p>
-                        </div>
-                        <div class="col fact">
-                            <p class="fact-value">Fuji</p>
-                            <p class="fact-label">Prominent Landmark</p>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-8 text-center">
-                            <h2 class="section-title display-5 fw-bold">About Japan</h2>
-                            <p class="fs-5 text-secondary mb-4">
-                                An island nation in East Asia, where ancient tradition meets modern technology.
-                            </p>
-                            <p class="mb-3">
-                                Japan is made up of four main islands: Honshu, Hokkaido, Kyushu and Shikoku. The country is known for its mountainous terrain, with Mount Fuji standing out as a prominent landmark.
-                            </p>
-                            <p class="mb-3">
-                                Japan has a rich cultural heritage, combining traditional arts and cuisine such as sushi and ramen with modern elements. Its history spans from ancient times through the era of the samurai to the rapid modernization of the Meiji Restoration.
-                            </p>
-                            <p class="mb-0">
-                                Today, Japan is one of the world's largest economies and is recognized for its advancements in technology and its major industries, including automobiles and electronics. With a population of more than 120 million, it also faces challenges such as an aging population.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-md-3 g-3 g-md-4 mt-4 mt-md-5">
-                        <div class="col">
-                            <div class="ratio ratio-3x4 rounded-4 overflow-hidden">
-                                <img src="assets/img/japan5.jpg" class="object-fit-cover" alt="Cherry blossoms along a canal">
-                            </div>
-                        </div>
-                        <div class="col mt-md-5">
-                            <div class="ratio ratio-3x4 rounded-4 overflow-hidden">
-                                <img src="assets/img/4.jpg" class="object-fit-cover" alt="Shirakawago village">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="ratio ratio-3x4 rounded-4 overflow-hidden">
-                                <img src="assets/img/japan6.jpeg" class="object-fit-cover" alt="Oyama Senmaida rice terraces">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-5">
-                        <div class="col-12">
-                            <div class="bg-light rounded-4 p-4 p-md-5">
-                                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-                                    <div class="col d-flex align-items-center gap-3">
-                                        <i class="fa-solid fa-landmark know-icon"></i>
-                                        <div>
-                                            <p class="know-label">Capital</p>
-                                            <p class="know-value">Tokyo</p>
-                                        </div>
-                                    </div>
-                                    <div class="col d-flex align-items-center gap-3">
-                                        <i class="fa-solid fa-language know-icon"></i>
-                                        <div>
-                                            <p class="know-label">Language</p>
-                                            <p class="know-value">Japanese</p>
-                                        </div>
-                                    </div>
-                                    <div class="col d-flex align-items-center gap-3">
-                                        <i class="fa-solid fa-yen-sign know-icon"></i>
-                                        <div>
-                                            <p class="know-label">Currency</p>
-                                            <p class="know-value">Japanese Yen</p>
-                                        </div>
-                                    </div>
-                                    <div class="col d-flex align-items-center gap-3">
-                                        <i class="fa-solid fa-calendar-days know-icon"></i>
-                                        <div>
-                                            <p class="know-label">Popular Seasons</p>
-                                            <p class="know-value">Spring and Autumn</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Hero -->
+      <div class="row g-0">
+        <nav
+          id="home"
+          class="col-12 hero position-relative text-white d-flex align-items-center"
+        >
+          <img
+            class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+            src="assets/img/japan.jpg"
+            alt="Japan"
+          />
+          <div
+            class="hero-shade position-absolute top-0 start-0 w-100 h-100"
+          ></div>
+          <div class="container position-relative">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 text-center">
+                <p class="hero-kanji mb-0" lang="ja">日本</p>
+                <h1 class="display-1 fw-bold">Japan</h1>
+                <p class="fs-4 mb-4">Exploring the Land of the Rising Sun</p>
+                <a href="#places" class="btn btn-danger btn-lg px-4"
+                  >Explore Places</a
+                >
+              </div>
             </div>
-        </div>
+          </div>
+        </nav>
+      </div>
 
-        <!-- Places -->
-        <div class="row g-0">
-            <div id="places" class="col-12 py-5 bg-light">
-                <div class="container py-md-4">
-                    <div class="row mb-5">
-                        <div class="col-12 col-lg-8">
-                            <h2 class="section-title display-5 fw-bold">Popular Places to Go in Japan</h2>
-                        </div>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <div class="place-card place-wide position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/japan2.jpg" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Osaka Castle">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-location-dot"></i>Osaka</p>
-                                    <h3 class="h4 place-title">Osaka Castle</h3>
-                                    <p class="place-text mb-0">A famous historical landmark known for its white exterior and golden roof. The castle is surrounded by cherry blossoms in spring, which are often associated with Japan.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="place-card place-wide position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/japan4.jpg" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Akihabara at night">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-location-dot"></i>Tokyo</p>
-                                    <h3 class="h4 place-title">Akihabara: Tokyo's Electric Town</h3>
-                                    <p class="place-text mb-0">Akihabara, known as "Akiba," is a lively Tokyo district famous for electronics and anime. It is a hub for unique subcultures, offering a colorful blend of modern technology and Japanese entertainment.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="place-card place-wide position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/japan5.jpg" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Cherry blossoms along a canal">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-calendar-days"></i>Spring</p>
-                                    <h3 class="h4 place-title">Cherry Blossoms in Japan</h3>
-                                    <p class="place-text mb-0">Cherry blossoms line a canal in Japan, lit by lanterns after dark for a magical and romantic atmosphere. Blossom season typically runs from late March to early April in many parts of the country.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="place-card place-wide position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/japan6.jpeg" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Oyama Senmaida rice terraces">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-location-dot"></i>Chiba</p>
-                                    <h3 class="h4 place-title">Oyama Senmaida: Rice Terraces</h3>
-                                    <p class="place-text mb-0">Oyama Senmaida is a breathtaking landscape of terraced rice paddies in Chiba Prefecture. Its name refers to its roughly 1,000 small paddies, a testament to the ingenuity and hard work of Japanese farmers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- About -->
+      <div class="row g-0">
+        <div id="about" class="col-12 py-5">
+          <div class="container py-md-4">
+            <div class="row row-cols-2 row-cols-md-4 g-4 mb-5 facts">
+              <div class="col fact">
+                <p class="fact-value">4</p>
+                <p class="fact-label">Main Islands</p>
+              </div>
+              <div class="col fact">
+                <p class="fact-value">120M+</p>
+                <p class="fact-label">People</p>
+              </div>
+              <div class="col fact">
+                <p class="fact-value">Top 5</p>
+                <p class="fact-label">World Economy</p>
+              </div>
+              <div class="col fact">
+                <p class="fact-value">Fuji</p>
+                <p class="fact-label">Prominent Landmark</p>
+              </div>
             </div>
-        </div>
 
-        <!-- Gallery -->
-        <div class="row g-0">
-            <div id="gallery" class="col-12 py-5">
-                <div class="container py-md-4">
-                    <div class="row mb-5">
-                        <div class="col-12 col-lg-8">
-                            <h2 class="section-title display-5 fw-bold">Moments from Japan</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="galleryCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel" data-bs-interval="4000">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/1.jpeg" class="carousel-img d-block w-100 object-fit-cover" alt="Japan scenery">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/2.jpeg" class="carousel-img d-block w-100 object-fit-cover" alt="Japan scenery">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/3.jpg" class="carousel-img d-block w-100 object-fit-cover" alt="Japan scenery">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 text-center">
+                <h2 class="section-title display-5 fw-bold">About Japan</h2>
+                <p class="fs-5 text-secondary mb-4">
+                  An island nation in East Asia, where ancient tradition meets
+                  modern technology.
+                </p>
+                <p class="mb-3">
+                  Japan is made up of four main islands: Honshu, Hokkaido,
+                  Kyushu and Shikoku. The country is known for its mountainous
+                  terrain, with Mount Fuji standing out as a prominent landmark.
+                </p>
+                <p class="mb-3">
+                  Japan has a rich cultural heritage, combining traditional arts
+                  and cuisine such as sushi and ramen with modern elements. Its
+                  history spans from ancient times through the era of the
+                  samurai to the rapid modernization of the Meiji Restoration.
+                </p>
+                <p class="mb-0">
+                  Today, Japan is one of the world's largest economies and is
+                  recognized for its advancements in technology and its major
+                  industries, including automobiles and electronics. With a
+                  population of more than 120 million, it also faces challenges
+                  such as an aging population.
+                </p>
+              </div>
             </div>
-        </div>
 
-        <!-- Treasures -->
-        <div class="row g-0">
-            <div id="others" class="col-12 py-5 bg-light">
-                <div class="container py-md-4">
-                    <div class="row mb-5">
-                        <div class="col-12 col-lg-8">
-                            <h2 class="section-title display-5 fw-bold">Japan's Timeless Treasures</h2>
-                            <p class="fs-5 text-secondary mb-0">
-                                Shirakawago's historic village, the Kerama Islands' pristine waters and the majestic Imperial Palace.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="place-card place-tall position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/4.jpg" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Shirakawago village">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-location-dot"></i>Gifu</p>
-                                    <h3 class="h5 place-title">Shirakawago</h3>
-                                    <p class="place-text mb-0">A historical village famous for its traditional gassho-zukuri farmhouses, designed to withstand heavy snowfall. It is a UNESCO World Heritage site known for its unique architecture.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="place-card place-tall position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/5.webp" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Kerama Islands">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-location-dot"></i>Okinawa</p>
-                                    <h3 class="h5 place-title">Kerama Islands</h3>
-                                    <p class="place-text mb-0">Located west of Okinawa's main island, the Kerama Islands are known for their coral reefs and clear blue waters, a haven for divers and beach lovers with vibrant marine life.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="place-card place-tall position-relative overflow-hidden rounded-4">
-                                <img src="assets/img/6.jpg" class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Imperial Palace in Tokyo">
-                                <div class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white">
-                                    <p class="place-name"><i class="fa-solid fa-location-dot"></i>Tokyo</p>
-                                    <h3 class="h5 place-title">Imperial Palace</h3>
-                                    <p class="place-text mb-0">The primary residence of the Emperor of Japan. Surrounded by beautiful gardens, it stands as a symbol of Japan's monarchy and rich cultural heritage.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row row-cols-1 row-cols-md-3 g-3 g-md-4 mt-4 mt-md-5">
+              <div class="col">
+                <div class="ratio ratio-3x4 rounded-4 overflow-hidden">
+                  <img
+                    src="assets/img/japan5.jpg"
+                    class="object-fit-cover"
+                    alt="Cherry blossoms along a canal"
+                  />
                 </div>
+              </div>
+              <div class="col mt-md-5">
+                <div class="ratio ratio-3x4 rounded-4 overflow-hidden">
+                  <img
+                    src="assets/img/4.jpg"
+                    class="object-fit-cover"
+                    alt="Shirakawago village"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="ratio ratio-3x4 rounded-4 overflow-hidden">
+                  <img
+                    src="assets/img/japan6.jpeg"
+                    class="object-fit-cover"
+                    alt="Oyama Senmaida rice terraces"
+                  />
+                </div>
+              </div>
             </div>
-        </div>
 
-        <!-- Footer -->
-        <div class="row g-0">
-            <footer class="col-12 site-footer text-white">
-                <div class="container">
-                    <div class="row g-4 py-5">
-                        <div class="col-12 col-md-5">
-                            <a href="#home" class="footer-brand d-inline-flex align-items-center gap-2">
-                                <span class="sun bg-danger rounded-circle"></span>
-                                Japan
-                            </a>
-                            <p class="footer-text mt-3">
-                                From the serene beauty of cherry blossoms to vibrant cityscapes, Japan is a land of harmony and innovation.
-                            </p>
-                            <div class="footer-social d-flex">
-                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center rounded-circle" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-md-3">
-                            <h2 class="footer-title">Explore</h2>
-                            <ul class="footer-links list-unstyled mb-0">
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#places">Places</a></li>
-                                <li><a href="#gallery">Gallery</a></li>
-                                <li><a href="#others">Treasures</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-6 col-md-4">
-                            <h2 class="footer-title">Destinations</h2>
-                            <ul class="footer-links list-unstyled mb-0">
-                                <li>Osaka Castle</li>
-                                <li>Akihabara, Tokyo</li>
-                                <li>Shirakawago</li>
-                                <li>Kerama Islands</li>
-                            </ul>
-                        </div>
+            <div class="row mt-5">
+              <div class="col-12">
+                <div class="bg-light rounded-4 p-4 p-md-5">
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                    <div class="col d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-landmark know-icon"></i>
+                      <div>
+                        <p class="know-label">Capital</p>
+                        <p class="know-value">Tokyo</p>
+                      </div>
                     </div>
-
-                    <div class="footer-bottom text-center small">
-                        &copy; <span id="footerYear">2026</span> Japan Organization. All Rights Reserved.
+                    <div class="col d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-language know-icon"></i>
+                      <div>
+                        <p class="know-label">Language</p>
+                        <p class="know-value">Japanese</p>
+                      </div>
                     </div>
+                    <div class="col d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-yen-sign know-icon"></i>
+                      <div>
+                        <p class="know-label">Currency</p>
+                        <p class="know-value">Japanese Yen</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-center gap-3">
+                      <i class="fa-solid fa-calendar-days know-icon"></i>
+                      <div>
+                        <p class="know-label">Popular Seasons</p>
+                        <p class="know-value">Spring and Autumn</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </footer>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Places -->
+      <div class="row g-0">
+        <div id="places" class="col-12 py-5 bg-light">
+          <div class="container py-md-4">
+            <div class="row mb-5">
+              <div class="col-12 col-lg-8">
+                <h2 class="section-title display-5 fw-bold">
+                  Popular Places to Go in Japan
+                </h2>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div
+                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/japan2.jpg"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Osaka Castle"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-location-dot"></i>Osaka
+                    </p>
+                    <h3 class="h4 place-title">Osaka Castle</h3>
+                    <p class="place-text mb-0">
+                      A famous historical landmark known for its white exterior
+                      and golden roof. The castle is surrounded by cherry
+                      blossoms in spring, which are often associated with Japan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div
+                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/japan4.jpg"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Akihabara at night"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-location-dot"></i>Tokyo
+                    </p>
+                    <h3 class="h4 place-title">
+                      Akihabara: Tokyo's Electric Town
+                    </h3>
+                    <p class="place-text mb-0">
+                      Akihabara, known as "Akiba," is a lively Tokyo district
+                      famous for electronics and anime. It is a hub for unique
+                      subcultures, offering a colorful blend of modern
+                      technology and Japanese entertainment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div
+                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/japan5.jpg"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Cherry blossoms along a canal"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-calendar-days"></i>Spring
+                    </p>
+                    <h3 class="h4 place-title">Cherry Blossoms in Japan</h3>
+                    <p class="place-text mb-0">
+                      Cherry blossoms line a canal in Japan, lit by lanterns
+                      after dark for a magical and romantic atmosphere. Blossom
+                      season typically runs from late March to early April in
+                      many parts of the country.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div
+                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/japan6.jpeg"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Oyama Senmaida rice terraces"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-location-dot"></i>Chiba
+                    </p>
+                    <h3 class="h4 place-title">
+                      Oyama Senmaida: Rice Terraces
+                    </h3>
+                    <p class="place-text mb-0">
+                      Oyama Senmaida is a breathtaking landscape of terraced
+                      rice paddies in Chiba Prefecture. Its name refers to its
+                      roughly 1,000 small paddies, a testament to the ingenuity
+                      and hard work of Japanese farmers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="row g-0">
+        <div id="gallery" class="col-12 py-5">
+          <div class="container py-md-4">
+            <div class="row mb-5">
+              <div class="col-12 col-lg-8">
+                <h2 class="section-title display-5 fw-bold">
+                  Moments from Japan
+                </h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div
+                  id="galleryCarousel"
+                  class="carousel slide rounded-4 overflow-hidden shadow"
+                  data-bs-ride="carousel"
+                  data-bs-interval="4000"
+                >
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#galleryCarousel"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#galleryCarousel"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#galleryCarousel"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="assets/img/1.jpeg"
+                        class="carousel-img d-block w-100 object-fit-cover"
+                        alt="Japan scenery"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="assets/img/2.jpeg"
+                        class="carousel-img d-block w-100 object-fit-cover"
+                        alt="Japan scenery"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="assets/img/3.jpg"
+                        class="carousel-img d-block w-100 object-fit-cover"
+                        alt="Japan scenery"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#galleryCarousel"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Treasures -->
+      <div class="row g-0">
+        <div id="others" class="col-12 py-5 bg-light">
+          <div class="container py-md-4">
+            <div class="row mb-5">
+              <div class="col-12 col-lg-8">
+                <h2 class="section-title display-5 fw-bold">
+                  Japan's Timeless Treasures
+                </h2>
+                <p class="fs-5 text-secondary mb-0">
+                  Shirakawago's historic village, the Kerama Islands' pristine
+                  waters and the majestic Imperial Palace.
+                </p>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div
+                  class="place-card place-tall position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/4.jpg"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Shirakawago village"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-location-dot"></i>Gifu
+                    </p>
+                    <h3 class="h5 place-title">Shirakawago</h3>
+                    <p class="place-text mb-0">
+                      A historical village famous for its traditional
+                      gassho-zukuri farmhouses, designed to withstand heavy
+                      snowfall. It is a UNESCO World Heritage site known for its
+                      unique architecture.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div
+                  class="place-card place-tall position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/5.webp"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Kerama Islands"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-location-dot"></i>Okinawa
+                    </p>
+                    <h3 class="h5 place-title">Kerama Islands</h3>
+                    <p class="place-text mb-0">
+                      Located west of Okinawa's main island, the Kerama Islands
+                      are known for their coral reefs and clear blue waters, a
+                      haven for divers and beach lovers with vibrant marine
+                      life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div
+                  class="place-card place-tall position-relative overflow-hidden rounded-4"
+                >
+                  <img
+                    src="assets/img/6.jpg"
+                    class="place-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    alt="Imperial Palace in Tokyo"
+                  />
+                  <div
+                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                  >
+                    <p class="place-name">
+                      <i class="fa-solid fa-location-dot"></i>Tokyo
+                    </p>
+                    <h3 class="h5 place-title">Imperial Palace</h3>
+                    <p class="place-text mb-0">
+                      The primary residence of the Emperor of Japan. Surrounded
+                      by beautiful gardens, it stands as a symbol of Japan's
+                      monarchy and rich cultural heritage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="row g-0">
+        <footer class="col-12 site-footer text-white">
+          <div class="container">
+            <div class="row g-4 py-5">
+              <div class="col-12 col-md-5">
+                <a
+                  href="#home"
+                  class="footer-brand d-inline-flex align-items-center gap-2"
+                >
+                  <span class="sun bg-danger rounded-circle"></span>
+                  Japan
+                </a>
+                <p class="footer-text mt-3">
+                  From the serene beauty of cherry blossoms to vibrant
+                  cityscapes, Japan is a land of harmony and innovation.
+                </p>
+                <div class="footer-social d-flex">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center justify-content-center rounded-circle"
+                    aria-label="Facebook"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="d-flex align-items-center justify-content-center rounded-circle"
+                    aria-label="Instagram"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="d-flex align-items-center justify-content-center rounded-circle"
+                    aria-label="YouTube"
+                    ><i class="fa-brands fa-youtube"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3">
+                <h2 class="footer-title">Explore</h2>
+                <ul class="footer-links list-unstyled mb-0">
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#places">Places</a></li>
+                  <li><a href="#gallery">Gallery</a></li>
+                  <li><a href="#others">Treasures</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h2 class="footer-title">Destinations</h2>
+                <ul class="footer-links list-unstyled mb-0">
+                  <li>Osaka Castle</li>
+                  <li>Akihabara, Tokyo</li>
+                  <li>Shirakawago</li>
+                  <li>Kerama Islands</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-bottom text-center small">
+              &copy; <span id="footerYear">2026</span> Japan Organization. All
+              Rights Reserved.
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/index.js"></script>
-</body>
+    <script>
+      document.getElementById("footerYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
 </html>
