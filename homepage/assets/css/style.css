@@ -1,4 +1,4 @@
-/* Root */
+/* Variables */
 
 :root {
     --bg: hsl(48, 19%, 95%);
@@ -98,7 +98,7 @@ i {
     background: var(--surface);
 }
 
-/* Type */
+/* Typography */
 
 .experience-date,
 .contact-label,
@@ -240,14 +240,17 @@ i {
     gap: 16px 32px;
 }
 
+.hero-intro,
+.hero-desc {
+    min-width: 0;
+}
+
 .hero-intro {
     grid-area: intro;
-    min-width: 0;
 }
 
 .hero-desc {
     grid-area: desc;
-    min-width: 0;
 }
 
 .hero-photo {
@@ -255,7 +258,6 @@ i {
     align-self: stretch;
 }
 
-/* The photo stretches to the full height of the name, role and description */
 .profile-photo {
     position: relative;
     width: 240px;
@@ -263,8 +265,6 @@ i {
     min-height: 216px;
 }
 
-/* The image is taken out of the flow so it fills the box
-   without making the hero taller than the text */
 .profile-photo img {
     position: absolute;
     inset: 0;
@@ -308,6 +308,10 @@ i {
 
 /* Experience */
 
+.experience-date {
+    white-space: nowrap;
+}
+
 .experience-box {
     padding: 0 0 36px 28px;
 }
@@ -332,9 +336,7 @@ i {
 
 .project-deck {
     --card-w: 250px;
-    /* how much each card tucks under the next one (small = "slightly together") */
-    --card-overlap: 18px;
-    /* keeps the cards' z-index inside the deck so they stay under the navbar */
+    --card-overlap: -18px;
     isolation: isolate;
 }
 
@@ -379,9 +381,6 @@ i {
     opacity: 0.4;
 }
 
-/* One row of cards that scrolls sideways.
-   The left and right padding are equal, so the selected card
-   (card 7 at the start) can sit exactly in the middle. */
 .deck-track {
     position: relative;
     display: flex;
@@ -393,7 +392,6 @@ i {
 }
 
 .play-card {
-    /* --lift is the hover/selected raise */
     --lift: 0px;
 
     position: relative;
@@ -402,7 +400,7 @@ i {
     flex-direction: column;
     width: var(--card-w);
     aspect-ratio: 5 / 7;
-    margin-left: calc(var(--card-overlap) * -1);
+    margin-left: var(--card-overlap);
     padding: 14px 28px 14px 16px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -422,12 +420,11 @@ i {
 .play-card:hover,
 .play-card:focus-visible {
     --lift: -14px;
-    z-index: 10;
+    z-index: 5;
     border-color: var(--accent);
     outline: none;
 }
 
-/* the selected card is raised the most */
 .play-card.selected {
     --lift: -28px;
     z-index: 20;
@@ -451,7 +448,7 @@ i {
 }
 
 .card-title {
-    max-height: calc(1.3em * 2);
+    max-height: 2.6em;
     margin: 14px 0 8px;
     overflow: hidden;
     font-size: var(--fs-lg);
@@ -459,7 +456,7 @@ i {
 }
 
 .card-description {
-    max-height: calc(1.5em * 7);
+    max-height: 10.5em;
     margin: 0 0 14px;
     overflow: hidden;
     color: var(--muted);
@@ -477,18 +474,6 @@ i {
 .play-card .card-action:hover {
     background: var(--accent);
     color: var(--bg);
-}
-
-@media (max-width: 575.98px) {
-    .project-deck {
-        --card-w: 230px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .play-card {
-        transition: none;
-    }
 }
 
 /* Contact */
@@ -519,37 +504,7 @@ i {
     padding: 28px 24px 40px;
 }
 
-/* Back to top (mobile only) */
-
-.scroll-top-button {
-    position: fixed;
-    right: 16px;
-    bottom: 84px;
-    z-index: 2;
-    display: none;
-    width: 42px;
-    height: 42px;
-    background: var(--surface-glass);
-    backdrop-filter: blur(14px);
-    color: var(--accent);
-    font-size: 18px;
-    box-shadow: var(--shadow);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-    transition: opacity 0.25s, transform 0.25s, visibility 0.25s,
-                border-color 0.15s;
-}
-
-.scroll-top-button.show {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-}
-
-.scroll-top-button:hover {
-    border-color: var(--accent);
-}
+/* Responsive */
 
 /* Tablet */
 
@@ -578,17 +533,13 @@ i {
     }
 }
 
-/* Medium */
-
-@media (min-width: 768px) {
-    .experience-date {
-        white-space: nowrap;
-    }
-}
-
 /* Small */
 
 @media (max-width: 767.98px) {
+    .experience-date {
+        white-space: normal;
+    }
+
     .profile-photo {
         width: 200px;
     }
@@ -597,6 +548,10 @@ i {
 /* Mobile */
 
 @media (max-width: 575.98px) {
+    .project-deck {
+        --card-w: 230px;
+    }
+
     .site-sidebar {
         top: auto;
         bottom: 12px;
@@ -625,12 +580,7 @@ i {
         padding-bottom: 110px;
     }
 
-    .scroll-top-button {
-        display: flex;
-    }
-
     .hero-top {
-        grid-template-columns: auto 1fr;
         grid-template-areas:
             "photo intro"
             "desc desc";
@@ -668,5 +618,13 @@ i {
 
     .main-title span {
         display: inline;
+    }
+}
+
+/* Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .play-card {
+        transition: none;
     }
 }

@@ -1,3 +1,4 @@
+// Functions
 function revealSections() {
   var sections = document.getElementsByClassName("content-section");
   var bottomOfScreen = window.pageYOffset + window.innerHeight - 80;
@@ -9,5 +10,6 @@ function revealSections() {
   }
 }
 
+// Events
 window.addEventListener("scroll", revealSections);
 document.addEventListener("DOMContentLoaded", revealSections);

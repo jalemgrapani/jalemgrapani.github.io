@@ -1,3 +1,4 @@
+// Data
 var categories = [
   {
     id: "fullstack",
@@ -15,13 +16,12 @@ var categories = [
     id: "frontend",
     label: "Front-End",
     icon: "bi-window-stack",
-    description:
-      "Websites and interfaces built with HTML, CSS, and JavaScript.",
+    description: "Websites and interfaces built with HTML, CSS, and JavaScript.",
   },
 ];
 
 var projects = [
-  // Full-Stack
+  // Fullstack
   {
     title: "Easechedemy",
     category: "fullstack",
@@ -47,7 +47,7 @@ var projects = [
     },
   },
 
-  // Front-End
+  // Frontend
   {
     title: "JCO Donut POS",
     category: "frontend",
@@ -158,9 +158,10 @@ var projects = [
   },
 ];
 
-var startIndex = Math.min(6, projects.length - 1);
-var selectedIndex = startIndex;
+// Variables
+var selectedIndex = 6;
 
+// Functions
 function truncate(text, max) {
   if (text.length <= max) {
     return text;
@@ -179,8 +180,10 @@ function getCategory(id) {
 
 function createCard(project, index) {
   var category = getCategory(project.category);
-
+  var shortTitle = truncate(project.title, 40);
+  var shortDescription = truncate(project.description, 150);
   var card = document.createElement("article");
+
   card.className = "play-card";
   card.tabIndex = 0;
 
@@ -189,8 +192,8 @@ function createCard(project, index) {
     <div class="card-corner" aria-hidden="true">
       <i class="bi ` + category.icon + `"></i>
     </div>
-    <h4 class="card-title" title="` + project.title + `">` + truncate(project.title, 40) + `</h4>
-    <p class="card-description" title="` + project.description + `">` + truncate(project.description, 150) + `</p>
+    <h4 class="card-title" title="` + project.title + `">` + shortTitle + `</h4>
+    <p class="card-description" title="` + project.description + `">` + shortDescription + `</p>
     <a href="` + project.action.href + `" target="_blank" rel="noopener"
        class="card-action small-action d-inline-block text-decoration-none rounded-pill">
       <i class="bi ` + project.action.icon + `"></i>
@@ -201,6 +204,7 @@ function createCard(project, index) {
     </div>
   `;
 
+  // Events
   card.addEventListener("click", function () {
     selectProject(index, true);
   });
@@ -223,43 +227,55 @@ function createCard(project, index) {
 
 function centerCard(index, smooth) {
   var track = document.getElementById("deckTrack");
-  if (track === null || !track.children[index]) {
+  var card = track.children[index];
+  var behavior = "auto";
+
+  if (card === undefined) {
     return;
   }
 
-  var card = track.children[index];
+  if (smooth) {
+    behavior = "smooth";
+  }
+
   track.scrollTo({
     left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2,
-    behavior: smooth ? "smooth" : "auto",
+    behavior: behavior,
   });
 }
 
 function selectProject(index, shouldScroll) {
+  var track = document.getElementById("deckTrack");
+  var cards = track.children;
+
   if (index < 0 || index >= projects.length) {
     return;
   }
 
   selectedIndex = index;
 
-  var track = document.getElementById("deckTrack");
-  var cards = track.children;
-
   for (var i = 0; i < cards.length; i++) {
-    var isSelected = i === index;
-    cards[i].classList.toggle("selected", isSelected);
+    var offset = i - index;
 
-    var offset = Math.max(-4, Math.min(4, i - index));
+    if (offset > 4) {
+      offset = 4;
+    }
+    if (offset < -4) {
+      offset = -4;
+    }
+
     cards[i].style.setProperty("--offset", offset);
 
-    if (isSelected) {
+    if (i === index) {
+      cards[i].classList.add("selected");
       cards[i].setAttribute("aria-current", "true");
     } else {
+      cards[i].classList.remove("selected");
       cards[i].removeAttribute("aria-current");
     }
   }
 
-  document.getElementById("deckCount").textContent =
-    index + 1 + " / " + projects.length;
+  document.getElementById("deckCount").textContent = index + 1 + " / " + projects.length;
   document.getElementById("deckPrev").disabled = index === 0;
   document.getElementById("deckNext").disabled = index === projects.length - 1;
 
@@ -270,14 +286,13 @@ function selectProject(index, shouldScroll) {
 
 function renderProjects() {
   var grid = document.getElementById("projectGrid");
+
   if (grid === null) {
     return;
   }
 
   grid.className = "project-deck";
-
-  grid.innerHTML =
-    `
+  grid.innerHTML = `
     <div class="deck-header">
       <span class="deck-count" id="deckCount"></span>
       <div class="deck-controls">
@@ -298,6 +313,7 @@ function renderProjects() {
     track.appendChild(createCard(projects[i], i));
   }
 
+  // Events
   document.getElementById("deckPrev").addEventListener("click", function () {
     selectProject(selectedIndex - 1, true);
   });
@@ -307,23 +323,28 @@ function renderProjects() {
   });
 
   track.addEventListener("keydown", function (event) {
-    var next = null;
+    var next = selectedIndex;
+
     if (event.key === "ArrowRight") {
       next = selectedIndex + 1;
     } else if (event.key === "ArrowLeft") {
       next = selectedIndex - 1;
+    } else {
+      return;
     }
-    if (next !== null && next >= 0 && next < projects.length) {
+
+    if (next >= 0 && next < projects.length) {
       event.preventDefault();
       selectProject(next, true);
       track.children[next].focus({ preventScroll: true });
     }
   });
 
-  selectProject(startIndex, false);
-  centerCard(startIndex, false);
+  selectProject(selectedIndex, false);
+  centerCard(selectedIndex, false);
 }
 
+// Events
 document.addEventListener("DOMContentLoaded", renderProjects);
 
 window.addEventListener("load", function () {

@@ -1,27 +1,27 @@
+// Variables
 var pageRoot = document.documentElement;
 
+// Functions
 function setTheme(theme) {
   var themeButton = document.getElementById("themeButton");
   var themeIcon = document.getElementById("themeIcon");
+  var icon = "bi bi-moon-stars-fill";
+  var label = "Switch to dark mode";
+
+  if (theme === "dark") {
+    icon = "bi bi-brightness-high-fill";
+    label = "Switch to light mode";
+  }
 
   pageRoot.setAttribute("data-theme", theme);
   localStorage.setItem("portfolio-theme", theme);
-
-  if (theme === "dark") {
-    themeIcon.className = "bi bi-brightness-high-fill";
-    themeButton.setAttribute("aria-label", "Switch to light mode");
-    themeButton.setAttribute("title", "Switch to light mode");
-  } else {
-    themeIcon.className = "bi bi-moon-stars-fill";
-    themeButton.setAttribute("aria-label", "Switch to dark mode");
-    themeButton.setAttribute("title", "Switch to dark mode");
-  }
+  themeIcon.className = icon;
+  themeButton.setAttribute("aria-label", label);
+  themeButton.setAttribute("title", label);
 }
 
 function changeTheme() {
-  var currentTheme = pageRoot.getAttribute("data-theme");
-
-  if (currentTheme === "dark") {
+  if (pageRoot.getAttribute("data-theme") === "dark") {
     setTheme("light");
   } else {
     setTheme("dark");
@@ -40,4 +40,5 @@ function startTheme() {
   document.getElementById("themeButton").addEventListener("click", changeTheme);
 }
 
+// Events
 document.addEventListener("DOMContentLoaded", startTheme);

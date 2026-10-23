@@ -1,28 +1,31 @@
+// Data
 var skills = [
   {
     title: "Programming & Web Development",
-    tags: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "WordPress"]
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "WordPress"],
   },
   {
     title: "Database",
-    tags: ["MySQL"]
+    tags: ["MySQL"],
   },
   {
     title: "Development Tools",
-    tags: ["Git", "GitHub", "Visual Studio Code", "XAMPP", "Docker", "LocalWP"]
+    tags: ["Git", "GitHub", "Visual Studio Code", "XAMPP", "Docker", "LocalWP"],
   },
   {
     title: "UI/UX & Design",
-    tags: ["Figma", "Canva"]
+    tags: ["Figma", "Canva"],
   },
   {
     title: "Testing & QA",
-    tags: ["Manual QA Testing", "Functional Testing"]
-  }
+    tags: ["Manual QA Testing", "Functional Testing"],
+  },
 ];
 
+// Functions
 function displaySkills() {
   var skillsList = document.getElementById("skillsList");
+
   if (skillsList === null) {
     return;
   }
@@ -46,4 +49,5 @@ function displaySkills() {
   }
 }
 
+// Events
 document.addEventListener("DOMContentLoaded", displaySkills);
