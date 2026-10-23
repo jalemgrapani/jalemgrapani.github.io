@@ -1,11 +1,24 @@
 <!doctype html>
 <html lang="en" data-theme="light">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 — Page Not Found | Jalem Louise Grapani</title>
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/svg+xml" href="homepage/assets/img/J2.1.svg" />
+
+    <!-- Base -->
+    <script>
+      var path = location.pathname;
+      var folder = "jalemgrapani.github.io/";
+      var index = path.indexOf(folder);
+      var base = index > -1 ? path.slice(0, index + folder.length) : "/";
+
+      document.write('<base href="' + base + '" />');
+    </script>
+
+    <!-- Styles -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,6 +35,7 @@
     />
     <link rel="stylesheet" href="homepage/assets/css/style.css" />
 
+    <!-- Theme -->
     <script>
       try {
         document.documentElement.setAttribute(
@@ -33,11 +47,34 @@
       }
     </script>
 
+    <!-- Page -->
     <style>
-      .error-main {
+      /* Navigation */
+
+      .site-sidebar {
+        grid-template-columns: 1fr auto 1fr;
+      }
+
+      .sidebar-logo {
+        justify-self: start;
+      }
+
+      .sidebar-bottom {
+        justify-self: end;
+      }
+
+      .theme-button {
+        color: var(--text);
+      }
+
+      /* Content */
+
+      .error-page {
         min-height: 100vh;
-        display: flex;
-        align-items: center;
+      }
+
+      .error-main {
+        padding-top: 90px;
       }
 
       .error-main .site-container {
@@ -85,87 +122,122 @@
         color: var(--accent);
       }
 
-      @media (max-width: 991.98px) {
-        .error-main {
-          min-height: auto;
-          padding-bottom: 150px;
-        }
-
-        .site-navigation {
-          justify-content: center;
-          padding-left: 49px;
-        }
+      .action-btn-primary {
+        --bs-btn-color: var(--bg);
+        --bs-btn-bg: var(--accent);
+        --bs-btn-border-color: var(--accent);
+        --bs-btn-hover-color: var(--accent);
+        --bs-btn-hover-bg: var(--accent-soft);
+        --bs-btn-hover-border-color: var(--accent);
+        --bs-btn-active-color: var(--accent);
+        --bs-btn-active-bg: var(--accent-soft);
+        --bs-btn-active-border-color: var(--accent);
       }
 
+      /* Responsive */
+
       @media (max-width: 575.98px) {
-        .site-navigation {
-          padding-left: 47px;
+        .error-main {
+          padding-top: 0;
         }
       }
     </style>
   </head>
 
   <body>
-    <aside class="site-sidebar">
-      <a href="index.html" class="sidebar-logo" aria-label="Back to homepage">
-        <img src="homepage/assets/img/J2.svg" alt="Jalem Louise Grapani logo" />
-      </a>
-
-      <nav class="site-navigation" aria-label="Main navigation">
-        <a href="index.html"
-          ><i class="bi bi-house-door"></i><span>Home</span></a
+    <div class="container-fluid error-page d-flex flex-column">
+      <!-- Navigation -->
+      <div
+        class="site-sidebar position-fixed start-50 translate-middle-x z-3 d-grid align-items-center border rounded-pill shadow"
+      >
+        <a
+          href="index.html"
+          class="sidebar-logo d-flex align-items-center"
+          aria-label="Back to homepage"
         >
-        <a href="index.html#contact"
-          ><i class="bi bi-envelope"></i><span>Contact</span></a
+          <img
+            class="d-block"
+            src="homepage/assets/img/J2.svg"
+            alt="Jalem Louise Grapani logo"
+            height="40"
+          />
+        </a>
+
+        <nav
+          class="site-navigation d-flex align-items-center"
+          aria-label="Main navigation"
         >
-      </nav>
-
-      <div class="sidebar-bottom">
-        <button
-          type="button"
-          class="theme-button"
-          id="themeButton"
-          aria-label="Switch to dark mode"
-        >
-          <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-        </button>
-      </div>
-    </aside>
-
-    <main class="site-main error-main">
-      <div class="container site-container">
-        <div class="section-label">error / 404</div>
-        <div class="error-code" aria-hidden="true">404</div>
-        <h1 class="error-heading">Page not found</h1>
-        <p class="error-description">
-          The page you're looking for might have been removed, had its name
-          changed, or is temporarily unavailable.
-        </p>
-
-        <div class="main-buttons">
-          <a href="index.html" class="action-btn action-btn-primary"
-            >Back to home</a
+          <a
+            href="index.html"
+            class="d-flex align-items-center text-decoration-none"
+            aria-label="Home"
+            ><i class="bi bi-house-door"></i
+            ><span class="d-none d-sm-inline">Home</span></a
           >
-        </div>
+          <a
+            href="index.html#contact"
+            class="d-flex align-items-center text-decoration-none"
+            aria-label="Contact"
+            ><i class="bi bi-envelope"></i
+            ><span class="d-none d-sm-inline">Contact</span></a
+          >
+        </nav>
 
-        <div class="information-box">
-          <i class="bi bi-info-circle"></i>
-          You can return to the homepage and continue exploring my portfolio.
-        </div>
-
-        <div class="site-footer">
-          © 2026 Jalem Louise Grapani · Calamba City, PH
+        <div class="sidebar-bottom d-flex align-items-center">
+          <button
+            type="button"
+            class="theme-button d-flex align-items-center justify-content-center p-0 border rounded-circle bg-transparent"
+            id="themeButton"
+            aria-label="Switch to dark mode"
+          >
+            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+          </button>
         </div>
       </div>
-    </main>
 
+      <!-- Content -->
+      <div class="site-main error-main row align-items-center flex-grow-1">
+        <div class="col-12 site-container mx-auto px-4">
+          <div class="section-label font-monospace mb-3">error / 404</div>
+          <div class="error-code" aria-hidden="true">404</div>
+          <h1 class="error-heading">Page not found</h1>
+          <p class="error-description">
+            The page you're looking for does not exist. It may have been removed
+            or renamed, or it may be temporarily unavailable.
+          </p>
+
+          <div class="main-buttons d-flex flex-wrap gap-3 my-4">
+            <a
+              href="index.html"
+              class="action-btn action-btn-primary btn px-4 rounded-pill"
+              >Back to home</a
+            >
+          </div>
+
+          <div class="information-box p-3 mb-4">
+            <i class="bi bi-info-circle"></i>
+            You can return to the homepage and continue exploring my portfolio.
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer text-center">
+        © <span id="year">2026</span> Jalem Louise Grapani · Calamba City, PH
+      </footer>
+    </div>
+
+    <!-- Script -->
     <script>
-      const html = document.documentElement;
-      const themeButton = document.getElementById("themeButton");
-      const themeIcon = document.getElementById("themeIcon");
+      // Variables
+      var html = document.documentElement;
+      var themeButton = document.getElementById("themeButton");
+      var themeIcon = document.getElementById("themeIcon");
+      var year = document.getElementById("year");
 
+      // Functions
       function updateThemeButton() {
-        const isDark = html.getAttribute("data-theme") === "dark";
+        var isDark = html.getAttribute("data-theme") === "dark";
         themeIcon.className = isDark
           ? "bi bi-sun-fill"
           : "bi bi-moon-stars-fill";
@@ -175,17 +247,20 @@
         );
       }
 
-      themeButton.addEventListener("click", function () {
-        const next =
-          html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      function toggleTheme() {
+        var next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
         html.setAttribute("data-theme", next);
         try {
           localStorage.setItem("portfolio-theme", next);
         } catch (e) {}
         updateThemeButton();
-      });
+      }
+
+      // Events
+      themeButton.addEventListener("click", toggleTheme);
 
       updateThemeButton();
+      year.textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

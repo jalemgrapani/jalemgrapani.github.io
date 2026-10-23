@@ -1,197 +1,225 @@
-// State
+// Variables
 var total = 0;
 var receiptItems = [];
 
 // Categories
 function loadCategories() {
-    var categoriesContainer = document.getElementById("categories");
+  var categoriesContainer = document.getElementById("categories");
 
-    products.forEach(function (product, index) {
-        categoriesContainer.innerHTML += `
-      <button type="button" class="category-tab" onclick="loadProducts(` + index + `)">` + product.category + `</button>
+  products.forEach(function (product, index) {
+    categoriesContainer.innerHTML +=
+      `
+      <button type="button" class="category-tab" onclick="loadProducts(` +
+      index +
+      `)">` +
+      product.category +
+      `</button>
     `;
-    });
+  });
 }
 
 // Products
 function loadProducts(categoryIndex) {
-    var maincontainer = document.getElementById("maincontainer");
-    maincontainer.innerHTML = "";
+  var maincontainer = document.getElementById("maincontainer");
+  maincontainer.innerHTML = "";
 
-    var contents = products[categoryIndex].contents;
+  var contents = products[categoryIndex].contents;
 
-    // Cards
-    contents.forEach(function (content, contentIndex) {
-        if (content.isAvailable) {
-            maincontainer.innerHTML += `
-        <button type="button" class="product-card" onclick="addToReceipt(` + categoryIndex + `, ` + contentIndex + `)">
+  contents.forEach(function (content, contentIndex) {
+    if (content.isAvailable) {
+      maincontainer.innerHTML +=
+        `
+        <button type="button" class="product-card" onclick="addToReceipt(` +
+        categoryIndex +
+        `, ` +
+        contentIndex +
+        `)">
           <span class="product-media">
-            <img src="assets/img/` + content.image + `.png" alt="">
+            <img src="assets/img/` +
+        content.image +
+        `.png" alt="">
           </span>
-          <span class="product-name">` + content.name + `</span>
-          <span class="product-price">₱` + content.price + `</span>
+          <span class="product-name">` +
+        content.name +
+        `</span>
+          <span class="product-price">₱` +
+        content.price +
+        `</span>
         </button>
       `;
-        }
-    });
-
-    // Empty
-    if (maincontainer.innerHTML == "") {
-        maincontainer.innerHTML = `<p class="empty-note">No items available in this category.</p>`;
     }
+  });
 
-    // Tabs
-    var tabs = document.querySelectorAll(".category-tab");
-    tabs.forEach(function (tab, index) {
-        if (index == categoryIndex) {
-            tab.classList.add("is-active");
-        } else {
-            tab.classList.remove("is-active");
-        }
-    });
+  if (maincontainer.innerHTML == "") {
+    maincontainer.innerHTML = `<p class="empty-note">No items available in this category.</p>`;
+  }
+
+  var tabs = document.querySelectorAll(".category-tab");
+  tabs.forEach(function (tab, index) {
+    if (index == categoryIndex) {
+      tab.classList.add("is-active");
+    } else {
+      tab.classList.remove("is-active");
+    }
+  });
 }
 
 // Order
 function addToReceipt(categoryIndex, contentIndex) {
-    var content = products[categoryIndex].contents[contentIndex];
-    var itemFound = false;
+  var content = products[categoryIndex].contents[contentIndex];
+  var itemFound = false;
 
-    // Lookup
-    receiptItems.forEach(function (item) {
-        if (item.name == content.name) {
-            item.quantity += 1;
-            itemFound = true;
-        }
-    });
-
-    // Insert
-    if (!itemFound) {
-        receiptItems.push({ name: content.name, price: parseFloat(content.price), quantity: 1 });
+  receiptItems.forEach(function (item) {
+    if (item.name == content.name) {
+      item.quantity += 1;
+      itemFound = true;
     }
+  });
 
-    updateReceipt();
+  if (!itemFound) {
+    receiptItems.push({
+      name: content.name,
+      price: parseFloat(content.price),
+      quantity: 1,
+    });
+  }
+
+  updateReceipt();
 }
 
 // Receipt
 function updateReceipt() {
-    // Elements
-    var receiptContainer = document.getElementById("receipt");
-    var totalValueElement = document.getElementById("totalValue");
-    var itemCountElement = document.getElementById("itemCount");
-    var confirmBtn = document.getElementById("confirmBtn");
+  var receiptContainer = document.getElementById("receipt");
+  var totalValueElement = document.getElementById("totalValue");
+  var itemCountElement = document.getElementById("itemCount");
+  var confirmBtn = document.getElementById("confirmBtn");
 
-    receiptContainer.innerHTML = "";
-    total = 0;
-    var count = 0;
+  receiptContainer.innerHTML = "";
+  total = 0;
+  var count = 0;
 
-    // Rows
-    receiptItems.forEach(function (item, index) {
-        if (item.quantity > 0) {
-            var subTotal = item.price * item.quantity;
-            total += subTotal;
-            count += item.quantity;
+  receiptItems.forEach(function (item, index) {
+    if (item.quantity > 0) {
+      var subTotal = item.price * item.quantity;
+      total += subTotal;
+      count += item.quantity;
 
-            receiptContainer.innerHTML += `
+      receiptContainer.innerHTML +=
+        `
         <div class="receipt-row">
-          <span class="receipt-name">` + item.name + `</span>
-          <span class="receipt-sub">₱` + subTotal + `</span>
+          <span class="receipt-name">` +
+        item.name +
+        `</span>
+          <span class="receipt-sub">₱` +
+        subTotal +
+        `</span>
           <div class="receipt-controls">
             <div class="qty">
-              <button type="button" class="qty-btn" onclick="changeQuantity(` + index + `, -1)" aria-label="Remove one ` + item.name + `">
+              <button type="button" class="qty-btn" onclick="changeQuantity(` +
+        index +
+        `, -1)" aria-label="Remove one ` +
+        item.name +
+        `">
                 <i class="fa-solid fa-minus"></i>
               </button>
-              <span class="qty-value">` + item.quantity + `</span>
-              <button type="button" class="qty-btn" onclick="changeQuantity(` + index + `, 1)" aria-label="Add one ` + item.name + `">
+              <span class="qty-value">` +
+        item.quantity +
+        `</span>
+              <button type="button" class="qty-btn" onclick="changeQuantity(` +
+        index +
+        `, 1)" aria-label="Add one ` +
+        item.name +
+        `">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </div>
-            <span class="receipt-unit">₱` + item.price + ` each</span>
+            <span class="receipt-unit">₱` +
+        item.price +
+        ` each</span>
           </div>
-          <button type="button" class="remove-btn" onclick="changeQuantity(` + index + `, 0)" aria-label="Remove ` + item.name + ` from order">
+          <button type="button" class="remove-btn" onclick="changeQuantity(` +
+        index +
+        `, 0)" aria-label="Remove ` +
+        item.name +
+        ` from order">
             <i class="fa-solid fa-trash"></i>
           </button>
         </div>
       `;
-        }
-    });
+    }
+  });
 
-    // Empty
-    if (count == 0) {
-        receiptContainer.innerHTML = `
+  if (count == 0) {
+    receiptContainer.innerHTML = `
       <div class="receipt-empty">
         <i class="fa-solid fa-receipt"></i>
         <p>No items in this order yet</p>
         <small>Tap an item on the menu to add it.</small>
       </div>
     `;
-    }
+  }
 
-    // Total
-    totalValueElement.innerHTML = "₱" + total;
+  totalValueElement.innerHTML = "₱" + total;
 
-    // Count
-    if (count == 1) {
-        itemCountElement.innerHTML = "1 item";
-    } else {
-        itemCountElement.innerHTML = count + " items";
-    }
+  if (count == 1) {
+    itemCountElement.innerHTML = "1 item";
+  } else {
+    itemCountElement.innerHTML = count + " items";
+  }
 
-    // Button
-    confirmBtn.disabled = (count == 0);
+  confirmBtn.disabled = count == 0;
 }
 
 // Quantity
 function changeQuantity(index, change) {
-    var item = receiptItems[index];
+  var item = receiptItems[index];
 
-    if (change == 0) {
-        item.quantity = 0;
-    } else {
-        item.quantity += change;
-        if (item.quantity < 1) {
-            item.quantity = 0;
-        }
+  if (change == 0) {
+    item.quantity = 0;
+  } else {
+    item.quantity += change;
+    if (item.quantity < 1) {
+      item.quantity = 0;
     }
+  }
 
-    updateReceipt();
+  updateReceipt();
 }
 
 // Purchase
 function confirmPurchase() {
-    var hasItems = receiptItems.some(function (item) {
-        return item.quantity > 0;
-    });
+  var hasItems = receiptItems.some(function (item) {
+    return item.quantity > 0;
+  });
 
-    // Elements
-    var purchaseIcon = document.getElementById("purchaseIcon");
-    var purchaseTitle = document.getElementById("purchaseModalLabel");
-    var purchaseMessage = document.getElementById("purchaseMessage");
+  var purchaseIcon = document.getElementById("purchaseIcon");
+  var purchaseTitle = document.getElementById("purchaseModalLabel");
+  var purchaseMessage = document.getElementById("purchaseMessage");
 
-    if (hasItems) {
-        // Success
-        purchaseIcon.className = "purchase-icon is-success";
-        purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        purchaseTitle.innerText = "Purchase confirmed";
-        purchaseMessage.innerText = "₱" + total + " total. Thank you for ordering!";
-        receiptItems = [];
-        total = 0;
-        updateReceipt();
-    } else {
-        // Warning
-        purchaseIcon.className = "purchase-icon is-warning";
-        purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
-        purchaseTitle.innerText = "Nothing to purchase";
-        purchaseMessage.innerText = "Add at least one item to the order first.";
-    }
+  if (hasItems) {
+    purchaseIcon.className = "purchase-icon is-success";
+    purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+    purchaseTitle.innerText = "Purchase confirmed";
+    purchaseMessage.innerText = "₱" + total + " total. Thank you for ordering!";
+    receiptItems = [];
+    total = 0;
+    updateReceipt();
+  } else {
+    purchaseIcon.className = "purchase-icon is-warning";
+    purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
+    purchaseTitle.innerText = "Nothing to purchase";
+    purchaseMessage.innerText = "Add at least one item to the order first.";
+  }
 
-    // Modal
-    var purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
-    purchaseModal.show();
+  var purchaseModal = new bootstrap.Modal(
+    document.getElementById("purchaseModal"),
+  );
+  purchaseModal.show();
 }
 
 // Init
 loadCategories();
 if (products.length > 0) {
-    loadProducts(0);
+  loadProducts(0);
 }
 updateReceipt();

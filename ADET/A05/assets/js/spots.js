@@ -13,105 +13,121 @@ var modalTip = document.getElementById("spotModalTip");
 
 // Functions
 function getSpots(category) {
-    if (category === "All") {
-        return spots;
-    }
+  if (category === "All") {
+    return spots;
+  }
 
-    return spots.filter(function(spot) {
-        return spot.category === category;
-    });
+  return spots.filter(function (spot) {
+    return spot.category === category;
+  });
 }
 
 function displayFilters() {
-    var content = "";
+  var content = "";
 
-    categories.forEach(function(category) {
-        var count = getSpots(category.name).length;
+  categories.forEach(function (category) {
+    var count = getSpots(category.name).length;
 
-        content += `
+    content +=
+      `
             <div class="col-6 col-lg-3">
-                <button class="filter-button" type="button" data-category="${category.name}">
-                    <span class="filter-icon"><i class="fa-solid ${category.icon}"></i></span>
+                <button class="filter-button" type="button" data-category="` +
+      category.name +
+      `" onclick="selectCategory('` +
+      category.name +
+      `')">
+                    <span class="filter-icon"><i class="fa-solid ` +
+      category.icon +
+      `"></i></span>
                     <span>
-                        <span class="filter-name">${category.name}</span>
-                        <span class="filter-count">${count} spots</span>
+                        <span class="filter-name">` +
+      category.name +
+      `</span>
+                        <span class="filter-count">` +
+      count +
+      ` spots</span>
                     </span>
                 </button>
             </div>
         `;
-    });
+  });
 
-    filters.innerHTML = content;
+  filters.innerHTML = content;
 }
 
 function updateFilters() {
-    filters.querySelectorAll(".filter-button").forEach(function(button) {
-        var isActive = button.dataset.category === currentCategory;
+  var buttons = filters.querySelectorAll(".filter-button");
 
-        button.classList.toggle("active", isActive);
-        button.setAttribute("aria-pressed", isActive);
-    });
+  buttons.forEach(function (button) {
+    if (button.dataset.category === currentCategory) {
+      button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
+    } else {
+      button.classList.remove("active");
+      button.setAttribute("aria-pressed", "false");
+    }
+  });
 }
 
 function displaySpots() {
-    var items = getSpots(currentCategory);
-    var content = "";
+  var items = getSpots(currentCategory);
+  var content = "";
 
-    items.forEach(function(spot) {
-        content += `
+  items.forEach(function (spot) {
+    content +=
+      `
             <div class="col-12 col-md-6 col-lg-4">
-                <button class="spot-card" type="button" data-index="${spots.indexOf(spot)}">
-                    <img src="${spot.image}" class="spot-img" alt="${spot.name}" loading="lazy" onerror="this.classList.add('d-none')">
-                    <span class="spot-badge">${spot.badge}</span>
+                <button class="spot-card" type="button" onclick="showModal(` +
+      spots.indexOf(spot) +
+      `)">
+                    <img src="` +
+      spot.image +
+      `" class="spot-img" alt="` +
+      spot.name +
+      `" loading="lazy" onerror="this.classList.add('d-none')">
+                    <span class="spot-badge">` +
+      spot.badge +
+      `</span>
                     <span class="spot-info d-block">
-                        <span class="spot-place d-block">${spot.place}</span>
-                        <span class="spot-title d-block">${spot.name}</span>
+                        <span class="spot-place d-block">` +
+      spot.place +
+      `</span>
+                        <span class="spot-title d-block">` +
+      spot.name +
+      `</span>
                     </span>
                 </button>
             </div>
         `;
-    });
+  });
 
-    spotGrid.innerHTML = content;
-    spotCount.textContent = "Showing " + items.length + " of " + spots.length + " spots";
+  spotGrid.innerHTML = content;
+  spotCount.textContent =
+    "Showing " + items.length + " of " + spots.length + " spots";
+}
+
+function selectCategory(category) {
+  currentCategory = category;
+  updateFilters();
+  displaySpots();
 }
 
 function showModal(index) {
-    var spot = spots[index];
+  var spot = spots[index];
 
-    modalImg.classList.remove("d-none");
-    modalImg.src = spot.image;
-    modalImg.alt = spot.name;
-    modalPlace.textContent = spot.place + " · " + spot.badge;
-    modalTitle.textContent = spot.name;
-    modalText.textContent = spot.text;
-    modalTip.textContent = spot.tip;
+  modalImg.classList.remove("d-none");
+  modalImg.src = spot.image;
+  modalImg.alt = spot.name;
+  modalPlace.textContent = spot.place + " · " + spot.badge;
+  modalTitle.textContent = spot.name;
+  modalText.textContent = spot.text;
+  modalTip.textContent = spot.tip;
 
-    spotModal.show();
+  spotModal.show();
 }
 
-// Setup
+// Start
 spotTotal.textContent = spots.length;
-
 displayFilters();
 updateFilters();
 displaySpots();
-
-// Events
-filters.addEventListener("click", function(event) {
-    var button = event.target.closest(".filter-button");
-
-    if (button) {
-        currentCategory = button.dataset.category;
-        updateFilters();
-        displaySpots();
-    }
-});
-
-spotGrid.addEventListener("click", function(event) {
-    var card = event.target.closest(".spot-card");
-
-    if (card) {
-        showModal(card.dataset.index);
-    }
-});
