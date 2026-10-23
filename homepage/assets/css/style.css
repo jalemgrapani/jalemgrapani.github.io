@@ -98,6 +98,12 @@ i {
     background: var(--surface);
 }
 
+.info-label {
+    color: var(--muted);
+    font-family: var(--bs-body-font-family);
+    font-weight: 500;
+}
+
 /* Typography */
 
 .experience-date,
@@ -124,6 +130,7 @@ i {
 }
 
 .skill-title,
+.info-label,
 .site-navigation a {
     font-size: var(--fs-md);
 }
