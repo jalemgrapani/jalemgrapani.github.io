@@ -1,6 +1,8 @@
+// State
 var categories = [];
 var products = [];
 
+// API
 const getAllCategories = async () => {
     fetch("http://localhost/Jalem's Portfolio/jalemgrapani.github.io/ADET/A04/BE/categories.php"
     )
@@ -12,6 +14,7 @@ const getAllCategories = async () => {
 }
 
 const getAllProducts = async (categoryID) => {
+    // Request
     const categoryData = {
         categoryID: categoryID
     };
@@ -30,11 +33,14 @@ const getAllProducts = async (categoryID) => {
         });
 }
 
+// Start
 getAllCategories();
 
+// Order
 var total = 0;
 var receiptItems = [];
 
+// Categories
 function loadCategories() {
     var categoriesContainer = document.getElementById("categories");
 
@@ -44,14 +50,14 @@ function loadCategories() {
     `;
     });
 
-    // open the first category by default
+    // Default
     if (categories.length > 0) {
         getAllProducts(categories[0].categoryID);
         setActiveCategory(categoriesContainer.firstElementChild);
     }
 }
 
-// highlight the selected category tab
+// Active
 function setActiveCategory(selectedTab) {
     var tabs = document.querySelectorAll(".category-tab");
 
@@ -62,10 +68,12 @@ function setActiveCategory(selectedTab) {
     selectedTab.classList.add("is-active");
 }
 
+// Products
 function loadProducts() {
     var maincontainer = document.getElementById("maincontainer");
     maincontainer.innerHTML = "";
 
+    // Cards
     products.forEach(function (product, index) {
         if (product.isAvailable) {
             maincontainer.innerHTML += `
@@ -80,15 +88,18 @@ function loadProducts() {
         }
     });
 
+    // Empty
     if (maincontainer.innerHTML == "") {
         maincontainer.innerHTML = `<p class="empty-note">No items available in this category.</p>`;
     }
 }
 
+// Cart
 function addToReceipt(index) {
     var product = products[index];
     var itemFound = false;
 
+    // Lookup
     receiptItems.forEach(function (item) {
         if (item.name == product.name) {
             item.quantity += 1;
@@ -96,6 +107,7 @@ function addToReceipt(index) {
         }
     });
 
+    // Insert
     if (!itemFound) {
         receiptItems.push({ name: product.name, price: parseFloat(product.price), quantity: 1 });
     }
@@ -103,7 +115,9 @@ function addToReceipt(index) {
     updateReceipt();
 }
 
+// Receipt
 function updateReceipt() {
+    // Elements
     var receiptContainer = document.getElementById("receipt");
     var totalValueElement = document.getElementById("totalValue");
     var itemCountElement = document.getElementById("itemCount");
@@ -113,6 +127,7 @@ function updateReceipt() {
     total = 0;
     var count = 0;
 
+    // Rows
     receiptItems.forEach(function (item, index) {
         if (item.quantity > 0) {
             var subTotal = item.price * item.quantity;
@@ -143,7 +158,7 @@ function updateReceipt() {
         }
     });
 
-    // nothing in the order yet
+    // Empty
     if (count == 0) {
         receiptContainer.innerHTML = `
       <div class="receipt-empty">
@@ -154,18 +169,21 @@ function updateReceipt() {
     `;
     }
 
+    // Total
     totalValueElement.innerHTML = "₱" + total;
 
+    // Count
     if (count == 1) {
         itemCountElement.innerHTML = "1 item";
     } else {
         itemCountElement.innerHTML = count + " items";
     }
 
-    // Confirm button only works when there is something to buy
+    // Button
     confirmBtn.disabled = (count == 0);
 }
 
+// Quantity
 function changeQuantity(index, change) {
     var item = receiptItems[index];
 
@@ -181,16 +199,19 @@ function changeQuantity(index, change) {
     updateReceipt();
 }
 
+// Purchase
 function confirmPurchase() {
     var hasItems = receiptItems.some(function (item) {
         return item.quantity > 0;
     });
 
+    // Elements
     var purchaseIcon = document.getElementById("purchaseIcon");
     var purchaseTitle = document.getElementById("purchaseModalLabel");
     var purchaseMessage = document.getElementById("purchaseMessage");
 
     if (hasItems) {
+        // Success
         purchaseIcon.className = "purchase-icon is-success";
         purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
         purchaseTitle.innerText = "Purchase confirmed";
@@ -199,14 +220,17 @@ function confirmPurchase() {
         total = 0;
         updateReceipt();
     } else {
+        // Warning
         purchaseIcon.className = "purchase-icon is-warning";
         purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
         purchaseTitle.innerText = "Nothing to purchase";
         purchaseMessage.innerText = "Add at least one item to the order first.";
     }
 
+    // Modal
     var purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
     purchaseModal.show();
 }
 
+// Init
 updateReceipt();

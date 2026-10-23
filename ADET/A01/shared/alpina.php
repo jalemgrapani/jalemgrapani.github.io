@@ -1,4 +1,5 @@
 <?php
+// Data
 $alpinaWatches = [
   ["img/alpina1.webp", "Alpina Alpiner 4 Automatic AL-525NS4AQ6B", "₱ 106,000.00"],
   ["img/alpina2.webp", "Alpina Alpiner Extreme Regulator Automatic AL-650DGN4AE6", "₱ 166,000.00"],
@@ -9,21 +10,25 @@ $alpinaWatches = [
 ];
 ?>
 
+<!-- Products -->
 <div class="row g-3 g-md-4">
   <?php foreach ($alpinaWatches as $watch) { ?>
-    <div class="col-12 col-sm-6 col-md-4">
+    <div class="col-6 col-md-4">
       <div class="card product-card h-100">
-        <img src="assets/<?php echo $watch[0]; ?>" class="card-img-top" alt="<?php echo $watch[1]; ?>">
-        <div class="card-body d-flex flex-column">
-          <p class="product-name" title="<?php echo $watch[1]; ?>"><?php echo $watch[1]; ?></p>
+        <div class="product-image">
+          <img src="assets/<?php echo $watch[0]; ?>" class="product-img" alt="<?php echo $watch[1]; ?>" loading="lazy">
+        </div>
+        <div class="card-body product-body d-flex flex-column">
+          <h2 class="product-name" title="<?php echo $watch[1]; ?>"><?php echo $watch[1]; ?></h2>
           <div class="product-price"><?php echo $watch[2]; ?></div>
-          <a href="#" class="btn btn-shop mt-auto w-100">Shop now</a>
+          <a href="#" class="btn btn-shop w-100 mt-auto" aria-label="Shop <?php echo $watch[1]; ?>">Shop Now</a>
         </div>
       </div>
     </div>
   <?php } ?>
 </div>
 
-<div class="text-center mt-4">
-  <a href="#" class="viewAll btn">View All</a>
+<!-- Action -->
+<div class="text-center mt-5">
+  <a href="#" class="btn viewAll">View All Alpina Watches</a>
 </div>

@@ -1,0 +1,72 @@
+/* Hero */
+
+.hero-carousel {
+    margin-bottom: 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Collections */
+
+.collection-card {
+    background: var(--white);
+    border: 1px solid var(--brushed);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.collection-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.collection-img:hover {
+    transform: scale(1.04);
+}
+
+/* History */
+
+.history-banner {
+    margin-top: 3.5rem;
+    padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 3rem);
+    background: var(--dial);
+    border-radius: 20px;
+    color: var(--white);
+    text-align: center;
+}
+
+.historyHeading {
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+.historyText {
+    max-width: 62ch;
+    margin: 0 auto;
+    color: var(--footer-text);
+    line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+    .history-banner {
+        text-align: left;
+    }
+
+    .historyText {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-carousel {
+        margin-bottom: 2rem;
+    }
+}

@@ -1,23 +1,36 @@
+/* Variables */
+
 :root {
-    --bg: #fdf1e1;
-    --surface: #ffffff;
-    --surface-soft: #fff6ea;
-    --ink: #3b1608;
-    --ink-soft: #7b5236;
-    --brown: #68200d;
-    --orange: #f47c20;
-    --orange-hover: #e06d12;
-    --orange-deep: #c65d0a;
-    --orange-tint: #ffe4c8;
-    --gold: #d4af37;
-    --danger: #b3261e;
-    --line: rgba(104, 32, 13, 0.12);
-    --line-strong: rgba(104, 32, 13, 0.28);
+    --bg: hsl(34, 88%, 94%);
+    --surface: hsl(0, 0%, 100%);
+    --surface-soft: hsl(34, 100%, 96%);
+    --ink: hsl(16, 76%, 13%);
+    --ink-soft: hsl(24, 39%, 35%);
+    --brown: hsl(13, 78%, 23%);
+    --orange: hsl(26, 91%, 54%);
+    --orange-hover: hsl(27, 85%, 47%);
+    --orange-deep: hsl(26, 90%, 41%);
+    --orange-tint: hsl(31, 100%, 89%);
+    --danger: hsl(3, 71%, 41%);
+    --danger-tint: hsl(6, 83%, 95%);
+    --success: hsl(123, 46%, 34%);
+    --cream: hsl(35, 100%, 95%);
+    --disabled-bg: hsl(34, 48%, 88%);
+    --disabled-text: hsl(28, 20%, 47%);
+    --scrollbar: hsl(30, 41%, 63%);
+
+    --line: hsla(13, 78%, 23%, 0.12);
+    --line-strong: hsla(13, 78%, 23%, 0.28);
+    --shadow: hsla(13, 78%, 23%, 0.35);
+
     --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
     --font-display: "Cal Sans", "Poppins", system-ui, sans-serif;
+
     --radius-lg: 18px;
     --radius-md: 12px;
 }
+
+/* Reset */
 
 *,
 *::before,
@@ -27,11 +40,11 @@
     padding: 0;
 }
 
+/* Base */
+
 html {
     scroll-behavior: smooth;
 }
-
-/* Base */
 
 html,
 body {
@@ -53,16 +66,52 @@ button {
     outline-offset: 2px;
 }
 
-/* Layout  */
+/* Typography */
+
+.title,
+.receipt-title,
+.purchase-heading,
+.total-row strong {
+    color: var(--brown);
+    font-family: var(--font-display);
+    font-weight: 400;
+}
+
+.product-price,
+.receipt-sub,
+.qty-value,
+.total-row strong {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Layout */
 
 .pos {
-    height: 100vh;
-    height: 100dvh;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    height: 100vh;
+    height: 100dvh;
     padding: 14px 20px 20px;
 }
+
+.pos-body {
+    --bs-gutter-x: 22px;
+    --bs-gutter-y: 0;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    min-height: 0;
+}
+
+.pos-body .receipt-col {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    width: calc(clamp(330px, 28vw, 400px) + var(--bs-gutter-x));
+    min-height: 0;
+}
+
+/* Header */
 
 .pos-header {
     --bs-gutter-x: 14px;
@@ -76,47 +125,27 @@ button {
 }
 
 .title {
-    margin: 0;
-    color: var(--brown);
-    font-family: var(--font-display);
     font-size: clamp(1.35rem, 2.2vw, 1.85rem);
-    font-weight: 400;
     letter-spacing: 0.02em;
     line-height: 1.1;
 }
 
-.pos-body {
-    --bs-gutter-x: 22px;
-    --bs-gutter-y: 0;
-    flex: 1 1 auto;
-    min-height: 0;
-    flex-wrap: nowrap;
-}
-
-.pos-body .receipt-col {
-    flex: 0 0 auto;
-    width: calc(clamp(330px, 28vw, 400px) + var(--bs-gutter-x));
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-}
+/* Menu */
 
 .menu {
-    min-width: 0;
-    min-height: 0;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    min-width: 0;
+    min-height: 0;
 }
 
-/* Categories */
-
 .categories {
-    flex: 0 0 auto;
     display: flex;
+    flex: 0 0 auto;
     gap: 8px;
-    overflow-x: auto;
     padding: 2px 2px 8px;
+    overflow-x: auto;
 }
 
 .category-tab {
@@ -143,20 +172,20 @@ button {
 .category-tab.is-active {
     background: var(--brown);
     border-color: var(--brown);
-    color: #fff4e5;
+    color: var(--cream);
 }
 
 /* Products */
 
 .product-grid {
-    flex: 1 1 auto;
-    min-height: 0;
     display: grid;
+    flex: 1 1 auto;
     grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     grid-auto-rows: max-content;
     gap: 14px;
-    overflow-y: auto;
+    min-height: 0;
     padding: 2px 8px 8px 2px;
+    overflow-y: auto;
 }
 
 .product-card {
@@ -176,12 +205,6 @@ button {
         transform 0.1s ease;
 }
 
-@media (hover: hover) {
-    .product-card:hover {
-        border-color: var(--orange);
-    }
-}
-
 .product-card:active {
     transform: scale(0.97);
     border-color: var(--orange);
@@ -191,7 +214,7 @@ button {
     display: grid;
     place-items: center;
     aspect-ratio: 1 / 1;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     background: var(--surface-soft);
     overflow: hidden;
 }
@@ -219,7 +242,6 @@ button {
     background: var(--orange-tint);
     color: var(--brown);
     font-weight: 600;
-    font-variant-numeric: tabular-nums;
 }
 
 .empty-note {
@@ -232,20 +254,20 @@ button {
 /* Receipt */
 
 .receipt-panel {
-    flex: 1 1 auto;
-    min-height: 0;
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
+    min-height: 0;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     background: var(--surface);
-    box-shadow: 0 12px 32px -16px rgba(104, 32, 13, 0.35);
+    box-shadow: 0 12px 32px -16px var(--shadow);
     overflow: hidden;
 }
 
 .receipt-head {
-    flex: 0 0 auto;
     display: flex;
+    flex: 0 0 auto;
     align-items: baseline;
     justify-content: space-between;
     padding: 18px 20px 14px;
@@ -253,11 +275,7 @@ button {
 }
 
 .receipt-title {
-    margin: 0;
-    color: var(--brown);
-    font-family: var(--font-display);
     font-size: 1.35rem;
-    font-weight: 400;
 }
 
 .receipt-count {
@@ -295,7 +313,6 @@ button {
 .receipt-sub {
     font-weight: 600;
     text-align: right;
-    font-variant-numeric: tabular-nums;
 }
 
 .receipt-controls {
@@ -322,7 +339,6 @@ button {
     place-items: center;
     width: 36px;
     height: 36px;
-    padding: 0;
     border: 0;
     border-radius: 50%;
     background: transparent;
@@ -345,7 +361,7 @@ button {
 }
 
 .remove-btn:hover {
-    background: #fdecea;
+    background: var(--danger-tint);
     color: var(--danger);
 }
 
@@ -354,17 +370,16 @@ button {
     color: var(--ink);
     font-weight: 600;
     text-align: center;
-    font-variant-numeric: tabular-nums;
 }
 
 .receipt-empty {
-    height: 100%;
-    min-height: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 6px;
+    height: 100%;
+    min-height: 160px;
     padding: 24px;
     color: var(--ink-soft);
     text-align: center;
@@ -377,7 +392,6 @@ button {
 }
 
 .receipt-empty p {
-    margin: 0;
     color: var(--ink);
     font-weight: 600;
 }
@@ -406,17 +420,14 @@ button {
 }
 
 .total-row strong {
-    color: var(--brown);
-    font-family: var(--font-display);
     font-size: 2rem;
-    font-weight: 400;
     line-height: 1;
-    font-variant-numeric: tabular-nums;
 }
 
 /* Buttons */
 
 .pos-btn {
+    width: 100%;
     padding: 14px 20px;
     border: 0;
     border-radius: var(--radius-md);
@@ -433,17 +444,18 @@ button {
     color: var(--ink);
 }
 
-.pos-btn-primary:hover:not(:disabled) {
+.pos-btn-primary:hover {
     background: var(--orange-hover);
 }
 
-.pos-btn:active:not(:disabled) {
+.pos-btn:active {
     transform: scale(0.98);
 }
 
 .pos-btn:disabled {
-    background: #efe2d1;
-    color: #8f7660;
+    background: var(--disabled-bg);
+    color: var(--disabled-text);
+    transform: none;
     cursor: not-allowed;
 }
 
@@ -466,7 +478,7 @@ button {
 }
 
 .purchase-icon.is-success {
-    color: #2e7d32;
+    color: var(--success);
 }
 
 .purchase-icon.is-warning {
@@ -474,15 +486,12 @@ button {
 }
 
 .purchase-heading {
-    margin: 0 0 4px;
-    color: var(--brown);
-    font-family: var(--font-display);
+    margin-bottom: 4px;
     font-size: 1.4rem;
-    font-weight: 400;
 }
 
 .purchase-message {
-    margin: 0 0 22px;
+    margin-bottom: 22px;
     color: var(--ink-soft);
 }
 
@@ -492,10 +501,16 @@ button {
 .product-grid,
 .receipt-list {
     scrollbar-width: thin;
-    scrollbar-color: #c7a17a transparent;
+    scrollbar-color: var(--scrollbar) transparent;
 }
 
-/* Tablet */
+/* Responsive */
+
+@media (hover: hover) {
+    .product-card:hover {
+        border-color: var(--orange);
+    }
+}
 
 @media (max-width: 991.98px) {
     .pos {
@@ -514,8 +529,6 @@ button {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
 }
-
-/* Mobile */
 
 @media (max-width: 719.98px) {
     html,
@@ -542,6 +555,15 @@ button {
         margin-top: 16px;
     }
 
+    .categories {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        padding-top: 10px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+    }
+
     .product-grid {
         flex: none;
         padding-right: 2px;
@@ -553,8 +575,6 @@ button {
         max-height: 45dvh;
     }
 }
-
-/* Reduced Motion */
 
 @media (prefers-reduced-motion: reduce) {
     *,

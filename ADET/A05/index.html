@@ -1,212 +1,297 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WanderPalawan | Tourist Spots in Palawan</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plan your Palawan trip: lagoons, beaches, shipwreck dives, the Underground River and when to go.">
+    <title>WanderPalawan | Tourist Spots in Palawan</title>
+
+    <!-- Vendor -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">WanderPalawan</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#spots">Tourist Spots</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tips">Travel Tips</a></li>
-          <li class="nav-item"><a class="nav-link" href="#season">When to Go</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7">
-          <h1>Discover the beauty of Palawan</h1>
-          <p class="my-4">Hidden lagoons, limestone cliffs, WWII shipwrecks and a river that runs underground. Find your next adventure in the Philippines' last frontier.</p>
-          <a href="#spots" class="btn btn-main me-2 mb-2">Browse tourist spots</a>
-          <a href="#tips" class="btn btn-ghost mb-2">Travel tips</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="facts">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-4 mb-3 mb-md-4"><div class="fact"><div class="fact-number">2</div>UNESCO sites</div></div>
-        <div class="col-12 col-md-4 mb-3 mb-md-4"><div class="fact"><div class="fact-number">12</div>Spots to explore</div></div>
-        <div class="col-12 col-md-4 mb-3 mb-md-4"><div class="fact"><div class="fact-number">Nov to May</div>Best months to visit</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="spots" class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">Famous tourist spots</h2>
-          <div class="title-bar"></div>
-          <p class="section-sub">Swipe through lagoons, beaches, lakes and dive sites from El Nido to Coron.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <iframe src="embed.html" title="Famous tourist spots in Palawan" width="100%" class="spots-frame border-0" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-tint">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">Featured destinations</h2>
-          <div class="title-bar"></div>
-          <p class="section-sub">Three places that show why Palawan tops so many best-island lists.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="spot-card">
-            <div class="img-wrap">
-              <img src="assets/img/underground.jpg" class="spot-img short" alt="Puerto Princesa Underground River">
-              <span class="spot-badge">Puerto Princesa</span>
-              <span class="view-overlay">EXPLORE</span>
+    <div class="container-fluid px-0">
+        <!-- Header -->
+        <div class="row g-0">
+            <div class="col-12">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="#home">WanderPalawan</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="menu">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#spots">Tourist Spots</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tips">Travel Tips</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#season">When to Go</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
-            <div class="spot-body">
-              <h3 class="spot-title">Puerto Princesa Underground River</h3>
-              <p class="spot-text">A UNESCO World Heritage Site with limestone karst scenery and a navigable underground river.</p>
-            </div>
-          </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="spot-card">
-            <div class="img-wrap">
-              <img src="assets/img/elnido.jpg" class="spot-img short" alt="El Nido">
-              <span class="spot-badge">North Palawan</span>
-              <span class="view-overlay">EXPLORE</span>
-            </div>
-            <div class="spot-body">
-              <h3 class="spot-title">El Nido</h3>
-              <p class="spot-text">Towering limestone cliffs, clear water and vibrant marine life for island hopping and diving.</p>
-            </div>
-          </div>
+
+        <!-- Hero -->
+        <div class="row g-0">
+            <header id="home" class="col-12 hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-9">
+                            <h1 class="hero-title">Lagoons, Shipwrecks and a River Inside a Mountain</h1>
+                            <p class="hero-text my-4">
+                                Palawan packs limestone cliffs, WWII wrecks and two UNESCO sites into one island. Pick a spot and plan your trip.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#spots" class="btn btn-main">Browse Tourist Spots</a>
+                                <a href="#season" class="btn btn-ghost">Find the Best Month</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 pt-lg-4 g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="hero-fact">
+                                <div class="hero-fact-number">2</div>
+                                <div>UNESCO World Heritage Sites</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="hero-fact">
+                                <div class="hero-fact-number" id="spotTotal">18</div>
+                                <div>Spots to Explore</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="hero-fact">
+                                <div class="hero-fact-number">Nov to May</div>
+                                <div>Best Months to Visit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="spot-card">
-            <div class="img-wrap">
-              <img src="assets/img/tubbataha.jpg" class="spot-img short" alt="Tubbataha Reef">
-              <span class="spot-badge">Sulu Sea</span>
-              <span class="view-overlay">EXPLORE</span>
-            </div>
-            <div class="spot-body">
-              <h3 class="spot-title">Tubbataha Reef</h3>
-              <p class="spot-text">A UNESCO marine site and diver's paradise with dense coral reefs and abundant sea life.</p>
-            </div>
-          </div>
+
+        <!-- Spots -->
+        <div class="row g-0">
+            <main id="spots" class="col-12 section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-7">
+                            <h2 class="section-title">Where Do You Want to Go?</h2>
+                            <p class="section-text">
+                                Filter by the kind of trip you want, then tap a spot for details and a local tip.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div id="filters" class="row g-2 g-lg-3" role="group" aria-label="Filter tourist spots"></div>
+                            <p id="spotCount" class="spot-count mt-3 mb-4" aria-live="polite"></p>
+                        </div>
+                    </div>
+
+                    <div id="spotGrid" class="row g-3 g-lg-4"></div>
+                </div>
+            </main>
         </div>
-      </div>
+
+        <!-- Tips -->
+        <div class="row g-0">
+            <section id="tips" class="col-12 section section-tint">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                            <h2 class="section-title">Sort These Out Before You Go</h2>
+                            <p class="section-text">Four things that make the trip smoother.</p>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="tip">
+                                <div class="tip-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+                                <div>
+                                    <h3 class="tip-title">Getting There</h3>
+                                    <p class="tip-text">Fly into Puerto Princesa, Busuanga (Coron) or El Nido, then continue by van or boat.</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <div class="tip-icon"><i class="fa-solid fa-sun"></i></div>
+                                <div>
+                                    <h3 class="tip-title">Pack for Sun and Sea</h3>
+                                    <p class="tip-text">Bring reef-safe sunscreen, a dry bag, water shoes and a hat.</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <div class="tip-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+                                <div>
+                                    <h3 class="tip-title">Bring cash</h3>
+                                    <p class="tip-text">ATMs are limited outside town centers. Carry pesos for entrance and eco fees.</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <div class="tip-icon"><i class="fa-solid fa-leaf"></i></div>
+                                <div>
+                                    <h3 class="tip-title">Protect the Reefs</h3>
+                                    <p class="tip-text">Do not touch corals or feed fish, and take all your trash with you.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Season -->
+        <div class="row g-0">
+            <section id="season" class="col-12 section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-7">
+                            <h2 class="section-title">When to go</h2>
+                            <p class="section-text">Palawan has a dry season and a wet season. Your month decides the weather, the crowds and the prices.</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="month-strip" aria-label="Palawan seasons by month">
+                                <div class="month month-cool" data-season="Cool and Dry">Jan</div>
+                                <div class="month month-cool" data-season="Cool and Dry">Feb</div>
+                                <div class="month month-hot" data-season="Hot and Clear">Mar</div>
+                                <div class="month month-hot" data-season="Hot and Clear">Apr</div>
+                                <div class="month month-hot" data-season="Hot and Clear">May</div>
+                                <div class="month month-rainy" data-season="Rainy Season">Jun</div>
+                                <div class="month month-rainy" data-season="Rainy Season">Jul</div>
+                                <div class="month month-rainy" data-season="Rainy Season">Aug</div>
+                                <div class="month month-rainy" data-season="Rainy Season">Sep</div>
+                                <div class="month month-rainy" data-season="Rainy Season">Oct</div>
+                                <div class="month month-cool" data-season="Cool and Dry">Nov</div>
+                                <div class="month month-cool" data-season="Cool and Dry">Dec</div>
+                            </div>
+                            <p id="seasonNow" class="season-now mt-3 mb-0"></p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 g-4">
+                        <div class="col-12 col-md-4">
+                            <h3 class="season-title"><span class="season-dot month-cool"></span>Nov to Feb: Cool and Dry</h3>
+                            <p class="season-text">Great for beaches and island hopping. This is the busiest time of year.</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h3 class="season-title"><span class="season-dot month-hot"></span>Mar to May: Hot and Clear</h3>
+                            <p class="season-text">The calmest, clearest seas. Ideal for diving and lagoon tours.</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h3 class="season-title"><span class="season-dot month-rainy"></span>Jun to Oct: Rainy Season</h3>
+                            <p class="season-text">Fewer crowds and lower prices, but boat trips may be canceled in rough weather.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="row g-0">
+            <footer class="col-12 footer">
+                <div class="container">
+                    <div class="row py-5">
+                        <div class="col-12 col-md-5 mb-4">
+                            <a href="#home" class="footer-brand">WanderPalawan</a>
+                            <p class="footer-text">Your guide to the lagoons, reefs and limestone cliffs of the Philippines' last frontier.</p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3 mb-4">
+                            <h2 class="footer-title">Explore</h2>
+                            <ul class="list-unstyled">
+                                <li class="footer-item"><a href="#home" class="footer-link">Home</a></li>
+                                <li class="footer-item"><a href="#spots" class="footer-link">Tourist Spots</a></li>
+                                <li class="footer-item"><a href="#tips" class="footer-link">Travel Tips</a></li>
+                                <li class="footer-item"><a href="#season" class="footer-link">When to Go</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-4 mb-4">
+                            <h2 class="footer-title">Top Destinations</h2>
+                            <ul class="list-unstyled">
+                                <li class="footer-item">Puerto Princesa Underground River</li>
+                                <li class="footer-item">El Nido</li>
+                                <li class="footer-item">Coron</li>
+                                <li class="footer-item">Tubbataha Reef</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom text-center">
+                        &copy; <span id="footerYear">2026</span> WanderPalawan. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
-  </section>
 
-  <section id="tips" class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">Travel tips</h2>
-          <div class="title-bar"></div>
-          <p class="section-sub">A few things to sort out before you go.</p>
+    <!-- Top -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="spotModal" tabindex="-1" aria-labelledby="spotModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content spot-modal">
+                <img id="spotModalImg" src="" alt="" class="spot-modal-img" onerror="this.classList.add('d-none')">
+                <div class="modal-header">
+                    <div>
+                        <p id="spotModalPlace" class="spot-place mb-1"></p>
+                        <h3 class="modal-title" id="spotModalTitle"></h3>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p id="spotModalText"></p>
+                    <p class="mb-0"><strong>Tip:</strong> <span id="spotModalTip"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-main" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="tip-card">
-            <div class="tip-icon"><i class="fa-solid fa-plane-arrival"></i></div>
-            <h3 class="h5">Getting there</h3>
-            <p class="text-secondary mb-0">Fly into Puerto Princesa, Busuanga (Coron) or El Nido, then continue by van or boat.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="tip-card">
-            <div class="tip-icon"><i class="fa-solid fa-sun"></i></div>
-            <h3 class="h5">Pack for sun and sea</h3>
-            <p class="text-secondary mb-0">Bring reef-safe sunscreen, a dry bag, water shoes and a hat.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="tip-card">
-            <div class="tip-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
-            <h3 class="h5">Bring cash</h3>
-            <p class="text-secondary mb-0">ATMs are limited outside town centers. Carry pesos for entrance and eco fees.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="tip-card">
-            <div class="tip-icon"><i class="fa-solid fa-leaf"></i></div>
-            <h3 class="h5">Protect the reefs</h3>
-            <p class="text-secondary mb-0">Do not touch corals or feed fish, and take all your trash with you.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <section id="season" class="section section-sand">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">When to go</h2>
-          <div class="title-bar"></div>
-          <p class="section-sub">Timing shapes your trip: Palawan has a dry season and a wet season.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4 mb-4">
-          <div class="season-card">
-            <p class="season-months">Nov to Feb</p>
-            <h3 class="h5">Cool and dry</h3>
-            <p class="text-secondary mb-0">Great for beaches and island hopping. This is the busiest time of year.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="season-card">
-            <p class="season-months">Mar to May</p>
-            <h3 class="h5">Hot and clear</h3>
-            <p class="text-secondary mb-0">The calmest, clearest seas. Ideal for diving and lagoon tours.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="season-card">
-            <p class="season-months">Jun to Oct</p>
-            <h3 class="h5">Rainy season</h3>
-            <p class="text-secondary mb-0">Fewer crowds and lower prices, but boat trips may be canceled in rough weather.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p class="mb-1">&copy; 2025 WanderPalawan. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/spots.js"></script>
+    <script src="assets/js/season.js"></script>
+    <script>
+        // Setup
+        document.getElementById("footerYear").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

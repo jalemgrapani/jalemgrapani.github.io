@@ -1,10 +1,13 @@
 function revealSections() {
-  for (var i = 0; i < navSections.length; i++) {
-    if (navSections[i].getBoundingClientRect().top < window.innerHeight - 80) {
-      navSections[i].classList.add("visible");
+  var sections = document.getElementsByClassName("content-section");
+  var bottomOfScreen = window.pageYOffset + window.innerHeight - 80;
+
+  for (var i = 0; i < sections.length; i++) {
+    if (sections[i].offsetTop < bottomOfScreen) {
+      sections[i].classList.add("visible");
     }
   }
 }
 
 window.addEventListener("scroll", revealSections);
-revealSections();
+document.addEventListener("DOMContentLoaded", revealSections);

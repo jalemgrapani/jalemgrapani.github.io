@@ -1,89 +1,128 @@
-// One list of dishes instead of two parallel arrays that had to stay in sync
-const dishes = [
-  { name: "Adobong Baboy", img: "adobongBaboy.jpg" },
-  { name: "Arroz Caldo", img: "arrozCaldo.jpg" },
-  { name: "Bicol Express", img: "bicolExpress.jpg" },
-  { name: "Kaldereta", img: "kaldereta.jpg" },
-  { name: "Kare-kare", img: "karekare.jpg" },
-  { name: "Lechong Kawali", img: "lechonKawali.jpg" },
-  { name: "Lumpia", img: "lumpia.jpg" },
-  { name: "Pinakbet", img: "pinakbet.jpg" },
-  { name: "Sinigang na Baboy", img: "sinigang.jpg" },
-  { name: "Sisig", img: "sisig.jpg" },
-  { name: "Tinolang Manok", img: "tinola.jpg" },
-  { name: "Sinigang na Hipon", img: "sinigang2.jpg" },
-  { name: "Laing", img: "laing.jpg" },
-  { name: "Ginataang Alimango", img: "ginataangAlimango.jpg" },
-  { name: "Lechong Paksiw", img: "lechongPaksiw.jpg" },
-  { name: "Beef Bulalo", img: "beefBulalo.jpg" },
+// Data
+var dishes = [
+    { name: "Adobong Baboy", img: "adobongBaboy.jpg", type: "Pork" },
+    { name: "Arroz Caldo", img: "arrozCaldo.jpg", type: "Chicken" },
+    { name: "Bicol Express", img: "bicolExpress.jpg", type: "Pork" },
+    { name: "Kaldereta", img: "kaldereta.jpg", type: "Beef" },
+    { name: "Kare-Kare", img: "karekare.jpg", type: "Beef" },
+    { name: "Lechon Kawali", img: "lechonKawali.jpg", type: "Pork" },
+    { name: "Lumpia", img: "lumpia.jpg", type: "Pork" },
+    { name: "Pinakbet", img: "pinakbet.jpg", type: "Vegetable" },
+    { name: "Sinigang na Baboy", img: "sinigang.jpg", type: "Pork" },
+    { name: "Sisig", img: "sisig.jpg", type: "Pork" },
+    { name: "Tinolang Manok", img: "tinola.jpg", type: "Chicken" },
+    { name: "Sinigang na Hipon", img: "sinigang2.jpg", type: "Seafood" },
+    { name: "Laing", img: "laing.jpg", type: "Vegetable" },
+    { name: "Ginataang Alimango", img: "ginataangAlimango.jpg", type: "Seafood" },
+    { name: "Lechon Paksiw", img: "lechongPaksiw.jpg", type: "Pork" },
+    { name: "Beef Bulalo", img: "beefBulalo.jpg", type: "Beef" }
 ];
 
-// Build one card's markup
-function dishCard(dish) {
-  return `
-    <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-      <div class="card dish-card h-100 border-0 shadow-sm overflow-hidden">
-        <img src="assets/img/${dish.img}" class="card-img-top" alt="${dish.name}" loading="lazy">
-        <div class="card-body">
-          <h5 class="card-title text-center mb-0">${dish.name}</h5>
-        </div>
-      </div>
-    </div>`;
+// Variables
+var cardContainer = document.getElementById("cardContainer");
+var filters = document.getElementById("filters");
+var dishModal = new bootstrap.Modal(document.getElementById("dishModal"));
+var modalImg = document.getElementById("dishModalImg");
+var modalTitle = document.getElementById("dishModalTitle");
+
+// Functions
+function countDishes(type) {
+    if (type === "All") {
+        return dishes.length;
+    }
+
+    return dishes.filter(function(dish) {
+        return dish.type === type;
+    }).length;
 }
 
-// Render all cards in one go
-const cardContainer = document.getElementById("cardContainer");
-cardContainer.innerHTML = dishes.map(dishCard).join("");
+function showFilters() {
+    var types = ["All"];
+    var content = "";
 
-// Show or hide the social icons
-const socialLinks = document.getElementById("socialLinks");
-const btnExpand = document.getElementById("btnExpand");
+    dishes.forEach(function(dish) {
+        if (types.indexOf(dish.type) === -1) {
+            types.push(dish.type);
+        }
+    });
 
-function expandContent() {
-  const isHidden = socialLinks.classList.toggle("d-none");
-  btnExpand.textContent = isHidden ? "Follow us" : "Close";
+    types.forEach(function(type) {
+        var pressed = type === "All" ? "true" : "false";
+        var total = countDishes(type);
+        var label = total === 1 ? " dish" : " dishes";
+
+        content += `
+            <button type="button" class="filter-tab" data-type="${type}" aria-pressed="${pressed}" aria-label="${type}, ${total + label}">
+                <span class="filter-name">${type}</span>
+                <span class="count">${total}</span>
+            </button>
+        `;
+    });
+
+    filters.innerHTML = content;
 }
 
-// Light / dark mode
-const body = document.getElementById("body");
-const btnColor = document.getElementById("btnColor");
-const themeIcon = document.getElementById("themeIcon");
+function showDishes(type) {
+    var content = "";
 
-function setColorMode(mode) {
-  body.setAttribute("data-bs-theme", mode);
+    dishes.forEach(function(dish) {
+        if (type !== "All" && dish.type !== type) {
+            return;
+        }
 
-  const isDark = mode === "dark";
-  themeIcon.className = isDark ? "bi bi-sun-fill" : "bi bi-moon-stars-fill";
-  btnColor.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+        content += `
+            <li>
+                <button type="button" class="dish" data-img="${dish.img}" data-name="${dish.name}">
+                    <span class="dish-photo">
+                        <img src="assets/img/${dish.img}" alt="${dish.name}" loading="lazy">
+                    </span>
+                    <span class="dish-name">${dish.name}</span>
+                    <span class="dish-type">${dish.type}</span>
+                </button>
+            </li>
+        `;
+    });
 
-  try {
-    localStorage.setItem("colorMode", mode);
-  } catch (e) {
-    // Storage can be unavailable (private browsing, etc.) - not critical
-  }
+    cardContainer.innerHTML = content;
 }
 
-function changeColorMode() {
-  const current = body.getAttribute("data-bs-theme");
-  setColorMode(current === "light" ? "dark" : "light");
+function showModal() {
+    dishModal.show();
 }
 
-// Start with the saved choice, or the device setting
-let savedMode = null;
-try {
-  savedMode = localStorage.getItem("colorMode");
-} catch (e) {
-  // Storage can be unavailable - fall back to device preference below
-}
+// Events
+filters.addEventListener("click", function(event) {
+    var tab = event.target.closest(".filter-tab");
+    var tabs = filters.querySelectorAll(".filter-tab");
 
-if (savedMode) {
-  setColorMode(savedMode);
-} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  setColorMode("dark");
-}
+    if (!tab) {
+        return;
+    }
 
-// Close the mobile menu after clicking a link
-const menu = document.getElementById("navbarNavDropdown");
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => menu.classList.remove("show"));
+    tabs.forEach(function(otherTab) {
+        otherTab.setAttribute("aria-pressed", otherTab === tab ? "true" : "false");
+    });
+
+    showDishes(tab.dataset.type);
 });
+
+cardContainer.addEventListener("click", function(event) {
+    var tile = event.target.closest(".dish");
+
+    if (!tile) {
+        return;
+    }
+
+    modalTitle.textContent = tile.dataset.name;
+    modalImg.alt = tile.dataset.name;
+
+    // Show the modal after the image loads
+    modalImg.removeAttribute("src");
+    modalImg.onload = showModal;
+    modalImg.onerror = showModal;
+    modalImg.src = "assets/img/" + tile.dataset.img;
+});
+
+// Start
+showFilters();
+showDishes("All");

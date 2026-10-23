@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -9,22 +10,36 @@
       href="../../../homepage/assets/img/JL Logo.svg"
     />
     <title>Our Stores | Watch Store</title>
+
+    <!-- Vendor -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../assets/css/stores.css" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/stores.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
   </head>
 
   <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a
@@ -92,6 +107,63 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4 py-5">
+          <div class="col-12 col-md-5">
+            <a href="../index.html" class="footer-brand">The Watch Store</a>
+            <p class="footer-text">
+              Quality timepieces at affordable prices, for every style.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h2 class="footer-title">Explore</h2>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="outlet.html">Outlet</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="stores.html">Our Stores</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <h2 class="footer-title">Brands</h2>
+            <ul class="footer-links">
+              <li>Tissot</li>
+              <li>Alpina</li>
+              <li>Tommy Hilfiger</li>
+              <li>Calvin Klein</li>
+              <li>Coach</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom text-center">
+          &copy; <span id="footerYear">2026</span> The Watch Store. All rights
+          reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      document.getElementById("footerYear").textContent =
+        new Date().getFullYear();
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

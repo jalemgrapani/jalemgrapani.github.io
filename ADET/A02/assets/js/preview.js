@@ -1,3 +1,4 @@
+// Data
 var watches = [
     {
         img: "tommy1.png",
@@ -31,16 +32,23 @@ var watches = [
     }
 ];
 
+// Variables
 var container = document.getElementById("watchCardContainer");
+var content = "";
 
-for (var i = 0; i < watches.length; i++) {
-    container.innerHTML += `<div class="col-xl-4 col-md-4 col-sm-6 col-12 d-flex justify-content-center">
-        <div class="cardBrand rounded-5 d-flex flex-column align-items-center my-2" style="height: auto; max-width: 300px; overflow: hidden;">
-            <img src="../assets/img/` + watches[i].img + `" class="watchImage3 p-3 img-fluid">
-            <div class="card-description text-center p-3">
-                <h6 class="text-dark">` + watches[i].title + `</h6>
-                <h4 class="price text-dark">` + watches[i].price + `</h4>
+// Display
+watches.forEach(watch => {
+    content += `
+        <div class="col">
+            <div class="cardBrand rounded-5 d-flex flex-column align-items-center">
+                <img src="../assets/img/` + watch.img + `" class="watchImage3 p-3 img-fluid" alt="` + watch.title + `">
+                <div class="card-description text-center p-3">
+                    <h6 class="text-dark">` + watch.title + `</h6>
+                    <h4 class="price text-dark">` + watch.price + `</h4>
+                </div>
             </div>
         </div>
-    </div>`;
-}
+    `;
+});
+
+container.innerHTML = content;

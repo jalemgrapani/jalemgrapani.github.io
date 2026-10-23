@@ -1,12 +1,18 @@
+/* Variables */
+
 :root {
-    --steel: #DDE2E6;
-    --ink: #0C1B33;
-    --ink-soft: #4F5C72;
-    --red: #B30F29;
-    --line: rgba(12, 27, 51, 0.18);
-    --line-strong: rgba(12, 27, 51, 0.55);
+    --steel: hsl(207, 15%, 88%);
+    --ink: hsl(217, 62%, 12%);
+    --red: hsl(350, 85%, 38%);
+    --line: hsla(217, 62%, 12%, 0.18);
     --radius: 20px;
+    --gap: clamp(0.5rem, 1vw, 0.75rem);
+
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Lato", sans-serif;
 }
+
+/* Reset */
 
 *,
 *::before,
@@ -16,16 +22,21 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* Base */
 
+html,
 body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    height: 100vh;
+    height: 100dvh;
     background-color: var(--steel);
     color: var(--ink);
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-body);
 }
 
 a {
@@ -33,6 +44,7 @@ a {
 }
 
 /* Navbar */
+
 .navbar {
     background-color: var(--steel) !important;
     border-bottom: 1px solid var(--line);
@@ -43,31 +55,42 @@ a {
 }
 
 .navbar-toggler {
-    border: 1px solid var(--line);
+    border: 1px solid var(--ink);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px var(--ink);
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 1.5em;
+    height: 2px;
+    margin: calc(0.75em - 1px) 0;
+    background-image: none;
+    background-color: var(--ink);
+    box-shadow: 0 -0.5em 0 var(--ink), 0 0.5em 0 var(--ink);
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
 }
 
 .brand-wordmark {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
     color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
     line-height: 1.1;
 }
 
-.brand-wordmark span {
-    display: block;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 0.78rem;
-    color: var(--ink-soft);
-}
-
 .nav-link {
-    color: var(--ink) !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
     margin: 0 0.6rem;
     border-bottom: 2px solid transparent;
+    color: var(--ink) !important;
+    font-family: var(--font-heading);
+    font-weight: 600;
 }
 
 .nav-link:hover,
@@ -75,17 +98,64 @@ a {
     border-bottom-color: var(--red);
 }
 
-/* Grid */
+/* Layout */
+
+.page,
 .bento-row {
-    padding: 1.5rem 0;
+    flex: 1 1 0;
+    min-height: 0;
+}
+
+.page {
+    padding: var(--gap);
+    overflow: hidden;
+}
+
+.bento-row {
+    --bs-gutter-x: var(--gap);
+    --bs-gutter-y: 0;
+    flex-direction: column;
+    row-gap: var(--gap);
+}
+
+.bento-col,
+.small-pair,
+.b-card {
+    min-width: 0;
+    min-height: 0;
+}
+
+.bento-col,
+.small-pair {
+    gap: var(--gap);
+}
+
+.col-main {
+    order: -1;
+    flex: 3 1 0;
+    flex-direction: column;
+}
+
+.col-side {
+    flex: 1.4 1 0;
+    flex-direction: row;
+}
+
+.col-small {
+    flex: 1 1 0;
+    flex-direction: row;
+}
+
+.small-pair {
+    flex: 2 1 0;
 }
 
 /* Cards */
+
 .b-card {
-    position: relative;
+    flex: 1 1 0;
+    padding: clamp(0.4rem, 1.8vh, 1.5rem);
     overflow: hidden;
-    background: transparent;
-    color: var(--ink);
     border: 1px solid var(--line);
     border-radius: var(--radius);
 }
@@ -94,132 +164,64 @@ a {
     border-color: var(--ink);
 }
 
+.showcase-card {
+    flex: 3 1 0;
+    gap: clamp(0.25rem, 1vh, 1rem);
+}
+
+.duo-card {
+    flex: 2 1 0;
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.divider {
+    flex: 0 0 1px;
+    width: 1px;
+    height: 70%;
+    background: var(--line);
+}
+
+/* Images */
+
 .b-card img {
     mix-blend-mode: multiply;
 }
 
-.hero-card {
-    height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
+.hero-card img,
+.showcase-gif,
+.showcase-watch,
+.duo-card img,
+.single-card img {
+    object-fit: contain;
 }
 
 .hero-card img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
 }
 
-/* Tagline */
-.tagline-card {
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 1.5rem;
-}
-
-.eyebrow-rule {
-    display: none;
-}
-
-.tagline {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 1.8rem;
-    line-height: 1.2;
-    color: var(--ink);
-    margin: 0;
-    padding-left: 1rem;
-    border-left: 4px solid var(--red);
-}
-
-.tagline strong {
-    display: block;
-    font-weight: 800;
-}
-
-/* Showcase */
-.showcase-card {
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    gap: 1rem;
+.showcase-card img {
+    min-height: 0;
 }
 
 .showcase-gif {
     max-height: 180px;
-    object-fit: contain;
     border-radius: 14px;
 }
 
 .showcase-watch {
     max-height: 260px;
     max-width: 85%;
-    object-fit: contain;
-}
-
-/* Buttons */
-.accent-button {
-    background: var(--ink);
-    color: var(--steel);
-    border: 1px solid var(--ink);
-    border-radius: 999px;
-    padding: 0.75rem 1.9rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-}
-
-.accent-button:hover {
-    background: transparent;
-    color: var(--ink);
-}
-
-/* Duo */
-.duo-card {
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem;
 }
 
 .duo-card img {
-    max-height: 190px;
+    max-height: min(clamp(150px, 40vw, 190px), 100%);
     max-width: 44%;
-    object-fit: contain;
-}
-
-.divider {
-    width: 1px;
-    height: 70%;
-    background: var(--line);
-}
-
-/* Single */
-.single-card {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
 }
 
 .single-card img {
     max-width: 80%;
     max-height: 85%;
-    object-fit: contain;
-}
-
-/* Photo */
-.photo-card {
-    height: 220px;
 }
 
 .photo-card img {
@@ -229,41 +231,130 @@ a {
     mix-blend-mode: normal;
 }
 
+/* Text */
+
+.tagline {
+    --tag-vw: 3.4vw;
+    min-width: 0;
+    padding-left: 0.75rem;
+    border-left: 4px solid var(--red);
+    font-family: var(--font-heading);
+    font-size: clamp(0.8rem, min(3.2vh, var(--tag-vw)), 1.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.tagline strong {
+    display: block;
+}
+
+/* Buttons */
+
+.showcase-card a {
+    flex: 0 0 auto;
+}
+
+.accent-button {
+    padding: 0.4em 1.5em;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--steel);
+    font-family: var(--font-heading);
+    font-size: clamp(0.72rem, min(2.2vh, 3vw), 1rem);
+    font-weight: 600;
+}
+
+.accent-button:hover {
+    background: transparent;
+    color: var(--ink);
+}
+
 /* Responsive */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .tagline {
-        font-size: 1.4rem;
+
+@media (max-width: 330px) {
+    .col-small {
+        flex: 2 1 0;
+        flex-direction: column;
+    }
+
+    .small-pair {
+        flex: 1 1 0;
+        flex-direction: row;
     }
 }
 
-@media (max-width: 991px) {
-    .showcase-card {
-        min-height: 420px;
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0.75rem;
+        z-index: 1030;
+        width: fit-content;
+        min-width: 10rem;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        border: 0;
+        border-radius: 0 0 0.75rem 0.75rem;
+        box-shadow: 0 0.6rem 1.5rem hsla(217, 62%, 12%, 0.15);
     }
 
-    .tagline {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+    .navbar-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: flex-end;
+        text-align: right;
     }
 }
 
-@media (max-width: 576px) {
-    .hero-card {
-        height: 260px;
+@media (max-height: 500px) {
+    .navbar {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
     }
 
-    .duo-card {
-        height: auto;
-        padding: 1.25rem;
+    .brand-logo {
+        width: 34px;
+        height: 34px;
     }
 
-    .duo-card img {
-        max-height: 150px;
+    .brand-wordmark {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px), (orientation: landscape) {
+    .bento-row {
+        flex-direction: row;
     }
 
-    .container-fluid {
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .bento-col {
+        order: 0;
+        flex: 0 0 auto;
+        flex-direction: column;
+    }
+
+    .col-side,
+    .col-small {
+        width: 25%;
+    }
+
+    .col-main {
+        width: 50%;
+    }
+
+    .small-pair {
+        flex-direction: column;
+    }
+
+    .hero-card,
+    .tagline-card {
+        flex-grow: 3;
+    }
+
+    .tagline {
+        --tag-vw: 2.2vw;
     }
 }

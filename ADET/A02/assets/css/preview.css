@@ -1,12 +1,20 @@
+/* Variables */
+
 :root {
-    --steel: #DDE2E6;
-    --ink: #0C1B33;
-    --ink-soft: #4F5C72;
-    --red: #B30F29;
-    --line: rgba(12, 27, 51, 0.18);
-    --line-strong: rgba(12, 27, 51, 0.55);
+    --steel: hsl(207, 15%, 88%);
+    --ink: hsl(217, 62%, 12%);
+    --ink-soft: hsl(218, 18%, 38%);
+    --red: hsl(350, 85%, 38%);
+    --white: hsl(0, 0%, 100%);
+    --line: hsla(217, 62%, 12%, 0.18);
+    --line-strong: hsla(217, 62%, 12%, 0.55);
     --radius: 20px;
+
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Lato", sans-serif;
 }
+
+/* Reset */
 
 *,
 *::before,
@@ -16,16 +24,16 @@
     padding: 0;
 }
 
+/* Base */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Base */
-
 body {
     background-color: var(--steel);
     color: var(--ink);
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-body);
 }
 
 section {
@@ -33,14 +41,28 @@ section {
     padding-bottom: 3.5rem;
 }
 
+.info-section,
+.more-section,
+.reviews-section {
+    border-top: 1px solid var(--line);
+}
+
 .title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
     color: var(--ink);
+    font-family: var(--font-heading);
+    font-weight: 800;
     line-height: 1.2;
 }
 
+.watchImage,
+.watchImage3,
+.gallery-item img {
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
 /* Navbar */
+
 .navbar {
     background-color: var(--steel) !important;
     border-bottom: 1px solid var(--line);
@@ -51,31 +73,45 @@ section {
 }
 
 .navbar-toggler {
-    border: 1px solid var(--line);
+    border: 1px solid var(--ink);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px var(--ink);
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 1.5em;
+    height: 2px;
+    margin: calc(0.75em - 1px) 0;
+    background-image: none;
+    background-color: var(--ink);
+    box-shadow: 0 -0.5em 0 var(--ink), 0 0.5em 0 var(--ink);
 }
 
 .brand-wordmark {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
     color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
     line-height: 1.1;
 }
 
 .brand-wordmark span {
     display: block;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 0.78rem;
     color: var(--ink-soft);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 400;
 }
 
 .nav-link {
-    color: var(--ink) !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
     margin: 0 0.6rem;
     border-bottom: 2px solid transparent;
+    color: var(--ink) !important;
+    font-family: var(--font-heading);
+    font-weight: 600;
 }
 
 .nav-link:hover,
@@ -83,10 +119,11 @@ section {
     border-bottom-color: var(--red);
 }
 
-/* Back Link */
+/* Back */
+
 .back-link {
     color: var(--ink-soft);
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-heading);
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -96,40 +133,36 @@ section {
 }
 
 /* Product */
+
 .product-hero {
     padding-top: 1.5rem;
 }
 
+.product-hero .title {
+    font-size: 1.5rem;
+}
+
 .product-image-card {
-    background: transparent;
-    border-radius: var(--radius);
-    border: 1px solid var(--line);
-    overflow: hidden;
-    max-width: 380px;
-    width: 100%;
-    padding: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    padding: 2.5rem;
+    overflow: hidden;
 }
 
 .watchImage {
-    object-fit: contain;
-    max-height: 400px;
     width: 100%;
-    mix-blend-mode: multiply;
+    max-height: 400px;
 }
 
 .product-brand {
-    font-family: "Montserrat", sans-serif;
+    margin-bottom: 0.4rem;
+    color: var(--ink-soft);
+    font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--ink-soft);
-    margin-bottom: 0.4rem;
-}
-
-.product-hero .title {
-    font-size: 1.5rem;
 }
 
 .rating-row {
@@ -137,13 +170,12 @@ section {
     align-items: center;
     gap: 0.6rem;
     margin: 0.75rem 0 1.25rem;
-    font-size: 0.9rem;
     color: var(--ink-soft);
+    font-size: 0.9rem;
 }
 
 .rating-row .fa-star {
     color: var(--ink);
-    font-size: 0.9rem;
 }
 
 .rating-row a {
@@ -152,22 +184,23 @@ section {
 }
 
 .product-summary {
-    font-size: 1.02rem;
-    line-height: 1.7;
-    color: var(--ink-soft);
     max-width: 75dvh;
     margin-bottom: 1.75rem;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    line-height: 1.7;
 }
 
 .price {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 2.2rem;
-    color: var(--red);
     margin-bottom: 1.5rem;
+    color: var(--red);
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
 }
 
 /* Buttons */
+
 .button-row {
     display: flex;
     flex-wrap: wrap;
@@ -177,10 +210,10 @@ section {
 .add-button,
 .review-button,
 .buy-button {
-    border-radius: 999px;
-    padding: 0.75rem 1.9rem;
     min-width: 190px;
-    font-family: "Montserrat", sans-serif;
+    padding: 0.75rem 1.9rem;
+    border-radius: 999px;
+    font-family: var(--font-heading);
     font-weight: 600;
 }
 
@@ -192,7 +225,6 @@ section {
 
 .add-button:hover {
     background: transparent;
-    border-color: var(--ink);
     color: var(--ink);
 }
 
@@ -204,8 +236,7 @@ section {
 
 .buy-button:hover {
     background: var(--red);
-    border-color: var(--red);
-    color: #fff;
+    color: var(--white);
 }
 
 .review-button {
@@ -220,16 +251,17 @@ section {
     color: var(--steel);
 }
 
-/* Specifications */
-.info-section {
-    border-top: 1px solid var(--line);
+.btn-wide {
+    width: 200px;
 }
 
+/* Specs */
+
 .info-heading {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 1.4rem;
     margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
 }
 
 .spec-list {
@@ -250,13 +282,13 @@ section {
 }
 
 .spec-value {
-    color: var(--ink);
-    font-weight: 700;
     font-size: 0.95rem;
+    font-weight: 700;
     text-align: right;
 }
 
 /* Gallery */
+
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -264,47 +296,49 @@ section {
 }
 
 .gallery-item {
-    background: transparent;
-    border-radius: var(--radius);
-    border: 1px solid var(--line);
-    padding: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 220px;
     margin: 0;
+    padding: 1.5rem;
+    background: transparent;
 }
 
 .gallery-item img {
-    max-height: 100%;
     max-width: 100%;
-    object-fit: contain;
-    mix-blend-mode: multiply;
+    max-height: 100%;
 }
 
 .gallery-caption {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
     margin-top: 0.6rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-align: center;
 }
 
-/* Recommendations */
-.more-section {
-    border-top: 1px solid var(--line);
-}
+/* More */
 
 .more-section .title {
     font-size: 1.6rem;
 }
 
+.more-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .cardBrand {
     position: relative;
     top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     background: transparent;
     border: 1px solid var(--line);
     border-radius: var(--radius) !important;
-    width: 100%;
+    transition: top 0.2s ease, border-color 0.2s ease;
 }
 
 .cardBrand:hover {
@@ -313,37 +347,39 @@ section {
 }
 
 .watchImage3 {
-    mix-blend-mode: multiply;
     max-height: 240px;
-    object-fit: contain;
+}
+
+.card-description {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-description h6 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    line-height: 1.45;
     color: var(--ink) !important;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.45;
 }
 
 .card-description .price {
-    font-size: 1.25rem;
-    color: var(--ink) !important;
     margin-bottom: 0;
+    color: var(--ink) !important;
+    font-size: 1.25rem;
 }
 
 /* Reviews */
-.reviews-section {
-    border-top: 1px solid var(--line);
-}
 
 .review-panel {
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 3rem 2rem;
-    text-align: center;
     max-width: 560px;
     margin: 0 auto;
+    padding: 3rem 2rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-align: center;
 }
 
 .review-panel .fa-star {
@@ -352,24 +388,42 @@ section {
 }
 
 .review-panel h5 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: var(--ink);
     margin: 1rem 0 1.5rem;
-}
-
-.btn-wide {
-    width: 200px;
+    font-family: var(--font-heading);
+    font-weight: 700;
 }
 
 /* Responsive */
+
 @media (min-width: 768px) {
     .product-hero .title {
         font-size: 1.9rem;
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0.75rem;
+        z-index: 1030;
+        width: fit-content;
+        min-width: 10rem;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        border: 0;
+        border-radius: 0 0 0.75rem 0.75rem;
+        box-shadow: 0 0.6rem 1.5rem hsla(217, 62%, 12%, 0.15);
+    }
+
+    .navbar-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: flex-end;
+        text-align: right;
+    }
+
     .gallery-item {
         height: 190px;
     }
@@ -379,6 +433,11 @@ section {
     section {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
+    }
+
+    .product-image-card {
+        max-width: 280px;
+        padding: 1.5rem;
     }
 
     .price {
@@ -395,13 +454,14 @@ section {
         min-width: 0;
     }
 
-    .product-image-card {
-        max-width: 280px;
-        padding: 1.5rem;
-    }
-
     .gallery-item {
         height: 160px;
         padding: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .more-grid {
+        max-width: 320px;
     }
 }

@@ -1,248 +1,312 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Mulish:wght@400;500;600;700&display=swap");
+/* Variables */
 
 :root {
-  --navy-950: #05070c;
-  --navy-900: #0a1428;
-  --navy-800: #0f1c33;
-  --card-bg: #1e2328;
-  --card-border: #2c3540;
-  --gold-500: #c89b3c;
-  --gold-300: #e8c877;
-  --parchment: #f0e6d2;
-  --ink-300: #a7a2ab;
-  --ink-500: #786f8c;
-  --cyan-400: #0ac8b9;
-  --font-display: "Cinzel", "Georgia", serif;
-  --font-body: "Mulish", "Segoe UI", sans-serif;
+    --background: hsl(222, 40%, 6%);
+    --surface: hsl(222, 32%, 10%);
+    --surface-alt: hsl(222, 38%, 8%);
+    --border: hsl(222, 20%, 20%);
+    --text: hsl(40, 20%, 92%);
+    --muted: hsl(220, 12%, 68%);
+    --gold: hsl(42, 62%, 56%);
+    --gold-dark: hsl(38, 70%, 44%);
+    --cyan: hsl(188, 75%, 52%);
+    --heading-font: "Cinzel", serif;
+    --body-font: "Mulish", sans-serif;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Types */
+
+.fighter-bg {
+    --type: hsl(24, 54%, 51%);
 }
 
-html {
-  scroll-behavior: smooth;
+.mage-bg {
+    --type: hsl(209, 63%, 61%);
+}
+
+.assassin-bg {
+    --type: hsl(339, 49%, 55%);
+}
+
+.tank-bg {
+    --type: hsl(140, 19%, 46%);
+}
+
+.support-bg {
+    --type: hsl(253, 48%, 69%);
+}
+
+.marksman-bg {
+    --type: hsl(171, 43%, 52%);
 }
 
 /* Base */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  background: var(--navy-950);
-  color: var(--parchment);
-  font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--body-font);
+    line-height: 1.7;
 }
 
-a {
-  color: inherit;
+.container-fluid {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
-/* Navbar */
+a:focus-visible,
+.btn:focus-visible,
+.page-link:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+/* Navigation */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 4.5rem;
+    background: hsla(222, 40%, 6%, 0.94);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.4);
+}
 
 .navbar {
-  height: 64px;
-  background: rgba(10, 20, 40, 0.92) !important;
-  border-bottom: 1px solid var(--gold-500);
-  backdrop-filter: blur(6px);
+    min-height: 4.5rem;
+    padding: 0;
+    background: transparent;
+}
+
+@supports (animation-timeline: scroll()) {
+    .navbar {
+        animation: navbar-fill 1ms linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 80px;
+    }
+}
+
+@keyframes navbar-fill {
+    from {
+        background: hsla(222, 40%, 6%, 0);
+        backdrop-filter: blur(0);
+        border-bottom: 1px solid transparent;
+        box-shadow: none;
+    }
+
+    to {
+        background: hsla(222, 40%, 6%, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid hsl(222, 20%, 20%);
+        box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.4);
+    }
 }
 
 .navbar-brand {
-  color: var(--parchment) !important;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--gold);
 }
 
-.navbar-brand img {
-  margin-right: 10px;
+.navbar-brand:hover {
+    color: var(--text);
 }
 
-.navbar-nav .nav-link {
-  position: relative;
-  padding: 12px 18px;
-  color: var(--ink-300) !important;
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: color 0.25s ease;
+.nav-link {
+    color: var(--text);
+    font-weight: 600;
 }
 
-.navbar-nav .nav-link:hover {
-  color: var(--gold-300) !important;
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold);
 }
 
-.navbar-nav .nav-link.active {
-  color: var(--gold-500) !important;
-  font-weight: 700;
+/* Buttons */
+
+.btn-gold {
+    background: linear-gradient(hsl(44, 70%, 62%), var(--gold-dark));
+    border: 0;
+    color: hsl(222, 40%, 8%);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.navbar-nav .nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 6px;
-  height: 2px;
-  background: var(--gold-500);
+.btn-gold:hover {
+    color: hsl(222, 40%, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsla(42, 62%, 56%, 0.35);
 }
 
-.navbar-toggler {
-  border-color: var(--gold-500);
+.btn-outline-light {
+    border-color: hsla(40, 20%, 92%, 0.5);
 }
 
-/* Hero */
+.btn-outline-light:hover {
+    background: var(--text);
+    color: var(--background);
+}
+
+/* Headers */
 
 .hero-banner {
-  height: 62vh;
-  min-height: 380px;
-  display: flex;
-  align-items: flex-end;
-  background-image:
-    linear-gradient(180deg, rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.92)),
-    url("../img/lol2.jpg");
-  background-size: cover;
-  background-position: center 30%;
+    z-index: 2;
+    min-height: max(420px, 70vh);
+    padding-top: 6rem;
+    background-color: var(--background);
+    background-image: linear-gradient(180deg, hsla(222, 40%, 6%, 0.45), var(--background)), url("../img/lol2.jpg");
+    background-position: center 30%;
+    background-size: cover;
 }
 
-.hero-banner .container {
-  padding-bottom: 4.5rem;
+.hero-content {
+    padding-bottom: 4.5rem;
 }
 
-.hero-eyebrow {
-  margin-bottom: 0.75rem;
-  color: var(--gold-500);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.page-hero {
+    z-index: 2;
+    padding: 9rem 0 4rem;
+    background: radial-gradient(ellipse at top, hsl(215, 55%, 16%), var(--background) 65%);
 }
 
 .hero-title {
-  margin: 0 0 0.75rem;
-  color: var(--parchment);
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.05;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.1;
+    text-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.6);
 }
 
-.hero-subtitle {
-  max-width: 540px;
-  margin: 0;
-  color: var(--ink-300);
-  font-size: clamp(1rem, 2vw, 1.2rem);
+.hero-lead {
+    max-width: 34rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--muted);
 }
 
-/* Cards */
-
-.section-label {
-  margin-bottom: 0.5rem;
-  color: var(--gold-500);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-align: center;
-  text-transform: uppercase;
+.page-hero .hero-lead {
+    margin: 0 auto;
 }
 
-.card {
-  position: relative;
-  padding: 2.25rem 2rem;
-  overflow: hidden;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 4px;
-  color: var(--parchment);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+/* Content */
+
+.section {
+    padding: 4rem 0 5rem;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
-  opacity: 0;
-  transition: opacity 0.25s ease;
+.section-title {
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    color: var(--gold);
 }
 
-.card:hover {
-  border-color: var(--gold-500);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-  transform: translateY(-4px);
+.body-text {
+    max-width: 40rem;
+    color: var(--muted);
+    font-size: 1.05rem;
 }
 
-.card:hover::before {
-  opacity: 1;
+/* Explore cards */
+
+.explore-card {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: var(--text);
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
-.card a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
+.explore-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 14px 30px hsla(0, 0%, 0%, 0.5);
+    transform: translateY(-4px);
 }
 
-.h3 {
-  margin: 0;
-  color: var(--parchment);
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: color 0.25s ease;
+.explore-icon {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: var(--cyan);
 }
 
-.card a:hover .h3 {
-  color: var(--gold-300);
+.explore-title {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 1.4rem;
 }
 
-.card-hint {
-  display: block;
-  margin-top: 0.5rem;
-  color: var(--ink-300);
-  font-size: 0.9rem;
+.explore-text {
+    color: var(--muted);
+}
+
+.explore-hint {
+    font-weight: 700;
+    color: var(--gold);
 }
 
 /* Footer */
 
 .site-footer {
-  padding: 1.75rem 0;
-  border-top: 1px solid var(--card-border);
-  color: var(--ink-500);
-  font-size: 0.85rem;
-  text-align: center;
+    padding: 1.75rem 0;
+    background: hsl(222, 45%, 4%);
+    border-top: 1px solid var(--border);
 }
 
-.site-footer a {
-  color: var(--gold-500);
-  text-decoration: none;
+.footer-bottom {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
 }
 
-.site-footer a:hover {
-  color: var(--gold-300);
+/* Responsive */
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        background: hsla(222, 40%, 6%, 0.96);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+    }
+
+    .section {
+        padding: 3rem 0 4rem;
+    }
 }
 
-/* Mobile */
+@media (max-width: 575.98px) {
+    .page-hero {
+        padding: 7.5rem 0 3rem;
+    }
 
-@media (max-width: 767px) {
-  .hero-banner {
-    height: 52vh;
-    min-height: 320px;
-  }
+    .hero-content {
+        padding-bottom: 3rem;
+    }
+}
 
-  .hero-banner .container {
-    padding-bottom: 2.5rem;
-  }
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
-  .card {
-    padding: 1.75rem 1.25rem;
-  }
+    .btn-gold,
+    .explore-card {
+        transition: none;
+    }
 }

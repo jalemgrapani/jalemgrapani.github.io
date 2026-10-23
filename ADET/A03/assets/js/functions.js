@@ -1,6 +1,8 @@
+// State
 var total = 0;
 var receiptItems = [];
 
+// Categories
 function loadCategories() {
     var categoriesContainer = document.getElementById("categories");
 
@@ -11,12 +13,14 @@ function loadCategories() {
     });
 }
 
+// Products
 function loadProducts(categoryIndex) {
     var maincontainer = document.getElementById("maincontainer");
     maincontainer.innerHTML = "";
 
     var contents = products[categoryIndex].contents;
 
+    // Cards
     contents.forEach(function (content, contentIndex) {
         if (content.isAvailable) {
             maincontainer.innerHTML += `
@@ -31,11 +35,12 @@ function loadProducts(categoryIndex) {
         }
     });
 
+    // Empty
     if (maincontainer.innerHTML == "") {
         maincontainer.innerHTML = `<p class="empty-note">No items available in this category.</p>`;
     }
 
-    // highlight the selected category tab
+    // Tabs
     var tabs = document.querySelectorAll(".category-tab");
     tabs.forEach(function (tab, index) {
         if (index == categoryIndex) {
@@ -46,10 +51,12 @@ function loadProducts(categoryIndex) {
     });
 }
 
+// Order
 function addToReceipt(categoryIndex, contentIndex) {
     var content = products[categoryIndex].contents[contentIndex];
     var itemFound = false;
 
+    // Lookup
     receiptItems.forEach(function (item) {
         if (item.name == content.name) {
             item.quantity += 1;
@@ -57,6 +64,7 @@ function addToReceipt(categoryIndex, contentIndex) {
         }
     });
 
+    // Insert
     if (!itemFound) {
         receiptItems.push({ name: content.name, price: parseFloat(content.price), quantity: 1 });
     }
@@ -64,7 +72,9 @@ function addToReceipt(categoryIndex, contentIndex) {
     updateReceipt();
 }
 
+// Receipt
 function updateReceipt() {
+    // Elements
     var receiptContainer = document.getElementById("receipt");
     var totalValueElement = document.getElementById("totalValue");
     var itemCountElement = document.getElementById("itemCount");
@@ -74,6 +84,7 @@ function updateReceipt() {
     total = 0;
     var count = 0;
 
+    // Rows
     receiptItems.forEach(function (item, index) {
         if (item.quantity > 0) {
             var subTotal = item.price * item.quantity;
@@ -104,7 +115,7 @@ function updateReceipt() {
         }
     });
 
-    // nothing in the order yet
+    // Empty
     if (count == 0) {
         receiptContainer.innerHTML = `
       <div class="receipt-empty">
@@ -115,18 +126,21 @@ function updateReceipt() {
     `;
     }
 
+    // Total
     totalValueElement.innerHTML = "₱" + total;
 
+    // Count
     if (count == 1) {
         itemCountElement.innerHTML = "1 item";
     } else {
         itemCountElement.innerHTML = count + " items";
     }
 
-    // Confirm button only works when there is something to buy
+    // Button
     confirmBtn.disabled = (count == 0);
 }
 
+// Quantity
 function changeQuantity(index, change) {
     var item = receiptItems[index];
 
@@ -142,16 +156,19 @@ function changeQuantity(index, change) {
     updateReceipt();
 }
 
+// Purchase
 function confirmPurchase() {
     var hasItems = receiptItems.some(function (item) {
         return item.quantity > 0;
     });
 
+    // Elements
     var purchaseIcon = document.getElementById("purchaseIcon");
     var purchaseTitle = document.getElementById("purchaseModalLabel");
     var purchaseMessage = document.getElementById("purchaseMessage");
 
     if (hasItems) {
+        // Success
         purchaseIcon.className = "purchase-icon is-success";
         purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
         purchaseTitle.innerText = "Purchase confirmed";
@@ -160,16 +177,19 @@ function confirmPurchase() {
         total = 0;
         updateReceipt();
     } else {
+        // Warning
         purchaseIcon.className = "purchase-icon is-warning";
         purchaseIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
         purchaseTitle.innerText = "Nothing to purchase";
         purchaseMessage.innerText = "Add at least one item to the order first.";
     }
 
+    // Modal
     var purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
     purchaseModal.show();
 }
 
+// Init
 loadCategories();
 if (products.length > 0) {
     loadProducts(0);

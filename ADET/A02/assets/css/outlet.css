@@ -1,12 +1,18 @@
+/* Variables */
+
 :root {
-    --steel: #DDE2E6;
-    --ink: #0C1B33;
-    --ink-soft: #4F5C72;
-    --red: #B30F29;
-    --line: rgba(12, 27, 51, 0.18);
-    --line-strong: rgba(12, 27, 51, 0.55);
-    --radius: 20px;
+    --steel: hsl(207, 15%, 88%);
+    --ink: hsl(217, 62%, 12%);
+    --ink-soft: hsl(218, 18%, 38%);
+    --red: hsl(350, 85%, 38%);
+    --line: hsla(217, 62%, 12%, 0.18);
+    --line-strong: hsla(217, 62%, 12%, 0.55);
+
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Lato", sans-serif;
 }
+
+/* Reset */
 
 *,
 *::before,
@@ -16,28 +22,19 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* Base */
 
 body {
     background-color: var(--steel);
     color: var(--ink);
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-body);
 }
 
-section {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-}
-
-.title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    color: var(--ink);
-    line-height: 1.2;
+button:focus-visible,
+a:focus-visible,
+.form-select:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
 }
 
 /* Navbar */
@@ -45,6 +42,7 @@ section {
 .navbar {
     background-color: var(--steel) !important;
     border-bottom: 1px solid var(--line);
+    z-index: 5;
 }
 
 .navbar-collapse {
@@ -52,23 +50,42 @@ section {
 }
 
 .navbar-toggler {
-    border: 1px solid var(--line);
+    border: 1px solid var(--ink);
 }
 
-.brand-wordmark {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px var(--ink);
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 1.5em;
+    height: 2px;
+    margin: calc(0.75em - 1px) 0;
+    background-image: none;
+    background-color: var(--ink);
+    box-shadow: 0 -0.5em 0 var(--ink), 0 0.5em 0 var(--ink);
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+}
+
+.brand-name {
     color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
     line-height: 1.1;
 }
 
 .nav-link {
-    color: var(--ink) !important;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
     margin: 0 0.6rem;
     border-bottom: 2px solid transparent;
+    color: var(--ink) !important;
+    font-family: var(--font-heading);
+    font-weight: 600;
 }
 
 .nav-link:hover,
@@ -78,38 +95,47 @@ section {
 
 /* Header */
 
-.outlet-header .title {
-    font-size: 2.2rem;
+.page-header {
+    border-bottom: 1px solid var(--line);
 }
 
-.section-lede {
+.page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.page-lede {
+    max-width: 38rem;
     color: var(--ink-soft);
     font-size: 1.05rem;
-    max-width: 90vw;
+    line-height: 1.6;
 }
 
 /* Filters */
 
-.filter-section {
-    padding-top: 0;
-    padding-bottom: 1.5rem;
+.filters {
+    top: 6rem;
+    z-index: 1;
 }
 
-.filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+.filter-title {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 .filter-button {
     padding: 0.4rem 1.2rem;
-    border-radius: 999px;
-    border: 1px solid var(--line-strong);
     background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
     color: var(--ink);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+    font-family: var(--font-heading);
     font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .filter-button:hover,
@@ -124,91 +150,120 @@ section {
     font-size: 0.95rem;
 }
 
+/* Forms */
+
+.form-select {
+    background-color: transparent;
+    border-color: var(--line-strong);
+    color: var(--ink);
+    font-size: 0.95rem;
+}
+
 /* Products */
 
-.products-section {
-    border-top: 1px solid var(--line);
+.product-list {
+    border-top: 1px solid var(--line-strong);
 }
 
-.cardBrand {
-    position: relative;
-    top: 0;
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: var(--radius) !important;
-    width: 100%;
+.product {
+    border-bottom: 1px solid var(--line);
 }
 
-.cardBrand:hover {
-    top: -5px;
-    border-color: var(--ink);
-}
-
-.sale-badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.2rem 0.75rem;
-    border-radius: 999px;
-    border: 1px solid var(--red);
-    color: var(--red);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-}
-
-.watchImage3 {
-    mix-blend-mode: multiply;
-    max-height: 240px;
+.product-image {
+    max-height: 150px;
     object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
-.card-description h6 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    color: var(--ink) !important;
+.product-name {
+    max-width: 26rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
-.old-price {
+.price-was {
     color: var(--ink-soft);
-    text-decoration: line-through;
     font-size: 0.9rem;
-    margin-bottom: 0;
+    text-decoration: line-through;
 }
 
-.price {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 1.25rem;
+.price-now {
     color: var(--red);
-    margin-bottom: 0;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
-.add-button {
-    border-radius: 999px;
+.price-saving {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Buttons */
+
+.details-button {
+    display: inline-block;
     padding: 0.5rem 1.6rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
     background: var(--ink);
     border: 1px solid var(--ink);
+    border-radius: 999px;
     color: var(--steel);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-.add-button:hover {
+.details-button:hover {
     background: transparent;
-    border-color: var(--ink);
     color: var(--ink);
 }
 
-@media (max-width: 767px) {
-    section {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
+/* Information */
+
+.info-section {
+    border-top: 1px solid var(--line);
+}
+
+.info-title {
+    padding-top: 0.75rem;
+    border-top: 3px solid var(--red);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.info-text {
+    max-width: 24rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0.75rem;
+        z-index: 5;
+        width: fit-content;
+        min-width: 10rem;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        border: 0;
+        border-radius: 0 0 0.75rem 0.75rem;
+        box-shadow: 0 0.6rem 1.5rem hsla(217, 62%, 12%, 0.15);
     }
 
-    .outlet-header .title {
-        font-size: 1.8rem;
+    .navbar-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: flex-end;
+        text-align: right;
     }
 }

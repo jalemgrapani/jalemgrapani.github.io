@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -9,35 +10,48 @@
       href="../../../homepage/assets/img/JL Logo.svg"
     />
     <title>Outlet | Watch Store</title>
+
+    <!-- Vendor -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../assets/css/outlet.css" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/outlet.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
   </head>
 
   <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a
-          class="d-flex align-items-center text-decoration-none ms-3"
+          class="d-flex align-items-center text-decoration-none ms-2 ms-lg-3"
           href="../index.html"
         >
           <img
             src="../assets/img/JW1.svg"
-            alt="Logo"
-            style="height: 44px; width: 44px"
-            class="me-2"
+            alt="The Watch Store"
+            class="brand-logo me-2"
           />
-          <span class="brand-wordmark">The Watch Store</span>
+          <span class="brand-name d-none d-sm-inline">The Watch Store</span>
         </a>
         <button
           class="navbar-toggler"
@@ -62,43 +76,158 @@
     </nav>
 
     <!-- Header -->
-    <section class="outlet-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-7">
-            <h1 class="title mb-2">Outlet</h1>
-            <p class="section-lede mb-0">
-              Selected watches at reduced prices while stocks last.
+    <header class="page-header">
+      <div class="container py-4 py-md-5">
+        <h1 class="page-title mb-3">Outlet</h1>
+        <p class="page-lede mb-0">
+          Tommy Hilfiger watches at lower prices. Each one is a past-season
+          model or a store display piece, and once a model sells out it is gone.
+        </p>
+      </div>
+    </header>
+
+    <!-- Listing -->
+    <main class="container py-4 py-lg-5">
+      <div class="row g-4 g-lg-5">
+        <!-- Filters -->
+        <aside class="col-12 col-lg-3">
+          <div class="filters sticky-lg-top">
+            <h2 class="filter-title mb-2">Price</h2>
+            <div
+              class="d-flex flex-wrap flex-lg-column align-items-lg-start gap-2 mb-4"
+            >
+              <button
+                class="filter-button active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All prices
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="under"
+                aria-pressed="false"
+              >
+                Under ₱10,000
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="over"
+                aria-pressed="false"
+              >
+                ₱10,000 and up
+              </button>
+            </div>
+
+            <label for="sortSelect" class="filter-title mb-2">Sort by</label>
+            <select id="sortSelect" class="form-select">
+              <option value="saving">Biggest saving</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+            </select>
+          </div>
+        </aside>
+
+        <!-- Products -->
+        <section class="col-12 col-lg-9" aria-labelledby="listHeading">
+          <div
+            class="d-flex justify-content-between align-items-baseline mb-3"
+          >
+            <h2 class="filter-title mb-0" id="listHeading">Watches</h2>
+            <p class="result-count mb-0" id="resultCount" aria-live="polite"></p>
+          </div>
+          <ul class="product-list list-unstyled mb-0" id="outletCardContainer"></ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Info -->
+    <section class="info-section">
+      <div class="container py-4 py-md-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <h2 class="info-title">Checked before they ship</h2>
+            <p class="info-text mb-0">
+              Every outlet watch is inspected, wound and tested before it
+              leaves the store.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="info-title">Same warranty</h2>
+            <p class="info-text mb-0">
+              Outlet watches come with the standard one-year store warranty.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="info-title">Limited stock</h2>
+            <p class="info-text mb-0">
+              Outlet models are not restocked. When one sells out, it is
+              removed from this page.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Filters -->
-    <section class="filter-section">
+    <!-- Footer -->
+    <footer class="site-footer">
       <div class="container">
-        <div class="row align-items-center g-3">
-          <div class="col-12 col-md-8">
-            <div class="filter-row">
-              <button class="filter-button active" data-filter="all">All</button>
-              <button class="filter-button" data-filter="under">Under ₱10,000</button>
-              <button class="filter-button" data-filter="over">₱10,000 and up</button>
+        <div class="row g-4 py-5">
+          <div class="col-12 col-md-5">
+            <a href="../index.html" class="footer-brand">The Watch Store</a>
+            <p class="footer-text">
+              Quality timepieces at affordable prices, for every style.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
             </div>
           </div>
-          <div class="col-12 col-md-4 text-md-end">
-            <span class="result-count" id="resultCount"></span>
+
+          <div class="col-6 col-md-3">
+            <h2 class="footer-title">Explore</h2>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="outlet.html">Outlet</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="stores.html">Our Stores</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <h2 class="footer-title">Brands</h2>
+            <ul class="footer-links">
+              <li>Tissot</li>
+              <li>Alpina</li>
+              <li>Tommy Hilfiger</li>
+              <li>Calvin Klein</li>
+              <li>Coach</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Products -->
-    <section class="products-section">
-      <div class="container">
-        <div class="row g-4" id="outletCardContainer"></div>
+        <div class="footer-bottom text-center">
+          &copy; <span id="footerYear">2026</span> The Watch Store. All rights
+          reserved.
+        </div>
       </div>
-    </section>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      document.getElementById("footerYear").textContent =
+        new Date().getFullYear();
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

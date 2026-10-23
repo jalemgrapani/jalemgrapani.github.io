@@ -1,23 +1,26 @@
-var navSections = document.querySelectorAll(".content-section");
-var navLinks = document.querySelectorAll(".site-navigation a");
-
+// Highlight the nav link of the section you are currently viewing
 function updateNavigation() {
+  var sections = document.getElementsByClassName("content-section");
+  var links = document.querySelectorAll(".site-navigation a");
+  var scrollPosition = window.pageYOffset + 180;
   var activeId = "";
 
-  for (var i = 0; i < navSections.length; i++) {
-    if (navSections[i].getBoundingClientRect().top <= 180) {
-      activeId = navSections[i].id;
+  // Find the last section that has already reached the top
+  for (var i = 0; i < sections.length; i++) {
+    if (sections[i].offsetTop <= scrollPosition) {
+      activeId = sections[i].id;
     }
   }
 
-  for (var j = 0; j < navLinks.length; j++) {
-    if (navLinks[j].getAttribute("href") === "#" + activeId) {
-      navLinks[j].classList.add("active");
+  // Add "active" to the matching link, remove it from the others
+  for (var j = 0; j < links.length; j++) {
+    if (links[j].getAttribute("href") === "#" + activeId) {
+      links[j].classList.add("active");
     } else {
-      navLinks[j].classList.remove("active");
+      links[j].classList.remove("active");
     }
   }
 }
 
 window.addEventListener("scroll", updateNavigation);
-updateNavigation();
+document.addEventListener("DOMContentLoaded", updateNavigation);

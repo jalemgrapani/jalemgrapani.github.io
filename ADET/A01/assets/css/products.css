@@ -1,0 +1,107 @@
+/* Card */
+
+.product-card {
+    --bs-card-bg: transparent;
+    border: 0;
+}
+
+.product-image {
+    overflow: hidden;
+    background: var(--tile);
+    border-radius: 14px;
+}
+
+.product-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    padding: 1.25rem;
+    mix-blend-mode: multiply;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-body {
+    padding: 0.9rem 0 0;
+}
+
+/* Text */
+
+.product-name {
+    margin: 0 0 0.4rem;
+    min-height: 2.8em;
+    max-height: 4.2em;
+    overflow: hidden;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--dial);
+}
+
+.product-price {
+    margin-bottom: 0.9rem;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* Buttons */
+
+.btn-shop,
+.viewAll {
+    padding: 0.7rem 1.25rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-shop {
+    --bs-btn-color: var(--white);
+    --bs-btn-bg: var(--dial);
+    --bs-btn-border-color: var(--dial);
+    --bs-btn-hover-color: var(--white);
+    --bs-btn-hover-bg: var(--dial-soft);
+    --bs-btn-hover-border-color: var(--dial-soft);
+    --bs-btn-active-color: var(--white);
+    --bs-btn-active-bg: var(--dial-soft);
+    --bs-btn-active-border-color: var(--dial-soft);
+}
+
+.viewAll {
+    --bs-btn-color: var(--dial);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--dial);
+    --bs-btn-hover-color: var(--white);
+    --bs-btn-hover-bg: var(--dial);
+    --bs-btn-hover-border-color: var(--dial);
+    --bs-btn-active-color: var(--white);
+    --bs-btn-active-bg: var(--dial-soft);
+    --bs-btn-active-border-color: var(--dial-soft);
+    padding: 0.7rem 2.5rem;
+}
+
+/* Responsive */
+
+@media (max-width: 575.98px) {
+    .product-img {
+        padding: 0.75rem;
+    }
+
+    .product-name {
+        min-height: 2.8em;
+        font-size: 0.85rem;
+    }
+
+    .product-price {
+        font-size: 1.15rem;
+    }
+
+    .btn-shop {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}

@@ -1,4 +1,5 @@
 <?php
+// Data
 $tissotWatches = [
   ["img/tissot1.webp", "Tissot Chemin Des Tourelles Powermatic 80 34MM", "₱ 58,300.00"],
   ["img/tissot2.webp", "Tissot Chrono XL Classic T116.617.11.047.01", "₱ 49,600.00"],
@@ -9,21 +10,25 @@ $tissotWatches = [
 ];
 ?>
 
+<!-- Products -->
 <div class="row g-3 g-md-4">
   <?php foreach ($tissotWatches as $watch) { ?>
-    <div class="col-12 col-sm-6 col-md-4">
+    <div class="col-6 col-md-4">
       <div class="card product-card h-100">
-        <img src="assets/<?php echo $watch[0]; ?>" class="card-img-top" alt="<?php echo $watch[1]; ?>">
-        <div class="card-body d-flex flex-column">
-          <p class="product-name" title="<?php echo $watch[1]; ?>"><?php echo $watch[1]; ?></p>
+        <div class="product-image">
+          <img src="assets/<?php echo $watch[0]; ?>" class="product-img" alt="<?php echo $watch[1]; ?>" loading="lazy">
+        </div>
+        <div class="card-body product-body d-flex flex-column">
+          <h2 class="product-name" title="<?php echo $watch[1]; ?>"><?php echo $watch[1]; ?></h2>
           <div class="product-price"><?php echo $watch[2]; ?></div>
-          <a href="#" class="btn btn-shop mt-auto align-self-start">Shop now</a>
+          <a href="#" class="btn btn-shop w-100 mt-auto" aria-label="Shop <?php echo $watch[1]; ?>">Shop Now</a>
         </div>
       </div>
     </div>
   <?php } ?>
 </div>
 
-<div class="text-center mt-4">
-  <a href="#" class="viewAll btn">View All</a>
+<!-- Action -->
+<div class="text-center mt-5">
+  <a href="#" class="btn viewAll">View All Tissot Watches</a>
 </div>

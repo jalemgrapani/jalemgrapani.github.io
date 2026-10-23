@@ -1,0 +1,129 @@
+/* Variables */
+
+:root {
+    --ink: hsl(217, 62%, 12%);
+    --red: hsl(350, 85%, 38%);
+    --white: hsl(0, 0%, 100%);
+    --footer-text: hsl(214, 24%, 83%);
+    --footer-muted: hsl(212, 23%, 69%);
+    --footer-line: hsla(0, 0%, 100%, 0.16);
+    --footer-tint: hsla(0, 0%, 100%, 0.1);
+
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Lato", sans-serif;
+}
+
+/* Footer */
+
+.site-footer {
+    margin-top: auto;
+    background: var(--ink);
+    color: var(--footer-text);
+    border-top: 3px solid var(--red);
+    font-family: var(--font-body);
+}
+
+.site-footer a {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--white);
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 3px;
+}
+
+.footer-bottom {
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--footer-line);
+    color: var(--footer-muted);
+    font-size: 0.875rem;
+}
+
+/* Brand */
+
+.footer-brand {
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.footer-text {
+    max-width: 30ch;
+    margin: 0.75rem 0 1.25rem;
+    color: var(--footer-muted);
+    line-height: 1.6;
+}
+
+/* Links */
+
+.footer-title {
+    margin: 0 0 1rem;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links a.active {
+    color: var(--white);
+    border-bottom: 2px solid var(--red);
+}
+
+/* Social */
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--footer-tint);
+    color: var(--white);
+    transition: background 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: var(--red);
+}
+
+/* Compact */
+
+.site-footer-compact {
+    flex-shrink: 0;
+    padding: 0.65rem 0;
+    font-size: 0.85rem;
+}
+
+.site-footer-compact .footer-nav {
+    display: flex;
+    gap: 1.25rem;
+}
+
+/* Responsive */
+
+@media (max-height: 500px) {
+    .site-footer-compact {
+        display: none;
+    }
+}
