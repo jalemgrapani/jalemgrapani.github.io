@@ -214,6 +214,13 @@ i {
     font-size: 18px;
 }
 
+.tooltip {
+    --bs-tooltip-bg: var(--text);
+    --bs-tooltip-color: var(--bg);
+    --bs-tooltip-font-size: var(--fs-xs);
+    --bs-tooltip-border-radius: 8px;
+}
+
 /* Layout */
 
 .site-container {
@@ -513,8 +520,6 @@ i {
 
 /* Responsive */
 
-/* Tablet */
-
 @media (max-width: 991.98px) {
     .site-sidebar {
         padding: 6px 8px 6px 12px;
@@ -540,7 +545,6 @@ i {
     }
 }
 
-
 @media (max-width: 767.98px) {
     .experience-date {
         white-space: normal;
@@ -550,8 +554,6 @@ i {
         width: 200px;
     }
 }
-
-/* Mobile */
 
 @media (max-width: 575.98px) {
     .project-deck {
@@ -609,8 +611,6 @@ i {
     }
 }
 
-/* Compact */
-
 @media (max-width: 305px) {
     .hero-top {
         grid-template-columns: 1fr;
@@ -626,8 +626,6 @@ i {
         display: inline;
     }
 }
-
-/* Motion */
 
 @media (prefers-reduced-motion: reduce) {
     .play-card {
