@@ -4,7 +4,7 @@ var footerYear = document.getElementById("footerYear");
 
 // Functions
 function setActive(id) {
-    navLinks.forEach(link => {
+    navLinks.forEach(function(link) {
         var isCurrent = link.getAttribute("href") === "#" + id;
 
         link.classList.toggle("active", isCurrent);
@@ -18,25 +18,27 @@ function setActive(id) {
 }
 
 // Events
-var observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             setActive(entry.target.id);
         }
     });
 }, { rootMargin: "-80px 0px -60% 0px" });
 
-navLinks.forEach(link => {
+navLinks.forEach(function(link) {
     var section = document.querySelector(link.getAttribute("href"));
 
     if (section) {
         observer.observe(section);
     }
 
-    link.addEventListener("click", () => {
+    link.addEventListener("click", function() {
         setActive(link.getAttribute("href").slice(1));
     });
 });
 
 // Start
-footerYear.textContent = new Date().getFullYear();
+if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+}

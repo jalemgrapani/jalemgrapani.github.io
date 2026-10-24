@@ -138,7 +138,7 @@ body::before {
     min-height: 100%;
     border: 0;
     opacity: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, calc(-50% - 2rem)) scale(1.4);
     transition: opacity 0.8s;
 }
 
@@ -147,7 +147,7 @@ body::before {
 }
 
 .hero-overlay {
-    background: linear-gradient(to top, var(--background) 4%, hsla(222, 40%, 6%, 0.55) 55%, hsla(222, 40%, 6%, 0.7));
+    background: linear-gradient(to top, var(--background) 12%, hsla(222, 40%, 6%, 0.55) 55%, hsla(222, 40%, 6%, 0.7));
 }
 
 .hero-content {

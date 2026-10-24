@@ -10,10 +10,9 @@ function onPlayerStateChange(event) {
 
     if (state === YT.PlayerState.PLAYING) {
         frame.classList.add("is-ready");
-        return;
+    } else {
+        frame.classList.remove("is-ready");
     }
-
-    frame.classList.remove("is-ready");
 
     if (state === YT.PlayerState.ENDED) {
         event.target.seekTo(0);
@@ -24,7 +23,7 @@ function onPlayerStateChange(event) {
     }
 }
 
-// Called by the YouTube API once it has loaded
+// API
 function onYouTubeIframeAPIReady() {
     new YT.Player(document.querySelector(".hero-video"), {
         events: {
