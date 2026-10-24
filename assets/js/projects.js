@@ -42,7 +42,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
     action: {
       label: "View frontend",
-      href: "ADET/A04/FE/index.html",
+      href: "projects/A04/FE/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -56,7 +56,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     action: {
       label: "View project",
-      href: "ADET/A03/index.html",
+      href: "projects/A03/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -68,7 +68,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     action: {
       label: "View project",
-      href: "ADET/A02/index.html",
+      href: "projects/A02/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -80,7 +80,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     action: {
       label: "View project",
-      href: "ADET/A05/index.html",
+      href: "projects/A05/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -92,7 +92,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     action: {
       label: "View project",
-      href: "WD/W06/index.html",
+      href: "projects/W06/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -104,7 +104,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     action: {
       label: "View project",
-      href: "WD/W03/index.html",
+      href: "projects/W03/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -116,7 +116,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     action: {
       label: "View project",
-      href: "WD/W04/index.html",
+      href: "projects/W04/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -128,7 +128,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap"],
     action: {
       label: "View project",
-      href: "WD/W01/index.html",
+      href: "projects/W01/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -140,7 +140,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap"],
     action: {
       label: "View project",
-      href: "WD/W02/index.html",
+      href: "projects/W02/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },
@@ -152,7 +152,7 @@ var projects = [
     tags: ["HTML", "CSS", "Bootstrap"],
     action: {
       label: "View project",
-      href: "WD/W05/index.html",
+      href: "projects/W05/index.html",
       icon: "bi-box-arrow-up-right",
     },
   },

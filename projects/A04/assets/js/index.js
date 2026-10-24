@@ -7,7 +7,7 @@ var receiptItems = [];
 // API
 const getAllCategories = async () => {
   fetch(
-    "http://localhost/Jalem's Portfolio/jalemgrapani.github.io/ADET/A04/BE/categories.php",
+    "http://localhost/Jalem's Portfolio/jalemgrapani.github.io/projects/A04/BE/categories.php",
   )
     .then((response) => response.json())
     .then((data) => {
@@ -22,7 +22,7 @@ const getAllProducts = async (categoryID) => {
   };
 
   fetch(
-    "http://localhost/Jalem's Portfolio/jalemgrapani.github.io/ADET/A04/BE/products.php",
+    "http://localhost/Jalem's Portfolio/jalemgrapani.github.io/projects/A04/BE/products.php",
     {
       method: "POST",
       headers: {
