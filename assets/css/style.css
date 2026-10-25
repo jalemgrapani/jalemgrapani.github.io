@@ -200,20 +200,6 @@ i {
     --bs-border-color: var(--accent);
 }
 
-.social-links a {
-    color: var(--muted);
-    transition: color 0.15s, background 0.15s;
-}
-
-.social-links a:hover {
-    color: var(--accent);
-    background: var(--accent-soft);
-}
-
-.social-links i {
-    font-size: 18px;
-}
-
 .tooltip {
     --bs-tooltip-bg: var(--text);
     --bs-tooltip-color: var(--bg);
@@ -500,6 +486,8 @@ i {
     border-color: var(--accent);
 }
 
+/* Buttons */
+
 .small-action {
     padding: 7px 14px;
     border: 1px solid var(--border);
@@ -552,6 +540,12 @@ i {
 
     .profile-photo {
         width: 200px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .site-navigation a i {
+        display: none;
     }
 }
 
@@ -608,6 +602,16 @@ i {
 
     .main-title span {
         display: block;
+    }
+}
+
+@media (max-width: 399.98px) {
+    .site-navigation a {
+        padding: 9px 8px;
+    }
+
+    .sidebar-bottom {
+        padding-left: 6px;
     }
 }
 

@@ -16,7 +16,8 @@ var categories = [
     id: "frontend",
     label: "Front-End",
     icon: "bi-window-stack",
-    description: "Websites and interfaces built with HTML, CSS, and JavaScript.",
+    description:
+      "Websites and interfaces built with HTML, CSS, and JavaScript.",
   },
 ];
 
@@ -34,6 +35,30 @@ var projects = [
       icon: "bi-code-slash",
     },
   },
+  {
+    title: "Bookblast",
+    category: "fullstack",
+    description:
+      "A web-based digital library system that makes reading and managing books easier. It has separate login-based admin and user sides, and supports book management through a PHP backend, including batch book handling.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+    action: {
+      label: "Source",
+      href: "https://github.com/Pages-Beyond/BookBlast-Website",
+      icon: "bi-code-slash",
+    },
+  },
+  {
+  title: "Eventure",
+  category: "fullstack",
+  description:
+    "A web-based event management system for creating, browsing, and managing events.",
+  tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+  action: {
+    label: "Source",
+    href: "https://github.com/pupstc-student-academic-works/adet-grp-7",
+    icon: "bi-code-slash",
+  },
+},
   {
     title: "POS Product Management",
     category: "fullstack",
@@ -190,17 +215,35 @@ function createCard(project, index) {
   card.innerHTML =
     `
     <div class="card-corner" aria-hidden="true">
-      <i class="bi ` + category.icon + `"></i>
+      <i class="bi ` +
+    category.icon +
+    `"></i>
     </div>
-    <h4 class="card-title" title="` + project.title + `">` + shortTitle + `</h4>
-    <p class="card-description" title="` + project.description + `">` + shortDescription + `</p>
-    <a href="` + project.action.href + `" target="_blank" rel="noopener"
+    <h4 class="card-title" title="` +
+    project.title +
+    `">` +
+    shortTitle +
+    `</h4>
+    <p class="card-description" title="` +
+    project.description +
+    `">` +
+    shortDescription +
+    `</p>
+    <a href="` +
+    project.action.href +
+    `" target="_blank" rel="noopener"
        class="card-action small-action d-inline-block text-decoration-none rounded-pill">
-      <i class="bi ` + project.action.icon + `"></i>
-      ` + project.action.label + `
+      <i class="bi ` +
+    project.action.icon +
+    `"></i>
+      ` +
+    project.action.label +
+    `
     </a>
     <div class="card-corner card-corner-bottom" aria-hidden="true">
-      <i class="bi ` + category.icon + `"></i>
+      <i class="bi ` +
+    category.icon +
+    `"></i>
     </div>
   `;
 
@@ -209,11 +252,13 @@ function createCard(project, index) {
     selectProject(index, true);
   });
 
-  card.querySelector(".card-action").addEventListener("click", function (event) {
-    if (!card.classList.contains("selected")) {
-      event.preventDefault();
-    }
-  });
+  card
+    .querySelector(".card-action")
+    .addEventListener("click", function (event) {
+      if (!card.classList.contains("selected")) {
+        event.preventDefault();
+      }
+    });
 
   card.addEventListener("keydown", function (event) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) {
@@ -275,7 +320,8 @@ function selectProject(index, shouldScroll) {
     }
   }
 
-  document.getElementById("deckCount").textContent = index + 1 + " / " + projects.length;
+  document.getElementById("deckCount").textContent =
+    index + 1 + " / " + projects.length;
   document.getElementById("deckPrev").disabled = index === 0;
   document.getElementById("deckNext").disabled = index === projects.length - 1;
 
