@@ -1,3 +1,5 @@
+/* Products */
+
 /* Card */
 
 .product-card {
@@ -52,25 +54,6 @@
 
 /* Buttons */
 
-.btn-shop,
-.viewAll {
-    padding: 0.7rem 1.25rem;
-    font-weight: 600;
-    border-radius: 8px;
-}
-
-.btn-shop {
-    --bs-btn-color: var(--white);
-    --bs-btn-bg: var(--dial);
-    --bs-btn-border-color: var(--dial);
-    --bs-btn-hover-color: var(--white);
-    --bs-btn-hover-bg: var(--dial-soft);
-    --bs-btn-hover-border-color: var(--dial-soft);
-    --bs-btn-active-color: var(--white);
-    --bs-btn-active-bg: var(--dial-soft);
-    --bs-btn-active-border-color: var(--dial-soft);
-}
-
 .viewAll {
     --bs-btn-color: var(--dial);
     --bs-btn-bg: transparent;
@@ -92,7 +75,6 @@
     }
 
     .product-name {
-        min-height: 2.8em;
         font-size: 0.85rem;
     }
 

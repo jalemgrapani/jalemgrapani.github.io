@@ -1,0 +1,121 @@
+/* Contact */
+
+/* Form */
+
+.contact-form-card {
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.contact-form-card .section-title {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-intro {
+    max-width: 52ch;
+    margin-bottom: 2rem;
+}
+
+.contact-form-card .alert {
+    margin-bottom: 1.75rem;
+    border-radius: 10px;
+}
+
+.form-card .form-label {
+    font-weight: 600;
+}
+
+.form-card .form-control {
+    padding: 0.75rem 1rem;
+    background: var(--steel-mist);
+    border: 1px solid var(--brushed);
+    border-radius: 10px;
+    color: var(--dial);
+}
+
+.form-card .form-control::placeholder {
+    color: var(--muted);
+}
+
+.form-card .form-control:focus {
+    background: var(--white);
+    border-color: var(--dial);
+    box-shadow: 0 0 0 3px hsla(222, 47%, 11%, 0.15);
+}
+
+.contact-form-card textarea.form-control {
+    resize: vertical;
+    min-height: 9rem;
+}
+
+/* Info */
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: var(--dial);
+    border-radius: 20px;
+    color: var(--white);
+}
+
+.contact-info-title {
+    color: var(--white);
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.85rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--tint-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.contact-item .icon-box {
+    background: var(--tint);
+    color: var(--white);
+}
+
+.contact-item-body {
+    min-width: 0;
+}
+
+.contact-item .detail-label {
+    margin-bottom: 0.15rem;
+    color: var(--footer-muted);
+}
+
+.contact-value,
+.contact-link {
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--white);
+    overflow-wrap: anywhere;
+}
+
+.contact-link {
+    text-decoration: underline var(--line-strong) 2px;
+    text-underline-offset: 0.3rem;
+}
+
+.contact-link:hover {
+    color: var(--white);
+    text-decoration-color: var(--hand);
+}
+
+/* Responsive */
+
+@media (max-width: 575.98px) {
+    .contact-item {
+        padding: 1rem;
+    }
+}

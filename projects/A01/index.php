@@ -71,6 +71,18 @@ switch ($page) {
   <?php if ($page == "outlet") { ?>
     <link rel="stylesheet" href="assets/css/outlet.css">
   <?php } ?>
+  <?php if ($page === 'stores') { ?>
+  <link rel="stylesheet" href="assets/css/stores.css">
+<?php } ?>
+<?php if ($page === 'about') { ?>
+  <link rel="stylesheet" href="assets/css/about.css">
+<?php } ?>
+<?php if ($page === 'contact') { ?>
+  <link rel="stylesheet" href="assets/css/contact.css">
+<?php } ?>
+<?php if ($page === 'cart') { ?>
+  <link rel="stylesheet" href="assets/css/cart.css">
+<?php } ?>
 </head>
 
 <body>

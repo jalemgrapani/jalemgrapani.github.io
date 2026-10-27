@@ -1,0 +1,63 @@
+/* About */
+
+/* Story */
+
+.about-story {
+    display: flex;
+    align-items: center;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    border-left: 4px solid var(--hand);
+}
+
+.about-story-text {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+/* Highlights */
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.about-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+    background: var(--tile);
+    border: 1px solid var(--brushed);
+    border-radius: 14px;
+}
+
+.about-highlight .icon-box {
+    background: var(--white);
+}
+
+/* Cards */
+
+.about-card .card-heading {
+    margin-bottom: 0.6rem;
+}
+
+.about-icon {
+    margin-bottom: 1.25rem;
+}
+
+.about-tag {
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+
+@media (max-width: 575.98px) {
+    .about-story-text {
+        font-size: 1.1rem;
+    }
+}
