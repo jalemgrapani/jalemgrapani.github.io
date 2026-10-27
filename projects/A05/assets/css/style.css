@@ -554,10 +554,37 @@ button:focus-visible {
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        margin-top: 12px;
-        padding: 8px 20px 12px;
-        background: var(--shade);
-        border-radius: 16px;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        width: fit-content;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 12px 24px hsla(192, 55%, 9%, 0.25);
+    }
+
+    .navbar-nav {
+        align-items: flex-end;
+    }
+
+    .navbar-nav .nav-link {
+        white-space: nowrap;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 0;
+        color: var(--ink);
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: var(--lagoon);
+    }
+
+    .navbar-nav .nav-link.active {
+        color: var(--ink);
+        text-decoration-color: var(--lagoon);
     }
 
     .hero {

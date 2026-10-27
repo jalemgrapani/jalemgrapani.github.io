@@ -91,6 +91,11 @@ body::before {
     background: transparent;
 }
 
+.navbar .container,
+.navbar .container-fluid {
+    position: relative;
+}
+
 @supports (animation-timeline: scroll()) {
     .navbar {
         animation: navbar-fill 1ms linear both;
@@ -126,14 +131,29 @@ body::before {
     color: var(--text);
 }
 
-.nav-link {
+.navbar-nav .nav-link {
     color: var(--text);
     font-weight: 600;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
     color: var(--gold);
+}
+
+.navbar-toggler {
+    border-color: var(--gold);
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 1.5em;
+    height: 2px;
+    margin: calc(0.75em - 1px) 0;
+    background-image: none;
+    background-color: var(--gold);
+    box-shadow: 0 -0.5em 0 var(--gold), 0 0.5em 0 var(--gold);
 }
 
 /* Buttons */
@@ -278,11 +298,22 @@ body::before {
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        padding: 1rem;
-        margin-bottom: 0.75rem;
-        background: hsla(222, 40%, 6%, 0.96);
+        position: absolute;
+        top: 100%;
+        right: 0.75rem;
+        width: max-content;
+        min-width: 10rem;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 1rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.4);
+    }
+
+    .navbar-nav {
+        align-items: flex-end;
+        text-align: right;
     }
 
     .section {

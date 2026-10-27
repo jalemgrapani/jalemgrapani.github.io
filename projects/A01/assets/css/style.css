@@ -519,9 +519,26 @@ a:focus-visible,
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        margin-top: 0.5rem;
-        padding: 0.5rem 0;
-        border-top: 1px solid var(--brushed);
+        position: absolute;
+        top: 100%;
+        right: 12px;
+        width: fit-content;
+        margin-top: 8px;
+        padding: 8px 16px;
+        background: var(--shade);
+        border-radius: 16px;
+        box-shadow: 0 12px 24px hsla(192, 55%, 9%, 0.35);
+    }
+
+    .navbar-nav {
+        align-items: flex-end;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

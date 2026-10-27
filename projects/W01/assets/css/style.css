@@ -24,6 +24,7 @@
 /* Base */
 
 html {
+    background: var(--ink);
     scroll-behavior: smooth;
     scroll-padding-top: 72px;
 }
@@ -174,7 +175,7 @@ button:focus-visible {
 }
 
 .hero-image {
-    max-width: 420px;
+    max-width: min(100%, 420px);
     max-height: 70vh;
     object-fit: contain;
     filter: drop-shadow(0 30px 40px hsla(212, 55%, 4%, 0.55));
@@ -344,7 +345,7 @@ button:focus-visible {
 }
 
 .battery-image {
-    max-width: 480px;
+    max-width: min(100%, 480px);
 }
 
 /* Colors */
@@ -483,11 +484,53 @@ button:focus-visible {
 /* Responsive */
 
 @media (max-width: 767.98px) {
+    .navbar,
+    .navbar.scrolled {
+        padding: 10px 0;
+    }
+
+    .navbar .container {
+        position: relative;
+    }
+
     .navbar-collapse {
-        margin-top: 12px;
-        padding: 8px 20px 16px;
-        border-radius: 16px;
-        background: var(--faint-white);
+        position: absolute;
+        top: calc(100% + 10px + 0.5rem);
+        right: 0.75rem;
+        z-index: 1030;
+        width: max-content;
+        max-width: calc(100vw - 1.5rem);
+        margin: 0;
+        padding: 0.5rem 1rem;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 12px 24px hsla(212, 55%, 4%, 0.25);
+    }
+
+    .navbar-collapse.collapsing {
+        transition: none;
+    }
+
+    .navbar-nav {
+        align-items: flex-end;
+    }
+
+    .navbar-nav .nav-link {
+        white-space: nowrap;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 0;
+        color: var(--ink);
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: var(--aqua-deep);
+    }
+
+    .navbar-nav .nav-link.active {
+        color: var(--ink);
+        text-decoration-color: var(--aqua-deep);
     }
 
     .hero {
@@ -496,7 +539,7 @@ button:focus-visible {
     }
 
     .hero-image {
-        max-width: 260px;
+        max-width: min(100%, 260px);
     }
 
     .section {
@@ -525,6 +568,10 @@ button:focus-visible {
     .btn-ghost,
     .btn-gold {
         width: 100%;
+    }
+
+    .navbar .btn-gold {
+        width: auto;
     }
 }
 

@@ -61,6 +61,10 @@ button:focus-visible {
     transition: background 0.3s ease, padding 0.3s ease;
 }
 
+.navbar .container {
+    position: relative;
+}
+
 .navbar.scrolled,
 .navbar.open {
     background: var(--shade);
@@ -308,10 +312,23 @@ button:focus-visible {
     }
 
     .navbar-collapse {
-        margin-top: 0.75rem;
-        padding: 0.5rem 1rem 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0.75rem;
+        width: max-content;
+        min-width: 10rem;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        border: 1px solid var(--faint-white);
         border-radius: 1rem;
-        background: var(--faint-white);
+        background: hsla(0, 0%, 8%, 0.96);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.35);
+    }
+
+    .navbar-nav {
+        align-items: flex-end;
+        text-align: right;
     }
 }
 

@@ -103,14 +103,14 @@ button:focus-visible {
     transition: background 0.3s ease, padding 0.3s ease;
 }
 
-.navbar.scrolled,
-.navbar.open {
-    --nav-ink: var(--page-ink);
-    --nav-accent: var(--accent);
-    background: var(--page-bg);
+.navbar .container {
+    position: relative;
 }
 
 .navbar.scrolled {
+    --nav-ink: var(--page-ink);
+    --nav-accent: var(--accent);
+    background: var(--page-bg);
     padding: 0.6rem 0;
     border-bottom: 1px solid var(--line);
     box-shadow: 0 4px 20px hsla(0, 0%, 0%, 0.1);
@@ -123,7 +123,7 @@ button:focus-visible {
     font-size: 1.4rem;
 }
 
-.nav-link {
+.navbar-nav .nav-link {
     color: var(--nav-ink);
     font-size: 1.05rem;
     text-decoration: underline;
@@ -133,13 +133,13 @@ button:focus-visible {
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.nav-link.active {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
     color: var(--nav-accent);
 }
 
-.nav-link.active {
+.navbar-nav .nav-link.active {
     text-decoration-color: var(--nav-accent);
 }
 
@@ -483,8 +483,36 @@ dd {
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        margin-top: 0.75rem;
-        padding: 0.5rem 0 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0.75rem;
+        width: max-content;
+        min-width: 10rem;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        background: var(--tile-bg);
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.25);
+    }
+
+    .navbar-nav {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .navbar-collapse .nav-link {
+        color: var(--page-ink);
+    }
+
+    .navbar-collapse .nav-link:hover,
+    .navbar-collapse .nav-link:focus,
+    .navbar-collapse .nav-link.active {
+        color: var(--accent);
+    }
+
+    .navbar-collapse .nav-link.active {
+        text-decoration-color: var(--accent);
     }
 }
 
@@ -510,7 +538,7 @@ dd {
     }
 
     .navbar,
-    .nav-link,
+    .navbar-nav .nav-link,
     .dish-photo img,
     .filter-tab,
     .footer-icon {
