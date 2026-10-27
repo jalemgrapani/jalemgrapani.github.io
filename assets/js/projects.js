@@ -3,24 +3,22 @@ var categories = [
   {
     id: "fullstack",
     label: "Full-Stack",
-    icon: "bi-database",
     description: "PHP and MySQL projects with a working backend.",
   },
   {
     id: "wordpress",
     label: "WordPress",
-    icon: "bi-wordpress",
     description: "Business websites built from design to launch.",
   },
   {
     id: "frontend",
     label: "Front-End",
-    icon: "bi-window-stack",
     description:
       "Websites and interfaces built with HTML, CSS, and JavaScript.",
   },
 ];
 
+// Projects
 var projects = [
   // Fullstack
   {
@@ -29,11 +27,8 @@ var projects = [
     description:
       "A web-based class scheduling system built for Almond Academy Foundation Inc. It considers teacher subject preferences and supports class schedule management and generation.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    action: {
-      label: "Source",
-      href: "https://github.com/StackedFrogs/Easechedemy.com",
-      icon: "bi-code-slash",
-    },
+    docs: "https://github.com/StackedFrogs/Easechedemy.com",
+    site: "",
   },
   {
     title: "Bookblast",
@@ -41,35 +36,26 @@ var projects = [
     description:
       "A web-based digital library system that makes reading and managing books easier. It has separate login-based admin and user sides, and supports book management through a PHP backend, including batch book handling.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    action: {
-      label: "Source",
-      href: "https://github.com/Pages-Beyond/BookBlast-Website",
-      icon: "bi-code-slash",
-    },
+    docs: "https://github.com/Pages-Beyond/BookBlast-Website",
+    site: "",
   },
   {
-  title: "Eventure",
-  category: "fullstack",
-  description:
-    "A web-based event management system for creating, browsing, and managing events.",
-  tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-  action: {
-    label: "Source",
-    href: "https://github.com/pupstc-student-academic-works/adet-grp-7",
-    icon: "bi-code-slash",
+    title: "Eventure",
+    category: "fullstack",
+    description:
+      "A web-based event management system for creating, browsing, and managing events.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+    docs: "https://github.com/pupstc-student-academic-works/adet-grp-7",
+    site: "",
   },
-},
   {
     title: "POS Product Management",
     category: "fullstack",
     description:
       "A point-of-sale project with a frontend interface and PHP backend files for product and category data.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    action: {
-      label: "View frontend",
-      href: "projects/A04/FE/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A04",
+    site: "projects/A04/FE/index.html",
   },
 
   // Frontend
@@ -79,11 +65,8 @@ var projects = [
     description:
       "A point-of-sale interface for browsing donut products and organizing product selections.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    action: {
-      label: "View project",
-      href: "projects/A03/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A03",
+    site: "projects/A03/index.html",
   },
   {
     title: "Watch Store Website Design",
@@ -91,11 +74,8 @@ var projects = [
     description:
       "A watch store website showcasing product collections and brand pages with a responsive layout.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    action: {
-      label: "View project",
-      href: "projects/A02/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A02",
+    site: "projects/A02/index.html",
   },
   {
     title: "Palawan Tourism Website",
@@ -103,11 +83,8 @@ var projects = [
     description:
       "A tourism website highlighting Palawan destinations through photos, destination information, and visual sections.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    action: {
-      label: "View project",
-      href: "projects/A05/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A05",
+    site: "projects/A05/index.html",
   },
   {
     title: "Philippines Tourism Website",
@@ -115,11 +92,8 @@ var projects = [
     description:
       "A tourism website showcasing destinations in the Philippines using image galleries and parallax scrolling effects.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    action: {
-      label: "View project",
-      href: "projects/W06/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W06",
+    site: "projects/W06/index.html",
   },
   {
     title: "Filipino Food Website",
@@ -127,11 +101,8 @@ var projects = [
     description:
       "A food website showcasing Filipino dishes with food images and recipe-related content.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    action: {
-      label: "View project",
-      href: "projects/W03/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W03",
+    site: "projects/W03/index.html",
   },
   {
     title: "League of Legends Information Website",
@@ -139,11 +110,8 @@ var projects = [
     description:
       "A website presenting League of Legends information with separate pages for browsing and viewing content.",
     tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    action: {
-      label: "View project",
-      href: "projects/W04/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W04",
+    site: "projects/W04/index.html",
   },
   {
     title: "Realme Product Website",
@@ -151,11 +119,8 @@ var projects = [
     description:
       "A product-focused website showcasing Realme devices and product features.",
     tags: ["HTML", "CSS", "Bootstrap"],
-    action: {
-      label: "View project",
-      href: "projects/W01/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W01",
+    site: "projects/W01/index.html",
   },
   {
     title: "Japan Travel Website",
@@ -163,11 +128,8 @@ var projects = [
     description:
       "A travel website featuring Japanese destinations and travel-related imagery.",
     tags: ["HTML", "CSS", "Bootstrap"],
-    action: {
-      label: "View project",
-      href: "projects/W02/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W02",
+    site: "projects/W02/index.html",
   },
   {
     title: "Riot Games Website",
@@ -175,11 +137,8 @@ var projects = [
     description:
       "A gaming website featuring Riot Games titles and related game information.",
     tags: ["HTML", "CSS", "Bootstrap"],
-    action: {
-      label: "View project",
-      href: "projects/W05/index.html",
-      icon: "bi-box-arrow-up-right",
-    },
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W05",
+    site: "projects/W05/index.html",
   },
 ];
 
@@ -203,22 +162,51 @@ function getCategory(id) {
   return categories[0];
 }
 
+function createActionLink(href, icon, label) {
+  var attributes = "";
+  var disabledClass = "";
+
+  if (href) {
+    attributes = ` href="` + href + `" target="_blank" rel="noopener"`;
+  } else {
+    attributes = ` aria-disabled="true" tabindex="-1"`;
+    disabledClass = " disabled-action";
+  }
+
+  return (
+    `<a` +
+    attributes +
+    ` class="card-action small-action d-inline-block text-decoration-none rounded-pill` +
+    disabledClass +
+    `">
+      <i class="bi ` +
+    icon +
+    `"></i>
+      ` +
+    label +
+    `
+    </a>`
+  );
+}
+
+function createActionsHtml(project) {
+  // Actions
+  return (
+    createActionLink(project.docs, "bi-github", "View documentation") +
+    createActionLink(project.site, "bi-globe2", "Site")
+  );
+}
+
 function createCard(project, index) {
-  var category = getCategory(project.category);
   var shortTitle = truncate(project.title, 40);
   var shortDescription = truncate(project.description, 150);
+  var actionsHtml = createActionsHtml(project);
   var card = document.createElement("article");
 
   card.className = "play-card";
   card.tabIndex = 0;
-
   card.innerHTML =
     `
-    <div class="card-corner" aria-hidden="true">
-      <i class="bi ` +
-    category.icon +
-    `"></i>
-    </div>
     <h4 class="card-title" title="` +
     project.title +
     `">` +
@@ -229,22 +217,9 @@ function createCard(project, index) {
     `">` +
     shortDescription +
     `</p>
-    <a href="` +
-    project.action.href +
-    `" target="_blank" rel="noopener"
-       class="card-action small-action d-inline-block text-decoration-none rounded-pill">
-      <i class="bi ` +
-    project.action.icon +
-    `"></i>
-      ` +
-    project.action.label +
-    `
-    </a>
-    <div class="card-corner card-corner-bottom" aria-hidden="true">
-      <i class="bi ` +
-    category.icon +
-    `"></i>
-    </div>
+    <div class="card-actions">` +
+    actionsHtml +
+    `</div>
   `;
 
   // Events
@@ -252,13 +227,18 @@ function createCard(project, index) {
     selectProject(index, true);
   });
 
-  card
-    .querySelector(".card-action")
-    .addEventListener("click", function (event) {
-      if (!card.classList.contains("selected")) {
+  var buttons = card.querySelectorAll(".card-action");
+
+  for (var j = 0; j < buttons.length; j++) {
+    buttons[j].addEventListener("click", function (event) {
+      if (
+        !card.classList.contains("selected") ||
+        this.classList.contains("disabled-action")
+      ) {
         event.preventDefault();
       }
     });
+  }
 
   card.addEventListener("keydown", function (event) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) {
@@ -305,6 +285,7 @@ function selectProject(index, shouldScroll) {
     if (offset > 4) {
       offset = 4;
     }
+
     if (offset < -4) {
       offset = -4;
     }

@@ -401,7 +401,7 @@ i {
     width: var(--card-w);
     aspect-ratio: 5 / 7;
     margin-left: var(--card-overlap);
-    padding: 14px 28px 14px 16px;
+    padding: 16px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: linear-gradient(165deg, var(--surface) 55%, var(--accent-soft));
@@ -432,24 +432,9 @@ i {
     box-shadow: 0 0 0 3px var(--glow), var(--shadow);
 }
 
-.card-corner {
-    color: var(--accent);
-}
-
-.card-corner i {
-    font-size: 20px;
-}
-
-.card-corner-bottom {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-    transform: rotate(180deg);
-}
-
 .card-title {
     max-height: 2.6em;
-    margin: 14px 0 8px;
+    margin: 0 0 8px;
     overflow: hidden;
     font-size: var(--fs-lg);
     line-height: 1.3;
@@ -464,16 +449,40 @@ i {
     line-height: 1.5;
 }
 
-.play-card .card-action {
-    align-self: flex-start;
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin-top: auto;
+}
+
+.play-card .card-action {
+    padding: 7px 12px;
     border: 1px solid var(--accent);
     color: var(--accent);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.play-card .card-action i {
+    margin-right: 6px;
 }
 
 .play-card .card-action:hover {
     background: var(--accent);
     color: var(--bg);
+}
+
+.play-card .card-action.disabled-action {
+    border-color: var(--border);
+    color: var(--muted);
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.play-card .card-action.disabled-action:hover {
+    background: transparent;
+    color: var(--muted);
 }
 
 /* Contact */
