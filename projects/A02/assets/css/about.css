@@ -2,15 +2,24 @@
 
 :root {
     --steel: hsl(207, 15%, 88%);
+    --white: hsl(0, 0%, 100%);
     --ink: hsl(217, 62%, 12%);
     --ink-soft: hsl(218, 18%, 38%);
+    --on-ink-soft: hsl(207, 15%, 72%);
     --red: hsl(350, 85%, 38%);
+    --red-light: hsl(350, 80%, 46%);
     --line: hsla(217, 62%, 12%, 0.18);
     --line-strong: hsla(217, 62%, 12%, 0.55);
-    --radius: 20px;
 
-    --font-heading: "Montserrat", sans-serif;
-    --font-body: "Lato", sans-serif;
+    --radius: 20px;
+    --pad-section: clamp(4rem, 9vw, 8rem);
+
+    --font-heading: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
+
+    --bs-body-font-family: var(--font-body);
+    --bs-font-sans-serif: var(--font-body);
+    --page-gutter: clamp(1rem, 4vw, 4rem);
 }
 
 /* Reset */
@@ -40,20 +49,31 @@ body {
     font-family: var(--font-body);
 }
 
-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+h1,
+h2,
+h3,
+h4,
+.btn {
+    font-family: var(--font-heading);
 }
 
-.about-section,
-.brands-section {
-    border-top: 1px solid var(--line);
+.page-gutter {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
 }
 
-.watchImage1,
+:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
+}
+
 .watchImage {
     object-fit: contain;
     mix-blend-mode: multiply;
+}
+
+.watchImage1 {
+    object-fit: contain;
 }
 
 /* Navbar */
@@ -93,14 +113,6 @@ section {
     line-height: 1.1;
 }
 
-.brand-wordmark span {
-    display: block;
-    color: var(--ink-soft);
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 400;
-}
-
 .nav-link {
     margin: 0 0.6rem;
     border-bottom: 2px solid transparent;
@@ -114,123 +126,205 @@ section {
     border-bottom-color: var(--red);
 }
 
-/* Hero */
+/* Layout */
+
+.block {
+    margin: 0;
+}
 
 .hero-section {
-    padding-top: 3rem;
+    background: var(--ink);
+    color: var(--steel);
 }
 
-.title {
-    color: var(--ink);
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1.1;
+.hero-section :focus-visible {
+    outline-color: var(--steel);
 }
 
-.titleDesc {
-    max-width: 80vw;
-    color: var(--ink-soft);
-    font-size: 1.1rem;
-    line-height: 1.7;
+.about-section,
+.brands-section,
+.visit-section {
+    border-top: 1px solid var(--line);
 }
 
-.hero-visual {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
+.block .page-gutter {
+    padding-top: var(--pad-section);
+    padding-bottom: var(--pad-section);
 }
 
-.watchImage1 {
-    max-height: 360px;
+.panel {
+    padding: 0;
 }
 
 /* Buttons */
 
 .shop-button,
 .learn-button {
-    padding: 0.75rem 1.9rem;
+    padding: 0.8rem 2rem;
     border-radius: 999px;
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
 .shop-button {
-    background: var(--ink);
-    border: 1px solid var(--ink);
-    color: var(--steel);
+    background: var(--red);
+    border: 1px solid var(--red);
+    color: var(--white);
 }
 
 .shop-button:hover {
-    background: transparent;
-    color: var(--ink);
+    background: var(--red-light);
+    border-color: var(--red-light);
+    color: var(--white);
 }
 
 .learn-button {
     background: transparent;
-    border: 1px solid var(--line-strong);
-    color: var(--ink);
-}
-
-.learn-button:hover {
-    background: var(--ink);
-    border-color: var(--ink);
+    border: 1px solid var(--on-ink-soft);
     color: var(--steel);
 }
 
-/* Headings */
+.learn-button:hover {
+    background: var(--steel);
+    border-color: var(--steel);
+    color: var(--ink);
+}
 
-.about,
-.brands {
-    margin-bottom: 0;
+/* Hero */
+
+.title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.titleDesc {
+    max-width: 30rem;
+    color: var(--on-ink-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-facts strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
     font-weight: 800;
 }
 
-.section-lede {
-    max-width: 90vw;
-    color: var(--ink-soft);
-    font-size: 1.05rem;
+.hero-facts span {
+    color: var(--on-ink-soft);
+    font-size: 0.9rem;
+}
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watchImage1 {
+    max-height: 420px;
 }
 
 /* About */
 
-.about-quote {
-    padding-left: 1.5rem;
-    border-left: 4px solid var(--red);
+.about {
+    margin-bottom: 1.5rem;
+    color: var(--ink-soft);
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.4;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.about-quote {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 .description {
-    margin-bottom: 1.75rem;
+    margin: 0;
     color: var(--ink-soft);
-    font-size: 1.05rem;
-    line-height: 1.85;
+    font-size: 1.1rem;
+    line-height: 1.9;
 }
 
-.brand-chip-row {
+.values {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.value-card {
+    height: 100%;
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease;
+}
+
+.value-card:hover {
+    border-color: var(--ink);
+}
+
+.value-icon {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    background: var(--ink);
+    border-radius: 14px;
+    color: var(--steel);
+    font-size: 1.1rem;
 }
 
-.brand-chip {
-    padding: 0.4rem 1.1rem;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 600;
+.value-title {
+    margin-bottom: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.value-text {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.7;
 }
 
 /* Brands */
 
 .brands-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+}
+
+.brands {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.section-lede {
+    max-width: 26rem;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 .cardBrand {
@@ -241,10 +335,11 @@ section {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 1.5rem 1rem;
-    background: transparent;
-    border: 1px solid var(--line);
+    padding: 2.5rem 1rem;
+    background: var(--white);
+    border: 1px solid transparent;
     border-radius: var(--radius);
+    transition: top 0.2s ease, border-color 0.2s ease;
 }
 
 .cardBrand:hover {
@@ -254,25 +349,48 @@ section {
 
 .watchImage {
     width: 100%;
-    max-width: 90px;
-    margin-bottom: 0.75rem;
+    max-width: 100px;
+    margin-bottom: 1.25rem;
 }
 
 .brand {
     margin: 0;
+    color: var(--ink);
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     text-align: center;
 }
 
-/* Responsive */
+/* Visit */
 
-@media (min-width: 768px) {
-    .title {
-        font-size: 3.4rem;
-    }
+.visit-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    background: var(--white);
+    border-radius: var(--radius);
 }
+
+.visit-title {
+    margin-bottom: 0.75rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 800;
+}
+
+.visit-text {
+    max-width: 32rem;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Responsive */
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
@@ -299,19 +417,17 @@ section {
 }
 
 @media (max-width: 767px) {
-    section {
-        padding-top: 2.75rem;
-        padding-bottom: 2.75rem;
-    }
-
     .titleDesc {
-        max-width: none;
         margin-left: auto;
         margin-right: auto;
     }
 
+    .hero-facts {
+        justify-content: center;
+    }
+
     .watchImage1 {
-        max-height: 240px;
+        max-height: 260px;
     }
 
     .shop-button,
@@ -323,16 +439,19 @@ section {
         margin-bottom: 0.75rem;
     }
 
-    .about,
-    .brands {
-        font-size: 1.6rem;
+    .visit-panel {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    .about-quote {
-        margin-bottom: 1.5rem;
-        padding-top: 1rem;
-        padding-left: 0;
-        border-top: 4px solid var(--red);
-        border-left: none;
+    .value-card,
+    .cardBrand {
+        transition: none;
     }
 }

@@ -2,14 +2,21 @@
 
 :root {
     --steel: hsl(207, 15%, 88%);
+    --surface: hsl(207, 25%, 95%);
+    --white: hsl(0, 0%, 100%);
     --ink: hsl(217, 62%, 12%);
     --red: hsl(350, 85%, 38%);
+    --red-light: hsl(350, 80%, 46%);
     --line: hsla(217, 62%, 12%, 0.18);
+
     --radius: 20px;
     --gap: clamp(0.5rem, 1vw, 0.75rem);
 
-    --font-heading: "Montserrat", sans-serif;
-    --font-body: "Lato", sans-serif;
+    --font-heading: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
+
+    --bs-body-font-family: var(--font-body);
+    --bs-font-sans-serif: var(--font-body);
 }
 
 /* Reset */
@@ -41,6 +48,11 @@ body {
 
 a {
     text-decoration: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
 }
 
 /* Navbar */
@@ -156,8 +168,10 @@ a {
     flex: 1 1 0;
     padding: clamp(0.4rem, 1.8vh, 1.5rem);
     overflow: hidden;
-    border: 1px solid var(--line);
+    background: var(--surface);
+    border: 1px solid transparent;
     border-radius: var(--radius);
+    transition: border-color 0.2s ease;
 }
 
 .b-card:hover {
@@ -256,19 +270,20 @@ a {
 }
 
 .accent-button {
-    padding: 0.4em 1.5em;
-    background: var(--ink);
-    border: 1px solid var(--ink);
+    padding: 0.5em 1.8em;
+    background: var(--red);
+    border: 1px solid var(--red);
     border-radius: 999px;
-    color: var(--steel);
+    color: var(--white);
     font-family: var(--font-heading);
     font-size: clamp(0.72rem, min(2.2vh, 3vw), 1rem);
     font-weight: 600;
 }
 
 .accent-button:hover {
-    background: transparent;
-    color: var(--ink);
+    background: var(--red-light);
+    border-color: var(--red-light);
+    color: var(--white);
 }
 
 /* Responsive */
@@ -356,5 +371,11 @@ a {
 
     .tagline {
         --tag-vw: 2.2vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .b-card {
+        transition: none;
     }
 }

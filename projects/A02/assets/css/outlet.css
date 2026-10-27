@@ -2,14 +2,24 @@
 
 :root {
     --steel: hsl(207, 15%, 88%);
+    --white: hsl(0, 0%, 100%);
     --ink: hsl(217, 62%, 12%);
     --ink-soft: hsl(218, 18%, 38%);
+    --on-ink-soft: hsl(207, 15%, 72%);
     --red: hsl(350, 85%, 38%);
+    --red-light: hsl(350, 80%, 46%);
     --line: hsla(217, 62%, 12%, 0.18);
     --line-strong: hsla(217, 62%, 12%, 0.55);
 
-    --font-heading: "Montserrat", sans-serif;
-    --font-body: "Lato", sans-serif;
+    --radius: 20px;
+    --pad-section: clamp(4rem, 9vw, 8rem);
+
+    --font-heading: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
+
+    --bs-body-font-family: var(--font-body);
+    --bs-font-sans-serif: var(--font-body);
+    --page-gutter: clamp(1rem, 4vw, 4rem);
 }
 
 /* Reset */
@@ -24,17 +34,37 @@
 
 /* Base */
 
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    overflow-x: clip;
+}
+
 body {
     background-color: var(--steel);
     color: var(--ink);
     font-family: var(--font-body);
 }
 
-button:focus-visible,
-a:focus-visible,
-.form-select:focus-visible {
-    outline: 2px solid var(--red);
-    outline-offset: 2px;
+h1,
+h2,
+h3,
+h4,
+.btn {
+    font-family: var(--font-heading);
+}
+
+.page-gutter {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}
+
+:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
 }
 
 /* Navbar */
@@ -42,7 +72,7 @@ a:focus-visible,
 .navbar {
     background-color: var(--steel) !important;
     border-bottom: 1px solid var(--line);
-    z-index: 5;
+    z-index: 1030;
 }
 
 .navbar-collapse {
@@ -67,12 +97,7 @@ a:focus-visible,
     box-shadow: 0 -0.5em 0 var(--ink), 0 0.5em 0 var(--ink);
 }
 
-.brand-logo {
-    width: 44px;
-    height: 44px;
-}
-
-.brand-name {
+.brand-wordmark {
     color: var(--ink);
     font-family: var(--font-heading);
     font-size: 1.1rem;
@@ -96,28 +121,71 @@ a:focus-visible,
 /* Header */
 
 .page-header {
-    border-bottom: 1px solid var(--line);
+    background: var(--ink);
+    color: var(--steel);
+}
+
+.page-header :focus-visible {
+    outline-color: var(--steel);
+}
+
+.page-header .page-gutter {
+    padding-top: clamp(3rem, 7vw, 6rem);
+    padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.header-tag {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--on-ink-soft);
+    border-radius: 999px;
+    color: var(--steel);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .page-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
 }
 
 .page-lede {
     max-width: 38rem;
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-    line-height: 1.6;
+    color: var(--on-ink-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Layout */
+
+.listing {
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: var(--pad-section);
+}
+
+.info-section {
+    border-top: 1px solid var(--line);
+}
+
+.info-section .page-gutter {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 /* Filters */
 
 .filters {
-    top: 6rem;
+    top: 5.5rem;
     z-index: 1;
+}
+
+.filter-card {
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
 }
 
 .filter-title {
@@ -153,20 +221,39 @@ a:focus-visible,
 /* Forms */
 
 .form-select {
-    background-color: transparent;
-    border-color: var(--line-strong);
+    background-color: var(--steel);
+    border-color: transparent;
+    border-radius: 999px;
     color: var(--ink);
     font-size: 0.95rem;
+}
+
+.form-select:focus {
+    border-color: var(--ink);
+    box-shadow: none;
 }
 
 /* Products */
 
 .product-list {
-    border-top: 1px solid var(--line-strong);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .product {
-    border-bottom: 1px solid var(--line);
+    position: relative;
+    top: 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    transition: top 0.2s ease, border-color 0.2s ease;
+}
+
+.product:hover {
+    top: -4px;
+    border-color: var(--ink);
 }
 
 .product-image {
@@ -206,11 +293,11 @@ a:focus-visible,
 
 .details-button {
     display: inline-block;
-    padding: 0.5rem 1.6rem;
-    background: var(--ink);
-    border: 1px solid var(--ink);
+    padding: 0.7rem 1.8rem;
+    background: var(--red);
+    border: 1px solid var(--red);
     border-radius: 999px;
-    color: var(--steel);
+    color: var(--white);
     font-family: var(--font-heading);
     font-weight: 600;
     text-decoration: none;
@@ -218,28 +305,49 @@ a:focus-visible,
 }
 
 .details-button:hover {
-    background: transparent;
-    color: var(--ink);
+    background: var(--red-light);
+    border-color: var(--red-light);
+    color: var(--white);
 }
 
 /* Information */
 
-.info-section {
-    border-top: 1px solid var(--line);
+.value-card {
+    height: 100%;
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease;
 }
 
-.info-title {
-    padding-top: 0.75rem;
-    border-top: 3px solid var(--red);
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
+.value-card:hover {
+    border-color: var(--ink);
+}
+
+.value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    background: var(--ink);
+    border-radius: 14px;
+    color: var(--steel);
+    font-size: 1.1rem;
+}
+
+.value-title {
+    margin-bottom: 0.6rem;
+    font-size: 1.15rem;
     font-weight: 700;
 }
 
-.info-text {
-    max-width: 24rem;
+.value-text {
+    margin: 0;
     color: var(--ink-soft);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Responsive */
@@ -249,7 +357,7 @@ a:focus-visible,
         position: absolute;
         top: 100%;
         right: 0.75rem;
-        z-index: 5;
+        z-index: 1030;
         width: fit-content;
         min-width: 10rem;
         margin: 0;
@@ -265,5 +373,22 @@ a:focus-visible,
         padding: 0;
         align-items: flex-end;
         text-align: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .product {
+        padding: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .product,
+    .value-card {
+        transition: none;
     }
 }

@@ -2,16 +2,23 @@
 
 :root {
     --steel: hsl(207, 15%, 88%);
+    --white: hsl(0, 0%, 100%);
     --ink: hsl(217, 62%, 12%);
     --ink-soft: hsl(218, 18%, 38%);
+    --on-ink-soft: hsl(207, 15%, 72%);
     --red: hsl(350, 85%, 38%);
-    --white: hsl(0, 0%, 100%);
+    --red-light: hsl(350, 80%, 46%);
     --line: hsla(217, 62%, 12%, 0.18);
     --line-strong: hsla(217, 62%, 12%, 0.55);
-    --radius: 20px;
 
-    --font-heading: "Montserrat", sans-serif;
-    --font-body: "Lato", sans-serif;
+    --radius: 20px;
+    --pad-section: clamp(3rem, 7vw, 6rem);
+
+    --font-heading: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
+
+    --bs-body-font-family: var(--font-body);
+    --bs-font-sans-serif: var(--font-body);
 }
 
 /* Reset */
@@ -30,21 +37,34 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--steel);
     color: var(--ink);
     font-family: var(--font-body);
 }
 
-section {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+.btn {
+    font-family: var(--font-heading);
 }
 
-.info-section,
-.more-section,
-.reviews-section {
-    border-top: 1px solid var(--line);
+section {
+    padding-top: var(--pad-section);
+    padding-bottom: var(--pad-section);
+}
+
+:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
 }
 
 .title {
@@ -98,14 +118,6 @@ section {
     line-height: 1.1;
 }
 
-.brand-wordmark span {
-    display: block;
-    color: var(--ink-soft);
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 400;
-}
-
 .nav-link {
     margin: 0 0.6rem;
     border-bottom: 2px solid transparent;
@@ -119,27 +131,21 @@ section {
     border-bottom-color: var(--red);
 }
 
-/* Back */
-
-.back-link {
-    color: var(--ink-soft);
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.back-link:hover {
-    color: var(--ink);
-}
-
 /* Product */
 
 .product-hero {
-    padding-top: 1.5rem;
+    background: var(--ink);
+    color: var(--steel);
+}
+
+.product-hero :focus-visible {
+    outline-color: var(--steel);
 }
 
 .product-hero .title {
-    font-size: 1.5rem;
+    color: var(--steel);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    line-height: 1.15;
 }
 
 .product-image-card {
@@ -147,7 +153,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     padding: 2.5rem;
     overflow: hidden;
 }
@@ -157,9 +163,13 @@ section {
     max-height: 400px;
 }
 
+.product-hero .watchImage {
+    mix-blend-mode: normal;
+}
+
 .product-brand {
     margin-bottom: 0.4rem;
-    color: var(--ink-soft);
+    color: var(--on-ink-soft);
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 700;
@@ -170,24 +180,28 @@ section {
     align-items: center;
     gap: 0.6rem;
     margin: 0.75rem 0 1.25rem;
-    color: var(--ink-soft);
+    color: var(--on-ink-soft);
     font-size: 0.9rem;
 }
 
 .rating-row .fa-star {
-    color: var(--ink);
+    color: var(--steel);
 }
 
 .rating-row a {
-    color: var(--ink-soft);
+    color: var(--on-ink-soft);
     text-decoration: underline;
 }
 
+.rating-row a:hover {
+    color: var(--steel);
+}
+
 .product-summary {
-    max-width: 75dvh;
+    max-width: 32rem;
     margin-bottom: 1.75rem;
-    color: var(--ink-soft);
-    font-size: 1.02rem;
+    color: var(--on-ink-soft);
+    font-size: 1.1rem;
     line-height: 1.7;
 }
 
@@ -199,6 +213,10 @@ section {
     font-weight: 800;
 }
 
+.product-hero .price {
+    color: var(--white);
+}
+
 /* Buttons */
 
 .button-row {
@@ -208,35 +226,37 @@ section {
 }
 
 .add-button,
-.review-button,
-.buy-button {
+.buy-button,
+.review-button {
     min-width: 190px;
-    padding: 0.75rem 1.9rem;
+    padding: 0.8rem 2rem;
     border-radius: 999px;
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
 .add-button {
-    background: var(--ink);
-    border: 1px solid var(--ink);
-    color: var(--steel);
+    background: var(--red);
+    border: 1px solid var(--red);
+    color: var(--white);
 }
 
 .add-button:hover {
-    background: transparent;
-    color: var(--ink);
+    background: var(--red-light);
+    border-color: var(--red-light);
+    color: var(--white);
 }
 
 .buy-button {
     background: transparent;
-    border: 1px solid var(--red);
-    color: var(--red);
+    border: 1px solid var(--on-ink-soft);
+    color: var(--steel);
 }
 
 .buy-button:hover {
-    background: var(--red);
-    color: var(--white);
+    background: var(--steel);
+    border-color: var(--steel);
+    color: var(--ink);
 }
 
 .review-button {
@@ -257,15 +277,25 @@ section {
 
 /* Specs */
 
+.info-section,
+.more-section,
+.reviews-section {
+    border-top: 1px solid var(--line);
+}
+
 .info-heading {
     margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--ink);
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 800;
 }
 
 .spec-list {
-    border-top: 1px solid var(--line-strong);
+    padding: 0.5rem 1.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
 }
 
 .spec-row {
@@ -274,6 +304,10 @@ section {
     gap: 1rem;
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--line);
+}
+
+.spec-row:last-child {
+    border-bottom: 0;
 }
 
 .spec-label {
@@ -302,7 +336,14 @@ section {
     height: 220px;
     margin: 0;
     padding: 1.5rem;
-    background: transparent;
+    background: var(--white);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease;
+}
+
+.gallery-item:hover {
+    border-color: var(--ink);
 }
 
 .gallery-item img {
@@ -320,7 +361,9 @@ section {
 /* More */
 
 .more-section .title {
-    font-size: 1.6rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 
 .more-grid {
@@ -335,8 +378,8 @@ section {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: transparent;
-    border: 1px solid var(--line);
+    background: var(--white);
+    border: 1px solid transparent;
     border-radius: var(--radius) !important;
     transition: top 0.2s ease, border-color 0.2s ease;
 }
@@ -377,7 +420,7 @@ section {
     max-width: 560px;
     margin: 0 auto;
     padding: 3rem 2rem;
-    border: 1px solid var(--line);
+    background: var(--white);
     border-radius: var(--radius);
     text-align: center;
 }
@@ -394,12 +437,6 @@ section {
 }
 
 /* Responsive */
-
-@media (min-width: 768px) {
-    .product-hero .title {
-        font-size: 1.9rem;
-    }
-}
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
@@ -430,14 +467,14 @@ section {
 }
 
 @media (max-width: 767px) {
-    section {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
+    .product-image-card {
+        max-width: 300px;
+        padding: 1.5rem;
     }
 
-    .product-image-card {
-        max-width: 280px;
-        padding: 1.5rem;
+    .product-summary {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .price {
@@ -448,8 +485,10 @@ section {
         flex-direction: column;
     }
 
+    .button-row a,
     .add-button,
     .buy-button {
+        display: block;
         width: 100%;
         min-width: 0;
     }
@@ -463,5 +502,16 @@ section {
 @media (max-width: 575px) {
     .more-grid {
         max-width: 320px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .gallery-item,
+    .cardBrand {
+        transition: none;
     }
 }

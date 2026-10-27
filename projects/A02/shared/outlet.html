@@ -4,12 +4,8 @@
     <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="../../../homepage/assets/img/JL Logo.svg"
-    />
-    <title>Outlet | Watch Store</title>
+    <link rel="icon" type="image/png" href="../../../homepage/assets/img/JL Logo.svg" />
+    <title>Outlet | Tommy Hilfiger</title>
 
     <!-- Vendor -->
     <link
@@ -23,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
 
@@ -42,26 +38,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
-        <a
-          class="d-flex align-items-center text-decoration-none ms-2 ms-lg-3"
-          href="../index.html"
-        >
-          <img
-            src="../assets/img/JW1.svg"
-            alt="The Watch Store"
-            class="brand-logo me-2"
-          />
-          <span class="brand-name d-none d-sm-inline">The Watch Store</span>
+        <a class="d-flex align-items-center text-decoration-none ms-3" href="../index.html">
+          <img src="../assets/img/JW1.svg" alt="Logo" style="height: 44px; width: 44px" class="me-2" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -77,49 +57,26 @@
 
     <!-- Header -->
     <header class="page-header">
-      <div class="container py-4 py-md-5">
-        <h1 class="page-title mb-3">Outlet</h1>
-        <p class="page-lede mb-0">
-          Tommy Hilfiger watches at lower prices. Each one is a past-season
-          model or a store display piece, and once a model sells out it is gone.
+      <div class="container-fluid page-gutter text-center">
+        <p class="header-tag mb-3"><i class="fa-solid fa-tag me-2" aria-hidden="true"></i>Outlet</p>
+        <h1 class="page-title mb-3">Shop Tommy Hilfiger.</h1>
+        <p class="page-lede mx-auto mb-0">
+          Filter and sort by price. More Tommy Hilfiger watches will appear here as they are added.
         </p>
       </div>
     </header>
 
     <!-- Listing -->
-    <main class="container py-4 py-lg-5">
+    <main class="container-fluid page-gutter listing">
       <div class="row g-4 g-lg-5">
         <!-- Filters -->
         <aside class="col-12 col-lg-3">
-          <div class="filters sticky-lg-top">
+          <div class="filters filter-card sticky-lg-top">
             <h2 class="filter-title mb-2">Price</h2>
-            <div
-              class="d-flex flex-wrap flex-lg-column align-items-lg-start gap-2 mb-4"
-            >
-              <button
-                class="filter-button active"
-                type="button"
-                data-filter="all"
-                aria-pressed="true"
-              >
-                All prices
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="under"
-                aria-pressed="false"
-              >
-                Under ₱10,000
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="over"
-                aria-pressed="false"
-              >
-                ₱10,000 and up
-              </button>
+            <div class="d-flex flex-wrap flex-lg-column align-items-lg-start gap-2 mb-4">
+              <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All prices</button>
+              <button class="filter-button" type="button" data-filter="under" aria-pressed="false">Under &#8369;10,000</button>
+              <button class="filter-button" type="button" data-filter="over" aria-pressed="false">&#8369;10,000 and up</button>
             </div>
 
             <label for="sortSelect" class="filter-title mb-2">Sort by</label>
@@ -133,10 +90,8 @@
 
         <!-- Products -->
         <section class="col-12 col-lg-9" aria-labelledby="listHeading">
-          <div
-            class="d-flex justify-content-between align-items-baseline mb-3"
-          >
-            <h2 class="filter-title mb-0" id="listHeading">Watches</h2>
+          <div class="d-flex justify-content-between align-items-baseline mb-3">
+            <h2 class="filter-title mb-0" id="listHeading">Tommy Hilfiger watches</h2>
             <p class="result-count mb-0" id="resultCount" aria-live="polite"></p>
           </div>
           <ul class="product-list list-unstyled mb-0" id="outletCardContainer"></ul>
@@ -146,27 +101,28 @@
 
     <!-- Info -->
     <section class="info-section">
-      <div class="container py-4 py-md-5">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <h2 class="info-title">Checked before they ship</h2>
-            <p class="info-text mb-0">
-              Every outlet watch is inspected, wound and tested before it
-              leaves the store.
-            </p>
+      <div class="container-fluid page-gutter">
+        <div class="row g-3 g-lg-4">
+          <div class="col-12 col-md-4">
+            <div class="value-card">
+              <div class="value-icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
+              <h2 class="value-title">Full specifications</h2>
+              <p class="value-text">Every watch lists its case, strap, dial, glass, movement and water resistance.</p>
+            </div>
           </div>
-          <div class="col">
-            <h2 class="info-title">Same warranty</h2>
-            <p class="info-text mb-0">
-              Outlet watches come with the standard one-year store warranty.
-            </p>
+          <div class="col-12 col-md-4">
+            <div class="value-card">
+              <div class="value-icon" aria-hidden="true"><i class="fa-solid fa-peso-sign"></i></div>
+              <h2 class="value-title">Prices in pesos</h2>
+              <p class="value-text">Clear prices, with filters for under and over &#8369;10,000.</p>
+            </div>
           </div>
-          <div class="col">
-            <h2 class="info-title">Limited stock</h2>
-            <p class="info-text mb-0">
-              Outlet models are not restocked. When one sells out, it is
-              removed from this page.
-            </p>
+          <div class="col-12 col-md-4">
+            <div class="value-card">
+              <div class="value-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+              <h2 class="value-title">Try it in store</h2>
+              <p class="value-text">Find a branch and see the watch before you decide.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -174,23 +130,17 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
+      <div class="container-fluid page-gutter">
         <div class="row g-4 py-5">
           <div class="col-12 col-md-5">
-            <a href="../index.html" class="footer-brand">The Watch Store</a>
+            <a href="../index.html" class="footer-brand">Tommy Hilfiger 1710690</a>
             <p class="footer-text">
-              Quality timepieces at affordable prices, for every style.
+              This website is a demonstration page for learning purposes only. It is not a real store and is not affiliated with, endorsed by or sponsored by Tommy Hilfiger or any other brand shown. All brand names, logos and product images belong to their respective owners.
             </p>
             <div class="footer-social">
-              <a href="#" aria-label="Facebook"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a href="#" aria-label="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="#" aria-label="YouTube"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
           </div>
 
@@ -205,28 +155,24 @@
           </div>
 
           <div class="col-6 col-md-4">
-            <h2 class="footer-title">Brands</h2>
+            <h2 class="footer-title">Featured watch</h2>
             <ul class="footer-links">
-              <li>Tissot</li>
-              <li>Alpina</li>
-              <li>Tommy Hilfiger</li>
-              <li>Calvin Klein</li>
-              <li>Coach</li>
+              <li><a href="preview.html">Tommy Hilfiger 1710690</a></li>
+              <li>Quartz multifunction</li>
+              <li>5 bar water resistant</li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom text-center">
-          &copy; <span id="footerYear">2026</span> The Watch Store. All rights
-          reserved.
+          &copy; <span id="footerYear">2026</span> For demonstration purposes only.
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-      document.getElementById("footerYear").textContent =
-        new Date().getFullYear();
+      document.getElementById("footerYear").textContent = new Date().getFullYear();
     </script>
 
     <script
