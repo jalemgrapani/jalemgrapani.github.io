@@ -63,6 +63,7 @@ switch ($page) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -72,17 +73,17 @@ switch ($page) {
     <link rel="stylesheet" href="assets/css/outlet.css">
   <?php } ?>
   <?php if ($page === 'stores') { ?>
-  <link rel="stylesheet" href="assets/css/stores.css">
-<?php } ?>
-<?php if ($page === 'about') { ?>
-  <link rel="stylesheet" href="assets/css/about.css">
-<?php } ?>
-<?php if ($page === 'contact') { ?>
-  <link rel="stylesheet" href="assets/css/contact.css">
-<?php } ?>
-<?php if ($page === 'cart') { ?>
-  <link rel="stylesheet" href="assets/css/cart.css">
-<?php } ?>
+    <link rel="stylesheet" href="assets/css/stores.css">
+  <?php } ?>
+  <?php if ($page === 'about') { ?>
+    <link rel="stylesheet" href="assets/css/about.css">
+  <?php } ?>
+  <?php if ($page === 'contact') { ?>
+    <link rel="stylesheet" href="assets/css/contact.css">
+  <?php } ?>
+  <?php if ($page === 'cart') { ?>
+    <link rel="stylesheet" href="assets/css/cart.css">
+  <?php } ?>
 </head>
 
 <body>
@@ -99,19 +100,29 @@ switch ($page) {
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav ms-auto">
         <div class="nav-item ms-lg-1">
-          <a class="nav-link <?php if ($page == "outlet") { echo "active"; } ?>" href="?page=outlet">Outlet</a>
+          <a class="nav-link <?php if ($page == "outlet") {
+            echo "active";
+          } ?>" href="?page=outlet">Outlet</a>
         </div>
         <div class="nav-item ms-lg-1">
-          <a class="nav-link <?php if ($page == "stores") { echo "active"; } ?>" href="?page=stores">Our Stores</a>
+          <a class="nav-link <?php if ($page == "stores") {
+            echo "active";
+          } ?>" href="?page=stores">Our Stores</a>
         </div>
         <div class="nav-item ms-lg-1">
-          <a class="nav-link <?php if ($page == "about") { echo "active"; } ?>" href="?page=about">About Us</a>
+          <a class="nav-link <?php if ($page == "about") {
+            echo "active";
+          } ?>" href="?page=about">About Us</a>
         </div>
         <div class="nav-item ms-lg-1">
-          <a class="nav-link <?php if ($page == "contact") { echo "active"; } ?>" href="?page=contact">Contact Us</a>
+          <a class="nav-link <?php if ($page == "contact") {
+            echo "active";
+          } ?>" href="?page=contact">Contact Us</a>
         </div>
         <div class="nav-item ms-lg-1">
-          <a class="nav-link <?php if ($page == "cart") { echo "active"; } ?>" href="?page=cart">
+          <a class="nav-link <?php if ($page == "cart") {
+            echo "active";
+          } ?>" href="?page=cart">
             <i class="fa-solid fa-cart-shopping"></i> Cart
             <div id="cartCount" class="badge cart-badge">0</div>
           </a>
@@ -123,9 +134,15 @@ switch ($page) {
   <!-- Content -->
   <div class="container-fluid page-wrap">
     <nav class="brand-strip d-lg-none" aria-label="Shop by brand">
-      <a href="?page=tissot" class="brand-link <?php if ($page == "tissot") { echo "active"; } ?>">Tissot</a>
-      <a href="?page=coach" class="brand-link <?php if ($page == "coach") { echo "active"; } ?>">Coach</a>
-      <a href="?page=alpina" class="brand-link <?php if ($page == "alpina") { echo "active"; } ?>">Alpina</a>
+      <a href="?page=tissot" class="brand-link <?php if ($page == "tissot") {
+        echo "active";
+      } ?>">Tissot</a>
+      <a href="?page=coach" class="brand-link <?php if ($page == "coach") {
+        echo "active";
+      } ?>">Coach</a>
+      <a href="?page=alpina" class="brand-link <?php if ($page == "alpina") {
+        echo "active";
+      } ?>">Alpina</a>
     </nav>
 
     <div class="row g-0 page-row">
@@ -134,13 +151,19 @@ switch ($page) {
         <div class="shop-brands-card">
           <div class="shop-brands-title">Shop by Brand</div>
           <a href="?page=tissot" class="shop-brand-link">
-            <div class="shopBrand <?php if ($page == "tissot") { echo "active"; } ?>">Tissot</div>
+            <div class="shopBrand <?php if ($page == "tissot") {
+              echo "active";
+            } ?>">Tissot</div>
           </a>
           <a href="?page=coach" class="shop-brand-link">
-            <div class="shopBrand <?php if ($page == "coach") { echo "active"; } ?>">Coach</div>
+            <div class="shopBrand <?php if ($page == "coach") {
+              echo "active";
+            } ?>">Coach</div>
           </a>
           <a href="?page=alpina" class="shop-brand-link">
-            <div class="shopBrand <?php if ($page == "alpina") { echo "active"; } ?>">Alpina</div>
+            <div class="shopBrand <?php if ($page == "alpina") {
+              echo "active";
+            } ?>">Alpina</div>
           </a>
         </div>
       </aside>

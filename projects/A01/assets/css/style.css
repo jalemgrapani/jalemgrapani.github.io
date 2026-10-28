@@ -54,6 +54,9 @@ a:focus-visible,
     --bs-navbar-color: var(--muted);
     --bs-navbar-hover-color: var(--dial);
     --bs-navbar-active-color: var(--dial);
+    position: sticky;
+    top: 0;
+    z-index: 5;
     background: var(--white);
     border-bottom: 1px solid var(--brushed);
     padding: 0.5rem 1rem;
@@ -172,7 +175,7 @@ a:focus-visible,
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1030;
+    z-index: 5;
     display: flex;
     background: var(--white);
     border-top: 1px solid var(--brushed);
@@ -476,6 +479,7 @@ a:focus-visible,
 /* Responsive */
 
 @media (min-width: 768px) {
+
     .about-banner,
     .store-banner,
     .history-banner {
@@ -522,12 +526,14 @@ a:focus-visible,
         position: absolute;
         top: 100%;
         right: 12px;
+        z-index: 5;
         width: fit-content;
         margin-top: 8px;
         padding: 8px 16px;
-        background: var(--shade);
+        background: var(--white);
+        border: 1px solid var(--brushed);
         border-radius: 16px;
-        box-shadow: 0 12px 24px hsla(192, 55%, 9%, 0.35);
+        box-shadow: 0 12px 24px var(--shadow);
     }
 
     .navbar-nav {
@@ -543,6 +549,7 @@ a:focus-visible,
 }
 
 @media (max-width: 575.98px) {
+
     .about-card,
     .store-card {
         padding: 1.5rem;
@@ -550,6 +557,7 @@ a:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .product-img,
     .collection-img,
     .about-card,

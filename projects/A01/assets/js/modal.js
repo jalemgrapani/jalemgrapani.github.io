@@ -16,16 +16,14 @@ function addToCart(event) {
 
     var card = event.currentTarget.closest(".product-card");
     var name = card.querySelector(".product-name").textContent.trim();
+    var price = card.querySelector(".product-price").textContent.trim();
+    var img = card.querySelector("img").getAttribute("src");
 
-    cartItems.push(name);
+    cartItems.push({ name: name, price: price, img: img });
     saveCart();
 
     modalText.textContent = name + " has been added to your cart.";
     modal.show();
-}
-
-function stopJump(event) {
-    event.preventDefault();
 }
 
 // Cart
@@ -37,5 +35,5 @@ document.querySelectorAll(".btn-shop").forEach((button) => {
 });
 
 document.querySelectorAll(".viewAll").forEach((button) => {
-    button.addEventListener("click", stopJump);
+    button.addEventListener("click", (event) => event.preventDefault());
 });

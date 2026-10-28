@@ -36,15 +36,8 @@ var priceList = {
 
 // Storage
 function loadCart() {
-    var saved = localStorage.getItem(cartKey);
-
-    if (!saved) {
-        cartItems = [];
-        return;
-    }
-
     try {
-        cartItems = JSON.parse(saved);
+        cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
     } catch (error) {
         cartItems = [];
     }
@@ -54,18 +47,16 @@ function loadCart() {
     }
 }
 
+function updateBadge() {
+    document.querySelectorAll(".cart-badge").forEach((badge) => {
+        badge.textContent = cartItems.length;
+    });
+}
+
 function saveCart() {
     localStorage.setItem(cartKey, JSON.stringify(cartItems));
     localStorage.setItem("cartCount", cartItems.length);
     updateBadge();
-}
-
-function updateBadge() {
-    var badges = document.querySelectorAll(".cart-badge");
-
-    badges.forEach(function(badge) {
-        badge.textContent = cartItems.length;
-    });
 }
 
 // Add
@@ -80,83 +71,58 @@ function addToCart(button) {
 }
 
 // Helpers
-function toNumber(text) {
-    var clean = String(text).replace(/[^0-9.]/g, "");
-    return parseFloat(clean) || 0;
-}
+var toNumber = (text) => parseFloat(String(text).replace(/[^0-9.]/g, "")) || 0;
 
-function formatPrice(number) {
+var formatPrice = (number) => {
     return "₱ " + number.toLocaleString("en-PH", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     });
-}
+};
 
-function getName(item) {
-    if (typeof item === "object") {
-        return item.name;
-    }
-    return item;
-}
+var getName = (item) => (typeof item === "object" ? item.name : item);
 
-function getPrice(item) {
+var getPrice = (item) => {
     if (typeof item === "object" && item.price) {
         return toNumber(item.price);
     }
 
-    var name = String(getName(item)).trim();
+    return priceList[String(getName(item)).trim()] || 0;
+};
 
-    if (priceList[name]) {
-        return priceList[name];
-    }
-
-    return 0;
-}
-
-function getImage(item) {
+var getImage = (item) => {
     if (typeof item === "object" && item.img) {
-        if (item.img.indexOf("assets/") == 0) {
-            return item.img;
-        }
-        return "assets/" + item.img;
+        return item.img.indexOf("assets/") == 0 ? item.img : "assets/" + item.img;
     }
-    return "";
-}
 
-function getTotalPrice() {
+    return "";
+};
+
+var getTotalPrice = () => {
     var total = 0;
 
-    cartItems.forEach(function(item) {
+    cartItems.forEach((item) => {
         total += getPrice(item);
     });
 
     return total;
-}
+};
 
-function getModal() {
-    var modalBox = document.getElementById("confirmModal");
-    return bootstrap.Modal.getOrCreateInstance(modalBox);
-}
+var getModal = () => bootstrap.Modal.getOrCreateInstance(document.getElementById("confirmModal"));
 
 // Display
 function displayCart() {
     var content = "";
 
-    cartItems.forEach(function(item, index) {
-        var name = getName(item);
-        var price = formatPrice(getPrice(item));
+    cartItems.forEach((item, index) => {
         var image = getImage(item);
-        var imageTag = "";
-
-        if (image != "") {
-            imageTag = `<img src="` + image + `" class="cart-item-img" alt="">`;
-        }
+        var imageTag = image ? `<img src="` + image + `" class="cart-item-img" alt="">` : "";
 
         content += `
             <div class="cart-item">` + imageTag + `
                 <div class="cart-item-info">
-                    <p class="cart-item-name">` + name + `</p>
-                    <div class="cart-item-price">` + price + `</div>
+                    <p class="cart-item-name">` + getName(item) + `</p>
+                    <div class="cart-item-price">` + formatPrice(getPrice(item)) + `</div>
                 </div>
                 <button type="button" class="cart-remove" aria-label="Remove item" onclick="removeItem(` + index + `)">
                     <i class="fa-solid fa-trash" aria-hidden="true"></i>
@@ -170,14 +136,8 @@ function displayCart() {
     cartPrice.textContent = formatPrice(getTotalPrice());
 
     cartDone.classList.add("d-none");
-
-    if (cartItems.length == 0) {
-        cartEmpty.classList.remove("d-none");
-        cartContent.classList.add("d-none");
-    } else {
-        cartEmpty.classList.add("d-none");
-        cartContent.classList.remove("d-none");
-    }
+    cartEmpty.classList.toggle("d-none", cartItems.length > 0);
+    cartContent.classList.toggle("d-none", cartItems.length == 0);
 }
 
 // Actions
@@ -201,14 +161,11 @@ function openConfirm() {
 
     var content = "";
 
-    cartItems.forEach(function(item) {
-        var name = getName(item);
-        var price = formatPrice(getPrice(item));
-
+    cartItems.forEach((item) => {
         content += `
             <div class="confirm-item">
-                <span class="confirm-item-name">` + name + `</span>
-                <span class="confirm-item-price">` + price + `</span>
+                <span class="confirm-item-name">` + getName(item) + `</span>
+                <span class="confirm-item-price">` + formatPrice(getPrice(item)) + `</span>
             </div>`;
     });
 
@@ -218,7 +175,7 @@ function openConfirm() {
 }
 
 function confirmPurchase() {
-    // Save the order to the database here
+    // Database
     cartItems = [];
     saveCart();
     getModal().hide();

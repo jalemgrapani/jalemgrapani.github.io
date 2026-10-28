@@ -25,13 +25,22 @@ $browseCollections = [
     <?php foreach ($featuredWatches as $watch) { ?>
       <div class="col-12 col-sm-6 col-xl-3">
         <div class="card product-card h-100">
-          <img src="assets/<?php echo htmlspecialchars($watch[0]); ?>" class="card-img-top product-img"
-            alt="<?php echo htmlspecialchars($watch[1]); ?>" loading="lazy">
+          <img src="assets/<?php echo $watch[0]; ?>" class="card-img-top product-img" alt="<?php echo $watch[1]; ?>"
+            loading="lazy">
+
           <div class="card-body product-body d-flex flex-column">
-            <p class="product-name" title="<?php echo htmlspecialchars($watch[1]); ?>">
-              <?php echo htmlspecialchars($watch[1]); ?></p>
-            <div class="product-price mt-auto"><?php echo htmlspecialchars($watch[2]); ?></div>
-            <a href="#" class="btn btn-shop">Shop now</a>
+            <p class="product-name" title="<?php echo $watch[1]; ?>">
+              <?php echo $watch[1]; ?>
+            </p>
+
+            <div class="product-price mt-auto">
+              <?php echo $watch[2]; ?>
+            </div>
+
+            <a href="#" class="btn btn-shop">
+              <i class="bi bi-cart-plus"></i>
+              <span>Add to cart</span>
+            </a>
           </div>
         </div>
       </div>
@@ -46,13 +55,16 @@ $browseCollections = [
 
 <!-- Hero -->
 <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" aria-label="Promotions">
+
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="4000">
       <img src="assets/img/banner.svg" class="d-block w-100" alt="Alpina and Tissot watch collection banner">
     </div>
+
     <div class="carousel-item" data-bs-interval="4000">
       <img src="assets/img/banner2.svg" class="d-block w-100" alt="Featured watch promotion banner">
     </div>
+
     <div class="carousel-item" data-bs-interval="4000">
       <img src="assets/img/banner3.svg" class="d-block w-100" alt="New arrivals watch banner">
     </div>
@@ -66,8 +78,8 @@ $browseCollections = [
     <?php foreach ($browseCollections as $collection) { ?>
       <div class="col-12 col-sm-6 col-md-4 col-xl-3">
         <div class="collection-card">
-          <img src="assets/<?php echo htmlspecialchars($collection[0]); ?>" class="collection-img"
-            alt="<?php echo htmlspecialchars($collection[1]); ?>" loading="lazy">
+          <img src="assets/<?php echo $collection[0]; ?>" class="collection-img" alt="<?php echo $collection[1]; ?>"
+            loading="lazy">
         </div>
       </div>
     <?php } ?>
@@ -77,6 +89,7 @@ $browseCollections = [
 <!-- History -->
 <section class="history-banner">
   <h2 class="historyHeading">Time-Tested Pioneers</h2>
+
   <p class="historyText mb-0">
     A true pioneer of the Swiss watchmaking industry, Alpina has been the source of innovative calibers. Alpina
     invented the concept of the Swiss sports watch as we know it today, with the creation of its legendary Alpina 4

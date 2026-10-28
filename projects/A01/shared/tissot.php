@@ -21,7 +21,10 @@ $tissotWatches = [
         <div class="card-body product-body d-flex flex-column">
           <h2 class="product-name" title="<?php echo $watch[1]; ?>"><?php echo $watch[1]; ?></h2>
           <div class="product-price"><?php echo $watch[2]; ?></div>
-          <a href="#" class="btn btn-shop w-100 mt-auto" aria-label="Shop <?php echo $watch[1]; ?>">Shop Now</a>
+          <a href="#" class="btn btn-shop w-100 mt-auto">
+            <i class="bi bi-cart-plus"></i>
+            <span>Add to cart</span>
+          </a>
         </div>
       </div>
     </div>
