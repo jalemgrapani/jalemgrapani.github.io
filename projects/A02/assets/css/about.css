@@ -6,10 +6,9 @@
     --ink: hsl(217, 62%, 12%);
     --ink-soft: hsl(218, 18%, 38%);
     --on-ink-soft: hsl(207, 15%, 72%);
-    --red: hsl(350, 85%, 38%);
-    --red-light: hsl(350, 80%, 46%);
+    --accent: var(--ink);
+    --accent-light: hsl(217, 40%, 24%);
     --line: hsla(217, 62%, 12%, 0.18);
-    --line-strong: hsla(217, 62%, 12%, 0.55);
 
     --radius: 20px;
     --pad-section: clamp(4rem, 9vw, 8rem);
@@ -27,7 +26,6 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -40,7 +38,7 @@ html {
 
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -63,46 +61,72 @@ h4,
 }
 
 :focus-visible {
-    outline: 3px solid var(--red);
+    outline: 3px solid var(--accent);
     outline-offset: 3px;
-}
-
-.watchImage {
-    object-fit: contain;
-    mix-blend-mode: multiply;
-}
-
-.watchImage1 {
-    object-fit: contain;
 }
 
 /* Navbar */
 
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
     background-color: var(--steel) !important;
     border-bottom: 1px solid var(--line);
 }
 
-.navbar-collapse {
-    background-color: var(--steel);
-}
-
 .navbar-toggler {
-    border: 1px solid var(--ink);
+    border: 0;
 }
 
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 3px var(--ink);
+    box-shadow: none;
 }
 
 .navbar-toggler-icon {
+    position: relative;
     display: block;
-    width: 1.5em;
+    width: 24px;
     height: 2px;
-    margin: calc(0.75em - 1px) 0;
+    margin: 8px 0;
     background-image: none;
     background-color: var(--ink);
-    box-shadow: 0 -0.5em 0 var(--ink), 0 0.5em 0 var(--ink);
+    border-radius: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--ink);
+    border-radius: 1px;
+    transition: transform 0.2s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Open state: becomes an X */
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .brand-wordmark {
@@ -115,15 +139,18 @@ h4,
 
 .nav-link {
     margin: 0 0.6rem;
-    border-bottom: 2px solid transparent;
-    color: var(--ink) !important;
+    color: var(--ink-soft) !important;
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    color: var(--ink) !important;
+}
+
 .nav-link.active {
-    border-bottom-color: var(--red);
+    color: var(--ink) !important;
+    font-weight: 800;
 }
 
 /* Layout */
@@ -167,15 +194,27 @@ h4,
 }
 
 .shop-button {
-    background: var(--red);
-    border: 1px solid var(--red);
-    color: var(--white);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--steel);
 }
 
 .shop-button:hover {
-    background: var(--red-light);
-    border-color: var(--red-light);
-    color: var(--white);
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+    color: var(--steel);
+}
+
+.hero-section .shop-button {
+    background: var(--steel);
+    border-color: var(--steel);
+    color: var(--ink);
+}
+
+.hero-section .shop-button:hover {
+    background: var(--on-ink-soft);
+    border-color: var(--on-ink-soft);
+    color: var(--ink);
 }
 
 .learn-button {
@@ -235,6 +274,7 @@ h4,
 
 .watchImage1 {
     max-height: 420px;
+    object-fit: contain;
 }
 
 /* About */
@@ -351,6 +391,8 @@ h4,
     width: 100%;
     max-width: 100px;
     margin-bottom: 1.25rem;
+    object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .brand {
@@ -397,20 +439,17 @@ h4,
         position: absolute;
         top: 100%;
         right: 0.75rem;
-        z-index: 1030;
+        z-index: 5;
         width: fit-content;
         min-width: 10rem;
-        margin: 0;
         padding: 0.5rem 1rem;
-        border: 0;
+        background-color: var(--steel);
         border-radius: 0 0 0.75rem 0.75rem;
         box-shadow: 0 0.6rem 1.5rem hsla(217, 62%, 12%, 0.15);
     }
 
     .navbar-nav {
         width: 100%;
-        margin: 0;
-        padding: 0;
         align-items: flex-end;
         text-align: right;
     }
@@ -450,6 +489,9 @@ h4,
         scroll-behavior: auto;
     }
 
+    .navbar-toggler-icon,
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
     .value-card,
     .cardBrand {
         transition: none;

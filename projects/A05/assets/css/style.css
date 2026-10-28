@@ -87,21 +87,57 @@ button:focus-visible {
 }
 
 .navbar-toggler {
-    border: 2px solid var(--white);
+    border: 0;
 }
 
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem hsla(41, 96%, 58%, 0.5);
+    box-shadow: none;
 }
 
 .navbar-toggler-icon {
+    position: relative;
     display: block;
-    width: 1.5em;
+    width: 24px;
     height: 2px;
-    margin: calc(0.75em - 1px) 0;
+    margin: 8px 0;
     background-image: none;
     background-color: var(--white);
-    box-shadow: 0 -0.5em 0 var(--white), 0 0.5em 0 var(--white);
+    border-radius: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 1px;
+    transition: transform 0.2s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Open state: becomes an X */
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero */
@@ -553,12 +589,18 @@ button:focus-visible {
 /* Responsive */
 
 @media (max-width: 991.98px) {
+    @media (max-width: 991.98px) {
+    .navbar .container,
+    .navbar .container-fluid {
+        position: relative;
+    }
+
     .navbar-collapse {
         position: absolute;
         top: 100%;
-        right: 1rem;
+        right: 0.75rem;
         width: fit-content;
-        margin-top: 0.5rem;
+        margin-top: 1.5rem;
         padding: 0.5rem 1rem;
         background: var(--white);
         border: 1px solid var(--line);
@@ -566,6 +608,10 @@ button:focus-visible {
         box-shadow: 0 12px 24px hsla(192, 55%, 9%, 0.25);
     }
 
+    .navbar.scrolled .navbar-collapse {
+        margin-top: 1.1rem;
+    }
+}
     .navbar-nav {
         align-items: flex-end;
     }
@@ -630,6 +676,9 @@ button:focus-visible {
         scroll-behavior: auto;
     }
 
+    .navbar-toggler-icon,
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
     .spot-img,
     .navbar,
     .back-to-top {
