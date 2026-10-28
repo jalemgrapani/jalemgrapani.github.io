@@ -53,38 +53,33 @@
       >
         <a
           href="#about"
-          class="d-flex align-items-center text-decoration-none"
+          class="d-flex flex-column flex-md-row align-items-center justify-content-center text-decoration-none"
           aria-label="About"
-          ><i class="bi bi-person"></i
-          ><span class="d-none d-sm-inline">About</span></a
+          ><i class="bi bi-person"></i><span>About</span></a
         >
         <a
           href="#skills"
-          class="d-flex align-items-center text-decoration-none"
+          class="d-flex flex-column flex-md-row align-items-center justify-content-center text-decoration-none"
           aria-label="Skills"
-          ><i class="bi bi-code-slash"></i
-          ><span class="d-none d-sm-inline">Skills</span></a
+          ><i class="bi bi-code-slash"></i><span>Skills</span></a
         >
         <a
           href="#experience"
-          class="d-flex align-items-center text-decoration-none"
+          class="d-flex flex-column flex-md-row align-items-center justify-content-center text-decoration-none"
           aria-label="Experience"
-          ><i class="bi bi-briefcase"></i
-          ><span class="d-none d-sm-inline">Experience</span></a
+          ><i class="bi bi-briefcase"></i><span>Experience</span></a
         >
         <a
           href="#projects"
-          class="d-flex align-items-center text-decoration-none"
+          class="d-flex flex-column flex-md-row align-items-center justify-content-center text-decoration-none"
           aria-label="Projects"
-          ><i class="bi bi-folder2"></i
-          ><span class="d-none d-sm-inline">Projects</span></a
+          ><i class="bi bi-folder2"></i><span>Projects</span></a
         >
         <a
           href="#contact"
-          class="d-flex align-items-center text-decoration-none"
+          class="d-flex flex-column flex-md-row align-items-center justify-content-center text-decoration-none"
           aria-label="Contact"
-          ><i class="bi bi-envelope"></i
-          ><span class="d-none d-sm-inline">Contact</span></a
+          ><i class="bi bi-envelope"></i><span>Contact</span></a
         >
       </nav>
 
@@ -95,8 +90,7 @@
           rel="noopener"
           class="small-action d-none d-sm-flex align-items-center gap-2 text-decoration-none rounded-pill"
           aria-label="View CV"
-          ><i class="bi bi-file-earmark-person"></i
-          ><span class="d-none d-sm-inline">View CV</span></a
+          ><i class="bi bi-file-earmark-person"></i><span>View CV</span></a
         >
         <button
           type="button"
@@ -109,6 +103,7 @@
       </div>
     </div>
 
+    <!-- Content -->
     <div class="container site-container site-content">
       <!-- About -->
       <div id="about" class="content-section">
@@ -141,10 +136,12 @@
             </p>
           </div>
 
-          <div class="col-12 hero-photo">
-            <div class="profile-photo shadow overflow-hidden">
+          <div class="col-12 hero-photo align-self-center align-self-sm-stretch">
+            <div
+              class="profile-photo position-relative border rounded shadow overflow-hidden"
+            >
               <img
-                class="d-block w-100 h-100 object-fit-cover"
+                class="position-absolute top-0 start-0 d-block w-100 h-100 object-fit-cover"
                 src="assets/img/Jalem_Pic.jpg"
                 alt="Portrait of Jalem Louise Grapani"
                 width="187"
@@ -156,16 +153,20 @@
 
         <div class="row mt-5">
           <div class="col-12">
-            <div class="information-box p-4">
+            <div class="information-box small p-4">
               <div class="row mb-2">
-                <div class="col-sm-2 info-label">Education</div>
+                <div class="col-sm-2 info-label text-body-secondary fw-medium">
+                  Education
+                </div>
                 <div class="col-sm-10">
                   BS Information Technology — Polytechnic University of the
                   Philippines, 2022–2026
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-2 info-label">Location</div>
+                <div class="col-sm-2 info-label text-body-secondary fw-medium">
+                  Location
+                </div>
                 <div class="col-sm-10">Calamba City, Laguna, Philippines</div>
               </div>
             </div>
@@ -174,9 +175,13 @@
 
         <div class="row mt-3">
           <div class="col-12">
-            <div class="information-box p-4">
+            <div class="information-box small p-4">
               <div class="row">
-                <div class="col-12 info-label mb-3">Certifications</div>
+                <div
+                  class="col-12 info-label text-body-secondary fw-medium mb-3"
+                >
+                  Certifications
+                </div>
               </div>
               <div class="row g-2">
                 <div class="col-auto">
@@ -201,7 +206,7 @@
             <div class="section-label font-monospace text-accent mb-2">
               Skills
             </div>
-            <h2 class="section-heading">Technical Skills</h2>
+            <h2 class="section-heading mb-4">Technical Skills</h2>
           </div>
         </div>
         <div id="skillsList" class="row g-3"></div>
@@ -214,13 +219,13 @@
             <div class="section-label font-monospace text-accent mb-2">
               Experience
             </div>
-            <h2 class="section-heading">Internship and Capstone</h2>
+            <h2 class="section-heading mb-4">Internship and Capstone</h2>
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
-            <div class="experience-box position-relative ms-2 border-start">
+            <div class="experience-box position-relative ms-2 ps-4 pb-4 border-start">
               <div class="row">
                 <div class="col-md-7">
                   <h3 class="experience-title">
@@ -237,7 +242,7 @@
               <div class="row">
                 <div class="col-12">
                   <ul
-                    class="experience-list text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+                    class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
                   >
                     <li>
                       Performed manual and functional QA testing for the
@@ -252,7 +257,7 @@
               </div>
             </div>
 
-            <div class="experience-box position-relative ms-2 border-start">
+            <div class="experience-box position-relative ms-2 ps-4 border-start">
               <div class="row">
                 <div class="col-md-7">
                   <h3 class="experience-title">
@@ -269,7 +274,7 @@
               <div class="row">
                 <div class="col-12">
                   <ul
-                    class="experience-list text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+                    class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
                   >
                     <li>
                       Built a web-based class scheduling system with automated
@@ -294,7 +299,7 @@
             <div class="section-label font-monospace text-accent mb-2">
               Projects
             </div>
-            <h2 class="section-heading">My Projects</h2>
+            <h2 class="section-heading mb-4">My Projects</h2>
           </div>
         </div>
         <div id="projectGrid" class="row g-5"></div>
@@ -307,13 +312,13 @@
             <div class="section-label font-monospace text-accent mb-2">
               Contact
             </div>
-            <h2 class="section-heading">Contact Information</h2>
+            <h2 class="section-heading mb-4">Contact Information</h2>
           </div>
         </div>
 
         <div class="row mb-4">
           <div class="col-12">
-            <p class="contact-description text-body-secondary mb-0">
+            <p class="small text-body-secondary mb-0">
               Available for entry-level IT and junior developer positions. You
               can reach me by email, phone, or LinkedIn.
             </p>
@@ -327,7 +332,7 @@
                 <div class="col">
                   <div class="contact-label text-body-secondary">Email</div>
                   <div
-                    class="contact-value font-monospace text-break"
+                    class="small font-monospace text-break"
                     id="emailText"
                   >
                     jalemgrapani354@gmail.com
@@ -351,7 +356,7 @@
               <div class="row align-items-center g-3">
                 <div class="col">
                   <div class="contact-label text-body-secondary">Phone</div>
-                  <div class="contact-value font-monospace text-break">
+                  <div class="small font-monospace text-break">
                     +63 967 018 5414
                   </div>
                 </div>
@@ -371,7 +376,7 @@
               <div class="row align-items-center g-3">
                 <div class="col">
                   <div class="contact-label text-body-secondary">LinkedIn</div>
-                  <div class="contact-value font-monospace text-break">
+                  <div class="small font-monospace text-break">
                     linkedin.com/in/jalemgrapani
                   </div>
                 </div>
@@ -393,7 +398,7 @@
               <div class="row align-items-center g-3">
                 <div class="col">
                   <div class="contact-label text-body-secondary">GitHub</div>
-                  <div class="contact-value font-monospace text-break">
+                  <div class="small font-monospace text-break">
                     github.com/jalemgrapani
                   </div>
                 </div>
@@ -415,7 +420,7 @@
               <div class="row align-items-center g-3">
                 <div class="col">
                   <div class="contact-label text-body-secondary">CV</div>
-                  <div class="contact-value font-monospace text-break">
+                  <div class="small font-monospace text-break">
                     Jalem_Louise_Grapani_CV.pdf
                   </div>
                 </div>

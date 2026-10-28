@@ -18,10 +18,8 @@
 
     --fs-xs: clamp(0.6875rem, 0.66rem + 0.15vw, 0.75rem);
     --fs-sm: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
-    --fs-base: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);
     --fs-md: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
     --fs-lg: clamp(0.9375rem, 0.9rem + 0.3vw, 1.0625rem);
-    --fs-xl: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
     --fs-heading: clamp(1.375rem, 1.2rem + 1vw, 1.625rem);
     --fs-hero: clamp(1.75rem, 1.3rem + 2.2vw, 2.375rem);
 
@@ -91,17 +89,10 @@ i {
 
 .information-box,
 .skill-box,
-.contact-box,
-.profile-photo {
+.contact-box {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface);
-}
-
-.info-label {
-    color: var(--muted);
-    font-family: var(--bs-body-font-family);
-    font-weight: 500;
 }
 
 /* Typography */
@@ -109,24 +100,13 @@ i {
 .experience-date,
 .contact-label,
 .skill-tag,
-.project-group-count,
 .small-action,
 .site-footer {
     font-size: var(--fs-xs);
 }
 
-.section-label,
-.project-action {
+.section-label {
     font-size: var(--fs-sm);
-}
-
-.information-box,
-.experience-list,
-.contact-description,
-.contact-value,
-.project-group-description,
-.project-description {
-    font-size: var(--fs-base);
 }
 
 .skill-title,
@@ -136,17 +116,11 @@ i {
 }
 
 .main-description,
-.experience-title,
-.project-title {
+.experience-title {
     font-size: var(--fs-lg);
 }
 
-.project-group-title {
-    font-size: var(--fs-xl);
-}
-
 .section-heading {
-    margin-bottom: 32px;
     font-size: var(--fs-heading);
 }
 
@@ -255,19 +229,15 @@ i {
 
 .hero-photo {
     grid-area: photo;
-    align-self: stretch;
 }
 
 .profile-photo {
-    position: relative;
     width: 240px;
     height: 100%;
     min-height: 216px;
 }
 
 .profile-photo img {
-    position: absolute;
-    inset: 0;
     object-position: center 45%;
 }
 
@@ -310,14 +280,6 @@ i {
 
 .experience-date {
     white-space: nowrap;
-}
-
-.experience-box {
-    padding: 0 0 36px 28px;
-}
-
-.experience-box:last-child {
-    padding-bottom: 0;
 }
 
 .experience-box::before {
@@ -427,7 +389,7 @@ i {
 
 .play-card.selected {
     --lift: -28px;
-    z-index: 20;
+    z-index: 5;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--glow), var(--shadow);
 }
@@ -550,11 +512,20 @@ i {
     .profile-photo {
         width: 200px;
     }
-}
 
-@media (min-width: 576px) and (max-width: 767.98px) {
+    .site-navigation a {
+        gap: 3px;
+        padding: 6px 8px;
+        font-size: var(--fs-xs);
+        line-height: 1.2;
+    }
+
     .site-navigation a i {
-        display: none;
+        font-size: 20px;
+    }
+
+    .site-navigation a.active span {
+        text-underline-offset: 3px;
     }
 }
 
@@ -567,20 +538,6 @@ i {
         top: auto;
         bottom: 12px;
         padding-left: 8px;
-    }
-
-    .site-navigation a {
-        padding: 9px 14px;
-    }
-
-    .site-navigation a i {
-        font-size: 20px;
-    }
-
-    .site-navigation a.active i {
-        display: inline-block;
-        padding-bottom: 4px;
-        border-bottom: 2px solid var(--accent);
     }
 
     .site-content {
@@ -598,10 +555,6 @@ i {
         gap: 24px 20px;
     }
 
-    .hero-photo {
-        align-self: center;
-    }
-
     .profile-photo {
         width: 150px;
         height: auto;
@@ -615,12 +568,45 @@ i {
 }
 
 @media (max-width: 399.98px) {
+    .site-sidebar {
+        padding: 6px 6px 6px 4px;
+    }
+
+    .site-navigation {
+        gap: 0 !important;
+    }
+
     .site-navigation a {
-        padding: 9px 8px;
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 6px 3px;
+        font-size: 0.625rem;
+    }
+
+    .site-navigation a i {
+        font-size: 18px;
     }
 
     .sidebar-bottom {
         padding-left: 6px;
+    }
+
+    .theme-button {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 319.98px) {
+    .site-navigation a span {
+        display: none;
+    }
+
+    .site-navigation a.active i {
+        display: inline-block;
+        padding-bottom: 4px;
+        border-bottom: 2px solid var(--accent);
     }
 }
 
