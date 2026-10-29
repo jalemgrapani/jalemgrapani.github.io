@@ -4,10 +4,9 @@
     --steel: hsl(207, 15%, 88%);
     --white: hsl(0, 0%, 100%);
     --ink: hsl(217, 62%, 12%);
+    --ink-light: hsl(217, 40%, 24%);
     --ink-soft: hsl(218, 18%, 38%);
     --on-ink-soft: hsl(207, 15%, 72%);
-    --accent: var(--ink);
-    --accent-light: hsl(217, 40%, 24%);
     --line: hsla(217, 62%, 12%, 0.18);
     --line-strong: hsla(217, 62%, 12%, 0.55);
 
@@ -18,7 +17,7 @@
     --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
 
     --bs-body-font-family: var(--font-body);
-    --bs-font-sans-serif: var(--font-body);
+    --bs-border-color: var(--line);
 }
 
 /* Reset */
@@ -44,7 +43,6 @@ body {
 body {
     background-color: var(--steel);
     color: var(--ink);
-    font-family: var(--font-body);
 }
 
 h1,
@@ -56,31 +54,50 @@ h5,
     font-family: var(--font-heading);
 }
 
-section {
-    padding-top: var(--pad-section);
-    padding-bottom: var(--pad-section);
-}
-
 :focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--ink);
     outline-offset: 3px;
 }
 
 .title {
-    color: var(--ink);
-    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
     font-weight: 800;
     line-height: 1.1;
 }
 
-/* Navbar */
+.lede {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Layout */
+
+.section {
+    padding-top: var(--pad-section);
+    padding-bottom: var(--pad-section);
+}
+
+/* Header */
+
+.header {
+    background: var(--ink);
+    color: var(--steel);
+}
+
+.header .lede {
+    max-width: 30rem;
+    color: var(--on-ink-soft);
+}
+
+/* Navigation */
 
 .navbar {
-    position: sticky;
-    top: 0;
+    --bs-navbar-color: var(--ink-soft);
+    --bs-navbar-hover-color: var(--ink);
+    --bs-navbar-active-color: var(--ink);
     z-index: 5;
-    background-color: var(--steel) !important;
-    border-bottom: 1px solid var(--line);
+    background-color: var(--steel);
 }
 
 .navbar-toggler {
@@ -123,8 +140,6 @@ section {
     top: 8px;
 }
 
-/* Open state: becomes an X */
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
 }
@@ -137,59 +152,17 @@ section {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.brand-wordmark {
-    color: var(--ink);
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 800;
-    line-height: 1.1;
-}
-
 .nav-link {
     margin: 0 0.6rem;
-    color: var(--ink-soft) !important;
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
-.nav-link:hover {
-    color: var(--ink) !important;
-}
-
 .nav-link.active {
-    color: var(--ink) !important;
     font-weight: 800;
 }
 
-/* Header */
-
-.stores-header {
-    background: var(--ink);
-    color: var(--steel);
-}
-
-.stores-header :focus-visible {
-    outline-color: var(--steel);
-}
-
-.stores-section,
-.help-section {
-    border-top: 1px solid var(--line);
-}
-
-.stores-header .title {
-    color: var(--steel);
-    font-size: clamp(2.4rem, 5.5vw, 4rem);
-}
-
-.section-lede {
-    max-width: 30rem;
-    color: var(--on-ink-soft);
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-/* Stores */
+/* Content */
 
 .store-card {
     height: 100%;
@@ -206,8 +179,6 @@ section {
 
 .store-name {
     margin-bottom: 1.25rem;
-    padding-left: 1rem;
-    border-left: 4px solid var(--accent);
     font-family: var(--font-heading);
     font-size: 1.2rem;
     font-weight: 800;
@@ -236,45 +207,36 @@ section {
     text-align: right;
 }
 
-/* Help */
-
 .help-panel {
     max-width: 560px;
-    margin: 0 auto;
     padding: 3rem 2rem;
     background: var(--white);
     border-radius: var(--radius);
-    text-align: center;
 }
 
-.help-panel h5 {
+.help-title {
     margin-bottom: 0.75rem;
     font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 800;
 }
 
-.help-panel p {
+.help-panel .lede {
     margin-bottom: 1.75rem;
-    color: var(--ink-soft);
-    font-size: 1.1rem;
-    line-height: 1.7;
 }
 
-/* Buttons */
+/* Components */
 
-.shop-button {
+.button {
     padding: 0.8rem 2rem;
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 999px;
+    background: var(--ink);
+    border: 1px solid var(--ink);
     color: var(--steel);
-    font-family: var(--font-heading);
     font-weight: 600;
 }
 
-.shop-button:hover {
-    background: var(--accent-light);
-    border-color: var(--accent-light);
+.button:hover {
+    background: var(--ink-light);
+    border-color: var(--ink-light);
     color: var(--steel);
 }
 
@@ -301,14 +263,9 @@ section {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
     .store-card {
         padding: 1.5rem;
-    }
-
-    .shop-button {
-        display: block;
-        width: 100%;
     }
 }
 
@@ -316,7 +273,7 @@ section {
     html {
         scroll-behavior: auto;
     }
- 
+
     .navbar-toggler-icon,
     .navbar-toggler-icon::before,
     .navbar-toggler-icon::after,

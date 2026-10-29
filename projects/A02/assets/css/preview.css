@@ -4,10 +4,9 @@
     --steel: hsl(207, 15%, 88%);
     --white: hsl(0, 0%, 100%);
     --ink: hsl(217, 62%, 12%);
+    --ink-light: hsl(217, 40%, 24%);
     --ink-soft: hsl(218, 18%, 38%);
     --on-ink-soft: hsl(207, 15%, 72%);
-    --accent: var(--ink);
-    --accent-light: hsl(217, 40%, 24%);
     --line: hsla(217, 62%, 12%, 0.18);
     --line-strong: hsla(217, 62%, 12%, 0.55);
 
@@ -18,7 +17,7 @@
     --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
 
     --bs-body-font-family: var(--font-body);
-    --bs-font-sans-serif: var(--font-body);
+    --bs-border-color: var(--line);
 }
 
 /* Reset */
@@ -44,30 +43,23 @@ body {
 body {
     background-color: var(--steel);
     color: var(--ink);
-    font-family: var(--font-body);
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.btn {
     font-family: var(--font-heading);
 }
 
-section {
-    padding-top: var(--pad-section);
-    padding-bottom: var(--pad-section);
-}
-
 :focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--ink);
     outline-offset: 3px;
 }
 
 .title {
-    color: var(--ink);
-    font-family: var(--font-heading);
     font-weight: 800;
     line-height: 1.2;
 }
@@ -76,17 +68,28 @@ section {
 .watchImage3,
 .gallery-item img {
     object-fit: contain;
+}
+
+.watchImage3,
+.gallery-item img {
     mix-blend-mode: multiply;
 }
 
-/* Navbar */
+/* Layout */
+
+.section {
+    padding-top: var(--pad-section);
+    padding-bottom: var(--pad-section);
+}
+
+/* Navigation */
 
 .navbar {
-    position: sticky;
-    top: 0;
+    --bs-navbar-color: var(--ink-soft);
+    --bs-navbar-hover-color: var(--ink);
+    --bs-navbar-active-color: var(--ink);
     z-index: 5;
-    background-color: var(--steel) !important;
-    border-bottom: 1px solid var(--line);
+    background-color: var(--steel);
 }
 
 .navbar-toggler {
@@ -129,8 +132,6 @@ section {
     top: 8px;
 }
 
-/* Open state: becomes an X */
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
 }
@@ -143,64 +144,40 @@ section {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.brand-wordmark {
-    color: var(--ink);
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 800;
-    line-height: 1.1;
-}
-
 .nav-link {
     margin: 0 0.6rem;
-    color: var(--ink-soft) !important;
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
-.nav-link:hover {
-    color: var(--ink) !important;
-}
-
 .nav-link.active {
-    color: var(--ink) !important;
     font-weight: 800;
 }
 
 /* Product */
 
-.product-hero {
+.hero {
     background: var(--ink);
     color: var(--steel);
 }
 
-.product-hero :focus-visible {
+.hero :focus-visible {
     outline-color: var(--steel);
 }
 
-.product-hero .title {
-    color: var(--steel);
+.hero .title {
     font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     line-height: 1.15;
 }
 
 .product-image-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     max-width: 420px;
     padding: 2.5rem;
-    overflow: hidden;
 }
 
 .watchImage {
     width: 100%;
     max-height: 400px;
-}
-
-.product-hero .watchImage {
-    mix-blend-mode: normal;
 }
 
 .product-brand {
@@ -212,9 +189,6 @@ section {
 }
 
 .rating-row {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
     margin: 0.75rem 0 1.25rem;
     color: var(--on-ink-soft);
     font-size: 0.9rem;
@@ -242,99 +216,17 @@ section {
 
 .price {
     margin-bottom: 1.5rem;
-    color: var(--accent);
     font-family: var(--font-heading);
     font-size: 2.2rem;
     font-weight: 800;
 }
 
-.product-hero .price {
-    color: var(--steel);
-}
-
-/* Buttons */
-
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.85rem;
-}
-
-.add-button,
-.buy-button,
-.review-button {
-    min-width: 190px;
-    padding: 0.8rem 2rem;
-    border-radius: 999px;
-    font-family: var(--font-heading);
-    font-weight: 600;
-}
-
-.add-button {
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    color: var(--steel);
-}
-
-.add-button:hover {
-    background: var(--accent-light);
-    border-color: var(--accent-light);
-    color: var(--steel);
-}
-
-.product-hero .add-button {
-    background: var(--steel);
-    border-color: var(--steel);
-    color: var(--ink);
-}
-
-.product-hero .add-button:hover {
-    background: var(--on-ink-soft);
-    border-color: var(--on-ink-soft);
-    color: var(--ink);
-}
-
-.buy-button {
-    background: transparent;
-    border: 1px solid var(--on-ink-soft);
-    color: var(--steel);
-}
-
-.buy-button:hover {
-    background: var(--steel);
-    border-color: var(--steel);
-    color: var(--ink);
-}
-
-.review-button {
-    background: transparent;
-    border: 1px solid var(--line-strong);
-    color: var(--ink);
-}
-
-.review-button:hover {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--steel);
-}
-
-.btn-wide {
-    width: 200px;
-}
-
 /* Specs */
-
-.info-section,
-.more-section,
-.reviews-section {
-    border-top: 1px solid var(--line);
-}
 
 .info-heading {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--ink);
-    font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 800;
 }
@@ -370,18 +262,8 @@ section {
 
 /* Gallery */
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-}
-
 .gallery-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 220px;
-    margin: 0;
     padding: 1.5rem;
     background: var(--white);
     border: 1px solid transparent;
@@ -399,15 +281,13 @@ section {
 }
 
 .gallery-caption {
-    margin-top: 0.6rem;
     color: var(--ink-soft);
     font-size: 0.85rem;
-    text-align: center;
 }
 
 /* More */
 
-.more-section .title {
+.more-title {
     padding-bottom: 1.5rem;
     border-bottom: 2px solid var(--ink);
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -415,8 +295,6 @@ section {
 
 .more-grid {
     max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .cardBrand {
@@ -465,11 +343,9 @@ section {
 
 .review-panel {
     max-width: 560px;
-    margin: 0 auto;
     padding: 3rem 2rem;
     background: var(--white);
     border-radius: var(--radius);
-    text-align: center;
 }
 
 .review-panel .fa-star {
@@ -477,9 +353,57 @@ section {
     font-size: 1.6rem;
 }
 
-.review-panel h5 {
+.review-title {
     margin: 1rem 0 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
+}
+
+/* Components */
+
+.add-button,
+.buy-button,
+.review-button {
+    min-width: 190px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+}
+
+.add-button {
+    background: var(--steel);
+    border: 1px solid var(--steel);
+    color: var(--ink);
+}
+
+.add-button:hover {
+    background: var(--on-ink-soft);
+    border-color: var(--on-ink-soft);
+    color: var(--ink);
+}
+
+.buy-button {
+    background: transparent;
+    border: 1px solid var(--on-ink-soft);
+    color: var(--steel);
+}
+
+.buy-button:hover {
+    background: var(--steel);
+    border-color: var(--steel);
+    color: var(--ink);
+}
+
+.review-button {
+    width: 200px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+}
+
+.review-button:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--steel);
 }
 
 /* Responsive */
@@ -509,23 +433,14 @@ section {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
     .product-image-card {
         max-width: 300px;
         padding: 1.5rem;
     }
 
-    .product-summary {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .price {
         font-size: 2rem;
-    }
-
-    .button-row {
-        flex-direction: column;
     }
 
     .gallery-item {
@@ -534,7 +449,7 @@ section {
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.98px) {
     .more-grid {
         max-width: 320px;
     }

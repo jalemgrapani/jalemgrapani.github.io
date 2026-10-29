@@ -9,16 +9,18 @@
     --accent: var(--ink);
     --accent-light: hsl(217, 40%, 24%);
     --line: hsla(217, 62%, 12%, 0.18);
+    --shadow: hsla(217, 62%, 12%, 0.15);
 
     --radius: 20px;
     --pad-section: clamp(4rem, 9vw, 8rem);
+    --page-gutter: clamp(1rem, 4vw, 4rem);
 
     --font-heading: "Montserrat", "Segoe UI", system-ui, sans-serif;
     --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
 
     --bs-body-font-family: var(--font-body);
     --bs-font-sans-serif: var(--font-body);
-    --page-gutter: clamp(1rem, 4vw, 4rem);
+    --bs-border-color: var(--line);
 }
 
 /* Reset */
@@ -55,32 +57,31 @@ h4,
     font-family: var(--font-heading);
 }
 
-.page-gutter {
-    padding-left: var(--page-gutter);
-    padding-right: var(--page-gutter);
-}
-
 :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
 }
 
-/* Navbar */
+/* Layout */
+
+.page-gutter {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}
+
+.section {
+    padding-top: var(--pad-section);
+    padding-bottom: var(--pad-section);
+}
+
+/* Navigation */
 
 .navbar {
-    position: sticky;
-    top: 0;
     z-index: 5;
-    background-color: var(--steel) !important;
-    border-bottom: 1px solid var(--line);
-}
-
-.navbar-toggler {
-    border: 0;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
+    background-color: var(--steel);
+    --bs-navbar-color: var(--ink-soft);
+    --bs-navbar-hover-color: var(--ink);
+    --bs-navbar-active-color: var(--ink);
 }
 
 .navbar-toggler-icon {
@@ -92,7 +93,6 @@ h4,
     background-image: none;
     background-color: var(--ink);
     border-radius: 1px;
-    transition: background-color 0.2s ease;
 }
 
 .navbar-toggler-icon::before,
@@ -115,8 +115,6 @@ h4,
     top: 8px;
 }
 
-/* Open state: becomes an X */
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
 }
@@ -129,35 +127,22 @@ h4,
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.brand-wordmark {
-    color: var(--ink);
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 800;
-    line-height: 1.1;
+.logo {
+    width: 44px;
+    height: 44px;
 }
 
 .nav-link {
     margin: 0 0.6rem;
-    color: var(--ink-soft) !important;
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
-.nav-link:hover {
-    color: var(--ink) !important;
-}
-
 .nav-link.active {
-    color: var(--ink) !important;
     font-weight: 800;
 }
 
-/* Layout */
-
-.block {
-    margin: 0;
-}
+/* Hero */
 
 .hero-section {
     background: var(--ink);
@@ -168,90 +153,20 @@ h4,
     outline-color: var(--steel);
 }
 
-.about-section,
-.brands-section,
-.visit-section {
-    border-top: 1px solid var(--line);
-}
-
-.block .page-gutter {
-    padding-top: var(--pad-section);
-    padding-bottom: var(--pad-section);
-}
-
-.panel {
-    padding: 0;
-}
-
-/* Buttons */
-
-.shop-button,
-.learn-button {
-    padding: 0.8rem 2rem;
-    border-radius: 999px;
-    font-family: var(--font-heading);
-    font-weight: 600;
-}
-
-.shop-button {
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    color: var(--steel);
-}
-
-.shop-button:hover {
-    background: var(--accent-light);
-    border-color: var(--accent-light);
-    color: var(--steel);
-}
-
-.hero-section .shop-button {
-    background: var(--steel);
-    border-color: var(--steel);
-    color: var(--ink);
-}
-
-.hero-section .shop-button:hover {
-    background: var(--on-ink-soft);
-    border-color: var(--on-ink-soft);
-    color: var(--ink);
-}
-
-.learn-button {
-    background: transparent;
-    border: 1px solid var(--on-ink-soft);
-    color: var(--steel);
-}
-
-.learn-button:hover {
-    background: var(--steel);
-    border-color: var(--steel);
-    color: var(--ink);
-}
-
-/* Hero */
-
-.title {
-    font-family: var(--font-heading);
+.hero-title {
     font-size: clamp(2.4rem, 5.5vw, 4rem);
     font-weight: 800;
     line-height: 1.08;
 }
 
-.titleDesc {
+.hero-text {
     max-width: 30rem;
     color: var(--on-ink-soft);
-    font-size: 1.1rem;
-    line-height: 1.7;
 }
 
 .hero-facts {
-    display: flex;
-    flex-wrap: wrap;
     gap: 1.5rem 2.5rem;
     margin: 2.5rem 0 0;
-    padding: 0;
-    list-style: none;
 }
 
 .hero-facts strong {
@@ -266,29 +181,15 @@ h4,
     font-size: 0.9rem;
 }
 
-.hero-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.watchImage1 {
-    max-height: 420px;
-    object-fit: contain;
-}
-
 /* About */
 
 .about {
-    margin-bottom: 1.5rem;
     color: var(--ink-soft);
-    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 700;
 }
 
 .about-quote {
-    margin: 0;
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 3.4vw, 3rem);
     font-weight: 700;
@@ -296,9 +197,6 @@ h4,
 }
 
 .description {
-    margin: 0;
-    color: var(--ink-soft);
-    font-size: 1.1rem;
     line-height: 1.9;
 }
 
@@ -307,7 +205,6 @@ h4,
 }
 
 .value-card {
-    height: 100%;
     padding: 2rem;
     background: var(--white);
     border: 1px solid transparent;
@@ -320,12 +217,8 @@ h4,
 }
 
 .value-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 3rem;
     height: 3rem;
-    margin-bottom: 1.5rem;
     background: var(--ink);
     border-radius: 14px;
     color: var(--steel);
@@ -333,28 +226,18 @@ h4,
 }
 
 .value-title {
-    margin-bottom: 0.6rem;
-    font-family: var(--font-heading);
     font-size: 1.15rem;
     font-weight: 700;
-}
-
-.value-text {
-    margin: 0;
-    color: var(--ink-soft);
-    line-height: 1.7;
 }
 
 /* Brands */
 
 .brands-header {
     margin-bottom: clamp(2rem, 4vw, 3rem);
-    padding-bottom: 1.5rem;
     border-bottom: 2px solid var(--ink);
 }
 
 .brands {
-    font-family: var(--font-heading);
     font-size: clamp(2rem, 4.5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.05;
@@ -362,9 +245,6 @@ h4,
 
 .section-lede {
     max-width: 26rem;
-    color: var(--ink-soft);
-    font-size: 1.1rem;
-    line-height: 1.7;
 }
 
 .cardBrand {
@@ -407,11 +287,6 @@ h4,
 /* Visit */
 
 .visit-panel {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
     padding: clamp(2rem, 4vw, 3.5rem);
     background: var(--white);
     border-radius: var(--radius);
@@ -419,17 +294,86 @@ h4,
 
 .visit-title {
     margin-bottom: 0.75rem;
-    font-family: var(--font-heading);
     font-size: clamp(1.7rem, 3vw, 2.4rem);
     font-weight: 800;
 }
 
 .visit-text {
     max-width: 32rem;
-    margin: 0;
+}
+
+/* Text */
+
+.hero-text,
+.description,
+.section-lede,
+.visit-text,
+.value-text {
     color: var(--ink-soft);
-    font-size: 1.1rem;
     line-height: 1.7;
+}
+
+.hero-text,
+.description,
+.section-lede,
+.visit-text {
+    font-size: 1.1rem;
+}
+
+.hero-text {
+    color: var(--on-ink-soft);
+}
+
+.description {
+    line-height: 1.9;
+}
+
+/* Buttons */
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.shop-button {
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--steel);
+}
+
+.shop-button:hover {
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+    color: var(--steel);
+}
+
+.hero-section .btn {
+    min-width: 12rem;
+}
+
+.hero-section .shop-button {
+    background: var(--steel);
+    border-color: var(--steel);
+    color: var(--ink);
+}
+
+.hero-section .shop-button:hover {
+    background: var(--on-ink-soft);
+    border-color: var(--on-ink-soft);
+    color: var(--ink);
+}
+
+.learn-button {
+    background: transparent;
+    border: 1px solid var(--on-ink-soft);
+    color: var(--steel);
+}
+
+.learn-button:hover {
+    background: var(--steel);
+    border-color: var(--steel);
+    color: var(--ink);
 }
 
 /* Responsive */
@@ -439,48 +383,12 @@ h4,
         position: absolute;
         top: 100%;
         right: 0.75rem;
-        z-index: 5;
         width: fit-content;
         min-width: 10rem;
         padding: 0.5rem 1rem;
         background-color: var(--steel);
         border-radius: 0 0 0.75rem 0.75rem;
-        box-shadow: 0 0.6rem 1.5rem hsla(217, 62%, 12%, 0.15);
-    }
-
-    .navbar-nav {
-        width: 100%;
-        align-items: flex-end;
-        text-align: right;
-    }
-}
-
-@media (max-width: 767px) {
-    .titleDesc {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-facts {
-        justify-content: center;
-    }
-
-    .watchImage1 {
-        max-height: 260px;
-    }
-
-    .shop-button,
-    .learn-button {
-        display: block;
-        width: 100%;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0.75rem;
-    }
-
-    .visit-panel {
-        text-align: center;
-        justify-content: center;
+        box-shadow: 0 0.6rem 1.5rem var(--shadow);
     }
 }
 
@@ -489,7 +397,6 @@ h4,
         scroll-behavior: auto;
     }
 
-    .navbar-toggler-icon,
     .navbar-toggler-icon::before,
     .navbar-toggler-icon::after,
     .value-card,
