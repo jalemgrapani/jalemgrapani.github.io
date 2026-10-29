@@ -38,10 +38,6 @@
         justify-self: end;
       }
 
-      .theme-button {
-        color: var(--text);
-      }
-
       /* Content */
 
       .error-page {
@@ -51,15 +47,6 @@
 
       .error-main {
         padding-top: 90px;
-      }
-
-      .error-main .site-container {
-        width: 100%;
-        text-align: center;
-      }
-
-      .error-main .main-buttons {
-        justify-content: center;
       }
 
       .error-code {
@@ -78,25 +65,24 @@
         line-height: 1.1;
       }
 
-      .error-description {
+      .error-description,
+      .information-box {
         max-width: 560px;
-        margin: 0 auto;
-        color: var(--muted);
+      }
+
+      .error-description {
         font-size: var(--fs-lg);
       }
 
-      .error-main .information-box {
-        max-width: 560px;
-        margin-left: auto;
-        margin-right: auto;
-        color: var(--muted);
+      .information-box {
         font-size: var(--fs-sm);
       }
 
-      .error-main .information-box i {
+      .information-box i {
         margin-right: 6px;
-        color: var(--accent);
       }
+
+      /* Components */
 
       .action-btn-primary {
         --bs-btn-color: var(--bg);
@@ -116,10 +102,6 @@
         .error-main {
           padding-top: 0;
         }
-
-        .site-footer {
-          padding-bottom: 110px;
-        }
       }
     </style>
   </head>
@@ -127,128 +109,132 @@
   <body>
     <div class="container-fluid error-page d-flex flex-column">
       <!-- Navigation -->
-      <div
-        class="site-sidebar position-fixed start-50 translate-middle-x z-3 d-grid align-items-center border rounded-pill shadow"
-      >
-        <a
-          href="index.html"
-          class="sidebar-logo d-flex align-items-center"
-          aria-label="Back to homepage"
-        >
-          <img
-            class="d-block"
-            src="assets/img/J2.svg"
-            alt="Jalem Louise Grapani logo"
-            height="40"
-          />
-        </a>
+      <div class="row">
+        <div class="col-12">
+          <div
+            class="site-sidebar position-fixed z-3 d-grid align-items-center border rounded-pill shadow"
+          >
+            <a
+              href="index.html"
+              class="sidebar-logo d-flex align-items-center"
+              aria-label="Back to homepage"
+            >
+              <img
+                class="d-block"
+                src="assets/img/J2.svg"
+                alt="Jalem Louise Grapani logo"
+                height="40"
+              />
+            </a>
 
-        <nav
-          class="site-navigation d-flex align-items-center"
-          aria-label="Main navigation"
-        >
-          <a
-            href="index.html"
-            class="d-flex align-items-center text-decoration-none"
-            aria-label="Home"
-            ><i class="bi bi-house-door"></i
-            ><span class="d-none d-sm-inline">Home</span></a
-          >
-          <a
-            href="index.html#contact"
-            class="d-flex align-items-center text-decoration-none"
-            aria-label="Contact"
-            ><i class="bi bi-envelope"></i
-            ><span class="d-none d-sm-inline">Contact</span></a
-          >
-        </nav>
+            <nav
+              class="site-navigation d-flex align-items-center"
+              aria-label="Main navigation"
+            >
+              <a href="index.html" aria-label="Home"
+                ><i class="bi bi-house-door"></i><span>Home</span></a
+              >
+              <a href="index.html#contact" aria-label="Contact"
+                ><i class="bi bi-envelope"></i><span>Contact</span></a
+              >
+            </nav>
 
-        <div class="sidebar-bottom d-flex align-items-center">
-          <button
-            type="button"
-            class="theme-button d-flex align-items-center justify-content-center p-0 border rounded-circle bg-transparent"
-            id="themeButton"
-            aria-label="Switch to dark mode"
-          >
-            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-          </button>
+            <div class="sidebar-bottom d-flex align-items-center">
+              <button
+                type="button"
+                class="theme-button d-flex align-items-center justify-content-center p-0 border bg-transparent text-reset rounded-circle"
+                id="themeButton"
+                aria-label="Switch to dark mode"
+              >
+                <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Content -->
-      <div class="site-main error-main row align-items-center flex-grow-1">
-        <div class="col-12 site-container mx-auto px-4">
-          <div class="section-label font-monospace mb-3">error / 404</div>
+      <div class="row error-main align-items-center flex-grow-1">
+        <div class="col-12 site-container mx-auto px-4 text-center">
+          <div class="section-label font-monospace text-accent mb-3">
+            error / 404
+          </div>
           <div class="error-code" aria-hidden="true">404</div>
           <h1 class="error-heading">Page not found</h1>
-          <p class="error-description">
+          <p class="error-description text-body-secondary mx-auto">
             The page you're looking for does not exist. It may have been removed
             or renamed, or it may be temporarily unavailable.
           </p>
-
-          <div class="main-buttons d-flex flex-wrap gap-3 my-4">
-            <a
-              href="index.html"
-              class="action-btn action-btn-primary btn px-4 rounded-pill"
-              >Back to home</a
-            >
-          </div>
-
-          <div class="information-box p-3 mb-4">
-            <i class="bi bi-info-circle"></i>
+          <a
+            href="index.html"
+            class="action-btn-primary btn px-4 my-4 rounded-pill"
+            >Back to home</a
+          >
+          <div class="information-box text-body-secondary mx-auto p-3 mb-4">
+            <i class="bi bi-info-circle text-accent"></i>
             You can return to the homepage and continue exploring my portfolio.
           </div>
         </div>
       </div>
 
       <!-- Footer -->
-      <footer class="site-footer text-center">
-        © <span id="year">2026</span> Jalem Louise Grapani · Calamba City, PH
-      </footer>
+      <div class="row">
+        <footer class="col-12 site-footer text-center">
+          © <span id="year">2026</span> Jalem Louise Grapani · Calamba City, PH
+        </footer>
+      </div>
     </div>
 
+    <!-- Scripts -->
     <script>
-      try {
-        document.documentElement.setAttribute(
-          "data-theme",
-          localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light",
-        );
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "light");
-      }
-    </script>
-
-    <!-- Script -->
-    <script>
+      // Variables
       var html = document.documentElement;
       var themeButton = document.getElementById("themeButton");
       var themeIcon = document.getElementById("themeIcon");
       var year = document.getElementById("year");
+      var theme = "light";
 
+      // Functions
       function updateThemeButton() {
-        var isDark = html.getAttribute("data-theme") === "dark";
-        themeIcon.className = isDark
-          ? "bi bi-sun-fill"
-          : "bi bi-moon-stars-fill";
-        themeButton.setAttribute(
-          "aria-label",
-          isDark ? "Switch to light mode" : "Switch to dark mode",
-        );
+        if (html.getAttribute("data-theme") === "dark") {
+          themeIcon.className = "bi bi-sun-fill";
+          themeButton.setAttribute("aria-label", "Switch to light mode");
+        } else {
+          themeIcon.className = "bi bi-moon-stars-fill";
+          themeButton.setAttribute("aria-label", "Switch to dark mode");
+        }
       }
 
       function toggleTheme() {
-        var next =
-          html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-        html.setAttribute("data-theme", next);
+        var nextTheme = "dark";
+
+        if (html.getAttribute("data-theme") === "dark") {
+          nextTheme = "light";
+        }
+
+        html.setAttribute("data-theme", nextTheme);
+
         try {
-          localStorage.setItem("portfolio-theme", next);
+          localStorage.setItem("portfolio-theme", nextTheme);
         } catch (e) {}
+
         updateThemeButton();
       }
 
+      // Theme
+      try {
+        if (localStorage.getItem("portfolio-theme") === "dark") {
+          theme = "dark";
+        }
+      } catch (e) {}
+
+      html.setAttribute("data-theme", theme);
+      updateThemeButton();
+
+      // Events
       themeButton.addEventListener("click", toggleTheme);
 
-      updateThemeButton();
+      // Footer
       year.textContent = new Date().getFullYear();
     </script>
   </body>
