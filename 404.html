@@ -24,29 +24,11 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <style>
-      /* Navigation */
-
-      .site-sidebar {
-        grid-template-columns: 1fr auto 1fr;
-      }
-
-      .sidebar-logo {
-        justify-self: start;
-      }
-
-      .sidebar-bottom {
-        justify-self: end;
-      }
-
       /* Content */
 
       .error-page {
         min-height: 100vh;
         min-height: 100dvh;
-      }
-
-      .error-main {
-        padding-top: 90px;
       }
 
       .error-code {
@@ -99,8 +81,8 @@
       /* Responsive */
 
       @media (max-width: 575.98px) {
-        .error-main {
-          padding-top: 0;
+        .site-footer {
+          padding-bottom: 40px;
         }
       }
     </style>
@@ -108,53 +90,8 @@
 
   <body>
     <div class="container-fluid error-page d-flex flex-column">
-      <!-- Navigation -->
-      <div class="row">
-        <div class="col-12">
-          <div
-            class="site-sidebar position-fixed z-3 d-grid align-items-center border rounded-pill shadow"
-          >
-            <a
-              href="index.html"
-              class="sidebar-logo d-flex align-items-center"
-              aria-label="Back to homepage"
-            >
-              <img
-                class="d-block"
-                src="assets/img/J2.svg"
-                alt="Jalem Louise Grapani logo"
-                height="40"
-              />
-            </a>
-
-            <nav
-              class="site-navigation d-flex align-items-center"
-              aria-label="Main navigation"
-            >
-              <a href="index.html" aria-label="Home"
-                ><i class="bi bi-house-door"></i><span>Home</span></a
-              >
-              <a href="index.html#contact" aria-label="Contact"
-                ><i class="bi bi-envelope"></i><span>Contact</span></a
-              >
-            </nav>
-
-            <div class="sidebar-bottom d-flex align-items-center">
-              <button
-                type="button"
-                class="theme-button d-flex align-items-center justify-content-center p-0 border bg-transparent text-reset rounded-circle"
-                id="themeButton"
-                aria-label="Switch to dark mode"
-              >
-                <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Content -->
-      <div class="row error-main align-items-center flex-grow-1">
+      <div class="row align-items-center flex-grow-1">
         <div class="col-12 site-container mx-auto px-4 text-center">
           <div class="section-label font-monospace text-accent mb-3">
             error / 404
@@ -187,55 +124,15 @@
 
     <!-- Scripts -->
     <script>
-      // Variables
-      var html = document.documentElement;
-      var themeButton = document.getElementById("themeButton");
-      var themeIcon = document.getElementById("themeIcon");
-      var year = document.getElementById("year");
-      var theme = "light";
-
-      // Functions
-      function updateThemeButton() {
-        if (html.getAttribute("data-theme") === "dark") {
-          themeIcon.className = "bi bi-sun-fill";
-          themeButton.setAttribute("aria-label", "Switch to light mode");
-        } else {
-          themeIcon.className = "bi bi-moon-stars-fill";
-          themeButton.setAttribute("aria-label", "Switch to dark mode");
-        }
-      }
-
-      function toggleTheme() {
-        var nextTheme = "dark";
-
-        if (html.getAttribute("data-theme") === "dark") {
-          nextTheme = "light";
-        }
-
-        html.setAttribute("data-theme", nextTheme);
-
-        try {
-          localStorage.setItem("portfolio-theme", nextTheme);
-        } catch (e) {}
-
-        updateThemeButton();
-      }
-
       // Theme
       try {
         if (localStorage.getItem("portfolio-theme") === "dark") {
-          theme = "dark";
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       } catch (e) {}
 
-      html.setAttribute("data-theme", theme);
-      updateThemeButton();
-
-      // Events
-      themeButton.addEventListener("click", toggleTheme);
-
       // Footer
-      year.textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
