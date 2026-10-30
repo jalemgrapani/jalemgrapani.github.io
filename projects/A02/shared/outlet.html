@@ -18,244 +18,229 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- Styles -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="../assets/css/outlet.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
   </head>
 
   <body>
     <div class="container-fluid p-0">
-      <div class="row g-0">
-        <div class="col-12">
-          <!-- Navigation -->
-          <nav class="navbar navbar-expand-lg sticky-top border-bottom px-2">
-            <a class="d-flex ms-3" href="../index.html">
-              <img
-                src="../assets/img/JW1.svg"
-                alt="Site logo"
-                width="44"
-                height="44"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ms-auto me-3">
-                <a class="nav-link" href="../index.html">Home</a>
-                <a class="nav-link active" href="outlet.html">Outlet</a>
-                <a class="nav-link" href="about.html">About Us</a>
-                <a class="nav-link" href="stores.html">Our Stores</a>
-              </div>
-            </div>
-          </nav>
-
-          <!-- Header -->
-          <div class="page-gutter header">
-            <div class="row">
-              <div class="col-12 text-center">
-                <p class="header-tag d-inline-block rounded-pill mb-3">
-                  <i class="fa-solid fa-tag me-2" aria-hidden="true"></i>Outlet
-                </p>
-                <h1 class="title mb-3">Shop Tommy Hilfiger.</h1>
-                <p class="lede mx-auto mb-0">
-                  Filter and sort by price. More Tommy Hilfiger watches will
-                  appear here as they are added.
-                </p>
-              </div>
+      <!-- Navigation -->
+      <div class="navigation sticky-top">
+        <nav class="navbar navbar-expand-lg border-bottom px-2">
+          <a class="d-flex ms-3" href="../index.html">
+            <img
+              src="../assets/img/JW1.svg"
+              alt="Site logo"
+              width="44"
+              height="44"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto me-3">
+              <a class="nav-link" href="../index.html">Home</a>
+              <a class="nav-link active" href="outlet.html">Outlet</a>
+              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="stores.html">Our Stores</a>
             </div>
           </div>
+        </nav>
+      </div>
 
-          <!-- Listing -->
-          <div class="page-gutter listing">
-            <div class="row g-4 g-lg-5">
-              <div class="col-12 col-lg-3">
-                <div class="filters sticky-lg-top">
-                  <h2 class="filter-title mb-2">Price</h2>
-                  <div
-                    class="d-flex flex-wrap flex-lg-column align-items-lg-start gap-2 mb-4"
-                  >
-                    <button
-                      class="filter-button rounded-pill active"
-                      type="button"
-                      data-filter="all"
-                      aria-pressed="true"
-                    >
-                      All prices
-                    </button>
-                    <button
-                      class="filter-button rounded-pill"
-                      type="button"
-                      data-filter="under"
-                      aria-pressed="false"
-                    >
-                      Under &#8369;10,000
-                    </button>
-                    <button
-                      class="filter-button rounded-pill"
-                      type="button"
-                      data-filter="over"
-                      aria-pressed="false"
-                    >
-                      &#8369;10,000 and up
-                    </button>
-                  </div>
+      <!-- Header -->
+      <div class="container-card header text-center">
+        <p class="header-tag d-inline-block rounded-pill">
+          <i class="fa-solid fa-tag me-2" aria-hidden="true"></i>Outlet
+        </p>
+        <h1 class="title mb-3">Shop Tommy Hilfiger.</h1>
+        <p class="lede mx-auto mb-0">
+          Filter and sort by price. More Tommy Hilfiger watches will appear here
+          as they are added.
+        </p>
+      </div>
 
-                  <label for="sortSelect" class="filter-title mb-2"
-                    >Sort by</label
-                  >
-                  <select id="sortSelect" class="form-select rounded-pill">
-                    <option value="saving">Biggest saving</option>
-                    <option value="low">Price: low to high</option>
-                    <option value="high">Price: high to low</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-12 col-lg-9">
-                <div
-                  class="d-flex justify-content-between align-items-baseline mb-3"
+      <!-- Content -->
+      <div class="container-card listing">
+        <div class="row g-4 g-lg-5">
+          <div class="col-12 col-lg-3">
+            <div class="filters sticky-lg-top">
+              <h2 class="filter-title mb-2">Price</h2>
+              <div
+                class="d-flex flex-wrap flex-lg-column align-items-lg-start gap-2 mb-4"
+              >
+                <button
+                  class="filter-button rounded-pill active"
+                  type="button"
+                  data-filter="all"
+                  aria-pressed="true"
                 >
-                  <h2 class="filter-title mb-0">Tommy Hilfiger watches</h2>
-                  <p
-                    class="result-count mb-0"
-                    id="resultCount"
-                    aria-live="polite"
-                  ></p>
-                </div>
-                <ul
-                  class="list-unstyled d-flex flex-column gap-3 mb-0"
-                  id="outletCardContainer"
-                ></ul>
+                  All prices
+                </button>
+                <button
+                  class="filter-button rounded-pill"
+                  type="button"
+                  data-filter="under"
+                  aria-pressed="false"
+                >
+                  Under &#8369;10,000
+                </button>
+                <button
+                  class="filter-button rounded-pill"
+                  type="button"
+                  data-filter="over"
+                  aria-pressed="false"
+                >
+                  &#8369;10,000 and up
+                </button>
               </div>
+
+              <label for="sortSelect" class="filter-title mb-2">Sort by</label>
+              <select id="sortSelect" class="form-select rounded-pill">
+                <option value="saving">Biggest saving</option>
+                <option value="low">Price: low to high</option>
+                <option value="high">Price: high to low</option>
+              </select>
             </div>
           </div>
 
-          <!-- Information -->
-          <div class="page-gutter info border-top">
-            <div class="row g-3 g-lg-4">
-              <div class="col-12 col-md-4">
-                <div class="value-card h-100">
-                  <div
-                    class="value-icon d-flex align-items-center justify-content-center mb-4"
-                    aria-hidden="true"
-                  >
-                    <i class="fa-solid fa-list-check"></i>
-                  </div>
-                  <h2 class="value-title">Full specifications</h2>
-                  <p class="value-text mb-0">
-                    Every watch lists its case, strap, dial, glass, movement and
-                    water resistance.
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="value-card h-100">
-                  <div
-                    class="value-icon d-flex align-items-center justify-content-center mb-4"
-                    aria-hidden="true"
-                  >
-                    <i class="fa-solid fa-peso-sign"></i>
-                  </div>
-                  <h2 class="value-title">Prices in pesos</h2>
-                  <p class="value-text mb-0">
-                    Clear prices, with filters for under and over &#8369;10,000.
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="value-card h-100">
-                  <div
-                    class="value-icon d-flex align-items-center justify-content-center mb-4"
-                    aria-hidden="true"
-                  >
-                    <i class="fa-solid fa-location-dot"></i>
-                  </div>
-                  <h2 class="value-title">Try it in store</h2>
-                  <p class="value-text mb-0">
-                    Find a branch and see the watch before you decide.
-                  </p>
-                </div>
-              </div>
+          <div class="col-12 col-lg-9">
+            <div
+              class="d-flex justify-content-between align-items-baseline mb-3"
+            >
+              <h2 class="filter-title mb-0">Tommy Hilfiger watches</h2>
+              <p class="result-count mb-0" id="resultCount" aria-live="polite"></p>
             </div>
+            <ul
+              class="list-unstyled d-flex flex-column gap-3 mb-0"
+              id="outletCardContainer"
+            ></ul>
           </div>
-
-          <!-- Footer -->
-          <footer class="site-footer">
-            <div class="page-gutter">
-              <div class="row g-4 py-5">
-                <div class="col-12 col-md-5">
-                  <a href="../index.html" class="footer-brand"
-                    >Tommy Hilfiger 1710690</a
-                  >
-                  <p class="footer-text">
-                    This is a demo page for learning only and is not affiliated
-                    with Tommy Hilfiger or any other brand shown, and all brand
-                    names and images belong to their respective owners.
-                  </p>
-                  <div class="footer-social">
-                    <a href="#" aria-label="Facebook"
-                      ><i class="fa-brands fa-facebook-f"></i
-                    ></a>
-                    <a href="#" aria-label="Instagram"
-                      ><i class="fa-brands fa-instagram"></i
-                    ></a>
-                    <a href="#" aria-label="YouTube"
-                      ><i class="fa-brands fa-youtube"></i
-                    ></a>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                  <h2 class="footer-title">Explore</h2>
-                  <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="outlet.html">Outlet</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="stores.html">Our Stores</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-6 col-md-4">
-                  <h2 class="footer-title">Featured watch</h2>
-                  <ul class="footer-links">
-                    <li><a href="preview.html">Tommy Hilfiger 1710690</a></li>
-                    <li>Quartz multifunction</li>
-                    <li>5 bar water resistant</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12">
-                  <div class="footer-bottom text-center">
-                    &copy; <span id="footerYear">2026</span> For demonstration
-                    purposes only.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </footer>
         </div>
+      </div>
+
+      <!-- Information -->
+      <div class="container-card info border-top">
+        <div class="row g-3 g-lg-4">
+          <div class="col-12 col-md-4">
+            <div class="value-card h-100">
+              <div
+                class="value-icon d-flex align-items-center justify-content-center mb-4"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-list-check"></i>
+              </div>
+              <h2 class="value-title">Full specifications</h2>
+              <p class="value-text mb-0">
+                Every watch lists its case, strap, dial, glass, movement and
+                water resistance.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="value-card h-100">
+              <div
+                class="value-icon d-flex align-items-center justify-content-center mb-4"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-peso-sign"></i>
+              </div>
+              <h2 class="value-title">Prices in pesos</h2>
+              <p class="value-text mb-0">
+                Clear prices, with filters for under and over &#8369;10,000.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="value-card h-100">
+              <div
+                class="value-icon d-flex align-items-center justify-content-center mb-4"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <h2 class="value-title">Try it in store</h2>
+              <p class="value-text mb-0">
+                Find a branch and see the watch before you decide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div>
+        <footer class="site-footer">
+          <div class="container-card">
+            <div class="row g-4 py-5">
+              <div class="col-12 col-md-5">
+                <a href="../index.html" class="footer-brand"
+                  >Tommy Hilfiger 1710690</a
+                >
+                <p class="footer-text">
+                  This is a demo page for learning only and is not affiliated
+                  with Tommy Hilfiger or any other brand shown, and all brand
+                  names and images belong to their respective owners.
+                </p>
+                <div class="footer-social">
+                  <a href="#" aria-label="Facebook"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a href="#" aria-label="Instagram"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                  <a href="#" aria-label="YouTube"
+                    ><i class="fa-brands fa-youtube"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3">
+                <h2 class="footer-title">Explore</h2>
+                <ul class="footer-links">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="outlet.html">Outlet</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="stores.html">Our Stores</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h2 class="footer-title">Featured watch</h2>
+                <ul class="footer-links">
+                  <li><a href="preview.html">Tommy Hilfiger 1710690</a></li>
+                  <li>Quartz multifunction</li>
+                  <li>5 bar water resistant</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+              &copy; <span id="footerYear">2026</span> For demonstration
+              purposes only.
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
 
-    <!-- Scripts -->
     <script>
       document.getElementById("footerYear").textContent =
         new Date().getFullYear();

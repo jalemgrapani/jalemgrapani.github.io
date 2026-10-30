@@ -63,13 +63,6 @@ h4,
     font-weight: 600;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    line-height: 1.2;
-}
-
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--calamansi);
@@ -93,10 +86,13 @@ button:focus-visible {
 
 /* Navigation */
 
+.navigation {
+    z-index: 3;
+}
+
 .navbar {
     --nav-ink: var(--white);
     --nav-accent: var(--calamansi);
-    z-index: 3;
     padding: 1.1rem 0;
     background: transparent;
     transition: background 0.3s ease, padding 0.3s ease;
@@ -264,7 +260,6 @@ button:focus-visible {
     border: 0;
     border-radius: 0.7rem;
     color: var(--muted);
-    font-family: var(--font-body);
     font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
 }

@@ -85,11 +85,8 @@ i {
 
 /* Layout */
 
-.site-container {
-    max-width: 800px;
-}
-
 .site-content {
+    max-width: 800px;
     padding: 130px 24px 0;
 }
 

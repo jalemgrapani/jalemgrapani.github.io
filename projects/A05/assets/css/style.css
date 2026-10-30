@@ -14,7 +14,6 @@
     --tint: hsla(0, 0%, 100%, 0.1);
 
     --cool: hsl(190, 70%, 55%);
-    --hot: var(--sun);
     --rainy: hsl(215, 35%, 50%);
 
     --bs-body-font-family: "Inter", "Segoe UI", system-ui, sans-serif;
@@ -61,28 +60,6 @@ button:focus-visible {
 
 .section-text {
     font-size: 1.1rem;
-}
-
-/* Hero */
-
-.hero {
-    min-height: 100vh;
-    padding: 140px 0 48px;
-    background:
-        linear-gradient(180deg, hsla(192, 55%, 9%, 0.6) 0%, hsla(192, 55%, 9%, 0.2) 40%, hsla(192, 55%, 9%, 0.92) 100%),
-        url("../img/PALAWAN.jpg") center / cover;
-}
-
-.hero-title {
-    max-width: 13em;
-    font-size: clamp(2.4rem, 7vw, 5rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-}
-
-.hero-text {
-    max-width: 36rem;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 /* Navigation */
@@ -156,6 +133,28 @@ button:focus-visible {
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
     transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 0 48px;
+    background:
+        linear-gradient(180deg, hsla(192, 55%, 9%, 0.6) 0%, hsla(192, 55%, 9%, 0.2) 40%, hsla(192, 55%, 9%, 0.92) 100%),
+        url("../img/PALAWAN.jpg") center / cover;
+}
+
+.hero-title {
+    max-width: 13em;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.hero-text {
+    max-width: 36rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 /* Filters */
@@ -311,7 +310,7 @@ button:focus-visible {
 }
 
 .month-hot {
-    background: var(--hot);
+    background: var(--sun);
 }
 
 .month-rainy {

@@ -30,6 +30,17 @@
     font-weight: 700;
 }
 
+.search-button {
+    height: 3.4rem;
+    padding: 0 1.75rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.search-button:hover {
+    color: var(--on-gold);
+    filter: brightness(1.1);
+}
+
 #resultContainer a.search-message-btn {
     display: inline-block;
     width: auto;
@@ -108,17 +119,6 @@
     border-color: var(--gold);
     box-shadow: 0 0 0 3px hsla(42, 62%, 56%, 0.25);
     color: var(--text);
-}
-
-.search-button {
-    height: 3.4rem;
-    padding: 0 1.75rem;
-    border-radius: 0 0.75rem 0.75rem 0;
-}
-
-.search-button:hover {
-    color: var(--on-gold);
-    filter: brightness(1.1);
 }
 
 /* Responsive */

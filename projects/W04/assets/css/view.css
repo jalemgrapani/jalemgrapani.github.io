@@ -11,11 +11,12 @@
 }
 
 .champion-hero-overlay {
-    background: linear-gradient(to top, var(--background) 3%, hsla(222, 40%, 6%, 0.35) 60%, hsla(222, 40%, 6%, 0.55));
-}
-
-.champion-hero-content {
-    padding-bottom: 3rem;
+    background: linear-gradient(
+        to top,
+        var(--background) 3%,
+        hsla(222, 40%, 6%, 0.35) 60%,
+        hsla(222, 40%, 6%, 0.55)
+    );
 }
 
 #championName {

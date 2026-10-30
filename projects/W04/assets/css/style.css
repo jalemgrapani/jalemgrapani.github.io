@@ -62,12 +62,6 @@ body {
     line-height: 1.7;
 }
 
-.container-fluid {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-
 .navbar-brand,
 .hero-title,
 .section-title,
@@ -96,7 +90,9 @@ a:focus-visible,
     min-height: max(420px, 70vh);
     padding-top: 6rem;
     background-color: var(--background);
-    background-image: linear-gradient(180deg, hsla(222, 40%, 6%, 0.45), var(--background)), url("../img/lol2.jpg");
+    background-image:
+        linear-gradient(180deg, hsla(222, 40%, 6%, 0.45), var(--background)),
+        url("../img/lol2.jpg");
     background-position: center 30%;
     background-size: cover;
 }
@@ -112,8 +108,8 @@ a:focus-visible,
 
 .hero-title {
     margin-bottom: 1rem;
-    font-weight: 700;
     font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
     line-height: 1.1;
     text-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.6);
 }
@@ -130,19 +126,17 @@ a:focus-visible,
 
 /* Navigation */
 
-.navbar {
+.navigation {
     z-index: 5;
+}
+
+.navbar {
     min-height: 4.5rem;
     padding: 0;
     background: var(--navbar);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 6px 24px var(--shadow);
-}
-
-.navbar .container,
-.navbar .container-fluid {
-    position: relative;
 }
 
 @supports (animation-timeline: scroll()) {
@@ -163,9 +157,9 @@ a:focus-visible,
 }
 
 .navbar-brand {
-    font-weight: 700;
-    font-size: 1.25rem;
     color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .navbar-brand:hover {
@@ -243,9 +237,9 @@ a:focus-visible,
 
 .section-title {
     margin-bottom: 1rem;
-    font-weight: 600;
-    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
     color: var(--gold);
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 600;
 }
 
 .body-text {
@@ -294,18 +288,18 @@ a:focus-visible,
 
 .explore-icon {
     margin-bottom: 1rem;
-    font-size: 1.6rem;
     color: var(--cyan);
+    font-size: 1.6rem;
 }
 
 .explore-title {
-    font-weight: 600;
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .explore-hint {
-    font-weight: 700;
     color: var(--gold);
+    font-weight: 700;
 }
 
 /* Footer */
@@ -336,11 +330,6 @@ a:focus-visible,
         border: 1px solid var(--border);
         border-radius: 1rem;
         box-shadow: 0 8px 24px var(--shadow);
-    }
-
-    .navbar-nav {
-        align-items: flex-end;
-        text-align: right;
     }
 
     .section {

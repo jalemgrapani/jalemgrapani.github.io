@@ -22,15 +22,6 @@
     --bs-border-color: var(--line);
 }
 
-/* Reset */
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-}
-
 /* Base */
 
 html {
@@ -39,7 +30,6 @@ html {
 }
 
 body {
-    overflow-x: clip;
     background-color: var(--steel);
     color: var(--ink);
 }
@@ -47,8 +37,6 @@ body {
 h1,
 h2,
 h3,
-h4,
-.btn,
 .nav-link,
 .header-tag,
 .filter-title,
@@ -66,7 +54,7 @@ h4,
 
 /* Layout */
 
-.page-gutter {
+.container-card {
     padding-left: var(--page-gutter);
     padding-right: var(--page-gutter);
 }
@@ -112,11 +100,14 @@ h4,
 
 /* Navigation */
 
+.navigation {
+    z-index: 5;
+}
+
 .navbar {
     --bs-navbar-color: var(--ink-soft);
     --bs-navbar-hover-color: var(--ink);
     --bs-navbar-active-color: var(--ink);
-    z-index: 5;
     background-color: var(--steel);
 }
 
@@ -220,12 +211,10 @@ h4,
 
 .product,
 .value-card {
-    position: relative;
-    top: 0;
     background: var(--white);
     border: 1px solid transparent;
     border-radius: var(--radius);
-    transition: top 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .product:hover,
@@ -238,7 +227,7 @@ h4,
 }
 
 .product:hover {
-    top: -4px;
+    transform: translateY(-4px);
 }
 
 .product-image {
@@ -261,7 +250,6 @@ h4,
 }
 
 .price-now {
-    color: var(--ink);
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 1.2;

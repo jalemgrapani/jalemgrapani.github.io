@@ -19,15 +19,12 @@
     --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
 
     --bs-body-font-family: var(--font-body);
-    --bs-font-sans-serif: var(--font-body);
     --bs-border-color: var(--line);
 }
 
 /* Reset */
 
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
 }
@@ -52,7 +49,6 @@ body {
 h1,
 h2,
 h3,
-h4,
 .btn {
     font-family: var(--font-heading);
 }
@@ -64,20 +60,22 @@ h4,
 
 /* Layout */
 
-.page-gutter {
+.section {
+    padding: var(--pad-section) var(--page-gutter);
+}
+
+.footer-content {
     padding-left: var(--page-gutter);
     padding-right: var(--page-gutter);
 }
 
-.section {
-    padding-top: var(--pad-section);
-    padding-bottom: var(--pad-section);
-}
-
 /* Navigation */
 
-.navbar {
+.navigation {
     z-index: 5;
+}
+
+.navbar {
     background-color: var(--steel);
     --bs-navbar-color: var(--ink-soft);
     --bs-navbar-hover-color: var(--ink);
@@ -127,7 +125,7 @@ h4,
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.logo {
+.brand-logo {
     width: 44px;
     height: 44px;
 }
@@ -159,11 +157,6 @@ h4,
     line-height: 1.08;
 }
 
-.hero-text {
-    max-width: 30rem;
-    color: var(--on-ink-soft);
-}
-
 .hero-facts {
     gap: 1.5rem 2.5rem;
     margin: 2.5rem 0 0;
@@ -183,7 +176,7 @@ h4,
 
 /* About */
 
-.about {
+.about-title {
     color: var(--ink-soft);
     font-size: 1.1rem;
     font-weight: 700;
@@ -194,10 +187,6 @@ h4,
     font-size: clamp(1.8rem, 3.4vw, 3rem);
     font-weight: 700;
     line-height: 1.25;
-}
-
-.description {
-    line-height: 1.9;
 }
 
 .values {
@@ -237,7 +226,7 @@ h4,
     border-bottom: 2px solid var(--ink);
 }
 
-.brands {
+.brands-title {
     font-size: clamp(2rem, 4.5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.05;
@@ -321,6 +310,7 @@ h4,
 }
 
 .hero-text {
+    max-width: 30rem;
     color: var(--on-ink-soft);
 }
 
@@ -328,7 +318,7 @@ h4,
     line-height: 1.9;
 }
 
-/* Buttons */
+/* Components */
 
 .btn {
     padding: 0.8rem 2rem;

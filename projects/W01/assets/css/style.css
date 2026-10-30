@@ -69,7 +69,6 @@ button:focus-visible {
 .navbar {
     z-index: 5;
     padding: 18px 0;
-    background: transparent;
     transition: background 0.3s ease, padding 0.3s ease;
 }
 
@@ -194,33 +193,7 @@ button:focus-visible {
     }
 }
 
-/* Buttons */
-
-.btn-main {
-    background: var(--aqua);
-    border-color: var(--aqua);
-    color: var(--ink);
-}
-
-.btn-main:hover {
-    background: var(--white);
-    border-color: var(--white);
-    color: var(--ink);
-}
-
-.btn-gold {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--ink);
-}
-
-.btn-gold:hover {
-    background: var(--gold-hover);
-    border-color: var(--gold-hover);
-    color: var(--ink);
-}
-
-/* Sections */
+/* Content */
 
 .section {
     padding: 100px 0;
@@ -238,8 +211,6 @@ button:focus-visible {
 .section-text {
     font-size: 1.1rem;
 }
-
-/* Specs */
 
 .specs-visual {
     z-index: 1;
@@ -263,8 +234,6 @@ button:focus-visible {
     color: var(--aqua-deep);
 }
 
-/* Battery */
-
 .battery-number {
     color: var(--aqua);
     font-size: clamp(4.5rem, 12vw, 8rem);
@@ -279,8 +248,6 @@ button:focus-visible {
 .battery-image {
     max-width: min(100%, 480px);
 }
-
-/* Colors */
 
 .swatch {
     width: 64px;
@@ -313,13 +280,37 @@ button:focus-visible {
     max-height: 520px;
 }
 
-/* Price */
-
 .cta {
     padding: 72px 0;
     background:
         radial-gradient(circle at 90% 50%, hsla(44, 95%, 60%, 0.2), transparent 50%),
         var(--gradient);
+}
+
+/* Components */
+
+.btn-main {
+    background: var(--aqua);
+    border-color: var(--aqua);
+    color: var(--ink);
+}
+
+.btn-main:hover {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--ink);
+}
+
+.btn-gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink);
+}
+
+.btn-gold:hover {
+    background: var(--gold-hover);
+    border-color: var(--gold-hover);
+    color: var(--ink);
 }
 
 /* Footer */
@@ -357,8 +348,7 @@ button:focus-visible {
 /* Responsive */
 
 @media (max-width: 767.98px) {
-    .navbar,
-    .navbar.scrolled {
+    .navbar {
         padding: 10px 0;
     }
 
@@ -378,10 +368,6 @@ button:focus-visible {
 
     .navbar-collapse.collapsing {
         transition: none;
-    }
-
-    .navbar-nav {
-        align-items: flex-end;
     }
 
     .navbar-nav .nav-link {

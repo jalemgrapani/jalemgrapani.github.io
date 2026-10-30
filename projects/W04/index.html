@@ -29,161 +29,160 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <div class="container-fluid px-0">
-      <div class="row g-0">
-        <!-- Navigation -->
-        <div class="col-12">
-          <nav
-            id="navbar"
-            class="navbar navbar-expand-lg navbar-dark fixed-top"
-          >
-            <div class="container">
-              <a class="navbar-brand" href="index.html">League of Legends</a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      href="index.html"
-                      aria-current="page"
-                      >Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="champions.html">Champions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="search.html">Search</a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.leagueoflegends.com/en-us/"
-                      target="_blank"
-                      rel="noopener"
-                      >Official Website</a
-                    >
-                  </li>
-                  <li class="nav-item ms-lg-2">
-                    <a
-                      class="btn btn-gold btn-sm fw-bold px-3"
-                      href="https://signup.na.leagueoflegends.com/en/signup/redownload"
-                      target="_blank"
-                      rel="noopener"
-                      >Play for Free</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
 
-        <!-- Header -->
-        <div class="col-12 hero-banner d-flex align-items-end">
-          <div class="container hero-content">
-            <div class="row">
-              <div class="col-12 col-lg-8">
-                <h1 class="hero-title">League of Legends Champion Guide</h1>
-                <p class="hero-lead">
-                  Browse every champion, check their roles and read their lore.
-                </p>
-                <a
-                  href="champions.html"
-                  class="btn btn-gold btn-lg fw-bold me-2 mb-2"
-                  >Browse Champions</a
-                >
-                <a href="search.html" class="btn btn-outline-light btn-lg mb-2"
-                  >Search a Champion</a
-                >
-              </div>
+  <body>
+    <div class="container-fluid px-0 d-flex flex-column flex-grow-1">
+      <!-- Navigation -->
+      <div class="navigation fixed-top">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <div class="container position-relative">
+            <a class="navbar-brand" href="index.html">League of Legends</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul
+                class="navbar-nav ms-auto gap-lg-2 align-items-end align-items-lg-center"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    href="index.html"
+                    aria-current="page"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="champions.html">Champions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="search.html">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://www.leagueoflegends.com/en-us/"
+                    target="_blank"
+                    rel="noopener"
+                    >Official Website</a
+                  >
+                </li>
+                <li class="nav-item ms-lg-2">
+                  <a
+                    class="btn btn-gold btn-sm fw-bold px-3"
+                    href="https://signup.na.leagueoflegends.com/en/signup/redownload"
+                    target="_blank"
+                    rel="noopener"
+                    >Play for Free</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Header -->
+      <div class="hero-banner d-flex align-items-end">
+        <div class="container hero-content">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <h1 class="hero-title">League of Legends Champion Guide</h1>
+              <p class="hero-lead">
+                Browse every champion, check their roles and read their lore.
+              </p>
+              <a
+                href="champions.html"
+                class="btn btn-gold btn-lg fw-bold me-2 mb-2"
+                >Browse Champions</a
+              >
+              <a href="search.html" class="btn btn-outline-light btn-lg mb-2"
+                >Search a Champion</a
+              >
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Content -->
-        <div class="col-12 section">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-12 col-lg-8">
-                <h2 class="section-title">Where to Start</h2>
-                <p class="body-text mb-0">
-                  Pick a starting point below to explore the champions of League
-                  of Legends.
-                </p>
-              </div>
+      <!-- Content -->
+      <div class="section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-12 col-lg-8">
+              <h2 class="section-title">Where to Start</h2>
+              <p class="body-text mb-0">
+                Pick a starting point below to explore the champions of League
+                of Legends.
+              </p>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              <div class="col">
-                <a
-                  class="explore-card d-block h-100 text-decoration-none"
-                  href="champions.html"
-                >
-                  <i class="fa-solid fa-users explore-icon"></i>
-                  <h3 class="explore-title">Champions List</h3>
-                  <p class="explore-text">
-                    Browse every League of Legends champion, 20 per page.
-                  </p>
-                  <span class="explore-hint"
-                    >View the list <i class="fa-solid fa-arrow-right"></i
-                  ></span>
-                </a>
-              </div>
-              <div class="col">
-                <a
-                  class="explore-card d-block h-100 text-decoration-none"
-                  href="search.html"
-                >
-                  <i class="fa-solid fa-magnifying-glass explore-icon"></i>
-                  <h3 class="explore-title">Search Champion</h3>
-                  <p class="explore-text">
-                    Look up a champion by name and open their profile.
-                  </p>
-                  <span class="explore-hint"
-                    >Start searching <i class="fa-solid fa-arrow-right"></i
-                  ></span>
-                </a>
-              </div>
-              <div class="col">
-                <a
-                  class="explore-card d-block h-100 text-decoration-none"
-                  href="https://www.leagueoflegends.com/en-us/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="fa-solid fa-globe explore-icon"></i>
-                  <h3 class="explore-title">Official Website</h3>
-                  <p class="explore-text">
-                    Read the latest news and updates on the official League of
-                    Legends site.
-                  </p>
-                  <span class="explore-hint"
-                    >Visit the site <i class="fa-solid fa-arrow-right"></i
-                  ></span>
-                </a>
-              </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <a
+                class="explore-card d-block h-100 text-decoration-none"
+                href="champions.html"
+              >
+                <i class="fa-solid fa-users explore-icon"></i>
+                <h3 class="explore-title">Champions List</h3>
+                <p class="explore-text">
+                  Browse every League of Legends champion, 20 per page.
+                </p>
+                <span class="explore-hint"
+                  >View the list <i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+            <div class="col">
+              <a
+                class="explore-card d-block h-100 text-decoration-none"
+                href="search.html"
+              >
+                <i class="fa-solid fa-magnifying-glass explore-icon"></i>
+                <h3 class="explore-title">Search Champion</h3>
+                <p class="explore-text">
+                  Look up a champion by name and open their profile.
+                </p>
+                <span class="explore-hint"
+                  >Start searching <i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+            <div class="col">
+              <a
+                class="explore-card d-block h-100 text-decoration-none"
+                href="https://www.leagueoflegends.com/en-us/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-globe explore-icon"></i>
+                <h3 class="explore-title">Official Website</h3>
+                <p class="explore-text">
+                  Read the latest news and updates on the official League of
+                  Legends site.
+                </p>
+                <span class="explore-hint"
+                  >Visit the site <i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Footer -->
-      <div class="row g-0 mt-auto">
-        <footer class="col-12 site-footer">
+      <div class="mt-auto">
+        <footer class="site-footer">
           <div class="row g-0 justify-content-center">
             <div class="col-12 col-lg-10 px-3">
               <p class="footer-bottom mb-0">

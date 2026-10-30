@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="../../../homepage/assets/img/JL Logo.svg"
-    />
+    <link rel="icon" type="image/svg+xml" href="../../../homepage/assets/img/JL%20Logo.svg" />
     <title>Find a Store</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
@@ -18,161 +14,137 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400..900&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- Styles -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="../assets/css/stores.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
   </head>
 
   <body>
     <div class="container-fluid p-0">
-      <div class="row g-0">
-        <div class="col-12">
-          <!-- Navigation -->
-          <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-            <div class="container-fluid">
-              <a class="d-flex ms-3" href="../index.html">
-                <img
-                  src="../assets/img/JW1.svg"
-                  alt="Site logo"
-                  width="44"
-                  height="44"
-                />
-              </a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto mx-3">
-                  <a class="fs-6 nav-link" href="../index.html">Home</a>
-                  <a class="fs-6 nav-link" href="outlet.html">Outlet</a>
-                  <a class="fs-6 nav-link" href="about.html">About Us</a>
-                  <a class="fs-6 nav-link active" href="stores.html"
-                    >Our Stores</a
-                  >
-                </div>
-              </div>
-            </div>
-          </nav>
-
-          <!-- Header -->
-          <div class="header section">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-12 col-lg-7 text-center">
-                  <h1 class="title mb-2">Find a store</h1>
-                  <p class="lede mx-auto mb-0">
-                    Find a branch near you and see the watches in person.
-                  </p>
-                </div>
+      <!-- Navigation -->
+      <div class="sticky-top navigation">
+        <nav class="navbar navbar-expand-lg border-bottom">
+          <div class="container-fluid">
+            <a class="d-flex ms-3" href="../index.html">
+              <img src="../assets/img/JW1.svg" alt="Site logo" width="44" height="44" />
+            </a>
+            <button
+              class="navbar-toggler border-0 shadow-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav align-items-end ms-auto me-3">
+                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link" href="outlet.html">Outlet</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link active" href="stores.html">Our Stores</a>
               </div>
             </div>
           </div>
+        </nav>
+      </div>
 
-          <!-- Stores -->
-          <div class="section border-top">
-            <div class="container">
-              <div class="row g-4" id="storeCardContainer"></div>
+      <!-- Header -->
+      <div class="header section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-7 text-center">
+              <h1 class="title mb-2">Find a store</h1>
+              <p class="lede mx-auto mb-0">
+                Find a branch near you and see the watches in person.
+              </p>
             </div>
           </div>
-
-          <!-- Help -->
-          <div class="section border-top">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-12">
-                  <div class="help-panel mx-auto text-center">
-                    <h2 class="help-title">Not near a branch?</h2>
-                    <p class="lede">
-                      Browse the outlet to see every watch and its price.
-                    </p>
-                    <div class="d-grid d-md-block">
-                      <a href="outlet.html" class="btn fs-6 button rounded-pill"
-                        >Shop the outlet</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <footer class="site-footer">
-            <div class="container-fluid page-gutter">
-              <div class="row g-4 py-5">
-                <div class="col-12 col-md-5">
-                  <a href="../index.html" class="footer-brand"
-                    >Tommy Hilfiger 1710690</a
-                  >
-                  <p class="footer-text">
-                    This is a demo page for learning only and is not affiliated
-                    with Tommy Hilfiger or any other brand shown, and all brand
-                    names and images belong to their respective owners.
-                  </p>
-                  <div class="footer-social">
-                    <a href="#" aria-label="Facebook"
-                      ><i class="fa-brands fa-facebook-f"></i
-                    ></a>
-                    <a href="#" aria-label="Instagram"
-                      ><i class="fa-brands fa-instagram"></i
-                    ></a>
-                    <a href="#" aria-label="YouTube"
-                      ><i class="fa-brands fa-youtube"></i
-                    ></a>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                  <h2 class="footer-title">Explore</h2>
-                  <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="outlet.html">Outlet</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="stores.html">Our Stores</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-6 col-md-4">
-                  <h2 class="footer-title">Featured watch</h2>
-                  <ul class="footer-links">
-                    <li><a href="preview.html">Tommy Hilfiger 1710690</a></li>
-                    <li>Quartz multifunction</li>
-                    <li>5 bar water resistant</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="footer-bottom text-center">
-                &copy; <span id="footerYear">2026</span> For demonstration
-                purposes only.
-              </div>
-            </div>
-          </footer>
         </div>
+      </div>
+
+      <!-- Stores -->
+      <div class="section border-top">
+        <div class="container">
+          <div class="row g-4" id="storeCardContainer"></div>
+        </div>
+      </div>
+
+      <!-- Help -->
+      <div class="section border-top">
+        <div class="container">
+          <div class="help-panel mx-auto text-center">
+            <h2 class="help-title">Not near a branch?</h2>
+            <p class="lede">Browse the outlet to see every watch and its price.</p>
+            <div class="d-grid d-md-block">
+              <a href="outlet.html" class="btn button rounded-pill">Shop the outlet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div>
+        <footer class="site-footer">
+          <div class="container-fluid">
+            <div class="row g-4 py-5">
+              <div class="col-12 col-md-5">
+                <a href="../index.html" class="footer-brand">Tommy Hilfiger 1710690</a>
+                <p class="footer-text">
+                  This is a demo page for learning only and is not affiliated
+                  with Tommy Hilfiger or any other brand shown, and all brand
+                  names and images belong to their respective owners.
+                </p>
+                <div class="footer-social">
+                  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3">
+                <h2 class="footer-title">Explore</h2>
+                <ul class="footer-links">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="outlet.html">Outlet</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="stores.html">Our Stores</a></li>
+                </ul>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h2 class="footer-title">Featured watch</h2>
+                <ul class="footer-links">
+                  <li><a href="preview.html">Tommy Hilfiger 1710690</a></li>
+                  <li>Quartz multifunction</li>
+                  <li>5 bar water resistant</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+              &copy; <span id="footerYear">2026</span> For demonstration purposes
+              only.
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
 
     <!-- Scripts -->
     <script>
-      document.getElementById("footerYear").textContent =
-        new Date().getFullYear();
+      var year = document.getElementById("footerYear");
+      year.textContent = new Date().getFullYear();
     </script>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"

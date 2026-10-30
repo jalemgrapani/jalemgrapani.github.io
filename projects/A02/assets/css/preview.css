@@ -33,14 +33,11 @@
 
 html {
     scroll-behavior: smooth;
-}
-
-html,
-body {
     overflow-x: clip;
 }
 
 body {
+    overflow-x: clip;
     background-color: var(--steel);
     color: var(--ink);
 }
@@ -50,6 +47,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 .btn {
     font-family: var(--font-heading);
 }
@@ -61,7 +59,6 @@ h5,
 
 .title {
     font-weight: 800;
-    line-height: 1.2;
 }
 
 .watchImage,
@@ -84,11 +81,16 @@ h5,
 
 /* Navigation */
 
+.navigation {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
 .navbar {
     --bs-navbar-color: var(--ink-soft);
     --bs-navbar-hover-color: var(--ink);
     --bs-navbar-active-color: var(--ink);
-    z-index: 5;
     background-color: var(--steel);
 }
 
@@ -150,10 +152,6 @@ h5,
     font-weight: 600;
 }
 
-.nav-link.active {
-    font-weight: 800;
-}
-
 /* Product */
 
 .hero {
@@ -206,6 +204,13 @@ h5,
     color: var(--steel);
 }
 
+.price {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
 .product-summary {
     max-width: 32rem;
     margin-bottom: 1.75rem;
@@ -214,21 +219,15 @@ h5,
     line-height: 1.7;
 }
 
-.price {
-    margin-bottom: 1.5rem;
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 800;
+/* Details */
+
+.info-heading,
+.more-title {
+    border-bottom: 2px solid var(--ink);
 }
 
-/* Specs */
-
 .info-heading {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--ink);
     font-size: 1.4rem;
-    font-weight: 800;
 }
 
 .spec-list {
@@ -243,6 +242,7 @@ h5,
     gap: 1rem;
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
 }
 
 .spec-row:last-child {
@@ -251,16 +251,7 @@ h5,
 
 .spec-label {
     color: var(--ink-soft);
-    font-size: 0.95rem;
 }
-
-.spec-value {
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-align: right;
-}
-
-/* Gallery */
 
 .gallery-item {
     height: 220px;
@@ -288,8 +279,6 @@ h5,
 /* More */
 
 .more-title {
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--ink);
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 
@@ -327,7 +316,6 @@ h5,
 
 .card-description h6 {
     color: var(--ink) !important;
-    font-family: var(--font-heading);
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.45;
@@ -351,12 +339,6 @@ h5,
 .review-panel .fa-star {
     color: var(--ink);
     font-size: 1.6rem;
-}
-
-.review-title {
-    margin: 1rem 0 1.5rem;
-    font-size: 1.25rem;
-    font-weight: 700;
 }
 
 /* Components */
@@ -413,7 +395,6 @@ h5,
         position: absolute;
         top: 100%;
         right: 0.75rem;
-        z-index: 5;
         width: fit-content;
         min-width: 10rem;
         padding: 0.5rem 1rem;
@@ -425,7 +406,6 @@ h5,
     .navbar-nav {
         width: 100%;
         align-items: flex-end;
-        text-align: right;
     }
 
     .gallery-item {

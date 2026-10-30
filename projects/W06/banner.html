@@ -16,307 +16,304 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/parallax.css" />
   </head>
 
   <body>
-    <!-- Parallax -->
-    <div class="keyart" id="parallax">
-      <div class="keyart_layer parallax" id="keyart-0" data-speed="5"></div>
-      <div class="keyart_layer parallax" id="keyart-1" data-speed="10"></div>
-      <div class="keyart_layer parallax" id="keyart-2" data-speed="15"></div>
-      <div class="keyart_layer parallax" id="keyart-3" data-speed="20"></div>
-      <div class="keyart_layer parallax" id="keyart-4" data-speed="30"></div>
-      <div class="keyart_layer" id="keyart-5" data-speed="50"></div>
-    </div>
+    <div class="container-fluid p-0">
+      <!-- Parallax -->
+      <div class="keyart" id="parallax">
+        <div class="keyart_layer parallax" id="keyart-0" data-speed="5"></div>
+        <div class="keyart_layer parallax" id="keyart-1" data-speed="10"></div>
+        <div class="keyart_layer parallax" id="keyart-2" data-speed="15"></div>
+        <div class="keyart_layer parallax" id="keyart-3" data-speed="20"></div>
+        <div class="keyart_layer parallax" id="keyart-4" data-speed="30"></div>
+        <div class="keyart_layer" id="keyart-5" data-speed="50"></div>
+      </div>
 
-    <div id="home" class="main-content">
-      <!-- Title -->
-      <div class="container-title d-flex justify-content-center">
-        <div class="row-title w-100">
-          <div class="col-title">
-            <p class="title-eyebrow fst-italic">A visual record</p>
-            <h1 class="title-text">
-              Buildings and Architecture<br />of the Philippines
-            </h1>
-            <p class="title-sub mb-0">
-              From earthquake-proof baroque churches to a sugar baron's ruined
-              mansion, structures that trace how the country has built and
-              rebuilt itself.
+      <div id="home" class="main-content">
+        <!-- Title -->
+        <div class="title-section">
+          <div class="container-content mx-auto">
+            <div class="title-block">
+              <p class="title-eyebrow fst-italic">A visual record</p>
+              <h1 class="title-text">
+                Buildings and Architecture<br />of the Philippines
+              </h1>
+              <p class="title-sub mb-0">
+                From earthquake-proof baroque churches to a sugar baron's
+                ruined mansion, structures that trace how the country has built
+                and rebuilt itself.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+          <div class="container-content mx-auto">
+            <div class="feature pt-4 border-bottom">
+              <div class="row align-items-center gy-4 gx-md-5">
+                <div class="col-md-6">
+                  <img
+                    src="assets/img/theRuins.jpg"
+                    alt="The Ruins mansion"
+                    class="image w-100 d-block object-fit-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-text">
+                    <p class="image-meta">
+                      Talisay City, Negros Occidental — early 1900s
+                    </p>
+                    <h2 class="image-title mb-3">The Ruins</h2>
+                    <p class="image-desc mb-0">
+                      Built by the sugar baron Don Mariano Ledesma Lacson as a
+                      monument of luxury, the mansion was set ablaze during
+                      World War II to keep it from American use. What's left
+                      are its bare columns and stripped walls — an outline of
+                      the house rather than the house itself, and now one of
+                      the region's most visited ruins.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature border-bottom">
+              <div class="row align-items-center gy-4 gx-md-5">
+                <div class="col-md-6 order-md-2">
+                  <img
+                    src="assets/img/cathedral.jpg"
+                    alt="Our Lady of Atonement Cathedral"
+                    class="image w-100 d-block object-fit-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-text">
+                    <p class="image-meta">Baguio City — Neo-Gothic</p>
+                    <h2 class="image-title mb-3">
+                      Our Lady of Atonement Cathedral
+                    </h2>
+                    <p class="image-desc mb-0">
+                      Known locally as Baguio Cathedral, its twin spires sit
+                      above the city on a hilltop, visible from most of the
+                      surrounding streets. As seat of the Diocese of Baguio,
+                      the pink-toned Neo-Gothic building has become as much a
+                      wayfinding landmark as a place of worship.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature border-0">
+              <div class="row align-items-center gy-4 gx-md-5">
+                <div class="col-md-6">
+                  <img
+                    src="assets/img/stAugustine.jpg"
+                    alt="St. Augustine's Church, Paoay"
+                    class="image w-100 d-block object-fit-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-text">
+                    <p class="image-meta">
+                      Paoay, Ilocos Norte — UNESCO World Heritage Site
+                    </p>
+                    <h2 class="image-title mb-3">St. Augustine's Church</h2>
+                    <p class="image-desc mb-0">
+                      Also called Paoay Church, its massive coral-stone
+                      buttresses were built wide and low for a reason: to
+                      survive the earthquakes that regularly shake the region.
+                      That engineering answer to a local hazard is what
+                      "Earthquake Baroque" describes, and why the church still
+                      stands after three centuries.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Landmarks -->
+        <div id="others" class="section border-top">
+          <div class="container-content mx-auto">
+            <h2 class="section-heading d-inline-block">More landmarks</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-img-wrap overflow-hidden">
+                    <img
+                      src="assets/img/mmt.jpg"
+                      class="card-img-top h-100 d-block object-fit-cover rounded-0"
+                      alt="Manila Metropolitan Theater"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Manila Metropolitan Theater</h3>
+                    <p class="card-meta mb-0">Manila — Art Deco</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-img-wrap overflow-hidden">
+                    <img
+                      src="assets/img/makiling.png"
+                      class="card-img-top h-100 d-block object-fit-cover rounded-0"
+                      alt="Tanghalang Maria Makiling"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Tanghalang Maria Makiling</h3>
+                    <p class="card-meta mb-0">National Arts Center, Laguna</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-img-wrap overflow-hidden">
+                    <img
+                      src="assets/img/manila.jpg"
+                      class="card-img-top h-100 d-block object-fit-cover rounded-0"
+                      alt="Manila Central Post Office"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Manila Central Post Office</h3>
+                    <p class="card-meta mb-0">Manila — Neoclassical</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-img-wrap overflow-hidden">
+                    <img
+                      src="assets/img/philArena.jpg"
+                      class="card-img-top h-100 d-block object-fit-cover rounded-0"
+                      alt="Philippine Arena"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">Philippine Arena</h3>
+                    <p class="card-meta mb-0">Bocaue, Bulacan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Styles -->
+        <div id="styles" class="section border-top">
+          <div class="container-content mx-auto">
+            <h2 class="section-heading d-inline-block">
+              Architectural styles
+            </h2>
+            <p class="styles-intro">
+              The buildings above come from different eras and answer different
+              needs. These are the four styles you will see across this page.
             </p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Features -->
-      <div class="container-image">
-        <div class="inner mx-auto">
-          <div class="feature pt-4 border-bottom">
-            <div class="row align-items-center gy-4 gx-md-5">
-              <div class="col-md-6">
-                <img
-                  src="assets/img/theRuins.jpg"
-                  alt="The Ruins mansion"
-                  class="image w-100 d-block object-fit-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div class="col-md-6">
-                <div class="feature-text">
-                  <p class="image-meta">
-                    Talisay City, Negros Occidental — early 1900s
-                  </p>
-                  <h2 class="image-title mb-3">The Ruins</h2>
-                  <p class="image-desc mb-0">
-                    Built by the sugar baron Don Mariano Ledesma Lacson as a
-                    monument of luxury, the mansion was set ablaze during World
-                    War II to keep it from American use. What's left are its
-                    bare columns and stripped walls — an outline of the house
-                    rather than the house itself, and now one of the region's
-                    most visited ruins.
-                  </p>
-                </div>
-              </div>
+            <div class="style-item">
+              <h3 class="style-name">Earthquake Baroque</h3>
+              <p class="style-example">St. Augustine's Church, Paoay</p>
+              <p class="style-desc">
+                Wide, low buttresses of coral stone, built to survive the
+                earthquakes that regularly shake the region.
+              </p>
+            </div>
+
+            <div class="style-item">
+              <h3 class="style-name">Neo-Gothic</h3>
+              <p class="style-example">Our Lady of Atonement Cathedral</p>
+              <p class="style-desc">
+                Twin spires and pointed forms that make the cathedral a
+                landmark visible across Baguio.
+              </p>
+            </div>
+
+            <div class="style-item">
+              <h3 class="style-name">Art Deco</h3>
+              <p class="style-example">Manila Metropolitan Theater</p>
+              <p class="style-desc">
+                Bold geometry and decorative detail, used here for a public
+                place of performance.
+              </p>
+            </div>
+
+            <div class="style-item">
+              <h3 class="style-name">Neoclassical</h3>
+              <p class="style-example">Manila Central Post Office</p>
+              <p class="style-desc">
+                Formal, symmetrical lines and columns that give a civic
+                building a sense of order and permanence.
+              </p>
             </div>
           </div>
+        </div>
 
-          <div class="feature border-bottom">
-            <div class="row align-items-center gy-4 gx-md-5">
-              <div class="col-md-6 order-md-2">
-                <img
-                  src="assets/img/cathedral.jpg"
-                  alt="Our Lady of Atonement Cathedral"
-                  class="image w-100 d-block object-fit-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div class="col-md-6 order-md-1">
-                <div class="feature-text">
-                  <p class="image-meta">Baguio City — Neo-Gothic</p>
-                  <h2 class="image-title mb-3">
-                    Our Lady of Atonement Cathedral
+        <!-- Footer -->
+        <div>
+          <footer id="contact" class="site-footer">
+            <div class="container-content mx-auto px-4">
+              <div class="row g-5 footer-grid">
+                <div class="col-12 col-md-6">
+                  <a
+                    href="#home"
+                    class="footer-brand d-inline-block fw-semibold text-decoration-none"
+                    >Buildings and Architecture of the Philippines</a
+                  >
+                  <p class="footer-text mb-0">
+                    A visual record of the structures that trace how the
+                    country has built and rebuilt itself.
+                  </p>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <h2 class="footer-title d-inline-block mb-3 pb-2">Explore</h2>
+                  <ul class="footer-links list-unstyled mb-0">
+                    <li><a href="#home">Top of Page</a></li>
+                    <li><a href="#others">More Landmarks</a></li>
+                    <li><a href="#styles">Architectural Styles</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <h2 class="footer-title d-inline-block mb-3 pb-2">
+                    Featured
                   </h2>
-                  <p class="image-desc mb-0">
-                    Known locally as Baguio Cathedral, its twin spires sit above
-                    the city on a hilltop, visible from most of the surrounding
-                    streets. As seat of the Diocese of Baguio, the pink-toned
-                    Neo-Gothic building has become as much a wayfinding landmark
-                    as a place of worship.
-                  </p>
+                  <ul class="footer-links list-unstyled mb-0">
+                    <li>The Ruins</li>
+                    <li>Baguio Cathedral</li>
+                    <li>St. Augustine's Church</li>
+                    <li>Philippine Arena</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="feature border-0">
-            <div class="row align-items-center gy-4 gx-md-5">
-              <div class="col-md-6">
-                <img
-                  src="assets/img/stAugustine.jpg"
-                  alt="St. Augustine's Church, Paoay"
-                  class="image w-100 d-block object-fit-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div class="col-md-6">
-                <div class="feature-text">
-                  <p class="image-meta">
-                    Paoay, Ilocos Norte — UNESCO World Heritage Site
-                  </p>
-                  <h2 class="image-title mb-3">St. Augustine's Church</h2>
-                  <p class="image-desc mb-0">
-                    Also called Paoay Church, its massive coral-stone buttresses
-                    were built wide and low for a reason: to survive the
-                    earthquakes that regularly shake the region. That
-                    engineering answer to a local hazard is what "Earthquake
-                    Baroque" describes, and why the church still stands after
-                    three centuries.
-                  </p>
-                </div>
+              <div class="footer-bottom text-center">
+                &copy; <span id="footerYear">2026</span> Jalem Louise Grapani.
+                All Rights Reserved.
               </div>
             </div>
-          </div>
+          </footer>
         </div>
       </div>
-
-      <!-- Landmarks -->
-      <div id="others" class="band border-top">
-        <div class="inner mx-auto">
-          <h3 class="others-heading d-inline-block">More landmarks</h3>
-          <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-img-wrap overflow-hidden">
-                  <img
-                    src="assets/img/mmt.jpg"
-                    class="card-img-top h-100 d-block object-fit-cover rounded-0"
-                    alt="Manila Metropolitan Theater"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Manila Metropolitan Theater</h4>
-                  <p class="card-meta mb-0">Manila — Art Deco</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-img-wrap overflow-hidden">
-                  <img
-                    src="assets/img/makiling.png"
-                    class="card-img-top h-100 d-block object-fit-cover rounded-0"
-                    alt="Tanghalang Maria Makiling"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Tanghalang Maria Makiling</h4>
-                  <p class="card-meta mb-0">National Arts Center, Laguna</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-img-wrap overflow-hidden">
-                  <img
-                    src="assets/img/manila.jpg"
-                    class="card-img-top h-100 d-block object-fit-cover rounded-0"
-                    alt="Manila Central Post Office"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Manila Central Post Office</h4>
-                  <p class="card-meta mb-0">Manila — Neoclassical</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-img-wrap overflow-hidden">
-                  <img
-                    src="assets/img/philArena.jpg"
-                    class="card-img-top h-100 d-block object-fit-cover rounded-0"
-                    alt="Philippine Arena"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Philippine Arena</h4>
-                  <p class="card-meta mb-0">Bocaue, Bulacan</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Architecture -->
-      <div id="styles" class="band border-top">
-        <div class="inner mx-auto">
-          <h3 class="others-heading d-inline-block">Architectural styles</h3>
-          <p class="styles-intro">
-            The buildings above come from different eras and answer different
-            needs. These are the four styles you will see across this page.
-          </p>
-
-          <div class="row row-cols-1 g-0">
-            <div class="col">
-              <div class="style-item">
-                <h4 class="style-name">Earthquake Baroque</h4>
-                <p class="style-example">St. Augustine's Church, Paoay</p>
-                <p class="style-desc">
-                  Wide, low buttresses of coral stone, built to survive the
-                  earthquakes that regularly shake the region.
-                </p>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="style-item">
-                <h4 class="style-name">Neo-Gothic</h4>
-                <p class="style-example">Our Lady of Atonement Cathedral</p>
-                <p class="style-desc">
-                  Twin spires and pointed forms that make the cathedral a
-                  landmark visible across Baguio.
-                </p>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="style-item">
-                <h4 class="style-name">Art Deco</h4>
-                <p class="style-example">Manila Metropolitan Theater</p>
-                <p class="style-desc">
-                  Bold geometry and decorative detail, used here for a public
-                  place of performance.
-                </p>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="style-item">
-                <h4 class="style-name">Neoclassical</h4>
-                <p class="style-example">Manila Central Post Office</p>
-                <p class="style-desc">
-                  Formal, symmetrical lines and columns that give a civic
-                  building a sense of order and permanence.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer id="contact" class="site-footer">
-        <div class="inner mx-auto px-4">
-          <div class="footer-grid">
-            <div class="row g-5">
-              <div class="col-12 col-md-6">
-                <a
-                  href="#home"
-                  class="footer-brand d-inline-block fw-semibold text-decoration-none"
-                  >Buildings and Architecture of the Philippines</a
-                >
-                <p class="footer-text mb-0">
-                  A visual record of the structures that trace how the country
-                  has built and rebuilt itself.
-                </p>
-              </div>
-
-              <div class="col-6 col-md-3">
-                <h2 class="footer-title d-inline-block mb-3 pb-2">Explore</h2>
-                <ul class="footer-links list-unstyled mb-0">
-                  <li><a href="#home">Top of Page</a></li>
-                  <li><a href="#others">More Landmarks</a></li>
-                  <li><a href="#styles">Architectural Styles</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-md-3">
-                <h2 class="footer-title d-inline-block mb-3 pb-2">Featured</h2>
-                <ul class="footer-links list-unstyled mb-0">
-                  <li>The Ruins</li>
-                  <li>Baguio Cathedral</li>
-                  <li>St. Augustine's Church</li>
-                  <li>Philippine Arena</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-bottom text-center">
-            &copy; <span id="footerYear">2024</span> Jalem Louise Grapani. All
-            Rights Reserved.
-          </div>
-        </div>
-      </footer>
     </div>
 
     <!-- Scripts -->
