@@ -2,8 +2,7 @@
 
 :root {
     --ink: hsl(0, 0%, 11%);
-    --muted: hsl(0, 0%, 40%);
-    --line: hsl(0, 0%, 88%);
+    --white: hsl(0, 0%, 100%);
     --soft-white: hsla(0, 0%, 100%, 0.75);
     --faint-white: hsla(0, 0%, 100%, 0.12);
     --accent-light: hsl(346, 100%, 72%);
@@ -31,7 +30,10 @@ h1,
 h2,
 h3,
 .navbar-brand,
-.footer-brand {
+.footer-brand,
+.hero-kanji,
+.fact-value,
+.know-value {
     font-family: var(--font-heading);
 }
 
@@ -41,28 +43,25 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
+.text-soft {
+    color: var(--soft-white);
+}
+
 /* Progress */
 
 #progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
+    z-index: 5;
     width: 0;
     height: 4px;
-    background: var(--bs-danger);
-    z-index: 1040;
 }
 
 /* Navigation */
 
 .navbar {
+    z-index: 4;
     padding: 1.1rem 0;
     background: transparent;
     transition: background 0.3s ease, padding 0.3s ease;
-}
-
-.navbar .container {
-    position: relative;
 }
 
 .navbar.scrolled,
@@ -76,20 +75,8 @@ button:focus-visible {
     box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.3);
 }
 
-.navbar-brand {
-    color: hsl(0, 0%, 100%);
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.sun {
-    width: 1rem;
-    height: 1rem;
-}
-
 .nav-link {
     color: var(--soft-white);
-    font-weight: 500;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 3px;
@@ -99,19 +86,11 @@ button:focus-visible {
 
 .nav-link:hover,
 .nav-link.active {
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
 }
 
 .nav-link.active {
     text-decoration-color: var(--bs-danger);
-}
-
-.navbar-toggler {
-    border: 0;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
 }
 
 .navbar-toggler-icon {
@@ -121,7 +100,7 @@ button:focus-visible {
     height: 2px;
     margin: 8px 0;
     background-image: none;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--white);
     border-radius: 1px;
     transition: background-color 0.2s ease;
 }
@@ -133,7 +112,7 @@ button:focus-visible {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--white);
     border-radius: 1px;
     transition: transform 0.2s ease;
 }
@@ -145,8 +124,6 @@ button:focus-visible {
 .navbar-toggler-icon::after {
     top: 8px;
 }
-
-/* Open state: becomes an X */
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
@@ -172,68 +149,22 @@ button:focus-visible {
 }
 
 .hero-kanji {
-    color: hsl(0, 0%, 100%);
-    font-family: var(--font-heading);
     font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 700;
     letter-spacing: 0.3em;
 }
 
-.hero h1 {
-    margin-bottom: 1.5rem;
+.hero-title {
     font-size: clamp(4rem, 12vw, 8rem);
-    line-height: 1;
 }
 
 /* Content */
 
-.section-title {
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.facts {
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--line);
-}
-
-.fact {
-    padding-left: 1.25rem;
-    border-left: 3px solid var(--bs-danger);
-}
-
-.fact-value {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.fact-label {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.9rem;
+.ratio-3x4 {
+    --bs-aspect-ratio: 133.3333%;
 }
 
 .know-icon {
     width: 2.5rem;
-    color: var(--bs-danger);
-    font-size: 1.8rem;
-    text-align: center;
-}
-
-.know-label {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.9rem;
-}
-
-.know-value {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
 }
 
 /* Cards */
@@ -255,29 +186,12 @@ button:focus-visible {
 }
 
 .place-body {
-    padding-top: 7rem !important;
+    padding-top: 7rem;
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.82) 55%, hsla(0, 0%, 0%, 0.92) 100%);
 }
 
 .place-name {
-    margin-bottom: 0.35rem;
     color: var(--accent-light);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.place-name i {
-    margin-right: 0.5rem;
-}
-
-.place-title {
-    margin-bottom: 0.6rem;
-}
-
-.place-text {
-    color: var(--soft-white);
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
 
 /* Carousel */
@@ -288,50 +202,20 @@ button:focus-visible {
 
 /* Footer */
 
-.site-footer {
-    background: var(--ink);
-    border-top: 4px solid var(--bs-danger);
-}
-
-.site-footer a {
+footer a,
+footer a:hover {
     color: inherit;
     text-decoration: none;
-}
-
-.footer-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.footer-text,
-.footer-links,
-.footer-bottom {
-    color: var(--soft-white);
 }
 
 .footer-text {
     max-width: 22rem;
 }
 
-.footer-title {
-    margin-bottom: 1rem;
-    font-family: var(--bs-body-font-family);
-    font-size: 1.05rem;
-    font-weight: 600;
-}
-
-.footer-links li {
-    margin-bottom: 0.6rem;
-}
-
 .footer-links a:hover {
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
     text-decoration: underline var(--bs-danger) 2px;
     text-underline-offset: 4px;
-}
-
-.footer-social {
-    gap: 10px;
 }
 
 .footer-social a {
@@ -343,11 +227,6 @@ button:focus-visible {
 
 .footer-social a:hover {
     background: var(--bs-danger);
-}
-
-.footer-bottom {
-    padding: 1.25rem 0;
-    border-top: 1px solid var(--faint-white);
 }
 
 /* Responsive */
@@ -367,14 +246,9 @@ button:focus-visible {
         padding: 0.5rem 1.25rem;
         border: 1px solid var(--faint-white);
         border-radius: 1rem;
-        background: hsla(0, 0%, 8%, 0.96);
+        background: var(--shade);
         backdrop-filter: blur(10px);
         box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.35);
-    }
-
-    .navbar-nav {
-        align-items: flex-end;
-        text-align: right;
     }
 }
 
@@ -397,10 +271,10 @@ button:focus-visible {
         scroll-behavior: auto;
     }
 
+    .navbar,
     .navbar-toggler-icon,
     .navbar-toggler-icon::before,
     .navbar-toggler-icon::after,
-    .navbar,
     .nav-link,
     .place-image {
         transition: none;

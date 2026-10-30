@@ -11,13 +11,17 @@
     --white: hsl(0, 0%, 100%);
     --soft-white: hsla(0, 0%, 100%, 0.75);
     --shade: hsla(192, 55%, 9%, 0.9);
+    --tint: hsla(0, 0%, 100%, 0.1);
 
     --cool: hsl(190, 70%, 55%);
-    --hot: hsl(41, 96%, 58%);
+    --hot: var(--sun);
     --rainy: hsl(215, 35%, 50%);
 
-    --font-display: "Inter", sans-serif;
-    --font-body: "Inter", sans-serif;
+    --bs-body-font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    --bs-body-color: var(--ink);
+    --bs-body-line-height: 1.6;
+    --bs-border-color: var(--line);
+    --bs-secondary-color: var(--muted);
 }
 
 /* Base */
@@ -27,18 +31,10 @@ html {
     scroll-padding-top: 72px;
 }
 
-body {
-    background: var(--white);
-    color: var(--ink);
-    font-family: var(--font-body);
-    line-height: 1.6;
-}
-
 h1,
 h2,
 h3,
 .navbar-brand {
-    font-family: var(--font-display);
     letter-spacing: -0.02em;
 }
 
@@ -48,9 +44,54 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
+/* Layout */
+
+.section {
+    padding: 96px 0;
+}
+
+.section-tint {
+    background: var(--mist);
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    line-height: 1.1;
+}
+
+.section-text {
+    font-size: 1.1rem;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 0 48px;
+    background:
+        linear-gradient(180deg, hsla(192, 55%, 9%, 0.6) 0%, hsla(192, 55%, 9%, 0.2) 40%, hsla(192, 55%, 9%, 0.92) 100%),
+        url("../img/PALAWAN.jpg") center / cover;
+}
+
+.hero-title {
+    max-width: 13em;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.hero-text {
+    max-width: 36rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
 /* Navigation */
 
 .navbar {
+    --bs-navbar-color: var(--soft-white);
+    --bs-navbar-hover-color: var(--white);
+    --bs-navbar-active-color: var(--white);
+    z-index: 5;
     padding: 16px 0;
     transition: background 0.3s ease, padding 0.3s ease;
 }
@@ -61,15 +102,7 @@ button:focus-visible {
     backdrop-filter: blur(8px);
 }
 
-.navbar-brand {
-    color: var(--white);
-    font-size: 1.45rem;
-    font-weight: 700;
-}
-
 .nav-link {
-    color: var(--soft-white);
-    font-weight: 500;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 3px;
@@ -77,21 +110,8 @@ button:focus-visible {
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--white);
-}
-
 .nav-link.active {
     text-decoration-color: var(--sun);
-}
-
-.navbar-toggler {
-    border: 0;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
 }
 
 .navbar-toggler-icon {
@@ -126,8 +146,6 @@ button:focus-visible {
     top: 8px;
 }
 
-/* Open state: becomes an X */
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
 }
@@ -138,101 +156,6 @@ button:focus-visible {
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
     transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Hero */
-
-.hero {
-    display: flex;
-    align-items: flex-end;
-    min-height: 100vh;
-    padding: 140px 0 48px;
-    background:
-        linear-gradient(180deg, hsla(192, 55%, 9%, 0.6) 0%, hsla(192, 55%, 9%, 0.2) 40%, hsla(192, 55%, 9%, 0.92) 100%),
-        url("../img/PALAWAN.jpg") center / cover;
-    color: var(--white);
-}
-
-.hero-title {
-    max-width: 13em;
-    font-size: clamp(2.4rem, 7vw, 5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-}
-
-.hero-text {
-    max-width: 36rem;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: var(--soft-white);
-}
-
-.hero-fact {
-    padding-left: 16px;
-    border-left: 3px solid var(--sun);
-    color: var(--soft-white);
-}
-
-.hero-fact-number {
-    color: var(--white);
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-/* Buttons */
-
-.btn-main,
-.btn-ghost {
-    border-radius: 50px;
-    font-weight: 700;
-}
-
-.btn-main {
-    padding: 12px 28px;
-    background: var(--sun);
-    border: 2px solid var(--sun);
-    color: var(--ink);
-}
-
-.btn-main:hover {
-    background: var(--white);
-    border-color: var(--white);
-    color: var(--ink);
-}
-
-.btn-ghost {
-    padding: 12px 28px;
-    border: 2px solid var(--white);
-    color: var(--white);
-}
-
-.btn-ghost:hover {
-    background: var(--white);
-    color: var(--ink);
-}
-
-/* Sections */
-
-.section {
-    padding: 96px 0;
-}
-
-.section-tint {
-    background: var(--mist);
-}
-
-.section-title {
-    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.section-text {
-    margin-top: 12px;
-    color: var(--muted);
-    font-size: 1.1rem;
 }
 
 /* Filters */
@@ -264,7 +187,7 @@ button:focus-visible {
 
 .filter-icon {
     display: flex;
-    flex: 0 0 44px;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 44px;
@@ -295,11 +218,6 @@ button:focus-visible {
 
 .filter-button.active .filter-count {
     color: var(--soft-white);
-}
-
-.spot-count {
-    color: var(--muted);
-    font-size: 0.95rem;
 }
 
 /* Spots */
@@ -370,52 +288,17 @@ button:focus-visible {
 
 /* Tips */
 
-.tip {
-    display: flex;
-    gap: 20px;
-    padding: 24px 0;
-    border-top: 1px solid var(--line);
-}
-
 .tip-icon {
-    display: flex;
-    flex: 0 0 52px;
-    align-items: center;
-    justify-content: center;
     width: 52px;
     height: 52px;
-    background: var(--white);
-    border-radius: 50%;
     color: var(--lagoon);
     font-size: 1.2rem;
 }
 
-.tip-title {
-    margin-bottom: 4px;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.tip-text {
-    margin: 0;
-    color: var(--muted);
-}
-
 /* Season */
 
-.month-strip {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 6px;
-}
-
 .month {
-    padding: 14px 0;
     border: 2px solid transparent;
-    border-radius: 10px;
-    color: var(--ink);
-    font-weight: 700;
-    text-align: center;
 }
 
 .month.current {
@@ -436,81 +319,51 @@ button:focus-visible {
     color: var(--white);
 }
 
-.season-now {
-    color: var(--muted);
-    font-weight: 500;
-}
-
-.season-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
 .season-dot {
-    display: inline-block;
     width: 12px;
     height: 12px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.season-text {
-    margin: 0;
-    color: var(--muted);
 }
 
 /* Modal */
 
 .spot-modal {
-    overflow: hidden;
-    border: 0;
     border-radius: 24px;
 }
 
 .spot-modal-img {
-    display: block;
-    width: 100%;
     height: 260px;
-    object-fit: cover;
-}
-
-.spot-modal .modal-header {
-    align-items: flex-start;
-    padding-bottom: 0;
-    border-bottom: 0;
-}
-
-.spot-modal .modal-title {
-    font-family: var(--font-display);
-    font-weight: 700;
 }
 
 .spot-modal .spot-place {
     color: var(--lagoon);
 }
 
-.spot-modal .modal-body {
-    color: var(--muted);
+/* Components */
+
+.btn-main,
+.btn-ghost {
+    --bs-btn-padding-x: 28px;
+    --bs-btn-padding-y: 12px;
+    --bs-btn-hover-color: var(--ink);
+    --bs-btn-hover-bg: var(--white);
+    --bs-btn-hover-border-color: var(--white);
 }
 
-.spot-modal .modal-footer {
-    border-top: 0;
+.btn-main {
+    --bs-btn-color: var(--ink);
+    --bs-btn-bg: var(--sun);
+    --bs-btn-border-color: var(--sun);
 }
 
-/* Top */
+.btn-ghost {
+    --bs-btn-color: var(--white);
+    --bs-btn-border-color: var(--white);
+}
 
 .back-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 5;
     width: 48px;
     height: 48px;
     background: var(--sun);
-    border: 0;
-    border-radius: 50%;
-    box-shadow: 0 6px 18px hsla(192, 55%, 9%, 0.3);
-    color: var(--ink);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -525,59 +378,29 @@ button:focus-visible {
 
 .footer {
     background: var(--ink);
-    border-top: 1px solid hsla(0, 0%, 100%, 0.12);
-    color: var(--soft-white);
 }
 
-.footer-brand {
-    color: var(--white);
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 700;
+.footer a {
     text-decoration: none;
 }
 
 .footer-text {
     max-width: 22rem;
-    margin: 12px 0 20px;
-}
-
-.footer-title {
-    margin-bottom: 16px;
-    color: var(--white);
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.footer-item {
-    margin-bottom: 10px;
 }
 
 .footer-link {
-    color: var(--soft-white);
-    text-decoration: none;
+    color: inherit;
 }
 
 .footer-link:hover {
     color: var(--sun);
 }
 
-.footer-bottom {
-    padding: 20px 0;
-    border-top: 1px solid hsla(0, 0%, 100%, 0.12);
-    font-size: 0.9rem;
-}
-
 .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
-    background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 50%;
+    background: var(--tint);
     color: var(--white);
-    text-decoration: none;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -589,13 +412,14 @@ button:focus-visible {
 /* Responsive */
 
 @media (max-width: 991.98px) {
-    @media (max-width: 991.98px) {
-    .navbar .container,
-    .navbar .container-fluid {
+    .navbar .container {
         position: relative;
     }
 
     .navbar-collapse {
+        --bs-navbar-color: var(--ink);
+        --bs-navbar-hover-color: var(--lagoon);
+        --bs-navbar-active-color: var(--ink);
         position: absolute;
         top: 100%;
         right: 0.75rem;
@@ -611,25 +435,12 @@ button:focus-visible {
     .navbar.scrolled .navbar-collapse {
         margin-top: 1.1rem;
     }
-}
-    .navbar-nav {
-        align-items: flex-end;
-    }
 
-    .navbar-nav .nav-link {
+    .nav-link {
         white-space: nowrap;
-        text-align: right;
-        padding-left: 0;
-        padding-right: 0;
-        color: var(--ink);
     }
 
-    .navbar-nav .nav-link:hover {
-        color: var(--lagoon);
-    }
-
-    .navbar-nav .nav-link.active {
-        color: var(--ink);
+    .nav-link.active {
         text-decoration-color: var(--lagoon);
     }
 
@@ -644,16 +455,11 @@ button:focus-visible {
 }
 
 @media (max-width: 767.98px) {
-    .month-strip {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
     .filter-button {
         padding: 12px;
     }
 
     .filter-icon {
-        flex-basis: 38px;
         width: 38px;
         height: 38px;
     }
@@ -664,7 +470,6 @@ button:focus-visible {
 }
 
 @media (max-width: 400px) {
-
     .btn-main,
     .btn-ghost {
         width: 100%;
@@ -676,11 +481,11 @@ button:focus-visible {
         scroll-behavior: auto;
     }
 
+    .navbar,
     .navbar-toggler-icon,
     .navbar-toggler-icon::before,
     .navbar-toggler-icon::after,
     .spot-img,
-    .navbar,
     .back-to-top {
         transition: none;
     }

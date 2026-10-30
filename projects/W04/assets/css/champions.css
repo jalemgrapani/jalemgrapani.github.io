@@ -1,4 +1,4 @@
-/* Cards */
+/* Components */
 
 #championContainer a {
     display: flex;
@@ -20,9 +20,8 @@
 }
 
 .card:hover {
-    border-right-color: var(--gold);
-    border-bottom-color: var(--gold);
-    border-left-color: var(--gold);
+    border-color: var(--gold);
+    border-top-color: var(--type, var(--border));
     box-shadow: 0 14px 30px hsla(0, 0%, 0%, 0.5);
     transform: translateY(-4px);
 }
@@ -47,30 +46,42 @@
     transform: scale(1.06);
 }
 
-.championname {
-    margin-top: 0.85rem;
+.championname,
+.text-muted {
     overflow: hidden;
-    color: var(--text);
-    font-family: var(--heading-font);
-    font-size: clamp(0.8rem, 9cqi, 1.25rem);
     font-weight: 600;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.championname {
+    margin-top: 0.85rem;
+    font-family: var(--heading-font);
+    font-size: clamp(0.8rem, 9cqi, 1.25rem);
 }
 
 .text-muted {
     margin-top: auto;
-    overflow: hidden;
     color: var(--type, var(--gold)) !important;
     font-size: clamp(0.7rem, 6cqi, 0.9rem);
-    font-weight: 600;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
-/* Pagination */
-
 .pagination {
+    --bs-pagination-color: var(--text);
+    --bs-pagination-bg: var(--surface);
+    --bs-pagination-border-color: var(--border);
+    --bs-pagination-border-radius: 0.6rem;
+    --bs-pagination-hover-color: var(--gold);
+    --bs-pagination-hover-bg: var(--surface);
+    --bs-pagination-hover-border-color: var(--gold);
+    --bs-pagination-focus-color: var(--gold);
+    --bs-pagination-focus-bg: var(--surface);
+    --bs-pagination-active-color: var(--background);
+    --bs-pagination-active-bg: var(--gold);
+    --bs-pagination-active-border-color: var(--gold);
+    --bs-pagination-disabled-color: var(--muted);
+    --bs-pagination-disabled-bg: var(--surface-alt);
+    --bs-pagination-disabled-border-color: var(--border);
     flex-wrap: wrap;
     gap: 0.4rem;
     row-gap: 0.6rem;
@@ -78,31 +89,16 @@
 
 .pagination .page-link {
     min-width: 2.6rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
     border-radius: 0.6rem;
-    color: var(--text);
     font-weight: 600;
     text-align: center;
 }
 
-.pagination .page-link:hover,
 .pagination .page-link:focus {
-    background: var(--surface);
     border-color: var(--gold);
-    color: var(--gold);
 }
 
-.pagination .page-item.active .page-link {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--background);
-}
-
-.pagination .page-item.disabled .page-link {
-    background: var(--surface-alt);
-    border-color: var(--border);
-    color: var(--muted);
+.pagination .disabled .page-link {
     opacity: 0.6;
 }
 

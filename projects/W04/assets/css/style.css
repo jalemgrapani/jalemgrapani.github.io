@@ -4,11 +4,16 @@
     --background: hsl(222, 40%, 6%);
     --surface: hsl(222, 32%, 10%);
     --surface-alt: hsl(222, 38%, 8%);
+    --footer: hsl(222, 45%, 4%);
+    --navbar: hsla(222, 40%, 6%, 0.94);
     --border: hsl(222, 20%, 20%);
+    --shadow: hsla(0, 0%, 0%, 0.4);
     --text: hsl(40, 20%, 92%);
     --muted: hsl(220, 12%, 68%);
     --gold: hsl(42, 62%, 56%);
+    --gold-light: hsl(44, 70%, 62%);
     --gold-dark: hsl(38, 70%, 44%);
+    --on-gold: hsl(222, 40%, 8%);
     --cyan: hsl(188, 75%, 52%);
     --heading-font: "Cinzel", serif;
     --body-font: "Mulish", sans-serif;
@@ -63,6 +68,20 @@ body {
     flex-direction: column;
 }
 
+.navbar-brand,
+.hero-title,
+.section-title,
+.explore-title {
+    font-family: var(--heading-font);
+}
+
+.hero-lead,
+.body-text,
+.explore-text,
+.footer-bottom {
+    color: var(--muted);
+}
+
 a:focus-visible,
 .btn:focus-visible,
 .navbar-toggler:focus-visible,
@@ -71,25 +90,54 @@ a:focus-visible,
     outline-offset: 3px;
 }
 
-/* Navigation */
+/* Header */
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 4.5rem;
-    background: hsla(222, 40%, 6%, 0.94);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.4);
+.hero-banner {
+    min-height: max(420px, 70vh);
+    padding-top: 6rem;
+    background-color: var(--background);
+    background-image: linear-gradient(180deg, hsla(222, 40%, 6%, 0.45), var(--background)), url("../img/lol2.jpg");
+    background-position: center 30%;
+    background-size: cover;
 }
 
+.hero-content {
+    padding-bottom: 4.5rem;
+}
+
+.page-hero {
+    padding: 9rem 0 4rem;
+    background: radial-gradient(ellipse at top, hsl(215, 55%, 16%), var(--background) 65%);
+}
+
+.hero-title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.1;
+    text-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.6);
+}
+
+.hero-lead {
+    max-width: 34rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.page-hero .hero-lead {
+    margin: 0 auto;
+}
+
+/* Navigation */
+
 .navbar {
+    z-index: 5;
     min-height: 4.5rem;
     padding: 0;
-    background: transparent;
+    background: var(--navbar);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 6px 24px var(--shadow);
 }
 
 .navbar .container,
@@ -109,20 +157,12 @@ body::before {
     from {
         background: hsla(222, 40%, 6%, 0);
         backdrop-filter: blur(0);
-        border-bottom: 1px solid transparent;
+        border-bottom-color: transparent;
         box-shadow: none;
-    }
-
-    to {
-        background: hsla(222, 40%, 6%, 0.94);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid hsl(222, 20%, 20%);
-        box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.4);
     }
 }
 
 .navbar-brand {
-    font-family: var(--heading-font);
     font-weight: 700;
     font-size: 1.25rem;
     color: var(--gold);
@@ -183,8 +223,6 @@ body::before {
     top: 8px;
 }
 
-/* Open state: becomes an X */
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
 }
@@ -197,17 +235,35 @@ body::before {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Buttons */
+/* Content */
+
+.section {
+    padding: 4rem 0 5rem;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    color: var(--gold);
+}
+
+.body-text {
+    max-width: 40rem;
+    font-size: 1.05rem;
+}
+
+/* Components */
 
 .btn-gold {
-    background: linear-gradient(hsl(44, 70%, 62%), var(--gold-dark));
+    background: linear-gradient(var(--gold-light), var(--gold-dark));
     border: 0;
-    color: hsl(222, 40%, 8%);
+    color: var(--on-gold);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-gold:hover {
-    color: hsl(222, 40%, 8%);
+    color: var(--on-gold);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px hsla(42, 62%, 56%, 0.35);
 }
@@ -220,70 +276,6 @@ body::before {
     background: var(--text);
     color: var(--background);
 }
-
-/* Headers */
-
-.hero-banner {
-    z-index: 2;
-    min-height: max(420px, 70vh);
-    padding-top: 6rem;
-    background-color: var(--background);
-    background-image: linear-gradient(180deg, hsla(222, 40%, 6%, 0.45), var(--background)), url("../img/lol2.jpg");
-    background-position: center 30%;
-    background-size: cover;
-}
-
-.hero-content {
-    padding-bottom: 4.5rem;
-}
-
-.page-hero {
-    z-index: 2;
-    padding: 9rem 0 4rem;
-    background: radial-gradient(ellipse at top, hsl(215, 55%, 16%), var(--background) 65%);
-}
-
-.hero-title {
-    margin-bottom: 1rem;
-    font-family: var(--heading-font);
-    font-weight: 700;
-    font-size: clamp(2.2rem, 6vw, 4rem);
-    line-height: 1.1;
-    text-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.6);
-}
-
-.hero-lead {
-    max-width: 34rem;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-    color: var(--muted);
-}
-
-.page-hero .hero-lead {
-    margin: 0 auto;
-}
-
-/* Content */
-
-.section {
-    padding: 4rem 0 5rem;
-}
-
-.section-title {
-    margin-bottom: 1rem;
-    font-family: var(--heading-font);
-    font-weight: 600;
-    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-    color: var(--gold);
-}
-
-.body-text {
-    max-width: 40rem;
-    color: var(--muted);
-    font-size: 1.05rem;
-}
-
-/* Explore cards */
 
 .explore-card {
     padding: 2rem;
@@ -307,13 +299,8 @@ body::before {
 }
 
 .explore-title {
-    font-family: var(--heading-font);
     font-weight: 600;
     font-size: 1.4rem;
-}
-
-.explore-text {
-    color: var(--muted);
 }
 
 .explore-hint {
@@ -325,13 +312,12 @@ body::before {
 
 .site-footer {
     padding: 1.75rem 0;
-    background: hsl(222, 45%, 4%);
+    background: var(--footer);
     border-top: 1px solid var(--border);
 }
 
 .footer-bottom {
     font-size: 0.85rem;
-    color: var(--muted);
     text-align: center;
 }
 
@@ -349,7 +335,7 @@ body::before {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 1rem;
-        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.4);
+        box-shadow: 0 8px 24px var(--shadow);
     }
 
     .navbar-nav {

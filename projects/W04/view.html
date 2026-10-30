@@ -25,14 +25,13 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/view.css" />
   </head>
   <body>
     <div class="container-fluid px-0">
-      <!-- Navigation -->
       <div class="row g-0">
+        <!-- Navigation -->
         <div class="col-12">
           <nav
             id="navbar"
@@ -90,11 +89,9 @@
             </div>
           </nav>
         </div>
-      </div>
 
-      <!-- Champion -->
-      <div class="row g-0">
-        <nav
+        <!-- Header -->
+        <div
           class="col-12 champion-hero position-relative overflow-hidden d-flex align-items-end"
         >
           <img
@@ -105,15 +102,17 @@
           <div
             class="champion-hero-overlay position-absolute top-0 start-0 w-100 h-100"
           ></div>
-          <div class="container champion-hero-content position-relative z-1">
-            <span class="attribute-box" id="championRole">Role</span>
-            <h1 id="championName">Loading...</h1>
+          <div class="container champion-hero-content position-relative">
+            <span
+              class="attribute-box d-inline-block px-3 py-1 rounded-pill fw-bold"
+              id="championRole"
+              >Role</span
+            >
+            <h1 class="hero-title mb-2" id="championName">Loading...</h1>
           </div>
-        </nav>
-      </div>
+        </div>
 
-      <!-- Lore -->
-      <div class="row g-0">
+        <!-- Content -->
         <div class="col-12 section">
           <div class="container">
             <div class="row">
@@ -139,14 +138,17 @@
       <!-- Footer -->
       <div class="row g-0 mt-auto">
         <footer class="col-12 site-footer">
-          <div class="container">
-            <p class="footer-bottom mb-0">
-              &copy; <span id="footerYear">2026</span> This is a fan-made,
-              non-commercial project and is not affiliated with or endorsed by
-              Riot Games, Inc. League of Legends and Riot Games are trademarks
-              or registered trademarks of Riot Games, Inc. Champion data and
-              images are provided by Riot Games' Data Dragon.
-            </p>
+          <div class="row g-0 justify-content-center">
+            <div class="col-12 col-lg-10 px-3">
+              <p class="footer-bottom mb-0">
+                &copy; <span id="footerYear">2026</span> This is a fan-made,
+                non-commercial project and is not affiliated with or endorsed
+                by Riot Games, Inc. League of Legends and Riot Games are
+                trademarks or registered trademarks of Riot Games, Inc.
+                Champion data and images are provided by Riot Games' Data
+                Dragon.
+              </p>
+            </div>
           </div>
         </footer>
       </div>

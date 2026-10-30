@@ -16,6 +16,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -25,23 +29,22 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-    <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body data-bs-theme="light" id="body">
     <div class="container-fluid px-0">
-      <!-- Navbar -->
       <div class="row g-0">
+        <!-- Navigation -->
         <div class="col-12">
           <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-              <a class="navbar-brand" href="#home">Filipino Dishes</a>
+            <div class="container position-relative">
+              <a class="navbar-brand fs-4" href="#home">Filipino Dishes</a>
 
               <div
                 class="d-flex align-items-center order-lg-last ms-auto ms-lg-3 gap-2"
               >
                 <button
-                  class="btn theme-btn border p-0"
+                  class="btn theme-btn rounded-3 p-0"
                   id="btnColor"
                   type="button"
                   title="Switch to dark mode"
@@ -50,7 +53,7 @@
                   <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
                 </button>
                 <button
-                  class="navbar-toggler"
+                  class="navbar-toggler border-0 shadow-none"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarNavDropdown"
@@ -63,7 +66,9 @@
               </div>
 
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto gap-lg-2">
+                <ul
+                  class="navbar-nav ms-auto align-items-end align-items-lg-center text-end text-lg-start gap-lg-2"
+                >
                   <li class="nav-item">
                     <a class="nav-link fw-semibold" href="#home">Home</a>
                   </li>
@@ -81,11 +86,12 @@
             </div>
           </nav>
         </div>
-      </div>
 
-      <!-- Hero -->
-      <div class="row g-0">
-        <nav id="home" class="col-12 hero position-relative overflow-hidden">
+        <!-- Hero -->
+        <div
+          id="home"
+          class="col-12 hero position-relative overflow-hidden z-0"
+        >
           <div
             id="heroCarousel"
             class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100"
@@ -169,7 +175,7 @@
               <div class="row">
                 <div class="col-12">
                   <h1 class="hero-title mx-auto mb-3">Filipino Cuisine</h1>
-                  <p class="hero-lead fs-5 mx-auto">
+                  <p class="hero-lead fs-5 mx-auto mb-4">
                     Traditional Dishes from Across the Philippines.
                   </p>
                   <a
@@ -181,24 +187,22 @@
               </div>
             </div>
           </div>
-        </nav>
-      </div>
+        </div>
 
-      <!-- About -->
-      <div class="row g-0">
+        <!-- About -->
         <div id="about" class="col-12 section">
           <div class="container">
             <div class="row justify-content-center text-center">
               <div class="col-12 col-lg-8">
-                <h2 class="section-heading">About Filipino Cuisine</h2>
-                <p class="about-text mx-auto">
+                <h2 class="display-5 mb-3">About Filipino Cuisine</h2>
+                <p class="section-text fs-5 mx-auto">
                   Filipino cuisine is a vibrant blend of flavors and traditions
                   that showcases the Philippines' rich cultural heritage.
                   Influenced by Malay, Chinese, Spanish and American cultures,
                   it combines indigenous ingredients with a wide range of
                   cooking techniques.
                 </p>
-                <p class="about-text mx-auto mb-0">
+                <p class="section-text fs-5 mx-auto mb-0">
                   At its core, it relies on fresh, local ingredients, enhanced
                   by sauces like soy sauce, vinegar and fish sauce. Together
                   they give many dishes their distinctive savory, sour and
@@ -207,54 +211,54 @@
               </div>
             </div>
 
-            <dl class="about-facts row row-cols-1 row-cols-md-3 g-4 mb-0">
-              <div class="col fact">
-                <dt>Ingredients</dt>
-                <dd>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+              <div class="col">
+                <p class="fact-title fs-5 mb-1">Ingredients</p>
+                <p class="text-body-secondary mb-3">
                   Rice is the staple and is served with almost every meal. Pork,
                   chicken, beef and seafood are the main proteins, while
                   vegetables such as eggplant, okra, squash and string beans add
                   freshness. Coconut milk and calamansi round out many recipes.
-                </dd>
-                <dd class="fact-try">Try: Arroz Caldo, Pinakbet, Laing</dd>
+                </p>
+                <p class="small fw-semibold mb-0">
+                  Try: Arroz Caldo, Pinakbet, Laing
+                </p>
               </div>
-              <div class="col fact">
-                <dt>Sauces</dt>
-                <dd>
+              <div class="col">
+                <p class="fact-title fs-5 mb-1">Sauces</p>
+                <p class="text-body-secondary mb-3">
                   Soy sauce (toyo), cane vinegar (suka) and fish sauce (patis)
                   balance salty, sour and savory flavors. Bagoong, a fermented
                   shrimp or fish paste, adds extra depth and is often served on
                   the side.
-                </dd>
-                <dd class="fact-try">
+                </p>
+                <p class="small fw-semibold mb-0">
                   Try: Adobong Baboy, Kare-Kare, Pinakbet
-                </dd>
+                </p>
               </div>
-              <div class="col fact">
-                <dt>Methods</dt>
-                <dd>
+              <div class="col">
+                <p class="fact-title fs-5 mb-1">Methods</p>
+                <p class="text-body-secondary mb-3">
                   Cooks marinate meat for adobo, simmer sour broths for
                   sinigang, stew in coconut milk for ginataan, grill over
                   charcoal for inihaw and deep-fry for crisp dishes like lechon
                   kawali and lumpia.
-                </dd>
-                <dd class="fact-try">
+                </p>
+                <p class="small fw-semibold mb-0">
                   Try: Sinigang na Baboy, Lechon Kawali, Lumpia
-                </dd>
+                </p>
               </div>
-            </dl>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Flavors -->
-      <div class="row g-0">
+        <!-- Flavors -->
         <div id="flavors" class="col-12 section flavor-section">
           <div class="container">
             <div class="row justify-content-center text-center">
               <div class="col-12 col-lg-8">
-                <h2 class="section-heading">The Flavors of the Philippines</h2>
-                <p class="section-text mx-auto">
+                <h2 class="display-5 mb-3">The Flavors of the Philippines</h2>
+                <p class="section-text text-body-secondary fs-5 mx-auto">
                   Filipino dishes are built around a balance of sour, salty,
                   creamy and savory tastes. Here are four you will meet again
                   and again.
@@ -271,8 +275,8 @@
                     alt="Sinigang na Baboy"
                   />
                 </div>
-                <h3 class="flavor-title">Sour</h3>
-                <p class="flavor-text">
+                <h3 class="fs-5 mt-3 mb-1">Sour</h3>
+                <p class="text-body-secondary mb-0">
                   Sinigang gets its tang from tamarind, served in a hot broth
                   with vegetables.
                 </p>
@@ -285,8 +289,8 @@
                     alt="Adobong Baboy"
                   />
                 </div>
-                <h3 class="flavor-title">Salty and Tangy</h3>
-                <p class="flavor-text">
+                <h3 class="fs-5 mt-3 mb-1">Salty and Tangy</h3>
+                <p class="text-body-secondary mb-0">
                   Adobo braises meat in soy sauce and vinegar with garlic and
                   bay leaves.
                 </p>
@@ -299,8 +303,8 @@
                     alt="Bicol Express"
                   />
                 </div>
-                <h3 class="flavor-title">Creamy and Spicy</h3>
-                <p class="flavor-text">
+                <h3 class="fs-5 mt-3 mb-1">Creamy and Spicy</h3>
+                <p class="text-body-secondary mb-0">
                   Bicol Express simmers pork in coconut milk with chili peppers.
                 </p>
               </div>
@@ -312,8 +316,8 @@
                     alt="Kare-Kare"
                   />
                 </div>
-                <h3 class="flavor-title">Rich and Nutty</h3>
-                <p class="flavor-text">
+                <h3 class="fs-5 mt-3 mb-1">Rich and Nutty</h3>
+                <p class="text-body-secondary mb-0">
                   Kare-Kare is a stew in a thick peanut sauce, usually eaten
                   with bagoong.
                 </p>
@@ -321,21 +325,21 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Dishes -->
-      <div class="row g-0">
+        <!-- Dishes -->
         <div id="dishes" class="col-12 section">
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <h2 class="section-heading">Food Gallery</h2>
-                <p class="section-text">
+                <h2 class="display-5 text-center mb-3">Food Gallery</h2>
+                <p
+                  class="section-text text-body-secondary fs-5 text-center mx-auto"
+                >
                   Choose a category to filter the dishes, then select a photo to
                   see it larger.
                 </p>
                 <div
-                  class="filters"
+                  class="filters d-flex gap-1 p-1 mw-100 overflow-x-auto rounded-4 mx-auto mt-4 mb-5"
                   id="filters"
                   role="group"
                   aria-label="Filter dishes by main ingredient"
@@ -349,24 +353,20 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Action -->
-      <div class="row g-0">
+        <!-- Action -->
         <div class="col-12 cta text-white">
           <div class="container">
             <div class="row justify-content-center text-center">
               <div class="col-12 col-lg-8">
-                <h2 class="section-heading mb-3">
-                  Join Us on a Culinary Adventure
-                </h2>
+                <h2 class="display-5 mb-3">Join Us on a Culinary Adventure</h2>
                 <p class="fs-5">
                   Explore the vibrant and diverse world of Filipino dishes. From
                   the savory adobo to the hearty sinigang, there's a dish for
                   every palate. Follow our social media pages for more culinary
                   delights and updates.
                 </p>
-                <p class="cta-quote">
+                <p class="cta-quote fs-4 my-4">
                   "Every bite of Filipino food tells a story!"
                 </p>
 
@@ -381,28 +381,32 @@
                 </button>
 
                 <div
-                  class="social-icons d-none d-flex justify-content-center mt-4"
+                  class="d-none d-flex justify-content-center gap-3 mt-4"
                   id="socialLinks"
                 >
                   <a
-                    class="social-icon"
+                    class="social-icon fs-3 text-decoration-none"
                     href="#"
                     title="Facebook"
                     aria-label="Facebook"
                     ><i class="bi bi-facebook"></i
                   ></a>
-                  <a class="social-icon" href="#" title="X" aria-label="X"
+                  <a
+                    class="social-icon fs-3 text-decoration-none"
+                    href="#"
+                    title="X"
+                    aria-label="X"
                     ><i class="bi bi-twitter-x"></i
                   ></a>
                   <a
-                    class="social-icon"
+                    class="social-icon fs-3 text-decoration-none"
                     href="#"
                     title="YouTube"
                     aria-label="YouTube"
                     ><i class="bi bi-youtube"></i
                   ></a>
                   <a
-                    class="social-icon"
+                    class="social-icon fs-3 text-decoration-none"
                     href="#"
                     title="LinkedIn"
                     aria-label="LinkedIn"
@@ -413,40 +417,40 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Footer -->
-      <div class="row g-0">
+        <!-- Footer -->
         <footer id="footer" class="col-12 site-footer">
           <div class="container">
             <div class="row g-4 py-5">
               <div class="col-12 col-md-5">
-                <a href="#home" class="footer-brand">Filipino Dishes</a>
-                <p class="footer-text">
+                <a href="#home" class="footer-brand fs-4 text-decoration-none"
+                  >Filipino Dishes</a
+                >
+                <p class="footer-text mt-2 mb-3">
                   Explore a diverse collection of traditional Filipino dishes
                   that bring a taste of the Philippines to your table.
                 </p>
-                <div class="footer-social d-flex">
+                <div class="d-flex gap-2">
                   <a
-                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle"
+                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
                     href="#"
                     aria-label="Facebook"
                     ><i class="bi bi-facebook"></i
                   ></a>
                   <a
-                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle"
+                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
                     href="#"
                     aria-label="X"
                     ><i class="bi bi-twitter-x"></i
                   ></a>
                   <a
-                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle"
+                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
                     href="#"
                     aria-label="YouTube"
                     ><i class="bi bi-youtube"></i
                   ></a>
                   <a
-                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle"
+                    class="footer-icon d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
                     href="#"
                     aria-label="LinkedIn"
                     ><i class="bi bi-linkedin"></i
@@ -455,17 +459,33 @@
               </div>
 
               <div class="col-6 col-md-3">
-                <h2 class="footer-title">Explore</h2>
-                <ul class="footer-links d-flex flex-column list-unstyled mb-0">
-                  <li><a class="footer-link" href="#home">Home</a></li>
-                  <li><a class="footer-link" href="#about">About</a></li>
-                  <li><a class="footer-link" href="#dishes">Dishes</a></li>
+                <h2 class="text-white fs-5 mb-3">Explore</h2>
+                <ul
+                  class="footer-links d-flex flex-column gap-2 list-unstyled mb-0"
+                >
+                  <li>
+                    <a class="footer-link text-decoration-none" href="#home"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-link text-decoration-none" href="#about"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-link text-decoration-none" href="#dishes"
+                      >Dishes</a
+                    >
+                  </li>
                 </ul>
               </div>
 
               <div class="col-6 col-md-4">
-                <h2 class="footer-title">Popular Dishes</h2>
-                <ul class="footer-links d-flex flex-column list-unstyled mb-0">
+                <h2 class="text-white fs-5 mb-3">Popular Dishes</h2>
+                <ul
+                  class="footer-links d-flex flex-column gap-2 list-unstyled mb-0"
+                >
                   <li>Sisig</li>
                   <li>Bicol Express</li>
                   <li>Adobo</li>
@@ -474,39 +494,47 @@
               </div>
             </div>
 
-            <div class="footer-bottom text-center small">
-              &copy; <span id="footerYear">2026</span> Jalem Louise Grapani. All
-              Rights Reserved.
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="footer-bottom py-3 small text-center border-top border-white border-opacity-10"
+                >
+                  &copy; <span id="footerYear">2026</span> Jalem Louise Grapani.
+                  All Rights Reserved.
+                </div>
+              </div>
             </div>
           </div>
         </footer>
-      </div>
-    </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="dishModal"
-      tabindex="-1"
-      aria-labelledby="dishModalTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 overflow-hidden">
-          <img
-            class="modal-img d-block flex-shrink-0 mw-100 mx-auto object-fit-contain"
-            src=""
-            alt=""
-            id="dishModalImg"
-          />
-          <div class="modal-header">
-            <h3 class="modal-title h4" id="dishModalTitle"></h3>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+        <!-- Modal -->
+        <div class="col-12">
+          <div
+            class="modal fade"
+            id="dishModal"
+            tabindex="-1"
+            aria-labelledby="dishModalTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content border-0 overflow-hidden">
+                <img
+                  class="modal-img d-block flex-shrink-0 mw-100 mx-auto object-fit-contain"
+                  src=""
+                  alt=""
+                  id="dishModalImg"
+                />
+                <div class="modal-header">
+                  <h3 class="modal-title h4" id="dishModalTitle"></h3>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

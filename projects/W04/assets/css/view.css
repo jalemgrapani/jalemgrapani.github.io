@@ -1,7 +1,6 @@
-/* Champion */
+/* Header */
 
 .champion-hero {
-    z-index: 2;
     min-height: max(380px, 60vh);
     padding-top: 6rem;
     background: var(--surface-alt);
@@ -20,25 +19,17 @@
 }
 
 #championName {
-    font-family: var(--heading-font);
     font-size: clamp(2.4rem, 7vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    text-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.6);
 }
 
 .attribute-box {
-    display: inline-block;
     margin-bottom: 0.75rem;
-    padding: 0.25rem 1rem;
     background: hsla(222, 40%, 6%, 0.65);
     border: 1px solid var(--type, var(--gold));
-    border-radius: 2rem;
     color: var(--type, var(--gold));
-    font-weight: 700;
 }
 
-/* Lore */
+/* Content */
 
 .lore {
     margin-bottom: 2.5rem;

@@ -25,14 +25,13 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/search.css" />
   </head>
   <body>
     <div class="container-fluid px-0">
-      <!-- Navigation -->
       <div class="row g-0">
+        <!-- Navigation -->
         <div class="col-12">
           <nav
             id="navbar"
@@ -90,27 +89,21 @@
             </div>
           </nav>
         </div>
-      </div>
 
-      <!-- Hero -->
-      <div class="row g-0">
-        <nav class="col-12 page-hero position-relative">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-lg-8 mx-auto text-center">
-                <h1 class="hero-title">Search Champions</h1>
-                <p class="hero-lead">
-                  Type a champion's name to see their role and open their
-                  profile.
-                </p>
-              </div>
+        <!-- Header -->
+        <div class="col-12 page-hero">
+          <div class="row g-0">
+            <div class="col-12 col-lg-8 mx-auto px-3 text-center">
+              <h1 class="hero-title">Search Champions</h1>
+              <p class="hero-lead">
+                Type a champion's name to see their role and open their
+                profile.
+              </p>
             </div>
           </div>
-        </nav>
-      </div>
+        </div>
 
-      <!-- Content -->
-      <div class="row g-0">
+        <!-- Content -->
         <div class="col-12 section">
           <div class="container">
             <div class="row justify-content-center">
@@ -118,7 +111,7 @@
                 <label class="visually-hidden" for="searchTerm"
                   >Champion name</label
                 >
-                <div class="search-group d-flex justify-content-center">
+                <div class="d-flex">
                   <input
                     type="text"
                     class="form-control search-input"
@@ -137,7 +130,10 @@
               </div>
             </div>
 
-            <div class="row g-4 mt-3" id="resultContainer"></div>
+            <div
+              class="row g-4 mt-3 justify-content-center"
+              id="resultContainer"
+            ></div>
           </div>
         </div>
       </div>
@@ -145,14 +141,17 @@
       <!-- Footer -->
       <div class="row g-0 mt-auto">
         <footer class="col-12 site-footer">
-          <div class="container">
-            <p class="footer-bottom mb-0">
-              &copy; <span id="footerYear">2026</span> This is a fan-made,
-              non-commercial project and is not affiliated with or endorsed by
-              Riot Games, Inc. League of Legends and Riot Games are trademarks
-              or registered trademarks of Riot Games, Inc. Champion data and
-              images are provided by Riot Games' Data Dragon.
-            </p>
+          <div class="row g-0 justify-content-center">
+            <div class="col-12 col-lg-10 px-3">
+              <p class="footer-bottom mb-0">
+                &copy; <span id="footerYear">2026</span> This is a fan-made,
+                non-commercial project and is not affiliated with or endorsed
+                by Riot Games, Inc. League of Legends and Riot Games are
+                trademarks or registered trademarks of Riot Games, Inc.
+                Champion data and images are provided by Riot Games' Data
+                Dragon.
+              </p>
+            </div>
           </div>
         </footer>
       </div>

@@ -23,30 +23,28 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div class="container-fluid px-0">
-      <div id="progressBar"></div>
-
-      <!-- Navbar -->
       <div class="row g-0">
+        <!-- Navigation -->
         <div class="col-12">
-          <nav
-            id="navbar"
-            class="navbar navbar-expand-md navbar-dark fixed-top"
-          >
-            <div class="container">
+          <div
+            id="progressBar"
+            class="position-fixed top-0 start-0 bg-danger"
+          ></div>
+          <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container position-relative">
               <a
-                class="navbar-brand d-flex align-items-center gap-2"
+                class="navbar-brand fs-4 fw-bold d-flex align-items-center gap-2"
                 href="#home"
               >
-                <span class="sun bg-danger rounded-circle"></span>
+                <span class="p-2 bg-danger rounded-circle"></span>
                 Japan
               </a>
               <button
-                class="navbar-toggler"
+                class="navbar-toggler border-0 shadow-none"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
@@ -60,29 +58,29 @@
                 class="collapse navbar-collapse justify-content-end"
                 id="navbarNav"
               >
-                <ul class="navbar-nav gap-md-2">
+                <ul
+                  class="navbar-nav align-items-end align-items-md-center text-end text-md-start gap-md-2"
+                >
                   <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link fw-medium" href="#about">About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#places">Places</a>
+                    <a class="nav-link fw-medium" href="#places">Places</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Gallery</a>
+                    <a class="nav-link fw-medium" href="#gallery">Gallery</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#others">Treasures</a>
+                    <a class="nav-link fw-medium" href="#others">Treasures</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
         </div>
-      </div>
 
-      <!-- Hero -->
-      <div class="row g-0">
-        <nav
+        <!-- Hero -->
+        <div
           id="home"
           class="col-12 hero position-relative text-white d-flex align-items-center"
         >
@@ -97,8 +95,8 @@
           <div class="container position-relative">
             <div class="row justify-content-center">
               <div class="col-12 col-lg-8 text-center">
-                <p class="hero-kanji mb-0" lang="ja">日本</p>
-                <h1 class="display-1 fw-bold">Japan</h1>
+                <p class="hero-kanji fw-bold mb-0" lang="ja">日本</p>
+                <h1 class="hero-title lh-1 fw-bold mb-4">Japan</h1>
                 <p class="fs-4 mb-4">Exploring the Land of the Rising Sun</p>
                 <a href="#places" class="btn btn-danger btn-lg px-4"
                   >Explore Places</a
@@ -106,35 +104,33 @@
               </div>
             </div>
           </div>
-        </nav>
-      </div>
+        </div>
 
-      <!-- About -->
-      <div class="row g-0">
+        <!-- About -->
         <div id="about" class="col-12 py-5">
           <div class="container py-md-4">
-            <div class="row row-cols-2 row-cols-md-4 g-4 mb-5 facts">
-              <div class="col fact">
-                <p class="fact-value">4</p>
-                <p class="fact-label">Main Islands</p>
+            <div class="row row-cols-2 row-cols-md-4 g-4 mb-5 pb-5 border-bottom">
+              <div class="col">
+                <p class="fact-value fs-1 fw-bold lh-sm mb-0">4</p>
+                <p class="text-body-secondary small mb-0">Main Islands</p>
               </div>
-              <div class="col fact">
-                <p class="fact-value">120M+</p>
-                <p class="fact-label">People</p>
+              <div class="col">
+                <p class="fact-value fs-1 fw-bold lh-sm mb-0">120M+</p>
+                <p class="text-body-secondary small mb-0">People</p>
               </div>
-              <div class="col fact">
-                <p class="fact-value">Top 5</p>
-                <p class="fact-label">World Economy</p>
+              <div class="col">
+                <p class="fact-value fs-1 fw-bold lh-sm mb-0">Top 5</p>
+                <p class="text-body-secondary small mb-0">World Economy</p>
               </div>
-              <div class="col fact">
-                <p class="fact-value">Fuji</p>
-                <p class="fact-label">Prominent Landmark</p>
+              <div class="col">
+                <p class="fact-value fs-1 fw-bold lh-sm mb-0">Fuji</p>
+                <p class="text-body-secondary small mb-0">Prominent Landmark</p>
               </div>
             </div>
 
             <div class="row justify-content-center">
               <div class="col-12 col-lg-8 text-center">
-                <h2 class="section-title display-5 fw-bold">About Japan</h2>
+                <h2 class="display-5 fw-bold lh-sm mb-3">About Japan</h2>
                 <p class="fs-5 text-secondary mb-4">
                   An island nation in East Asia, where ancient tradition meets
                   modern technology.
@@ -195,31 +191,43 @@
                 <div class="bg-light rounded-4 p-4 p-md-5">
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                     <div class="col d-flex align-items-center gap-3">
-                      <i class="fa-solid fa-landmark know-icon"></i>
+                      <i
+                        class="fa-solid fa-landmark know-icon text-danger fs-2 text-center"
+                      ></i>
                       <div>
-                        <p class="know-label">Capital</p>
-                        <p class="know-value">Tokyo</p>
+                        <p class="text-body-secondary small mb-0">Capital</p>
+                        <p class="know-value fs-5 fw-bold mb-0">Tokyo</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-center gap-3">
-                      <i class="fa-solid fa-language know-icon"></i>
+                      <i
+                        class="fa-solid fa-language know-icon text-danger fs-2 text-center"
+                      ></i>
                       <div>
-                        <p class="know-label">Language</p>
-                        <p class="know-value">Japanese</p>
+                        <p class="text-body-secondary small mb-0">Language</p>
+                        <p class="know-value fs-5 fw-bold mb-0">Japanese</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-center gap-3">
-                      <i class="fa-solid fa-yen-sign know-icon"></i>
+                      <i
+                        class="fa-solid fa-yen-sign know-icon text-danger fs-2 text-center"
+                      ></i>
                       <div>
-                        <p class="know-label">Currency</p>
-                        <p class="know-value">Japanese Yen</p>
+                        <p class="text-body-secondary small mb-0">Currency</p>
+                        <p class="know-value fs-5 fw-bold mb-0">Japanese Yen</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-center gap-3">
-                      <i class="fa-solid fa-calendar-days know-icon"></i>
+                      <i
+                        class="fa-solid fa-calendar-days know-icon text-danger fs-2 text-center"
+                      ></i>
                       <div>
-                        <p class="know-label">Popular Seasons</p>
-                        <p class="know-value">Spring and Autumn</p>
+                        <p class="text-body-secondary small mb-0">
+                          Popular Seasons
+                        </p>
+                        <p class="know-value fs-5 fw-bold mb-0">
+                          Spring and Autumn
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -228,15 +236,13 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Places -->
-      <div class="row g-0">
+        <!-- Places -->
         <div id="places" class="col-12 py-5 bg-light">
           <div class="container py-md-4">
             <div class="row mb-5">
               <div class="col-12 col-lg-8">
-                <h2 class="section-title display-5 fw-bold">
+                <h2 class="display-5 fw-bold lh-sm mb-3">
                   Popular Places to Go in Japan
                 </h2>
               </div>
@@ -245,7 +251,7 @@
             <div class="row row-cols-1 row-cols-md-2 g-4">
               <div class="col">
                 <div
-                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                  class="place-card position-relative overflow-hidden rounded-4"
                 >
                   <img
                     src="assets/img/japan2.jpg"
@@ -253,13 +259,13 @@
                     alt="Osaka Castle"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-location-dot"></i>Osaka
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-location-dot me-2"></i>Osaka
                     </p>
-                    <h3 class="h4 place-title">Osaka Castle</h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h4 mb-2">Osaka Castle</h3>
+                    <p class="text-soft small mb-0">
                       A famous historical landmark known for its white exterior
                       and golden roof. The castle is surrounded by cherry
                       blossoms in spring, which are often associated with Japan.
@@ -270,7 +276,7 @@
 
               <div class="col">
                 <div
-                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                  class="place-card position-relative overflow-hidden rounded-4"
                 >
                   <img
                     src="assets/img/japan4.jpg"
@@ -278,15 +284,13 @@
                     alt="Akihabara at night"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-location-dot"></i>Tokyo
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-location-dot me-2"></i>Tokyo
                     </p>
-                    <h3 class="h4 place-title">
-                      Akihabara: Tokyo's Electric Town
-                    </h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h4 mb-2">Akihabara: Tokyo's Electric Town</h3>
+                    <p class="text-soft small mb-0">
                       Akihabara, known as "Akiba," is a lively Tokyo district
                       famous for electronics and anime. It is a hub for unique
                       subcultures, offering a colorful blend of modern
@@ -298,7 +302,7 @@
 
               <div class="col">
                 <div
-                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                  class="place-card position-relative overflow-hidden rounded-4"
                 >
                   <img
                     src="assets/img/japan5.jpg"
@@ -306,13 +310,13 @@
                     alt="Cherry blossoms along a canal"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-calendar-days"></i>Spring
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-calendar-days me-2"></i>Spring
                     </p>
-                    <h3 class="h4 place-title">Cherry Blossoms in Japan</h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h4 mb-2">Cherry Blossoms in Japan</h3>
+                    <p class="text-soft small mb-0">
                       Cherry blossoms line a canal in Japan, lit by lanterns
                       after dark for a magical and romantic atmosphere. Blossom
                       season typically runs from late March to early April in
@@ -324,7 +328,7 @@
 
               <div class="col">
                 <div
-                  class="place-card place-wide position-relative overflow-hidden rounded-4"
+                  class="place-card position-relative overflow-hidden rounded-4"
                 >
                   <img
                     src="assets/img/japan6.jpeg"
@@ -332,15 +336,13 @@
                     alt="Oyama Senmaida rice terraces"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-location-dot"></i>Chiba
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-location-dot me-2"></i>Chiba
                     </p>
-                    <h3 class="h4 place-title">
-                      Oyama Senmaida: Rice Terraces
-                    </h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h4 mb-2">Oyama Senmaida: Rice Terraces</h3>
+                    <p class="text-soft small mb-0">
                       Oyama Senmaida is a breathtaking landscape of terraced
                       rice paddies in Chiba Prefecture. Its name refers to its
                       roughly 1,000 small paddies, a testament to the ingenuity
@@ -352,17 +354,13 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Gallery -->
-      <div class="row g-0">
+        <!-- Gallery -->
         <div id="gallery" class="col-12 py-5">
           <div class="container py-md-4">
             <div class="row mb-5">
               <div class="col-12 col-lg-8">
-                <h2 class="section-title display-5 fw-bold">
-                  Moments from Japan
-                </h2>
+                <h2 class="display-5 fw-bold lh-sm mb-3">Moments from Japan</h2>
               </div>
             </div>
             <div class="row">
@@ -447,15 +445,13 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Treasures -->
-      <div class="row g-0">
+        <!-- Treasures -->
         <div id="others" class="col-12 py-5 bg-light">
           <div class="container py-md-4">
             <div class="row mb-5">
               <div class="col-12 col-lg-8">
-                <h2 class="section-title display-5 fw-bold">
+                <h2 class="display-5 fw-bold lh-sm mb-3">
                   Japan's Timeless Treasures
                 </h2>
                 <p class="fs-5 text-secondary mb-0">
@@ -476,13 +472,13 @@
                     alt="Shirakawago village"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-location-dot"></i>Gifu
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-location-dot me-2"></i>Gifu
                     </p>
-                    <h3 class="h5 place-title">Shirakawago</h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h5 mb-2">Shirakawago</h3>
+                    <p class="text-soft small mb-0">
                       A historical village famous for its traditional
                       gassho-zukuri farmhouses, designed to withstand heavy
                       snowfall. It is a UNESCO World Heritage site known for its
@@ -502,13 +498,13 @@
                     alt="Kerama Islands"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-location-dot"></i>Okinawa
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-location-dot me-2"></i>Okinawa
                     </p>
-                    <h3 class="h5 place-title">Kerama Islands</h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h5 mb-2">Kerama Islands</h3>
+                    <p class="text-soft small mb-0">
                       Located west of Okinawa's main island, the Kerama Islands
                       are known for their coral reefs and clear blue waters, a
                       haven for divers and beach lovers with vibrant marine
@@ -528,13 +524,13 @@
                     alt="Imperial Palace in Tokyo"
                   />
                   <div
-                    class="place-body position-absolute bottom-0 start-0 w-100 p-4 text-white"
+                    class="place-body position-absolute bottom-0 start-0 w-100 px-4 pb-4 text-white"
                   >
-                    <p class="place-name">
-                      <i class="fa-solid fa-location-dot"></i>Tokyo
+                    <p class="place-name small fw-semibold mb-1">
+                      <i class="fa-solid fa-location-dot me-2"></i>Tokyo
                     </p>
-                    <h3 class="h5 place-title">Imperial Palace</h3>
-                    <p class="place-text mb-0">
+                    <h3 class="h5 mb-2">Imperial Palace</h3>
+                    <p class="text-soft small mb-0">
                       The primary residence of the Emperor of Japan. Surrounded
                       by beautiful gardens, it stands as a symbol of Japan's
                       monarchy and rich cultural heritage.
@@ -545,26 +541,26 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Footer -->
-      <div class="row g-0">
-        <footer class="col-12 site-footer text-white">
+        <!-- Footer -->
+        <footer
+          class="col-12 bg-dark text-white border-top border-4 border-danger"
+        >
           <div class="container">
             <div class="row g-4 py-5">
               <div class="col-12 col-md-5">
                 <a
                   href="#home"
-                  class="footer-brand d-inline-flex align-items-center gap-2"
+                  class="footer-brand fs-4 fw-bold d-inline-flex align-items-center gap-2"
                 >
-                  <span class="sun bg-danger rounded-circle"></span>
+                  <span class="p-2 bg-danger rounded-circle"></span>
                   Japan
                 </a>
-                <p class="footer-text mt-3">
+                <p class="footer-text text-soft mt-3">
                   From the serene beauty of cherry blossoms to vibrant
                   cityscapes, Japan is a land of harmony and innovation.
                 </p>
-                <div class="footer-social d-flex">
+                <div class="footer-social d-flex gap-2">
                   <a
                     href="#"
                     class="d-flex align-items-center justify-content-center rounded-circle"
@@ -587,29 +583,35 @@
               </div>
 
               <div class="col-6 col-md-3">
-                <h2 class="footer-title">Explore</h2>
-                <ul class="footer-links list-unstyled mb-0">
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#places">Places</a></li>
-                  <li><a href="#gallery">Gallery</a></li>
-                  <li><a href="#others">Treasures</a></li>
+                <p class="fw-semibold mb-3">Explore</p>
+                <ul class="footer-links list-unstyled text-soft mb-0">
+                  <li class="mb-2"><a href="#about">About</a></li>
+                  <li class="mb-2"><a href="#places">Places</a></li>
+                  <li class="mb-2"><a href="#gallery">Gallery</a></li>
+                  <li class="mb-2"><a href="#others">Treasures</a></li>
                 </ul>
               </div>
 
               <div class="col-6 col-md-4">
-                <h2 class="footer-title">Destinations</h2>
-                <ul class="footer-links list-unstyled mb-0">
-                  <li>Osaka Castle</li>
-                  <li>Akihabara, Tokyo</li>
-                  <li>Shirakawago</li>
-                  <li>Kerama Islands</li>
+                <p class="fw-semibold mb-3">Destinations</p>
+                <ul class="list-unstyled text-soft mb-0">
+                  <li class="mb-2">Osaka Castle</li>
+                  <li class="mb-2">Akihabara, Tokyo</li>
+                  <li class="mb-2">Shirakawago</li>
+                  <li class="mb-2">Kerama Islands</li>
                 </ul>
               </div>
             </div>
 
-            <div class="footer-bottom text-center small">
-              &copy; <span id="footerYear">2026</span> Japan Organization. All
-              Rights Reserved.
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="py-3 small text-soft text-center border-top border-white border-opacity-10"
+                >
+                  &copy; <span id="footerYear">2026</span> Japan Organization.
+                  All Rights Reserved.
+                </div>
+              </div>
             </div>
           </div>
         </footer>
