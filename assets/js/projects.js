@@ -49,6 +49,15 @@ var projects = [
     site: "",
   },
   {
+    title: "JWatch Store",
+    category: "fullstack",
+    description:
+      "An online watch store featuring product collections, brand pages, store information, and a shopping cart.",
+    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A01",
+    site: "projects/A01/index.php?page=outlet",
+  },
+  {
     title: "POS Product Management",
     category: "fullstack",
     description:
@@ -143,7 +152,7 @@ var projects = [
 ];
 
 // Variables
-var selectedIndex = 6;
+var selectedIndex = 7;
 
 // Functions
 function truncate(text, max) {
@@ -192,7 +201,7 @@ function createActionLink(href, icon, label) {
 function createActionsHtml(project) {
   // Actions
   return (
-    createActionLink(project.docs, "bi-github", "View documentation") +
+    createActionLink(project.docs, "bi-github", "View") +
     createActionLink(project.site, "bi-globe2", "Site")
   );
 }
