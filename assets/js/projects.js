@@ -1,327 +1,147 @@
 // Data
-var categories = [
-  {
-    id: "fullstack",
-    label: "Full-Stack",
-    description: "PHP and MySQL projects with a working backend.",
-  },
-  {
-    id: "wordpress",
-    label: "WordPress",
-    description: "Business websites built from design to launch.",
-  },
-  {
-    id: "frontend",
-    label: "Front-End",
-    description:
-      "Websites and interfaces built with HTML, CSS, and JavaScript.",
-  },
-];
-
-// Projects
-var projects = [
-  // Fullstack
+const projects = [
   {
     title: "Easechedemy",
-    category: "fullstack",
     description:
-      "A web-based class scheduling system built for Almond Academy Foundation Inc. It considers teacher subject preferences and supports class schedule management and generation.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+      "A web-based class scheduling system developed for Almond Academy Foundation Inc. It helps manage class schedules and generates schedules based on teachers' subject preferences.",
+    image: "assets/img/easechedemy.jpg",
+    alt: "Screenshot of the Easechedemy class scheduling system",
     docs: "https://github.com/StackedFrogs/Easechedemy.com",
     site: "",
   },
   {
     title: "Bookblast",
-    category: "fullstack",
     description:
-      "A web-based digital library system that makes reading and managing books easier. It has separate login-based admin and user sides, and supports book management through a PHP backend, including batch book handling.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+      "A web-based digital library system with separate admin and user accounts. It allows administrators to manage books and supports batch book management through a PHP and MySQL backend.",
+    image: "assets/img/Bookblast.png",
+    alt: "Screenshot of the Bookblast digital library system",
     docs: "https://github.com/Pages-Beyond/BookBlast-Website",
     site: "",
   },
   {
     title: "Eventure",
-    category: "fullstack",
     description:
-      "A web-based event management system for creating, browsing, and managing events.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+      "A web-based event management system that allows users to create, browse, and manage event information through an organized interface.",
+    image: "assets/img/Eventure.png",
+    alt: "Screenshot of the Eventure event management system",
     docs: "https://github.com/pupstc-student-academic-works/adet-grp-7",
     site: "",
   },
   {
-    title: "JWatch Store",
-    category: "fullstack",
+    title: "J.CO Donuts & Coffee POS System (Backend)",
     description:
-      "An online watch store featuring product collections, brand pages, store information, and a shopping cart.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A01",
-    site: "projects/A01/index.php?page=outlet",
-  },
-  {
-    title: "POS Product Management",
-    category: "fullstack",
-    description:
-      "A point-of-sale project with a frontend interface and PHP backend files for product and category data.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+      "A database-backed POS project for J.CO Donuts & Coffee. It uses PHP and MySQL to retrieve product categories and product details, which are displayed dynamically in the frontend.",
+    image: "assets/img/JCO POS.png",
+    alt: "Screenshot of the J.CO Donuts & Coffee POS system",
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A04",
-    site: "projects/A04/FE/index.html",
+    site: "",
   },
-
-  // Frontend
   {
-    title: "JCO Donut POS",
-    category: "frontend",
+    title: "J.CO Donuts & Coffee POS System (Frontend)",
     description:
-      "A point-of-sale interface for browsing donut products and organizing product selections.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+      "A front-end ordering system for J.CO Donuts & Coffee that displays donuts, coffee, beverages, and other menu items by category. Users can select products, manage quantities, remove items, and view an order summary with an automatically calculated total.",
+    image: "assets/img/JCO POS.png",
+    alt: "Screenshot of the J.CO Donuts & Coffee ordering system",
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A03",
     site: "projects/A03/index.html",
   },
-  {
-    title: "Watch Store Website Design",
-    category: "frontend",
+   {
+    title: "League of Legends Champion API Website",
     description:
-      "A watch store website showcasing product collections and brand pages with a responsive layout.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A02",
-    site: "projects/A02/index.html",
-  },
-  {
-    title: "Palawan Tourism Website",
-    category: "frontend",
-    description:
-      "A tourism website highlighting Palawan destinations through photos, destination information, and visual sections.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A05",
-    site: "projects/A05/index.html",
-  },
-  {
-    title: "Philippines Tourism Website",
-    category: "frontend",
-    description:
-      "A tourism website showcasing destinations in the Philippines using image galleries and parallax scrolling effects.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W06",
-    site: "projects/W06/index.html",
-  },
-  {
-    title: "Filipino Food Website",
-    category: "frontend",
-    description:
-      "A food website showcasing Filipino dishes with food images and recipe-related content.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W03",
-    site: "projects/W03/index.html",
-  },
-  {
-    title: "League of Legends Information Website",
-    category: "frontend",
-    description:
-      "A website presenting League of Legends information with separate pages for browsing and viewing content.",
-    tags: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+      "A website that uses the Riot Games Data Dragon API to retrieve and display League of Legends champion information. It includes champion browsing, name-based search, pagination, and individual champion profiles with images and lore.",
+    image: "assets/img/LOL.png",
+    alt: "Screenshot of the League of Legends champion website",
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W04",
     site: "projects/W04/index.html",
   },
   {
-    title: "Realme Product Website",
-    category: "frontend",
+    title: "JWatch Store",
     description:
-      "A product-focused website showcasing Realme devices and product features.",
-    tags: ["HTML", "CSS", "Bootstrap"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W01",
-    site: "projects/W01/index.html",
+      "An online watch store featuring product collections, brand pages, store information, and a shopping cart.",
+    image: "assets/img/JWatch.png",
+    alt: "Screenshot of the JWatch Store website",
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A01",
+    site: "",
   },
   {
-    title: "Japan Travel Website",
-    category: "frontend",
+    title: "Palawan Tourism Website",
     description:
-      "A travel website featuring Japanese destinations and travel-related imagery.",
-    tags: ["HTML", "CSS", "Bootstrap"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W02",
-    site: "projects/W02/index.html",
-  },
-  {
-    title: "Riot Games Website",
-    category: "frontend",
-    description:
-      "A gaming website featuring Riot Games titles and related game information.",
-    tags: ["HTML", "CSS", "Bootstrap"],
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W05",
-    site: "projects/W05/index.html",
+      "A tourism website highlighting Palawan destinations through photos, destination information, and visual sections.",
+    image: "assets/img/Palawan.png",
+    alt: "Screenshot of the Palawan Tourism website",
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A05",
+    site: "projects/A05/index.html",
   },
 ];
 
 // Variables
-var selectedIndex = 7;
+let selectedIndex = 3;
 
 // Functions
 function truncate(text, max) {
-  if (text.length <= max) {
-    return text;
-  }
-  return text.slice(0, max).trim() + "...";
-}
-
-function getCategory(id) {
-  for (var i = 0; i < categories.length; i++) {
-    if (categories[i].id === id) {
-      return categories[i];
-    }
-  }
-  return categories[0];
+  return text.length > max ? `${text.slice(0, max).trim()}...` : text;
 }
 
 function createActionLink(href, icon, label) {
-  var attributes = "";
-  var disabledClass = "";
+  const attributes = href
+    ? `href="${href}" target="_blank" rel="noopener"`
+    : `aria-disabled="true" tabindex="-1"`;
+  const disabledClass = href ? "" : " disabled-action";
 
-  if (href) {
-    attributes = ` href="` + href + `" target="_blank" rel="noopener"`;
-  } else {
-    attributes = ` aria-disabled="true" tabindex="-1"`;
-    disabledClass = " disabled-action";
-  }
-
-  return (
-    `<a` +
-    attributes +
-    ` class="card-action small-action d-inline-block text-decoration-none rounded-pill` +
-    disabledClass +
-    `">
-      <i class="bi ` +
-    icon +
-    `"></i>
-      ` +
-    label +
-    `
-    </a>`
-  );
+  return `<a ${attributes} class="card-action small-action d-inline-block text-decoration-none rounded-pill${disabledClass}">
+    <i class="bi ${icon}"></i> ${label}
+  </a>`;
 }
 
-function createActionsHtml(project) {
-  // Actions
-  return (
-    createActionLink(project.docs, "bi-github", "View") +
-    createActionLink(project.site, "bi-globe2", "Site")
-  );
-}
-
-function createCard(project, index) {
-  var shortTitle = truncate(project.title, 40);
-  var shortDescription = truncate(project.description, 150);
-  var actionsHtml = createActionsHtml(project);
-  var card = document.createElement("article");
+function createCard(project) {
+  const card = document.createElement("article");
 
   card.className = "play-card";
   card.tabIndex = 0;
-  card.innerHTML =
-    `
-    <h4 class="card-title" title="` +
-    project.title +
-    `">` +
-    shortTitle +
-    `</h4>
-    <p class="card-description" title="` +
-    project.description +
-    `">` +
-    shortDescription +
-    `</p>
-    <div class="card-actions">` +
-    actionsHtml +
-    `</div>
+  card.innerHTML = `
+    <div class="card-thumb">
+      <img src="${project.image}" alt="${project.alt}" />
+    </div>
+    <h4 class="card-title">${project.title}</h4>
+    <p class="card-description">${truncate(project.description, 130)}</p>
+    <div class="card-actions">
+      ${createActionLink(project.docs, "bi-github", "View")}
+      ${createActionLink(project.site, "bi-globe2", "Site")}
+    </div>
   `;
-
-  // Events
-  card.addEventListener("click", function () {
-    selectProject(index, true);
-  });
-
-  var buttons = card.querySelectorAll(".card-action");
-
-  for (var j = 0; j < buttons.length; j++) {
-    buttons[j].addEventListener("click", function (event) {
-      if (
-        !card.classList.contains("selected") ||
-        this.classList.contains("disabled-action")
-      ) {
-        event.preventDefault();
-      }
-    });
-  }
-
-  card.addEventListener("keydown", function (event) {
-    if (event.target === card && (event.key === "Enter" || event.key === " ")) {
-      event.preventDefault();
-      selectProject(index, true);
-    }
-  });
 
   return card;
 }
 
-function centerCard(index, smooth) {
-  var track = document.getElementById("deckTrack");
-  var card = track.children[index];
-  var behavior = "auto";
+function selectProject(index, behavior = "smooth") {
+  const track = document.getElementById("deckTrack");
+  const cards = Array.from(track.children);
 
-  if (card === undefined) {
-    return;
-  }
-
-  if (smooth) {
-    behavior = "smooth";
-  }
-
-  track.scrollTo({
-    left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2,
-    behavior: behavior,
-  });
-}
-
-function selectProject(index, shouldScroll) {
-  var track = document.getElementById("deckTrack");
-  var cards = track.children;
-
-  if (index < 0 || index >= projects.length) {
+  if (index < 0 || index >= cards.length) {
     return;
   }
 
   selectedIndex = index;
 
-  for (var i = 0; i < cards.length; i++) {
-    var offset = i - index;
+  cards.forEach((card, i) => {
+    card.classList.toggle("selected", i === index);
+  });
 
-    if (offset > 4) {
-      offset = 4;
-    }
+  const card = cards[index];
 
-    if (offset < -4) {
-      offset = -4;
-    }
-
-    cards[i].style.setProperty("--offset", offset);
-
-    if (i === index) {
-      cards[i].classList.add("selected");
-      cards[i].setAttribute("aria-current", "true");
-    } else {
-      cards[i].classList.remove("selected");
-      cards[i].removeAttribute("aria-current");
-    }
-  }
+  track.scrollTo({
+    left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2,
+    behavior: behavior,
+  });
 
   document.getElementById("deckCount").textContent =
-    index + 1 + " / " + projects.length;
+    `${index + 1} / ${cards.length}`;
   document.getElementById("deckPrev").disabled = index === 0;
-  document.getElementById("deckNext").disabled = index === projects.length - 1;
-
-  if (shouldScroll) {
-    centerCard(index, true);
-  }
+  document.getElementById("deckNext").disabled = index === cards.length - 1;
 }
 
 function renderProjects() {
-  var grid = document.getElementById("projectGrid");
+  const grid = document.getElementById("projectGrid");
 
   if (grid === null) {
     return;
@@ -343,46 +163,62 @@ function renderProjects() {
     <div class="deck-track" id="deckTrack"></div>
   `;
 
-  var track = document.getElementById("deckTrack");
+  const track = document.getElementById("deckTrack");
 
-  for (var i = 0; i < projects.length; i++) {
-    track.appendChild(createCard(projects[i], i));
-  }
+  projects.forEach((project, index) => {
+    const card = createCard(project);
 
-  // Events
-  document.getElementById("deckPrev").addEventListener("click", function () {
-    selectProject(selectedIndex - 1, true);
+    // Events
+    card.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      const isSelected = card.classList.contains("selected");
+
+      if (link && (!isSelected || link.classList.contains("disabled-action"))) {
+        event.preventDefault();
+      }
+
+      selectProject(index);
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (
+        event.target === card &&
+        (event.key === "Enter" || event.key === " ")
+      ) {
+        event.preventDefault();
+        selectProject(index);
+      }
+    });
+
+    track.appendChild(card);
   });
 
-  document.getElementById("deckNext").addEventListener("click", function () {
-    selectProject(selectedIndex + 1, true);
-  });
-
-  track.addEventListener("keydown", function (event) {
-    var next = selectedIndex;
-
-    if (event.key === "ArrowRight") {
-      next = selectedIndex + 1;
-    } else if (event.key === "ArrowLeft") {
-      next = selectedIndex - 1;
-    } else {
-      return;
-    }
-
-    if (next >= 0 && next < projects.length) {
-      event.preventDefault();
-      selectProject(next, true);
-      track.children[next].focus({ preventScroll: true });
-    }
-  });
-
-  selectProject(selectedIndex, false);
-  centerCard(selectedIndex, false);
+  selectProject(selectedIndex, "auto");
 }
 
 // Events
 document.addEventListener("DOMContentLoaded", renderProjects);
 
-window.addEventListener("load", function () {
-  centerCard(selectedIndex, false);
+document.addEventListener("click", (event) => {
+  if (event.target.closest("#deckPrev")) {
+    selectProject(selectedIndex - 1);
+  }
+
+  if (event.target.closest("#deckNext")) {
+    selectProject(selectedIndex + 1);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!event.target.closest("#deckTrack")) {
+    return;
+  }
+
+  if (event.key === "ArrowRight") {
+    selectProject(selectedIndex + 1);
+  }
+
+  if (event.key === "ArrowLeft") {
+    selectProject(selectedIndex - 1);
+  }
 });

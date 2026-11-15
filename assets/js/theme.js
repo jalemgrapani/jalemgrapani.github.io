@@ -1,6 +1,9 @@
 // Variables
 var pageRoot = document.documentElement;
 
+// Tell the CSS that JavaScript is working
+pageRoot.classList.add("js");
+
 // Functions
 function setTheme(theme) {
   var themeButton = document.getElementById("themeButton");

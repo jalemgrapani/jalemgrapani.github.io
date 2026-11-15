@@ -92,12 +92,16 @@ i {
 
 .content-section {
     margin-bottom: 120px;
+}
+
+/* Only hide sections when JavaScript is working */
+.js .content-section {
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.content-section.visible {
+.js .content-section.visible {
     opacity: 1;
     transform: none;
 }
@@ -255,6 +259,10 @@ i {
     background: var(--surface);
 }
 
+.certification-box {
+    min-height: 88px;
+}
+
 .contact-box {
     transition: border-color 0.15s;
 }
@@ -315,8 +323,9 @@ i {
 }
 
 .project-deck {
-    --card-w: 250px;
-    --card-overlap: -18px;
+    --card-w: 420px;
+    --card-h: 390px;
+    --card-overlap: -24px;
     isolation: isolate;
 }
 
@@ -379,7 +388,7 @@ i {
     flex: 0 0 var(--card-w);
     flex-direction: column;
     width: var(--card-w);
-    aspect-ratio: 5 / 7;
+    height: var(--card-h);
     margin-left: var(--card-overlap);
     padding: 16px;
     border: 1px solid var(--border);
@@ -407,9 +416,29 @@ i {
 
 .play-card.selected {
     --lift: -28px;
-    z-index: 5;
+    z-index: 10;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--glow), var(--shadow);
+}
+
+.card-thumb {
+    flex: 0 0 200px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--muted);
+    font-family: var(--bs-font-monospace);
+    font-size: var(--fs-xs);
+}
+
+.card-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .card-title {
@@ -421,7 +450,7 @@ i {
 }
 
 .card-description {
-    max-height: 10.5em;
+    max-height: 4.5em;
     margin: 0 0 14px;
     overflow: hidden;
     color: var(--muted);
@@ -520,6 +549,10 @@ i {
     .site-navigation a.active span {
         text-underline-offset: 3px;
     }
+
+    .sidebar-bottom .small-action span {
+        display: none;
+    }
 }
 
 @media (max-width: 689.98px) {
@@ -539,7 +572,15 @@ i {
 
 @media (max-width: 575.98px) {
     .project-deck {
-        --card-w: 230px;
+        --card-w: min(330px, 88vw);
+    }
+
+    .card-thumb {
+        flex-basis: 160px;
+    }
+
+    .card-description {
+        max-height: 4.5em;
     }
 
     .site-sidebar {
@@ -550,6 +591,10 @@ i {
 
     .site-content {
         padding-top: 60px;
+    }
+
+    .site-navigation a:not(.active) span {
+        display: none;
     }
 
     .site-footer {
@@ -621,6 +666,7 @@ i {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .js .content-section,
     .play-card {
         transition: none;
     }
