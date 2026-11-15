@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +25,13 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <style>
+      /* Layout */
+
+      .error-page {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+
       /* Content */
 
       .error-code {
@@ -33,30 +40,77 @@
         line-height: 0.9;
         letter-spacing: -0.06em;
       }
+
+      .error-heading {
+        margin-bottom: 14px;
+        font-size: var(--fs-hero);
+        line-height: 1.1;
+      }
+
+      .error-description,
+      .information-box {
+        max-width: 560px;
+      }
+
+      .error-description {
+        font-size: var(--fs-lg);
+      }
+
+      .information-box {
+        font-size: var(--fs-sm);
+      }
+
+      .information-box i {
+        margin-right: 6px;
+      }
+
+      /* Components */
+
+      .button-primary {
+        --bs-btn-color: var(--bg);
+        --bs-btn-bg: var(--accent);
+        --bs-btn-border-color: var(--accent);
+        --bs-btn-hover-color: var(--accent);
+        --bs-btn-hover-bg: var(--accent-soft);
+        --bs-btn-hover-border-color: var(--accent);
+        --bs-btn-active-color: var(--accent);
+        --bs-btn-active-bg: var(--accent-soft);
+        --bs-btn-active-border-color: var(--accent);
+      }
+
+      /* Responsive */
+
+      @media (max-width: 575.98px) {
+        .site-footer {
+          padding-bottom: 40px;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <div class="container-fluid min-vh-100 d-flex flex-column">
+    <div class="container-fluid error-page d-flex flex-column">
       <!-- Content -->
-      <div
-        class="row justify-content-center align-items-center flex-grow-1 text-center"
-      >
-        <main class="col-12 col-md-8 col-lg-6 px-4">
+      <div class="row align-items-center flex-grow-1">
+        <main class="col-12 px-4 text-center">
           <div class="section-label font-monospace text-accent mb-3">
             error / 404
           </div>
           <div class="error-code text-accent fw-bold mb-2" aria-hidden="true">
             404
           </div>
-          <h1 class="main-title lh-1 mb-3">Page not found</h1>
-          <p class="main-description text-body-secondary mb-0">
+          <h1 class="error-heading">Page not found</h1>
+          <p class="error-description text-body-secondary mx-auto">
             The page you're looking for does not exist. It may have been removed
             or renamed, or it may be temporarily unavailable.
           </p>
-          <a href="index.html" class="small-action my-4">Back to home</a>
-          <div class="information-box small text-body-secondary p-3">
-            <i class="bi bi-info-circle text-accent me-2"></i>
+          <a
+            href="index.html"
+            class="button-primary btn px-4 my-4 rounded-pill"
+            >Back to home</a
+          >
+          <div class="information-box text-body-secondary mx-auto p-3 mb-4">
+            <i class="bi bi-info-circle text-accent"></i>
             You can return to the homepage and continue exploring my portfolio.
           </div>
         </main>
@@ -64,7 +118,7 @@
 
       <!-- Footer -->
       <div class="row">
-        <footer class="col-12 site-footer text-center pb-5">
+        <footer class="col-12 site-footer text-center">
           © <span id="currentYear">2026</span> Jalem Louise Grapani · Calamba
           City, PH
         </footer>
@@ -75,15 +129,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Theme
-      let theme = "dark";
-
       try {
-        theme = localStorage.getItem("portfolio-theme") || theme;
+        if (localStorage.getItem("portfolio-theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
       } catch (error) {
         console.error(error.message);
       }
-
-      document.documentElement.setAttribute("data-theme", theme);
 
       // Footer
       document.getElementById("currentYear").textContent =
