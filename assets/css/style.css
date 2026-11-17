@@ -94,7 +94,6 @@ i {
     margin-bottom: 120px;
 }
 
-/* Only hide sections when JavaScript is working */
 .js .content-section {
     opacity: 0;
     transform: translateY(16px);
@@ -322,6 +321,8 @@ i {
     color: var(--bg);
 }
 
+/* Projects */
+
 .project-deck {
     --card-w: 420px;
     --card-h: 390px;
@@ -379,6 +380,8 @@ i {
     scroll-snap-type: x proximity;
     scrollbar-width: none;
 }
+
+/* Cards */
 
 .play-card {
     --lift: 0px;
@@ -571,19 +574,15 @@ i {
 }
 
 @media (max-width: 575.98px) {
-   .project-deck {
+    .project-deck {
         --card-w: min(300px, 82vw);
         --card-h: 340px;
     }
 
-     .card-thumb {
+    .card-thumb {
         flex: 0 0 auto;
         height: auto;
         aspect-ratio: 386 / 200;
-     }
-
-    .card-description {
-        max-height: 4.5em;
     }
 
     .site-sidebar {
