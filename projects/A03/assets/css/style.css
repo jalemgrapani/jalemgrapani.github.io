@@ -433,6 +433,29 @@ body {
     scrollbar-color: var(--scrollbar) transparent;
 }
 
+@supports selector(::-webkit-scrollbar) {
+    .categories,
+    .product-grid,
+    .receipt-list {
+        scrollbar-width: auto;
+        scrollbar-color: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--scrollbar);
+        border-radius: 999px;
+    }
+
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+}
+
 /* Responsive */
 
 @media (hover: hover) {
