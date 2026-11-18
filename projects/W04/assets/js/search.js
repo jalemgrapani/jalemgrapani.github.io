@@ -53,7 +53,7 @@ async function searchChampion() {
   }
 
   var response = await fetch(
-    "https://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion.json",
+    "https://ddragon.leagueoflegends.com/cdn/16.23.1/data/en_US/champion.json",
   );
   var data = await response.json();
   var champions = Object.values(data.data);

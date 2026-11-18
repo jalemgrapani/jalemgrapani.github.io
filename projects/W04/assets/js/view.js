@@ -8,7 +8,7 @@ var championRole = document.getElementById("championRole");
 
 // Functions
 async function getChampion() {
-    var response = await fetch("https://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion/" + championId + ".json");
+    var response = await fetch("https://ddragon.leagueoflegends.com/cdn/16.23.1/data/en_US/champion/" + championId + ".json");
     var data = await response.json();
     var champion = data.data[championId];
 

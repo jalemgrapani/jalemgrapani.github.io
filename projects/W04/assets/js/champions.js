@@ -45,7 +45,7 @@ function displayChampions() {
       champion.id +
       "_0.jpg";
     var iconUrl =
-      "https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/" +
+      "https://ddragon.leagueoflegends.com/cdn/16.23.1/img/champion/" +
       champion.image.full;
 
     content +=
@@ -148,7 +148,7 @@ function displayPagination() {
 
 async function getChampions() {
   var response = await fetch(
-    "https://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion.json",
+    "https://ddragon.leagueoflegends.com/cdn/16.23.1/data/en_US/champion.json",
   );
   var data = await response.json();
 
