@@ -1,5 +1,6 @@
+
 // Data
-const skills = [
+var skills = [
   {
     title: "Programming & Web Development",
     tags: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "WordPress"],
@@ -24,24 +25,26 @@ const skills = [
 
 // Functions
 function displaySkills() {
-  const skillsList = document.getElementById("skillsList");
+  var skillsList = document.getElementById("skillsList");
 
-  if (skillsList === null) {
+  if (!skillsList) {
     return;
   }
 
-  skills.forEach((skill) => {
-    let tags = "";
+  skills.forEach(function (skill) {
+    var tags = "";
 
-    skill.tags.forEach((tag) => {
-      tags += `<span class="skill-tag">${tag}</span>`;
+    skill.tags.forEach(function (tag) {
+      tags += '<span class="skill-tag">' + tag + "</span>";
     });
 
-    const skillBox = document.createElement("div");
+    var skillBox = document.createElement("div");
+
     skillBox.className = "skill-box";
-    skillBox.innerHTML = `
-      <h3 class="skill-title">${skill.title}</h3>
-      <div class="tag-list">${tags}</div>
+    skillBox.innerHTML =
+      `
+      <h3 class="skill-title">` + skill.title + `</h3>
+      <div class="tag-list">` + tags + `</div>
     `;
 
     skillsList.appendChild(skillBox);

@@ -45,7 +45,7 @@ const projects = [
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A03",
     site: "projects/A03/index.html",
   },
-   {
+  {
     title: "League of Legends Champion API Website",
     description:
       "A website that uses the Riot Games Data Dragon API to retrieve and display League of Legends champion information. It includes champion browsing, name-based search, pagination, and individual champion profiles with images and lore.",
@@ -78,19 +78,29 @@ const projects = [
 let selectedIndex = 3;
 
 // Functions
-function truncate(text, max) {
-  return text.length > max ? `${text.slice(0, max).trim()}...` : text;
+function shortenText(text, max) {
+  if (text.length > max) {
+    return text.slice(0, max).trim() + "...";
+  }
+
+  return text;
 }
 
-function createActionLink(href, icon, label) {
-  const attributes = href
-    ? `href="${href}" target="_blank" rel="noopener"`
-    : `aria-disabled="true" tabindex="-1"`;
-  const disabledClass = href ? "" : " disabled-action";
+function createLink(url, icon, label) {
+  // Link with no url is disabled
+  if (url === "") {
+    return `
+      <a aria-disabled="true" tabindex="-1" class="card-action small-action d-inline-block text-decoration-none rounded-pill disabled-action">
+        <i class="bi ` + icon + `"></i> ` + label + `
+      </a>
+    `;
+  }
 
-  return `<a ${attributes} class="card-action small-action d-inline-block text-decoration-none rounded-pill${disabledClass}">
-    <i class="bi ${icon}"></i> ${label}
-  </a>`;
+  return `
+    <a href="` + url + `" target="_blank" rel="noopener" class="card-action small-action d-inline-block text-decoration-none rounded-pill">
+      <i class="bi ` + icon + `"></i> ` + label + `
+    </a>
+  `;
 }
 
 function createCard(project) {
@@ -98,24 +108,25 @@ function createCard(project) {
 
   card.className = "play-card";
   card.tabIndex = 0;
+
   card.innerHTML = `
     <div class="card-thumb">
-      <img src="${project.image}" alt="${project.alt}" />
+      <img src="` + project.image + `" alt="` + project.alt + `" />
     </div>
-    <h4 class="card-title">${project.title}</h4>
-    <p class="card-description">${truncate(project.description, 130)}</p>
+    <h4 class="card-title">` + project.title + `</h4>
+    <p class="card-description">` + shortenText(project.description, 130) + `</p>
     <div class="card-actions">
-      ${createActionLink(project.docs, "bi-github", "View")}
-      ${createActionLink(project.site, "bi-globe2", "Site")}
+      ` + createLink(project.docs, "bi-github", "Documentation") + `
+      ` + createLink(project.site, "bi-globe2", "View Site") + `
     </div>
   `;
 
   return card;
 }
 
-function selectProject(index, behavior = "smooth") {
+function selectProject(index, behavior) {
   const track = document.getElementById("deckTrack");
-  const cards = Array.from(track.children);
+  const cards = track.children;
 
   if (index < 0 || index >= cards.length) {
     return;
@@ -123,31 +134,68 @@ function selectProject(index, behavior = "smooth") {
 
   selectedIndex = index;
 
-  cards.forEach((card, i) => {
-    card.classList.toggle("selected", i === index);
-  });
+  // Highlight only the selected card
+  for (let i = 0; i < cards.length; i++) {
+    if (i === index) {
+      cards[i].classList.add("selected");
+    } else {
+      cards[i].classList.remove("selected");
+    }
+  }
 
+  // Scroll the selected card to the center
   const card = cards[index];
+  const center = (track.clientWidth - card.offsetWidth) / 2;
 
   track.scrollTo({
-    left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2,
-    behavior: behavior,
+    left: card.offsetLeft - center,
+    behavior: behavior || "smooth",
   });
 
-  document.getElementById("deckCount").textContent =
-    `${index + 1} / ${cards.length}`;
+  // Update counter and buttons
+  document.getElementById("deckCount").textContent = (index + 1) + " / " + cards.length;
   document.getElementById("deckPrev").disabled = index === 0;
   document.getElementById("deckNext").disabled = index === cards.length - 1;
+}
+
+function addCardEvents(card, index) {
+  card.addEventListener("click", (event) => {
+    const link = event.target.closest("a");
+
+    // Links only work on the selected card, and disabled links never work
+    if (link) {
+      const isSelected = card.classList.contains("selected");
+      const isDisabled = link.classList.contains("disabled-action");
+
+      if (!isSelected || isDisabled) {
+        event.preventDefault();
+      }
+    }
+
+    selectProject(index);
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.target !== card) {
+      return;
+    }
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      selectProject(index);
+    }
+  });
 }
 
 function renderProjects() {
   const grid = document.getElementById("projectGrid");
 
-  if (grid === null) {
+  if (!grid) {
     return;
   }
 
   grid.className = "project-deck";
+
   grid.innerHTML = `
     <div class="deck-header">
       <span class="deck-count" id="deckCount"></span>
@@ -165,32 +213,30 @@ function renderProjects() {
 
   const track = document.getElementById("deckTrack");
 
-  projects.forEach((project, index) => {
-    const card = createCard(project);
+  // Create the cards
+  for (let i = 0; i < projects.length; i++) {
+    const card = createCard(projects[i]);
 
-    // Events
-    card.addEventListener("click", (event) => {
-      const link = event.target.closest("a");
-      const isSelected = card.classList.contains("selected");
-
-      if (link && (!isSelected || link.classList.contains("disabled-action"))) {
-        event.preventDefault();
-      }
-
-      selectProject(index);
-    });
-
-    card.addEventListener("keydown", (event) => {
-      if (
-        event.target === card &&
-        (event.key === "Enter" || event.key === " ")
-      ) {
-        event.preventDefault();
-        selectProject(index);
-      }
-    });
-
+    addCardEvents(card, i);
     track.appendChild(card);
+  }
+
+  // Buttons
+  document.getElementById("deckPrev").addEventListener("click", () => {
+    selectProject(selectedIndex - 1);
+  });
+
+  document.getElementById("deckNext").addEventListener("click", () => {
+    selectProject(selectedIndex + 1);
+  });
+
+  // Arrow keys
+  track.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      selectProject(selectedIndex + 1);
+    } else if (event.key === "ArrowLeft") {
+      selectProject(selectedIndex - 1);
+    }
   });
 
   selectProject(selectedIndex, "auto");
@@ -198,27 +244,3 @@ function renderProjects() {
 
 // Events
 document.addEventListener("DOMContentLoaded", renderProjects);
-
-document.addEventListener("click", (event) => {
-  if (event.target.closest("#deckPrev")) {
-    selectProject(selectedIndex - 1);
-  }
-
-  if (event.target.closest("#deckNext")) {
-    selectProject(selectedIndex + 1);
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (!event.target.closest("#deckTrack")) {
-    return;
-  }
-
-  if (event.key === "ArrowRight") {
-    selectProject(selectedIndex + 1);
-  }
-
-  if (event.key === "ArrowLeft") {
-    selectProject(selectedIndex - 1);
-  }
-});

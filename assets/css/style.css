@@ -463,9 +463,13 @@ i {
 
 .card-actions {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap: 8px;
     margin-top: auto;
+}
+
+.card-action {
+    flex: 0 1 auto;
 }
 
 .play-card .card-action {
