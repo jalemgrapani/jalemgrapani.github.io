@@ -16,29 +16,33 @@ function getLastWord(text) {
     return text ? text.split("::").pop() : "";
 }
 
-function formatDate(date) {
-    return new Date(date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
+function filterByName(items, searchTerm) {
+    const term = searchTerm.trim().toLowerCase();
+
+    return items.filter((item) => item.displayName.toLowerCase().includes(term));
 }
 
-function getEventStatus(event) {
-    const now = Date.now();
-
-    if (now < new Date(event.startTime)) {
-        return "Upcoming";
+function getSkinMeta(skin) {
+    if (!skin.levels || !skin.chromas) {
+        return "Details are not available";
     }
 
-    if (now > new Date(event.endTime)) {
-        return "Ended";
-    }
-
-    return "Live";
+    return `${getCountText(skin.levels.length, "level")} and ${getCountText(skin.chromas.length, "chroma")}`;
 }
 
-function createAgentCard(agent, index) {
+function createSkinImage(skin, altText) {
+    if (!skin.displayIcon) {
+        return `<span class="message">Image is not available.</span>`;
+    }
+
+    return `<img src="${skin.displayIcon}" alt="${altText}" loading="lazy">`;
+}
+
+function createStat(label, value) {
+    return `<div class="stat"><dt>${label}</dt><dd>${value}</dd></div>`;
+}
+
+function createAgentCard(agent) {
     const role = agent.role ? agent.role.displayName : "Agent";
     const roleIcon = agent.role ? `<img class="agent-role-icon" src="${agent.role.displayIcon}" alt="">` : "";
 
@@ -85,68 +89,32 @@ function createWeaponCard(weapon) {
     `;
 }
 
-function createSkinRow(skin) {
-    const levels = getCountText(skin.levels.length, "level");
-    const chromas = getCountText(skin.chromas.length, "chroma");
-
+function createSkinCard(skin) {
     return `
-        <div class="col-12 col-lg-6">
-            <div class="skin-row">
-                <div class="skin-image">
-                    <img src="${skin.displayIcon}" alt="${skin.displayName}" loading="lazy">
-                </div>
-                <div>
-                    <h2 class="skin-name">${skin.displayName}</h2>
-                    <p class="skin-meta mb-0">${levels} and ${chromas}</p>
-                </div>
-            </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <button type="button" class="skin-card" data-bs-toggle="modal" data-bs-target="#detailModal" data-uuid="${skin.uuid}">
+                <span class="skin-image">${createSkinImage(skin, "")}</span>
+                <span class="skin-name">${skin.displayName}</span>
+                <span class="skin-meta">${getSkinMeta(skin)}</span>
+            </button>
         </div>
-    `;
-}
-
-function createModeRow(mode) {
-    const icon = mode.displayIcon ? `<img class="mode-icon" src="${mode.displayIcon}" alt="">` : "";
-    const duration = mode.duration ? `<p class="mode-meta mb-0">${mode.duration}</p>` : "";
-
-    return `
-        <div class="col-12 col-lg-6">
-            <div class="mode-row">
-                ${icon}
-                <div>
-                    <h2 class="mode-name">${mode.displayName}</h2>
-                    <p class="mode-text">${mode.description || "No description available."}</p>
-                    ${duration}
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-function createEventRow(event) {
-    const status = getEventStatus(event);
-
-    return `
-        <div class="col-12">
-            <div class="event-row">
-                <span class="event-dates">${formatDate(event.startTime)} to ${formatDate(event.endTime)}</span>
-                <h2 class="event-name">${event.displayName}</h2>
-                <span class="event-status event-${status.toLowerCase()}">${status}</span>
-            </div>
-        </div>
-    `;
-}
-
-function createLinkRow(name, type, link) {
-    return `
-        <a class="result-link" href="${link}">
-            <span class="result-name">${name}</span>
-            <span class="result-type">${type}</span>
-        </a>
     `;
 }
 
 function displayMessage(element, message) {
     element.innerHTML = `<div class="col-12"><p class="message">${message}</p></div>`;
+}
+
+function displaySkinDetail(skin) {
+    const stats = skin.levels && skin.chromas
+        ? `<dl class="stat-list mb-0">${createStat("Levels", skin.levels.length)}${createStat("Chromas", skin.chromas.length)}</dl>`
+        : `<p class="message mb-0">Details are not available.</p>`;
+
+    document.getElementById("detailTitle").textContent = skin.displayName;
+    document.getElementById("detailBody").innerHTML = `
+        <div class="skin-preview">${createSkinImage(skin, skin.displayName)}</div>
+        ${stats}
+    `;
 }
 
 // Shows the first, last and nearby pages only
@@ -190,6 +158,17 @@ function getNewPage(button, currentPage, totalPages) {
 
     return Number(page);
 }
+
+// Events
+// Error events do not bubble, so this listens in the capture phase
+document.addEventListener("error", (event) => {
+    const image = event.target;
+    const box = image.tagName === "IMG" ? image.closest(".skin-image, .skin-preview") : null;
+
+    if (box) {
+        box.innerHTML = `<span class="message">Image is not available.</span>`;
+    }
+}, true);
 
 // Start
 document.getElementById("footerYear").textContent = new Date().getFullYear();

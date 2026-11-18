@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Read a VALORANT agent's role, biography and abilities." />
-    <title>view</title>
+    <title>Valorant | Preview</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <header class="navigation sticky-top">
         <nav class="navbar navbar-expand-xl">
           <div class="container">
-            <a class="navbar-brand" href="index.html">Loadout</a>
+            <a class="navbar-brand" href="index.html">Valorant</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto gap-xl-2 align-items-xl-center">
@@ -28,9 +28,6 @@
                 <li class="nav-item"><a class="nav-link" href="maps.html">Maps</a></li>
                 <li class="nav-item"><a class="nav-link" href="weapons.html">Weapons</a></li>
                 <li class="nav-item"><a class="nav-link" href="skins.html">Skins</a></li>
-                <li class="nav-item"><a class="nav-link" href="modes.html">Modes</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
                 <li class="nav-item ms-xl-2"><a class="btn btn-red btn-sm px-3" href="https://playvalorant.com/" target="_blank" rel="noopener">Play for free</a></li>
               </ul>
             </div>
@@ -46,8 +43,7 @@
               <p class="role-tag"><img class="role-icon" id="agentRoleIcon" alt="" /><span id="agentRole">Role</span></p>
               <h1 class="display agent-title" id="agentName">Loading</h1>
               <p class="agent-bio" id="agentDescription">Loading agent details.</p>
-              <a href="agents.html" class="btn btn-red btn-lg me-2 mb-2">All agents</a>
-              <a href="search.html" class="btn btn-ghost btn-lg mb-2">Search</a>
+              <a href="agents.html" class="btn btn-red btn-lg mb-2">All agents</a>
             </div>
             <div class="col-12 col-lg-6">
               <div class="agent-stage" id="agentStage">
@@ -62,7 +58,7 @@
       <!-- Content -->
       <main class="section">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <h2 class="display section-title">Abilities</h2>
               <div id="abilityContainer"></div>
@@ -74,9 +70,9 @@
       <!-- Footer -->
       <footer class="site-footer mt-auto">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-12 col-lg-9">
-              <p class="mb-0">&copy; <span id="footerYear">2026</span> Fan-made, non-commercial project. Not affiliated with or endorsed by Riot Games, Inc. VALORANT and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Data and images come from valorant-api.com.</p>
+              <p class="mb-0 text-center">&copy; <span id="footerYear">2026</span> Fan-made, non-commercial project. Not affiliated with or endorsed by Riot Games, Inc. VALORANT and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Data and images come from valorant-api.com.</p>
             </div>
           </div>
         </div>
@@ -85,6 +81,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/nav.js"></script>
     <script src="assets/js/api.js"></script>
     <script src="assets/js/functions.js"></script>
     <script src="assets/js/view.js"></script>

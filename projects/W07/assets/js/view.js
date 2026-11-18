@@ -28,7 +28,7 @@ function displayAbilities(abilities) {
             <div class="ability-row">
                 <span class="keycap">${abilityKeys[ability.slot]}</span>
                 <img class="ability-icon" src="${ability.displayIcon}" alt="">
-                <div>
+                <div class="ability-info">
                     <h3 class="ability-name">${ability.displayName}</h3>
                     <p class="ability-text">${ability.description}</p>
                 </div>

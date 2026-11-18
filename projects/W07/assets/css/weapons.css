@@ -32,7 +32,6 @@
     padding: 1rem;
     background: var(--surface);
     border: 0;
-    border-left: 4px solid var(--red);
     clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
     color: var(--text);
     text-align: left;
@@ -79,6 +78,8 @@
     margin-bottom: 1.5rem;
     object-fit: contain;
 }
+
+/* Responsive */
 
 @media (prefers-reduced-motion: reduce) {
     .weapon-card {

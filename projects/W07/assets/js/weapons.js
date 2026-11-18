@@ -1,6 +1,7 @@
 // Variables
 const container = document.getElementById("weaponContainer");
 const filterContainer = document.getElementById("filterContainer");
+const searchInput = document.getElementById("searchInput");
 const detailModal = document.getElementById("detailModal");
 const detailTitle = document.getElementById("detailTitle");
 const detailBody = document.getElementById("detailBody");
@@ -8,10 +9,6 @@ let weapons = [];
 let currentCategory = "All";
 
 // Functions
-function createStat(label, value) {
-    return `<div class="stat"><dt>${label}</dt><dd>${value}</dd></div>`;
-}
-
 function displayFilters() {
     const categories = ["All", ...new Set(weapons.map((weapon) => getLastWord(weapon.category)))];
 
@@ -25,7 +22,13 @@ function displayFilters() {
 }
 
 function displayWeapons() {
-    const filtered = weapons.filter((weapon) => currentCategory === "All" || getLastWord(weapon.category) === currentCategory);
+    const inCategory = weapons.filter((weapon) => currentCategory === "All" || getLastWord(weapon.category) === currentCategory);
+    const filtered = filterByName(inCategory, searchInput.value);
+
+    if (filtered.length === 0) {
+        displayMessage(container, "No weapons match your search.");
+        return;
+    }
 
     container.innerHTML = filtered.map(createWeaponCard).join("");
 }
@@ -81,6 +84,12 @@ async function loadWeapons() {
 }
 
 // Events
+searchInput.addEventListener("input", () => {
+    if (weapons.length > 0) {
+        displayWeapons();
+    }
+});
+
 filterContainer.addEventListener("click", (event) => {
     const button = event.target.closest("button");
 

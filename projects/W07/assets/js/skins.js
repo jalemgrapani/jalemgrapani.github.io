@@ -1,7 +1,10 @@
 // Variables
 const container = document.getElementById("skinContainer");
 const pagination = document.getElementById("pagination");
-const perPage = 20;
+const searchInput = document.getElementById("searchInput");
+const detailModal = document.getElementById("detailModal");
+const perPage = 12;
+let allItems = [];
 let items = [];
 let currentPage = 1;
 
@@ -11,17 +14,24 @@ function getTotalPages() {
 }
 
 function displayItems() {
+    if (items.length === 0) {
+        displayMessage(container, "No skins match your search.");
+        pagination.innerHTML = "";
+        return;
+    }
+
     const start = (currentPage - 1) * perPage;
     const pageItems = items.slice(start, start + perPage);
 
-    container.innerHTML = pageItems.map(createSkinRow).join("");
+    container.innerHTML = pageItems.map(createSkinCard).join("");
+    displayPagination(pagination, currentPage, getTotalPages());
 }
 
 async function loadItems() {
     try {
-        items = await getSkins();
+        allItems = await getSkins();
+        items = allItems;
         displayItems();
-        displayPagination(pagination, currentPage, getTotalPages());
     } catch (error) {
         console.error(error.message);
         displayMessage(container, "Could not load skins. Check your connection and refresh the page.");
@@ -29,6 +39,16 @@ async function loadItems() {
 }
 
 // Events
+searchInput.addEventListener("input", () => {
+    if (allItems.length === 0) {
+        return;
+    }
+
+    items = filterByName(allItems, searchInput.value);
+    currentPage = 1;
+    displayItems();
+});
+
 pagination.addEventListener("click", (event) => {
     const button = event.target.closest("button");
 
@@ -38,8 +58,13 @@ pagination.addEventListener("click", (event) => {
 
     currentPage = getNewPage(button, currentPage, getTotalPages());
     displayItems();
-    displayPagination(pagination, currentPage, getTotalPages());
     window.scrollTo({ top: 0 });
+});
+
+detailModal.addEventListener("show.bs.modal", (event) => {
+    const skin = allItems.find((item) => item.uuid === event.relatedTarget.dataset.uuid);
+
+    displaySkinDetail(skin);
 });
 
 // Start

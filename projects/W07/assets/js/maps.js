@@ -1,11 +1,23 @@
 // Variables
 const container = document.getElementById("mapContainer");
+const searchInput = document.getElementById("searchInput");
 const detailModal = document.getElementById("detailModal");
 const detailTitle = document.getElementById("detailTitle");
 const detailBody = document.getElementById("detailBody");
 let maps = [];
 
 // Functions
+function displayMaps() {
+    const filtered = filterByName(maps, searchInput.value);
+
+    if (filtered.length === 0) {
+        displayMessage(container, "No maps match your search.");
+        return;
+    }
+
+    container.innerHTML = filtered.map(createMapCard).join("");
+}
+
 function displayMapDetail(map) {
     const minimap = map.displayIcon ? `<img class="minimap" src="${map.displayIcon}" alt="Minimap of ${map.displayName}">` : "";
 
@@ -25,7 +37,7 @@ function displayMapDetail(map) {
 async function loadMaps() {
     try {
         maps = await getMaps();
-        container.innerHTML = maps.map(createMapCard).join("");
+        displayMaps();
     } catch (error) {
         console.error(error.message);
         displayMessage(container, "Could not load maps. Check your connection and refresh the page.");
@@ -33,6 +45,12 @@ async function loadMaps() {
 }
 
 // Events
+searchInput.addEventListener("input", () => {
+    if (maps.length > 0) {
+        displayMaps();
+    }
+});
+
 detailModal.addEventListener("show.bs.modal", (event) => {
     const map = maps.find((item) => item.uuid === event.relatedTarget.dataset.uuid);
 

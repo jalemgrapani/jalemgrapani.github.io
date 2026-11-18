@@ -24,11 +24,8 @@ function getAgent(id) {
     return getData(`/agents/${id}`);
 }
 
-async function getSkins() {
-    const skins = await getData("/weapons/skins");
-
-    // Skins without an icon are placeholders
-    return skins.filter((skin) => skin.displayIcon);
+function getSkins() {
+    return getData("/weapons/skins");
 }
 
 async function getMaps() {
@@ -41,16 +38,4 @@ async function getWeapons() {
     const weapons = await getData("/weapons");
 
     return weapons.sort((a, b) => a.displayName.localeCompare(b.displayName));
-}
-
-async function getModes() {
-    const modes = await getData("/gamemodes");
-
-    return modes.sort((a, b) => a.displayName.localeCompare(b.displayName));
-}
-
-async function getEvents() {
-    const events = await getData("/events");
-
-    return events.sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
 }

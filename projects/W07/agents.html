@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Browse every playable VALORANT agent." />
-    <title>agents</title>
+    <title>Valorant | Agents</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <header class="navigation sticky-top">
         <nav class="navbar navbar-expand-xl">
           <div class="container">
-            <a class="navbar-brand" href="index.html">Loadout</a>
+            <a class="navbar-brand" href="index.html">Valorant</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto gap-xl-2 align-items-xl-center">
@@ -28,9 +28,6 @@
                 <li class="nav-item"><a class="nav-link" href="maps.html">Maps</a></li>
                 <li class="nav-item"><a class="nav-link" href="weapons.html">Weapons</a></li>
                 <li class="nav-item"><a class="nav-link" href="skins.html">Skins</a></li>
-                <li class="nav-item"><a class="nav-link" href="modes.html">Modes</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
                 <li class="nav-item ms-xl-2"><a class="btn btn-red btn-sm px-3" href="https://playvalorant.com/" target="_blank" rel="noopener">Play for free</a></li>
               </ul>
             </div>
@@ -41,7 +38,7 @@
       <!-- Header -->
       <header class="page-header">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <h1 class="display page-title">Agents</h1>
               <p class="page-lead mb-0">Pick an agent to read their biography and abilities.</p>
@@ -53,10 +50,16 @@
       <!-- Content -->
       <main class="section">
         <div class="container">
-
+          <div class="row justify-content-md-end align-items-center g-3 mb-4">
+            <div class="col-12 col-md-auto"><p class="search-text text-md-end mb-0">Find an agent by name, for example Jett or Sova.</p></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <label class="visually-hidden" for="searchInput">Search agents</label>
+              <input type="search" class="form-control search-input" id="searchInput" placeholder="Search agents" autocomplete="off" />
+            </div>
+          </div>
           <div class="row g-3" id="agentContainer"></div>
           <div class="row">
-            <nav class="col-12 mt-5" aria-label="Page navigation"><ul class="pagination" id="pagination"></ul></nav>
+            <nav class="col-12 mt-5" aria-label="Page navigation"><ul class="pagination justify-content-center" id="pagination"></ul></nav>
           </div>
         </div>
       </main>
@@ -64,9 +67,9 @@
       <!-- Footer -->
       <footer class="site-footer mt-auto">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-12 col-lg-9">
-              <p class="mb-0">&copy; <span id="footerYear">2026</span> Fan-made, non-commercial project. Not affiliated with or endorsed by Riot Games, Inc. VALORANT and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Data and images come from valorant-api.com.</p>
+              <p class="mb-0 text-center">&copy; <span id="footerYear">2026</span> Fan-made, non-commercial project. Not affiliated with or endorsed by Riot Games, Inc. VALORANT and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Data and images come from valorant-api.com.</p>
             </div>
           </div>
         </div>
@@ -75,6 +78,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/nav.js"></script>
     <script src="assets/js/api.js"></script>
     <script src="assets/js/functions.js"></script>
     <script src="assets/js/agents.js"></script>

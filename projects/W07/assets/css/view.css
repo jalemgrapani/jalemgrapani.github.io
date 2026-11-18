@@ -2,8 +2,6 @@
 
 .agent-header {
     padding: 4rem 0 0;
-    background: linear-gradient(100deg, var(--surface), var(--background));
-    border-bottom: 1px solid var(--line);
 }
 
 .role-tag {
@@ -92,7 +90,10 @@
     height: 3.5rem;
     padding: 0.5rem;
     background: var(--surface-alt);
-    border-left: 3px solid var(--red);
+}
+
+.ability-info {
+    flex: 1;
 }
 
 .ability-name {

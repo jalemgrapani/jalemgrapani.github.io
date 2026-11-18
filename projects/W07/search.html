@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Search VALORANT agents, maps, weapons and skins by name." />
-    <title>search</title>
+    <title>Valorant | Search</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@
       <header class="navigation sticky-top">
         <nav class="navbar navbar-expand-xl">
           <div class="container">
-            <a class="navbar-brand" href="index.html">Loadout</a>
+            <a class="navbar-brand" href="index.html">Valorant</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto gap-xl-2 align-items-xl-center">
@@ -30,8 +30,6 @@
                 <li class="nav-item"><a class="nav-link" href="maps.html">Maps</a></li>
                 <li class="nav-item"><a class="nav-link" href="weapons.html">Weapons</a></li>
                 <li class="nav-item"><a class="nav-link" href="skins.html">Skins</a></li>
-                <li class="nav-item"><a class="nav-link" href="modes.html">Modes</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
                 <li class="nav-item"><a class="nav-link active" href="search.html" aria-current="page">Search</a></li>
                 <li class="nav-item ms-xl-2"><a class="btn btn-red btn-sm px-3" href="https://playvalorant.com/" target="_blank" rel="noopener">Play for free</a></li>
               </ul>
@@ -43,7 +41,7 @@
       <!-- Header -->
       <header class="page-header">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <h1 class="display page-title">Search</h1>
               <p class="page-lead mb-0">Type a name, for example Jett, Ascent, Vandal or Reaver.</p>
@@ -80,6 +78,19 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <!-- Detail -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="display modal-title" id="detailTitle"></h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="detailBody"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Scripts -->
