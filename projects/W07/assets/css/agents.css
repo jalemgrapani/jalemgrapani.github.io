@@ -1,0 +1,55 @@
+/* Content */
+
+.agent-card {
+    position: relative;
+    display: block;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--type, var(--surface-alt)), var(--surface));
+    border-bottom: 4px solid transparent;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 88% 100%, 0 100%);
+    color: var(--text);
+    text-decoration: none;
+}
+
+.agent-card:hover {
+    border-bottom-color: var(--red);
+}
+
+.agent-card:focus-visible {
+    outline-offset: -6px;
+}
+
+.agent-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 100%;
+    max-width: none;
+    transform: translateX(-50%);
+}
+
+.agent-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2.5rem 1rem 0.9rem;
+    background: linear-gradient(transparent, hsla(210, 40%, 8%, 0.95));
+}
+
+.agent-role-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.agent-name {
+    font-family: var(--display-font);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}

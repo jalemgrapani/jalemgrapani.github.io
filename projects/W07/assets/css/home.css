@@ -1,0 +1,116 @@
+/* Header */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    overflow: hidden;
+    background:
+        linear-gradient(115deg, transparent 62%, var(--red) 62%, var(--red) 62.4%, transparent 62.4%),
+        linear-gradient(90deg, var(--background) 30%, hsla(210, 40%, 8%, 0.5)),
+        var(--splash, none) center / cover,
+        var(--background);
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+}
+
+.hero-lead {
+    max-width: 30rem;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: 1.2rem;
+}
+
+.hero-stage {
+    position: relative;
+    min-height: 34rem;
+}
+
+.hero-agent {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    height: 115%;
+    max-width: none;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 20px 40px hsla(0, 0%, 0%, 0.6));
+}
+
+.hero-caption {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    padding: 0.2rem 0.8rem;
+    background: var(--background);
+    border-left: 4px solid var(--red);
+    font-weight: 600;
+}
+
+/* Content */
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    min-height: 11rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border-left: 5px solid var(--red);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 94% 100%, 0 100%);
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tile-large {
+    min-height: 16rem;
+}
+
+.tile-title {
+    font-size: 2.6rem;
+}
+
+.tile-large .tile-title {
+    font-size: 4rem;
+}
+
+.tile-text {
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.tile:hover {
+    background: var(--red);
+    color: var(--background);
+}
+
+.tile:hover .tile-text {
+    color: var(--background);
+}
+
+.tile:focus-visible {
+    outline-offset: -6px;
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-stage {
+        min-height: 24rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tile,
+    .tile-text {
+        transition: none;
+    }
+}

@@ -1,0 +1,70 @@
+/* Content */
+
+.map-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    overflow: hidden;
+    background: var(--surface);
+    border: 0;
+    border-bottom: 4px solid transparent;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 94% 100%, 0 100%);
+    color: var(--text);
+    text-align: left;
+}
+
+.map-card:hover {
+    border-bottom-color: var(--red);
+}
+
+.map-card:focus-visible {
+    outline-offset: -6px;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.map-card:hover .map-image {
+    transform: scale(1.05);
+}
+
+.map-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.25rem 1rem;
+    background: linear-gradient(transparent, hsla(210, 40%, 8%, 0.92));
+}
+
+.map-name {
+    font-family: var(--display-font);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.map-sites {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.minimap {
+    width: 100%;
+    background: var(--surface-alt);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .map-image {
+        transition: none;
+    }
+}

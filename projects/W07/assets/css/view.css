@@ -1,0 +1,118 @@
+/* Header */
+
+.agent-header {
+    padding: 4rem 0 0;
+    background: linear-gradient(100deg, var(--surface), var(--background));
+    border-bottom: 1px solid var(--line);
+}
+
+.role-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.9rem;
+    border: 2px solid var(--red);
+    font-weight: 700;
+}
+
+.role-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.agent-title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(4rem, 11vw, 8rem);
+}
+
+.agent-bio {
+    max-width: 32rem;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.agent-stage {
+    position: relative;
+    min-height: 32rem;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--type, var(--surface-alt)), var(--surface));
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.agent-stage-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90%;
+    max-width: none;
+    opacity: 0.25;
+    transform: translate(-50%, -50%);
+}
+
+.agent-stage-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 100%;
+    max-width: none;
+    transform: translateX(-50%);
+}
+
+/* Content */
+
+.ability-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.keycap {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: var(--surface-alt);
+    border: 2px solid var(--text);
+    border-bottom-width: 5px;
+    border-radius: 0.4rem;
+    font-family: var(--display-font);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.ability-icon {
+    flex: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    background: var(--surface-alt);
+    border-left: 3px solid var(--red);
+}
+
+.ability-name {
+    margin-bottom: 0.25rem;
+    font-family: var(--display-font);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.ability-text {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+    .agent-stage {
+        min-height: 24rem;
+    }
+}
