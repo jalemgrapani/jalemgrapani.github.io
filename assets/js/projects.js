@@ -137,13 +137,14 @@ function createCard(project) {
 function createModal() {
   document.body.insertAdjacentHTML("beforeend", `
     <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title experience-title" id="detailsTitle"></h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <img class="d-block w-100 h-auto border rounded mb-4" id="detailsImage" />
             <p class="text-body-secondary mb-4" id="detailsDescription"></p>
             <h4 class="skill-title">Technologies Used</h4>
             <div class="tag-list" id="detailsTech"></div>
@@ -157,6 +158,11 @@ function createModal() {
 }
 
 function showDetails(project) {
+  const image = document.getElementById("detailsImage");
+
+  image.src = project.image;
+  image.alt = project.alt;
+
   document.getElementById("detailsTitle").textContent = project.title;
   document.getElementById("detailsDescription").textContent = project.description;
   document.getElementById("detailsTech").innerHTML = createTags(project.tech);
