@@ -278,6 +278,18 @@ i {
 
 /* Components */
 
+.modal {
+    --bs-modal-bg: var(--surface);
+    --bs-modal-color: var(--text);
+    --bs-modal-border-color: var(--border);
+    --bs-modal-border-radius: var(--radius);
+    --bs-modal-header-border-color: var(--border);
+}
+
+html[data-theme="dark"] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
 .information-box,
 .skill-box,
 .contact-box {
@@ -449,6 +461,7 @@ i {
 }
 
 .card-thumb {
+    position: relative;
     flex: 0 0 200px;
     margin-bottom: 12px;
     overflow: hidden;
@@ -466,6 +479,33 @@ i {
     height: 100%;
     object-fit: cover;
     object-position: top;
+    transition: transform 0.35s ease;
+}
+
+.thumb-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: hsla(210, 13%, 9%, 0.55);
+    color: hsl(0, 0%, 100%);
+    font-size: var(--fs-sm);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.play-card.selected .card-thumb {
+    cursor: pointer;
+}
+
+.play-card.selected .card-thumb:hover img {
+    transform: scale(1.05);
+}
+
+.play-card.selected .card-thumb:hover .thumb-overlay {
+    opacity: 1;
 }
 
 .card-title {
@@ -669,6 +709,12 @@ i {
         border-radius: 50%;
         font-size: 15px;
     }
+
+    .sidebar-bottom .theme-button {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 399.98px) {
@@ -689,16 +735,6 @@ i {
 
     .site-navigation a i {
         font-size: 18px;
-    }
-
-    .sidebar-bottom {
-        padding-left: 6px;
-    }
-
-    .theme-button {
-        width: 30px;
-        height: 30px;
-        font-size: 13px;
     }
 
     .nav-more {
@@ -742,7 +778,9 @@ i {
 @media (prefers-reduced-motion: reduce) {
 
     .js .content-section,
-    .play-card {
+    .play-card,
+    .card-thumb img,
+    .thumb-overlay {
         transition: none;
     }
 }

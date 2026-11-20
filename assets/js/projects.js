@@ -4,10 +4,11 @@ const projects = [
     title: "Easechedemy",
     description:
       "A web-based class scheduling system developed for Almond Academy Foundation Inc. It helps manage class schedules and generates schedules based on teachers' subject preferences.",
-    image: "assets/img/easechedemy.jpg",
+    image: "assets/img/Easechedemy.png",
     alt: "Screenshot of the Easechedemy class scheduling system",
     docs: "https://github.com/StackedFrogs/Easechedemy.com",
     site: "",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "MySQL"],
   },
   {
     title: "Bookblast",
@@ -17,6 +18,7 @@ const projects = [
     alt: "Screenshot of the Bookblast digital library system",
     docs: "https://github.com/Pages-Beyond/BookBlast-Website",
     site: "",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
   },
   {
     title: "Eventure",
@@ -26,24 +28,17 @@ const projects = [
     alt: "Screenshot of the Eventure event management system",
     docs: "https://github.com/pupstc-student-academic-works/adet-grp-7",
     site: "",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
   },
   {
-    title: "J.CO Donuts & Coffee POS System (Backend)",
-    description:
-      "A database-backed POS project for J.CO Donuts & Coffee. It uses PHP and MySQL to retrieve product categories and product details, which are displayed dynamically in the frontend.",
-    image: "assets/img/JCO POS.png",
-    alt: "Screenshot of the J.CO Donuts & Coffee POS system",
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A04",
-    site: "",
-  },
-  {
-    title: "J.CO Donuts & Coffee POS System (Frontend)",
+    title: "J.CO Donuts & Coffee POS System",
     description:
       "A front-end ordering system for J.CO Donuts & Coffee that displays donuts, coffee, beverages, and other menu items by category. Users can select products, manage quantities, remove items, and view an order summary with an automatically calculated total.",
     image: "assets/img/JCO POS.png",
     alt: "Screenshot of the J.CO Donuts & Coffee ordering system",
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A03",
     site: "projects/A03/index.html",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "JSON"],
   },
   {
     title: "League of Legends Champion API Website",
@@ -53,6 +48,17 @@ const projects = [
     alt: "Screenshot of the League of Legends champion website",
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W04",
     site: "projects/W04/index.html",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "League of Legends API"],
+  },
+  {
+    title: "Valorant API Website",
+    description:
+      "A website that uses the Valorant API to display agents with their roles and abilities, along with maps, weapons, and skins.",
+    image: "assets/img/Valorant.png",
+    alt: "Screenshot of the Valorant API website",
+    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/W07",
+    site: "projects/W07/index.html",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Valorant API"],
   },
   {
     title: "JWatch Store",
@@ -62,20 +68,13 @@ const projects = [
     alt: "Screenshot of the JWatch Store website",
     docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A01",
     site: "",
-  },
-  {
-    title: "Palawan Tourism Website",
-    description:
-      "A tourism website highlighting Palawan destinations through photos, destination information, and visual sections.",
-    image: "assets/img/Palawan.png",
-    alt: "Screenshot of the Palawan Tourism website",
-    docs: "https://github.com/jalemgrapani/jalemgrapani.github.io/tree/main/projects/A05",
-    site: "projects/A05/index.html",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "JSON", "PHP"],
   },
 ];
 
 // Variables
 let selectedIndex = 3;
+let detailsModal;
 
 // Functions
 function shortenText(text, max) {
@@ -103,6 +102,16 @@ function createLink(url, icon, label) {
   `;
 }
 
+function createTags(tech) {
+  let html = "";
+
+  for (const item of tech) {
+    html += `<span class="skill-tag">` + item + `</span>`;
+  }
+
+  return html;
+}
+
 function createCard(project) {
   const card = document.createElement("article");
 
@@ -112,6 +121,7 @@ function createCard(project) {
   card.innerHTML = `
     <div class="card-thumb">
       <img src="` + project.image + `" alt="` + project.alt + `" />
+      <span class="thumb-overlay"><i class="bi bi-arrows-fullscreen"></i> View details</span>
     </div>
     <h4 class="card-title">` + project.title + `</h4>
     <p class="card-description">` + shortenText(project.description, 130) + `</p>
@@ -122,6 +132,36 @@ function createCard(project) {
   `;
 
   return card;
+}
+
+function createModal() {
+  document.body.insertAdjacentHTML("beforeend", `
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title experience-title" id="detailsTitle"></h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-body-secondary mb-4" id="detailsDescription"></p>
+            <h4 class="skill-title">Technologies Used</h4>
+            <div class="tag-list" id="detailsTech"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `);
+
+  detailsModal = new bootstrap.Modal(document.getElementById("detailsModal"));
+}
+
+function showDetails(project) {
+  document.getElementById("detailsTitle").textContent = project.title;
+  document.getElementById("detailsDescription").textContent = project.description;
+  document.getElementById("detailsTech").innerHTML = createTags(project.tech);
+
+  detailsModal.show();
 }
 
 function selectProject(index, behavior) {
@@ -161,10 +201,11 @@ function selectProject(index, behavior) {
 function addCardEvents(card, index) {
   card.addEventListener("click", (event) => {
     const link = event.target.closest("a");
+    const thumb = event.target.closest(".card-thumb");
+    const isSelected = card.classList.contains("selected");
 
     // Links only work on the selected card, and disabled links never work
     if (link) {
-      const isSelected = card.classList.contains("selected");
       const isDisabled = link.classList.contains("disabled-action");
 
       if (!isSelected || isDisabled) {
@@ -173,6 +214,11 @@ function addCardEvents(card, index) {
     }
 
     selectProject(index);
+
+    // Clicking the image of the selected card opens the details
+    if (thumb && isSelected) {
+      showDetails(projects[index]);
+    }
   });
 
   card.addEventListener("keydown", (event) => {
@@ -182,7 +228,13 @@ function addCardEvents(card, index) {
 
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      selectProject(index);
+
+      // Enter on the selected card opens the details
+      if (card.classList.contains("selected")) {
+        showDetails(projects[index]);
+      } else {
+        selectProject(index);
+      }
     }
   });
 }
@@ -220,6 +272,8 @@ function renderProjects() {
     addCardEvents(card, i);
     track.appendChild(card);
   }
+
+  createModal();
 
   // Buttons
   document.getElementById("deckPrev").addEventListener("click", () => {
