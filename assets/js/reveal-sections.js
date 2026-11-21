@@ -1,13 +1,13 @@
 // Functions
 function revealSections() {
-  var sections = document.getElementsByClassName("content-section");
-  var bottomOfScreen = window.pageYOffset + window.innerHeight - 80;
+  const sections = document.querySelectorAll(".content-section");
+  const bottomOfScreen = window.scrollY + window.innerHeight - 80;
 
-  for (var i = 0; i < sections.length; i++) {
-    if (sections[i].offsetTop < bottomOfScreen) {
-      sections[i].classList.add("visible");
+  sections.forEach((section) => {
+    if (section.offsetTop < bottomOfScreen) {
+      section.classList.add("visible");
     }
-  }
+  });
 }
 
 // Events

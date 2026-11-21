@@ -4,11 +4,11 @@ const moreButton = document.getElementById("moreButton");
 const moreMenu = document.getElementById("moreMenu");
 
 // Functions
-const setMenuOpen = (isOpen) => {
+function setMenuOpen(isOpen) {
   sidebar.classList.toggle("more-open", isOpen);
   moreButton.setAttribute("aria-expanded", isOpen);
   moreButton.setAttribute("aria-label", isOpen ? "Close menu" : "More");
-};
+}
 
 // Events
 moreButton.addEventListener("click", () => {

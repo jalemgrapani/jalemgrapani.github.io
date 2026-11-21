@@ -1,47 +1,28 @@
 // Variables
-var pageRoot = document.documentElement;
+const pageRoot = document.documentElement;
+const themeButton = document.getElementById("themeButton");
+const themeIcon = document.getElementById("themeIcon");
 
 // Tell the CSS that JavaScript is working
 pageRoot.classList.add("js");
 
 // Functions
 function setTheme(theme) {
-  var themeButton = document.getElementById("themeButton");
-  var themeIcon = document.getElementById("themeIcon");
-  var icon = "bi bi-moon-stars-fill";
-  var label = "Switch to dark mode";
-
-  if (theme === "dark") {
-    icon = "bi bi-brightness-high-fill";
-    label = "Switch to light mode";
-  }
+  const isDark = theme === "dark";
+  const label = isDark ? "Switch to light mode" : "Switch to dark mode";
 
   pageRoot.setAttribute("data-theme", theme);
   localStorage.setItem("portfolio-theme", theme);
-  themeIcon.className = icon;
+  themeIcon.className = isDark
+    ? "bi bi-brightness-high-fill"
+    : "bi bi-moon-stars-fill";
   themeButton.setAttribute("aria-label", label);
   themeButton.setAttribute("title", label);
 }
 
-function changeTheme() {
-  if (pageRoot.getAttribute("data-theme") === "dark") {
-    setTheme("light");
-  } else {
-    setTheme("dark");
-  }
-}
-
-function startTheme() {
-  var savedTheme = localStorage.getItem("portfolio-theme");
-
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme("dark");
-  }
-
-  document.getElementById("themeButton").addEventListener("click", changeTheme);
-}
-
 // Events
-document.addEventListener("DOMContentLoaded", startTheme);
+themeButton.addEventListener("click", () => {
+  setTheme(pageRoot.dataset.theme === "dark" ? "light" : "dark");
+});
+
+setTheme(localStorage.getItem("portfolio-theme") || "dark");

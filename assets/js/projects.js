@@ -79,37 +79,25 @@ let detailsModal;
 // Functions
 function shortenText(text, max) {
   if (text.length > max) {
-    return text.slice(0, max).trim() + "...";
+    return `${text.slice(0, max).trim()}...`;
   }
 
   return text;
 }
 
 function createLink(url, icon, label) {
+  const content = `<i class="bi ${icon}"></i> ${label}`;
+
   // Link with no url is disabled
   if (url === "") {
-    return `
-      <a aria-disabled="true" tabindex="-1" class="card-action small-action d-inline-block text-decoration-none rounded-pill disabled-action">
-        <i class="bi ` + icon + `"></i> ` + label + `
-      </a>
-    `;
+    return `<a aria-disabled="true" tabindex="-1" class="card-action small-action disabled-action">${content}</a>`;
   }
 
-  return `
-    <a href="` + url + `" target="_blank" rel="noopener" class="card-action small-action d-inline-block text-decoration-none rounded-pill">
-      <i class="bi ` + icon + `"></i> ` + label + `
-    </a>
-  `;
+  return `<a href="${url}" target="_blank" rel="noopener" class="card-action small-action">${content}</a>`;
 }
 
 function createTags(tech) {
-  let html = "";
-
-  for (const item of tech) {
-    html += `<span class="skill-tag">` + item + `</span>`;
-  }
-
-  return html;
+  return tech.map((item) => `<span class="skill-tag">${item}</span>`).join("");
 }
 
 function createCard(project) {
@@ -120,14 +108,14 @@ function createCard(project) {
 
   card.innerHTML = `
     <div class="card-thumb">
-      <img src="` + project.image + `" alt="` + project.alt + `" />
+      <img src="${project.image}" alt="${project.alt}" />
       <span class="thumb-overlay"><i class="bi bi-arrows-fullscreen"></i> View details</span>
     </div>
-    <h4 class="card-title">` + project.title + `</h4>
-    <p class="card-description">` + shortenText(project.description, 130) + `</p>
+    <h4 class="card-title">${project.title}</h4>
+    <p class="card-description">${shortenText(project.description, 130)}</p>
     <div class="card-actions">
-      ` + createLink(project.docs, "bi-github", "Documentation") + `
-      ` + createLink(project.site, "bi-globe2", "View Site") + `
+      ${createLink(project.docs, "bi-github", "Documentation")}
+      ${createLink(project.site, "bi-globe2", "View Site")}
     </div>
   `;
 
@@ -170,7 +158,7 @@ function showDetails(project) {
   detailsModal.show();
 }
 
-function selectProject(index, behavior) {
+function selectProject(index, behavior = "smooth") {
   const track = document.getElementById("deckTrack");
   const cards = track.children;
 
@@ -180,13 +168,8 @@ function selectProject(index, behavior) {
 
   selectedIndex = index;
 
-  // Highlight only the selected card
   for (let i = 0; i < cards.length; i++) {
-    if (i === index) {
-      cards[i].classList.add("selected");
-    } else {
-      cards[i].classList.remove("selected");
-    }
+    cards[i].classList.toggle("selected", i === index);
   }
 
   // Scroll the selected card to the center
@@ -195,11 +178,10 @@ function selectProject(index, behavior) {
 
   track.scrollTo({
     left: card.offsetLeft - center,
-    behavior: behavior || "smooth",
+    behavior,
   });
 
-  // Update counter and buttons
-  document.getElementById("deckCount").textContent = (index + 1) + " / " + cards.length;
+  document.getElementById("deckCount").textContent = `${index + 1} / ${cards.length}`;
   document.getElementById("deckPrev").disabled = index === 0;
   document.getElementById("deckNext").disabled = index === cards.length - 1;
 }
@@ -210,13 +192,9 @@ function addCardEvents(card, index) {
     const thumb = event.target.closest(".card-thumb");
     const isSelected = card.classList.contains("selected");
 
-    // Links only work on the selected card, and disabled links never work
-    if (link) {
-      const isDisabled = link.classList.contains("disabled-action");
-
-      if (!isSelected || isDisabled) {
-        event.preventDefault();
-      }
+    // Links only work on the selected card
+    if (link && !isSelected) {
+      event.preventDefault();
     }
 
     selectProject(index);
@@ -248,10 +226,6 @@ function addCardEvents(card, index) {
 function renderProjects() {
   const grid = document.getElementById("projectGrid");
 
-  if (!grid) {
-    return;
-  }
-
   grid.className = "project-deck";
 
   grid.innerHTML = `
@@ -271,17 +245,15 @@ function renderProjects() {
 
   const track = document.getElementById("deckTrack");
 
-  // Create the cards
-  for (let i = 0; i < projects.length; i++) {
-    const card = createCard(projects[i]);
+  projects.forEach((project, index) => {
+    const card = createCard(project);
 
-    addCardEvents(card, i);
+    addCardEvents(card, index);
     track.appendChild(card);
-  }
+  });
 
   createModal();
 
-  // Buttons
   document.getElementById("deckPrev").addEventListener("click", () => {
     selectProject(selectedIndex - 1);
   });
@@ -290,7 +262,6 @@ function renderProjects() {
     selectProject(selectedIndex + 1);
   });
 
-  // Arrow keys
   track.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") {
       selectProject(selectedIndex + 1);
