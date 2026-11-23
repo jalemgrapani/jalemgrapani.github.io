@@ -31,9 +31,9 @@
 
   <body>
     <div class="container site-content">
-      <!-- Navigation -->
-      <div
-        class="site-sidebar position-fixed z-3 d-flex align-items-center gap-2 gap-lg-3 border shadow rounded-pill"
+      <!-- Header -->
+      <header
+        class="site-header position-fixed z-3 d-flex align-items-center gap-2 gap-lg-3 border shadow rounded-pill"
       >
         <img
           class="d-none d-lg-block"
@@ -76,7 +76,7 @@
         </nav>
 
         <div
-          class="sidebar-bottom align-items-center flex-shrink-0 gap-2"
+          class="header-actions align-items-center flex-shrink-0 gap-2"
           id="moreMenu"
         >
           <a
@@ -111,14 +111,14 @@
             <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
           </button>
         </div>
-      </div>
+      </header>
 
       <main>
         <!-- About -->
-        <div id="about" class="content-section">
+        <section id="about" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">About</div>
 
-          <div class="hero-top d-grid">
+          <div class="hero d-grid">
             <div class="hero-intro">
               <h1 class="main-title mb-3">
                 <span>Jalem Louise</span> <span>Grapani</span>
@@ -153,23 +153,36 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- Skills -->
-        <div id="skills" class="content-section">
+        <section id="skills" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">
             Skills
           </div>
           <h2 class="section-heading mb-4">Technical Skills</h2>
-          <div id="skillsList" class="row g-3"></div>
-        </div>
+          <div id="skillsList" class="d-flex flex-column gap-3"></div>
+        </section>
 
         <!-- Education -->
-        <div id="education" class="content-section">
+        <section id="education" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">
             Education
           </div>
-          <h2 class="section-heading mb-4">Education</h2>
+
+          <div
+            class="d-flex align-items-center justify-content-between gap-3 mb-4"
+          >
+            <h2 class="section-heading">Education</h2>
+            <a
+              href="assets/cv/Jalem_Louise_Grapani_CV.pdf"
+              target="_blank"
+              rel="noopener"
+              class="cv-link small text-accent text-decoration-none d-inline-flex align-items-center"
+              aria-label="View CV"
+              >View CV<i class="bi bi-arrow-right-short fs-5"></i
+            ></a>
+          </div>
 
           <div class="information-box p-4">
             <div class="row">
@@ -188,11 +201,17 @@
                 >
               </div>
             </div>
+
+            <ul
+              class="small text-body-secondary d-flex flex-column gap-2 mt-3 mb-0 ps-3"
+            >
+              <li>Focus areas: Full-Stack Web Development and UI/UX Design.</li>
+            </ul>
           </div>
-        </div>
+        </section>
 
         <!-- Experience -->
-        <div id="experience" class="content-section">
+        <section id="experience" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">
             Experience
           </div>
@@ -253,19 +272,19 @@
               </li>
             </ul>
           </div>
-        </div>
+        </section>
 
         <!-- Projects -->
-        <div id="projects" class="content-section">
+        <section id="projects" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">
             Projects
           </div>
-          <h2 class="section-heading mb-4">My Projects</h2>
+          <h2 class="section-heading mb-4">Featured Projects</h2>
           <div id="projectGrid"></div>
-        </div>
+        </section>
 
         <!-- Contact -->
-        <div id="contact" class="content-section">
+        <section id="contact" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">
             Contact
           </div>
@@ -348,28 +367,8 @@
                 </div>
               </div>
             </div>
-
-            <div class="contact-box p-3">
-              <div class="row align-items-center g-3">
-                <div class="col">
-                  <div class="contact-label text-body-secondary">CV</div>
-                  <div class="small font-monospace text-break">
-                    Jalem_Louise_Grapani_CV.pdf
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <a
-                    href="assets/cv/Jalem_Louise_Grapani_CV.pdf"
-                    target="_blank"
-                    rel="noopener"
-                    class="small-action"
-                    >View</a
-                  >
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+        </section>
       </main>
 
       <!-- Footer -->

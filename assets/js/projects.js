@@ -11,16 +11,6 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "MySQL"],
   },
   {
-    title: "Bookblast",
-    description:
-      "A web-based digital library system with separate admin and user accounts. It allows administrators to manage books and supports batch book management through a PHP and MySQL backend.",
-    image: "assets/img/Bookblast.png",
-    alt: "Screenshot of the Bookblast digital library system",
-    docs: "https://github.com/Pages-Beyond/BookBlast-Website",
-    site: "",
-    tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-  },
-  {
     title: "Eventure",
     description:
       "A web-based event management system that allows users to create, browse, and manage event information through an organized interface.",

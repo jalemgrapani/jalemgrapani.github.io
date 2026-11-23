@@ -13,6 +13,7 @@
     --radius: 14px;
     --shadow: 0 1px 2px hsla(210, 13%, 9%, 0.04),
         0 8px 24px hsla(210, 13%, 9%, 0.05);
+    --content-pad: 24px;
 
     --font-heading: "Poppins", sans-serif;
 
@@ -87,7 +88,7 @@ i {
 
 .site-content {
     max-width: 800px;
-    padding: 130px 24px 0;
+    padding: 130px var(--content-pad) 0;
 }
 
 .content-section {
@@ -105,13 +106,13 @@ i {
     transform: none;
 }
 
-/* Navigation */
+/* Header */
 
-.site-sidebar {
+.site-header {
     top: 14px;
-    right: 14px;
-    left: 14px;
-    max-width: 940px;
+    right: var(--content-pad);
+    left: var(--content-pad);
+    max-width: calc(800px - 2 * var(--content-pad));
     margin: 0 auto;
     padding: 8px 12px 8px 16px;
     background: var(--surface-glass);
@@ -147,11 +148,11 @@ i {
     text-underline-offset: 6px;
 }
 
-.sidebar-bottom {
+.header-actions {
     display: flex;
 }
 
-.sidebar-bottom .more-only {
+.header-actions .more-only {
     display: none;
 }
 
@@ -182,7 +183,7 @@ i {
 }
 
 .nav-more:hover,
-.site-sidebar.more-open .nav-more {
+.site-header.more-open .nav-more {
     color: var(--accent);
 }
 
@@ -196,6 +197,14 @@ i {
     font-size: var(--fs-heading);
 }
 
+.cv-link i {
+    transition: transform 0.2s ease;
+}
+
+.cv-link:hover i {
+    transform: translateX(3px);
+}
+
 .main-title {
     font-size: var(--fs-hero);
 }
@@ -205,7 +214,7 @@ i {
     font-size: var(--fs-lg);
 }
 
-.hero-top {
+.hero {
     grid-template-columns: auto 1fr;
     grid-template-areas:
         "photo intro"
@@ -404,8 +413,6 @@ html[data-theme="dark"] .btn-close {
     scrollbar-width: none;
 }
 
-/* Cards */
-
 .play-card {
     --lift: 0px;
 
@@ -531,8 +538,6 @@ html[data-theme="dark"] .btn-close {
     margin-right: 6px;
 }
 
-/* No hover effect unless the card is selected */
-
 .play-card .card-action:hover {
     background: transparent;
     color: var(--accent);
@@ -582,7 +587,15 @@ html[data-theme="dark"] .btn-close {
 }
 
 @media (max-width: 991.98px) {
-    .site-sidebar {
+    :root {
+        --content-pad: 18px;
+    }
+
+    .site-content {
+        padding-top: 110px;
+    }
+
+    .site-header {
         padding: 6px 8px 6px 12px;
     }
 
@@ -596,13 +609,9 @@ html[data-theme="dark"] .btn-close {
         font-size: var(--fs-sm);
     }
 
-    .sidebar-bottom {
+    .header-actions {
         padding-left: 8px;
         border-left: 1px solid var(--border);
-    }
-
-    .site-content {
-        padding: 110px 18px 0;
     }
 }
 
@@ -628,13 +637,13 @@ html[data-theme="dark"] .btn-close {
     }
 
     .site-navigation a:not(.active) span,
-    .sidebar-bottom .small-action span {
+    .header-actions .small-action span {
         display: none;
     }
 }
 
 @media (max-width: 689.98px) {
-    .hero-top {
+    .hero {
         grid-template-areas:
             "photo intro"
             "desc desc";
@@ -660,7 +669,7 @@ html[data-theme="dark"] .btn-close {
         aspect-ratio: 386 / 200;
     }
 
-    .site-sidebar {
+    .site-header {
         top: auto;
         bottom: 12px;
         padding-left: 8px;
@@ -686,7 +695,7 @@ html[data-theme="dark"] .btn-close {
         display: flex;
     }
 
-    .sidebar-bottom {
+    .header-actions {
         position: absolute;
         right: 0;
         bottom: calc(100% + 10px);
@@ -698,11 +707,11 @@ html[data-theme="dark"] .btn-close {
         box-shadow: var(--shadow);
     }
 
-    .site-sidebar.more-open .sidebar-bottom {
+    .site-header.more-open .header-actions {
         display: flex;
     }
 
-    .sidebar-bottom .small-action {
+    .header-actions .small-action {
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -715,7 +724,7 @@ html[data-theme="dark"] .btn-close {
 }
 
 @media (max-width: 399.98px) {
-    .site-sidebar {
+    .site-header {
         padding: 6px 6px 6px 4px;
     }
 
@@ -754,7 +763,7 @@ html[data-theme="dark"] .btn-close {
 }
 
 @media (max-width: 305px) {
-    .hero-top {
+    .hero {
         grid-template-columns: 1fr;
         grid-template-areas:
             "photo"

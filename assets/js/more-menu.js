@@ -1,18 +1,18 @@
 // Variables
-const sidebar = document.querySelector(".site-sidebar");
+const header = document.querySelector(".site-header");
 const moreButton = document.getElementById("moreButton");
 const moreMenu = document.getElementById("moreMenu");
 
 // Functions
 function setMenuOpen(isOpen) {
-  sidebar.classList.toggle("more-open", isOpen);
+  header.classList.toggle("more-open", isOpen);
   moreButton.setAttribute("aria-expanded", isOpen);
   moreButton.setAttribute("aria-label", isOpen ? "Close menu" : "More");
 }
 
 // Events
 moreButton.addEventListener("click", () => {
-  setMenuOpen(!sidebar.classList.contains("more-open"));
+  setMenuOpen(!header.classList.contains("more-open"));
 });
 
 moreMenu.addEventListener("click", (event) => {
@@ -22,7 +22,7 @@ moreMenu.addEventListener("click", (event) => {
 });
 
 document.addEventListener("click", (event) => {
-  if (!sidebar.contains(event.target)) {
+  if (!header.contains(event.target)) {
     setMenuOpen(false);
   }
 });
