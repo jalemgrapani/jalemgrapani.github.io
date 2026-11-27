@@ -33,6 +33,8 @@
     --bs-border-radius: var(--radius);
     --bs-box-shadow: var(--shadow);
     --bs-font-monospace: "JetBrains Mono", monospace;
+
+    --hover: hsl(48, 10%, 90%);
 }
 
 html[data-theme="dark"] {
@@ -47,6 +49,8 @@ html[data-theme="dark"] {
     --glow: hsla(173, 74%, 53%, 0.1);
     --shadow: 0 1px 2px hsla(0, 0%, 0%, 0.3),
         0 8px 24px hsla(0, 0%, 0%, 0.25);
+    --hover: hsl(0, 0%, 17%);
+
 }
 
 /* Base */
@@ -286,28 +290,55 @@ html[data-theme="dark"] .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
+/* Rows */
 .information-box,
 .skill-box,
 .contact-box {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
+    position: relative;
+    isolation: isolate;
+    padding: 20px 0 !important;
+    border-bottom: 1px solid var(--border);
 }
 
-.contact-box {
-    transition: border-color 0.15s;
+/* Top line only for the first row */
+.information-box,
+.skill-box:first-child,
+.contact-box:first-child {
+    border-top: 1px solid var(--border);
 }
 
+/* Hover background covers the lines and extends 16px on each side */
+.information-box::before,
+.skill-box::before,
+.contact-box::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -16px;
+    bottom: -1px;
+    left: -16px;
+    z-index: -1;
+    background: var(--hover);
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+/* Hover: hide the real border, let the background draw the lines */
+.information-box:hover,
+.skill-box:hover,
 .contact-box:hover {
-    border-color: var(--accent);
+    border-color: transparent;
 }
 
-.skill-box {
-    padding: 22px 24px;
+.information-box:hover::before,
+.skill-box:hover::before,
+.contact-box:hover::before {
+    opacity: 1;
+    box-shadow: inset 0 1px 0 var(--border), inset 0 -1px 0 var(--border);
 }
 
 .skill-title {
-    margin-bottom: 14px;
+    margin-bottom: 8px;
     color: var(--muted);
     font-family: var(--bs-body-font-family);
     font-size: var(--fs-md);
@@ -317,25 +348,16 @@ html[data-theme="dark"] .btn-close {
 .tag-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px 20px;
 }
 
 .skill-tag {
-    display: inline-block;
-    padding: 5px 12px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--bg);
     color: var(--text);
     font-family: var(--bs-font-monospace);
-    font-size: var(--fs-xs);
-    transition: border-color 0.15s, color 0.15s;
+    font-size: var(--fs-sm);
 }
 
-.skill-tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
+/* Buttons */
 
 .small-action {
     display: inline-block;
@@ -351,6 +373,55 @@ html[data-theme="dark"] .btn-close {
     background: var(--accent);
     border-color: var(--accent);
     color: var(--bg);
+}
+
+/* Contact rows */
+.contact-box {
+    cursor: pointer;
+}
+
+.contact-box .small-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: color 0.15s;
+}
+
+/* Only the text is underlined, not the icon */
+.contact-box .small-action span {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+}
+
+.contact-box .small-action i {
+    font-size: 11px;
+}
+
+/* Clickable area matches the gray hover background */
+.contact-box .small-action::after {
+    top: -1px;
+    right: -16px;
+    bottom: -1px;
+    left: -16px;
+}
+
+/* Hover: only the color changes (text, underline and icon) */
+.contact-box:hover .small-action,
+.contact-box .small-action:hover {
+    background: none;
+    color: var(--text);
+}
+
+.contact-box .small-action:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }
 
 /* Projects */
@@ -573,6 +644,18 @@ html[data-theme="dark"] .btn-close {
     }
 }
 
+@media (min-width: 768px) {
+    .skill-box {
+        display: grid;
+        grid-template-columns: 14rem 1fr;
+        gap: 16px;
+    }
+
+    .skill-title {
+        margin-bottom: 0;
+    }
+}
+
 @media (min-width: 576px) {
     .cv-button {
         background: var(--accent);
@@ -779,6 +862,7 @@ html[data-theme="dark"] .btn-close {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .js .content-section,
     .play-card,
     .card-thumb img,
