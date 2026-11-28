@@ -41,7 +41,10 @@
           height="40"
         />
 
-        <nav id="siteNav" class="site-navigation mx-lg-auto">
+        <nav
+          id="siteNav"
+          class="site-navigation d-none d-lg-flex flex-column flex-lg-row gap-1 mx-lg-auto"
+        >
           <a href="#about"
             ><i class="bi bi-person d-lg-none"></i><span>About</span></a
           >
@@ -53,8 +56,7 @@
             ><span>Education</span></a
           >
           <a href="#experience"
-            ><i class="bi bi-briefcase d-lg-none"></i
-            ><span>Experience</span></a
+            ><i class="bi bi-briefcase d-lg-none"></i><span>Experience</span></a
           >
           <a href="#projects"
             ><i class="bi bi-folder2 d-lg-none"></i><span>Projects</span></a
@@ -63,20 +65,18 @@
             ><i class="bi bi-envelope d-lg-none"></i><span>Contact</span></a
           >
 
-          <!-- CV -->
+          <!-- Menu -->
           <a
             href="assets/cv/Jalem-Louise-Grapani-CV.pdf"
             target="_blank"
             rel="noopener"
-            class="nav-cv d-lg-none"
+            class="d-lg-none mt-1 border-top rounded-0"
             ><i class="bi bi-file-earmark-person"></i><span>View CV</span></a
           >
-
-          <!-- Theme -->
           <div
-            class="nav-theme d-flex d-lg-none align-items-center justify-content-between"
+            class="nav-theme d-flex d-lg-none align-items-center justify-content-between text-body-secondary"
           >
-            <span class="nav-theme-label"
+            <span class="d-flex align-items-center gap-3"
               ><i class="bi bi-circle-half"></i><span>Theme</span></span
             >
             <button
@@ -105,40 +105,62 @@
           >
           <button
             type="button"
-            class="theme-button d-none d-lg-flex align-items-center justify-content-center p-0 border bg-transparent text-reset rounded-circle"
-            aria-label="Switch to dark mode"
+            class="icon-button d-none d-lg-flex align-items-center justify-content-center p-0 bg-transparent rounded-circle"
+            role="switch"
+            aria-checked="false"
+            aria-label="Dark mode"
             data-theme-toggle
           >
             <i class="bi bi-moon-stars-fill" data-theme-icon></i>
           </button>
           <button
             type="button"
-            class="menu-toggle d-flex d-lg-none align-items-center justify-content-center p-0 border-0 bg-transparent"
+            class="icon-button d-flex d-lg-none align-items-center justify-content-center p-0 border-0 bg-transparent rounded-circle"
             id="menuButton"
-            aria-label="Open menu"
+            aria-label="Menu"
             aria-expanded="false"
             aria-controls="siteNav"
           >
-            <i class="bi bi-list"></i>
+            <i class="bi bi-list fs-4"></i>
           </button>
         </div>
       </header>
 
-      <main>
-        <!-- About -->
-        <section id="about" class="content-section">
-          <div class="section-label font-monospace text-accent mb-2">About</div>
-
-          <div class="hero d-grid">
-            <div class="hero-intro">
-              <h1 class="main-title mb-3">
-                <span>Jalem Louise</span> <span>Grapani</span>
-              </h1>
-              <p class="text-accent fw-medium mb-0">Web Developer</p>
+      <!-- Content -->
+      <div class="row gx-0">
+        <main class="col-12">
+          <!-- About -->
+          <section id="about" class="content-section">
+            <div class="section-label font-monospace text-accent mb-2">
+              About
             </div>
 
-            <div class="hero-desc">
-              <p class="main-description text-body-secondary mb-0">
+            <div class="hero d-grid">
+              <div
+                class="hero-photo align-self-center align-self-sm-stretch"
+              >
+                <div
+                  class="profile-photo position-relative border rounded shadow overflow-hidden"
+                >
+                  <img
+                    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                    src="assets/img/Jalem_Pic.jpg"
+                    alt="Portrait of Jalem Louise Grapani"
+                    width="187"
+                    height="216"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h1 class="main-title mb-3">
+                  <span class="d-block d-sm-inline">Jalem Louise</span>
+                  <span class="d-block d-sm-inline">Grapani</span>
+                </h1>
+                <p class="text-accent fw-medium mb-0">Web Developer</p>
+              </div>
+
+              <p class="hero-desc main-description text-body-secondary mb-0">
                 An Information Technology graduate from the Polytechnic
                 University of the Philippines with experience in web
                 development, software testing, and UI/UX design. Skilled in
@@ -149,272 +171,339 @@
                 developer opportunities.
               </p>
             </div>
+          </section>
 
-            <div class="hero-photo align-self-center align-self-sm-stretch">
-              <div
-                class="profile-photo position-relative border rounded shadow overflow-hidden"
-              >
-                <img
-                  class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                  src="assets/img/Jalem_Pic.jpg"
-                  alt="Portrait of Jalem Louise Grapani"
-                  width="187"
-                  height="216"
-                />
-              </div>
+          <!-- Skills -->
+          <section id="skills" class="content-section">
+            <div class="section-label font-monospace text-accent mb-2">
+              Skills
             </div>
-          </div>
-        </section>
+            <h2 class="section-heading mb-4">Technical Skills</h2>
+            <div id="skillsList" class="border-top"></div>
+          </section>
 
-        <!-- Skills -->
-        <section id="skills" class="content-section">
-          <div class="section-label font-monospace text-accent mb-2">
-            Skills
-          </div>
-          <h2 class="section-heading mb-4">Technical Skills</h2>
-          <div id="skillsList" class="d-flex flex-column"></div>
-        </section>
+          <!-- Education -->
+          <section id="education" class="content-section">
+            <div class="section-label font-monospace text-accent mb-2">
+              Education
+            </div>
+            <h2 class="section-heading mb-4">Education</h2>
 
-        <!-- Education -->
-        <section id="education" class="content-section">
-          <div class="section-label font-monospace text-accent mb-2">
-            Education
-          </div>
+            <div class="border-top">
+              <div class="row-item">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h3 class="experience-title mb-0">
+                      Bachelor of Science in Information Technology
+                    </h3>
+                    <p class="small text-body-secondary mb-0 mt-1">
+                      Polytechnic University of the Philippines – Sto. Tomas,
+                      Batangas Campus
+                    </p>
+                  </div>
+                  <div class="col-md-3 text-md-end">
+                    <span
+                      class="experience-date font-monospace text-body-secondary text-nowrap"
+                      >2022 – 2026</span
+                    >
+                  </div>
+                </div>
 
-          <h2 class="section-heading mb-4">Education</h2>
-
-          <div class="information-box">
-            <div class="row">
-              <div class="col-md-9">
-                <h3 class="experience-title">
-                  Bachelor of Science in Information Technology
-                </h3>
-                <p class="small text-body-secondary mb-0 mt-1">
-                  Polytechnic University of the Philippines – Sto. Tomas,
-                  Batangas Campus
-                </p>
-              </div>
-              <div class="col-md-3 text-md-end">
-                <span class="experience-date font-monospace text-body-secondary"
-                  >2022 – 2026</span
+                <ul
+                  class="small text-body-secondary d-flex flex-column gap-2 mt-3 mb-0 ps-3"
                 >
+                  <li>
+                    Focus areas: Full-Stack Web Development and UI/UX Design.
+                  </li>
+                </ul>
               </div>
             </div>
+          </section>
 
-            <ul
-              class="small text-body-secondary d-flex flex-column gap-2 mt-3 mb-0 ps-3"
-            >
-              <li>Focus areas: Full-Stack Web Development and UI/UX Design.</li>
-            </ul>
-          </div>
-        </section>
+          <!-- Experience -->
+          <section id="experience" class="content-section">
+            <div class="section-label font-monospace text-accent mb-2">
+              Experience
+            </div>
+            <h2 class="section-heading mb-4">Internship and Capstone</h2>
 
-        <!-- Experience -->
-        <section id="experience" class="content-section">
-          <div class="section-label font-monospace text-accent mb-2">
-            Experience
-          </div>
-          <h2 class="section-heading mb-4">Internship and Capstone</h2>
-
-          <div class="d-flex flex-column">
-            <div class="experience-box">
-              <div class="row">
-                <div class="col-md-7">
-                  <h3 class="experience-title">
-                    IT Intern — BoxHive Digital Solutions Co.
-                  </h3>
+            <div class="border-top">
+              <div class="row-item">
+                <div class="row">
+                  <div class="col-md-7">
+                    <h3 class="experience-title mb-0">
+                      IT Intern — BoxHive Digital Solutions Co.
+                    </h3>
+                  </div>
+                  <div class="col-md-5 text-md-end">
+                    <span
+                      class="experience-date font-monospace text-body-secondary text-nowrap"
+                      >Feb 2026 – May 2026 · Quezon City</span
+                    >
+                  </div>
                 </div>
-                <div class="col-md-5 text-md-end">
-                  <span class="experience-date font-monospace text-body-secondary"
-                    >Feb 2026 – May 2026 · Quezon City</span
-                  >
-                </div>
+                <ul
+                  class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+                >
+                  <li>
+                    Developed responsive business websites using WordPress and
+                    created UI/UX designs and mockups using Figma.
+                  </li>
+                  <li>
+                    Conducted manual, functional, and behavioral testing of web
+                    and mobile applications, identifying issues and validating
+                    features.
+                  </li>
+                  <li>
+                    Managed event registration and provided technical support to
+                    attendees.
+                  </li>
+                </ul>
               </div>
-              <ul
-                class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+
+              <div class="row-item">
+                <div class="row">
+                  <div class="col-md-7">
+                    <h3 class="experience-title mb-0">
+                      Full-Stack Developer — Easechedemy
+                    </h3>
+                    <p class="small text-body-secondary mb-0 mt-1">
+                      A Web-Based Class Scheduling System Integrating Teacher
+                      Subject Preferences for Almond Academy Foundation
+                      Incorporated
+                    </p>
+                  </div>
+                  <div class="col-md-5 text-md-end">
+                    <span
+                      class="experience-date font-monospace text-body-secondary text-nowrap"
+                      >2025 – 2026 · PUP</span
+                    >
+                  </div>
+                </div>
+                <ul
+                  class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+                >
+                  <li>
+                    Designed the UI/UX of a class scheduling system using Figma
+                    for schedule management.
+                  </li>
+                  <li>
+                    Developed front-end and back-end functionalities using HTML,
+                    CSS, JavaScript, PHP, Bootstrap, and MySQL.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section id="projects" class="content-section">
+            <div class="section-label font-monospace text-accent mb-2">
+              Projects
+            </div>
+            <h2 class="section-heading mb-4">Featured Projects</h2>
+            <div class="project-deck">
+              <div
+                class="d-flex align-items-center justify-content-between gap-3"
               >
-                <li>
-                  Developed responsive business websites using WordPress and
-                  created UI/UX designs and mockups using Figma.
-                </li>
-                <li>
-                  Conducted manual, functional, and behavioral testing of web and
-                  mobile applications, identifying issues and validating features.
-                </li>
-                <li>
-                  Managed event registration and provided technical support to
-                  attendees.
-                </li>
-              </ul>
-            </div>
-
-            <div class="experience-box">
-              <div class="row">
-                <div class="col-md-7">
-                  <h3 class="experience-title">
-                    Full-Stack Developer — Easechedemy
-                  </h3>
-                  <p class="small text-body-secondary mb-0 mt-1">
-                    A Web-Based Class Scheduling System Integrating Teacher
-                    Subject Preferences for Almond Academy Foundation Incorporated
-                  </p>
-                </div>
-                <div class="col-md-5 text-md-end">
-                  <span class="experience-date font-monospace text-body-secondary"
-                    >2025 – 2026 · PUP</span
+                <span
+                  class="deck-count font-monospace text-body-secondary"
+                  id="deckCount"
+                ></span>
+                <div class="d-flex gap-2">
+                  <button
+                    type="button"
+                    class="icon-button d-flex align-items-center justify-content-center p-0 bg-transparent rounded-circle"
+                    id="deckPrev"
+                    aria-label="Previous project"
                   >
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="icon-button d-flex align-items-center justify-content-center p-0 bg-transparent rounded-circle"
+                    id="deckNext"
+                    aria-label="Next project"
+                  >
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
                 </div>
               </div>
-              <ul
-                class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
-              >
-                <li>
-                  Designed the UI/UX of a class scheduling system using Figma for
-                  schedule management.
-                </li>
-                <li>
-                  Developed front-end and back-end functionalities using HTML,
-                  CSS, JavaScript, PHP, Bootstrap, and MySQL.
-                </li>
-              </ul>
+              <div
+                class="deck-track position-relative d-flex align-items-start overflow-x-auto"
+                id="deckTrack"
+              ></div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- Projects -->
-        <section id="projects" class="content-section">
-          <div class="section-label font-monospace text-accent mb-2">
-            Projects
-          </div>
-          <h2 class="section-heading mb-4">Featured Projects</h2>
-          <div id="projectGrid"></div>
-        </section>
+          <!-- Contact -->
+          <section id="contact" class="content-section">
+            <div class="section-label font-monospace text-accent mb-2">
+              Contact
+            </div>
+            <h2 class="section-heading mb-4">Contact Information</h2>
 
-        <!-- Contact -->
-        <section id="contact" class="content-section">
-          <div class="section-label font-monospace text-accent mb-2">
-            Contact
-          </div>
-          <h2 class="section-heading mb-4">Contact Information</h2>
+            <p class="small text-body-secondary mb-4">
+              Available for entry-level IT and junior developer positions. You
+              can reach me by email, phone, or LinkedIn, or download my CV
+              below.
+            </p>
 
-          <p class="small text-body-secondary mb-4">
-            Available for entry-level IT and junior developer positions. You can
-            reach me by email, phone, or LinkedIn, or download my CV below.
-          </p>
-
-          <div class="d-flex flex-column">
-            <div class="contact-box">
-              <div class="row align-items-center g-3">
-                <div class="col">
-                  <div class="contact-label text-body-secondary">Email</div>
-                  <div class="small font-monospace text-break">
-                    jalemgrapani354@gmail.com
+            <div class="border-top">
+              <div class="row-item">
+                <div class="row align-items-center g-3">
+                  <div class="col">
+                    <div class="contact-label text-body-secondary">Email</div>
+                    <div class="small font-monospace text-break">
+                      jalemgrapani354@gmail.com
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a
+                      href="mailto:jalemgrapani354@gmail.com"
+                      class="contact-link stretched-link"
+                    >
+                      <span>Email</span><i class="bi bi-envelope"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col-auto">
-                  <a
-                    href="mailto:jalemgrapani354@gmail.com"
-                    class="small-action stretched-link"
-                  >
-                    <span>Email</span><i class="bi bi-envelope"></i>
-                  </a>
-                </div>
               </div>
-            </div>
 
-            <div class="contact-box">
-              <div class="row align-items-center g-3">
-                <div class="col">
-                  <div class="contact-label text-body-secondary">Phone</div>
-                  <div class="small font-monospace text-break">
-                    +63 967 018 5414
+              <div class="row-item">
+                <div class="row align-items-center g-3">
+                  <div class="col">
+                    <div class="contact-label text-body-secondary">Phone</div>
+                    <div class="small font-monospace text-break">
+                      +63 967 018 5414
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a href="tel:+639670185414" class="contact-link stretched-link">
+                      <span>Call</span><i class="bi bi-telephone"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col-auto">
-                  <a
-                    href="tel:+639670185414"
-                    class="small-action stretched-link"
-                  >
-                    <span>Call</span><i class="bi bi-telephone"></i>
-                  </a>
-                </div>
               </div>
-            </div>
 
-            <div class="contact-box">
-              <div class="row align-items-center g-3">
-                <div class="col">
-                  <div class="contact-label text-body-secondary">LinkedIn</div>
-                  <div class="small font-monospace text-break">
-                    linkedin.com/in/jalemlouisegrapani
+              <div class="row-item">
+                <div class="row align-items-center g-3">
+                  <div class="col">
+                    <div class="contact-label text-body-secondary">
+                      LinkedIn
+                    </div>
+                    <div class="small font-monospace text-break">
+                      linkedin.com/in/jalemlouisegrapani
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a
+                      href="https://www.linkedin.com/in/jalemlouisegrapani/"
+                      target="_blank"
+                      rel="noopener"
+                      class="contact-link stretched-link"
+                    >
+                      <span>Visit</span><i class="bi bi-arrow-up-right"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col-auto">
-                  <a
-                    href="https://www.linkedin.com/in/jalemlouisegrapani/"
-                    target="_blank"
-                    rel="noopener"
-                    class="small-action stretched-link"
-                  >
-                    <span>Visit</span><i class="bi bi-arrow-up-right"></i>
-                  </a>
-                </div>
               </div>
-            </div>
 
-            <div class="contact-box">
-              <div class="row align-items-center g-3">
-                <div class="col">
-                  <div class="contact-label text-body-secondary">GitHub</div>
-                  <div class="small font-monospace text-break">
-                    github.com/jalemgrapani
+              <div class="row-item">
+                <div class="row align-items-center g-3">
+                  <div class="col">
+                    <div class="contact-label text-body-secondary">GitHub</div>
+                    <div class="small font-monospace text-break">
+                      github.com/jalemgrapani
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a
+                      href="https://github.com/jalemgrapani"
+                      target="_blank"
+                      rel="noopener"
+                      class="contact-link stretched-link"
+                    >
+                      <span>Visit</span><i class="bi bi-arrow-up-right"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col-auto">
-                  <a
-                    href="https://github.com/jalemgrapani"
-                    target="_blank"
-                    rel="noopener"
-                    class="small-action stretched-link"
-                  >
-                    <span>Visit</span><i class="bi bi-arrow-up-right"></i>
-                  </a>
-                </div>
               </div>
-            </div>
 
-            <div class="contact-box">
-              <div class="row align-items-center g-3">
-                <div class="col">
-                  <div class="contact-label text-body-secondary">Resume</div>
-                  <div class="small font-monospace text-break">
-                    Jalem-Louise-Grapani-CV.pdf
+              <div class="row-item">
+                <div class="row align-items-center g-3">
+                  <div class="col">
+                    <div class="contact-label text-body-secondary">Resume</div>
+                    <div class="small font-monospace text-break">
+                      Jalem-Louise-Grapani-CV.pdf
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a
+                      href="assets/cv/Jalem-Louise-Grapani-CV.pdf"
+                      download="Jalem-Louise-Grapani-CV.pdf"
+                      class="contact-link stretched-link"
+                    >
+                      <span>Download</span><i class="bi bi-download"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="col-auto">
-                  <a
-                    href="assets/cv/Jalem-Louise-Grapani-CV.pdf"
-                    download="Jalem-Louise-Grapani-CV.pdf"
-                    class="small-action stretched-link"
-                  >
-                    <span>Download</span><i class="bi bi-download"></i>
-                  </a>
-                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
 
       <!-- Footer -->
-      <footer
-        class="site-footer text-center text-body-secondary font-monospace border-top"
+      <div class="row gx-0">
+        <footer
+          class="site-footer col-12 pt-4 pb-5 text-center text-body-secondary font-monospace border-top"
+        >
+          <p class="mb-0">
+            © <span id="currentYear"></span> Jalem Louise Grapani · Calamba
+            City, PH
+          </p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="detailsModal"
+      tabindex="-1"
+      aria-labelledby="detailsTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
       >
-        <p class="mb-0">
-          © <span id="currentYear"></span> Jalem Louise Grapani · Calamba City,
-          PH
-        </p>
-      </footer>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title experience-title" id="detailsTitle"></h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              class="d-block w-100 h-auto border rounded mb-4"
+              id="detailsImage"
+              alt=""
+            />
+            <p class="text-body-secondary mb-4" id="detailsDescription"></p>
+            <h4 class="skill-title text-body-secondary fw-medium">
+              Technologies Used
+            </h4>
+            <div
+              class="d-flex flex-wrap row-gap-1 column-gap-3"
+              id="detailsTech"
+            ></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Scripts -->

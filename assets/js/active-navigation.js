@@ -14,7 +14,11 @@ function updateNavigation() {
   });
 
   navigationLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
+    if (link.hash === `#${activeId}`) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
   });
 }
 

@@ -63,8 +63,16 @@ const projects = [
 ];
 
 // Variables
-let selectedIndex = 0;
-let detailsModal;
+const track = document.getElementById("deckTrack");
+const deckCount = document.getElementById("deckCount");
+const prevButton = document.getElementById("deckPrev");
+const nextButton = document.getElementById("deckNext");
+const detailsImage = document.getElementById("detailsImage");
+const detailsTitle = document.getElementById("detailsTitle");
+const detailsDescription = document.getElementById("detailsDescription");
+const detailsTech = document.getElementById("detailsTech");
+const detailsModal = new bootstrap.Modal(document.getElementById("detailsModal"));
+let selectedIndex = 3;
 
 // Functions
 function shortenText(text, max) {
@@ -75,81 +83,39 @@ function shortenText(text, max) {
   return text;
 }
 
-function createLink(url, icon, label) {
-  const content = `<i class="bi ${icon}"></i> ${label}`;
+function createTags(tech) {
+  let tags = "";
 
-  // Link with no url is disabled
+  tech.forEach((item) => {
+    tags += `<span class="skill-tag font-monospace">${item}</span>`;
+  });
+
+  return tags;
+}
+
+function createLink(url, icon, label) {
+  const classes = "small-action d-inline-flex align-items-center gap-2 text-nowrap";
+  const content = `<i class="bi ${icon}"></i>${label}`;
+
+  // Disabled link
   if (url === "") {
-    return `<a aria-disabled="true" tabindex="-1" class="card-action small-action disabled-action">${content}</a>`;
+    return `<a aria-disabled="true" tabindex="-1" class="${classes} text-body-secondary opacity-50 pe-none">${content}</a>`;
   }
 
-  return `<a href="${url}" target="_blank" rel="noopener" class="card-action small-action">${content}</a>`;
-}
-
-function createTags(tech) {
-  return tech.map((item) => `<span class="skill-tag">${item}</span>`).join("");
-}
-
-function createCard(project) {
-  const card = document.createElement("article");
-
-  card.className = "play-card";
-  card.tabIndex = 0;
-
-  card.innerHTML = `
-    <div class="card-thumb">
-      <img src="${project.image}" alt="${project.alt}" />
-      <span class="thumb-overlay"><i class="bi bi-arrows-fullscreen"></i> View details</span>
-    </div>
-    <h4 class="card-title">${project.title}</h4>
-    <p class="card-description">${shortenText(project.description, 130)}</p>
-    <div class="card-actions">
-      ${createLink(project.docs, "bi-github", "Documentation")}
-      ${createLink(project.site, "bi-globe2", "View Site")}
-    </div>
-  `;
-
-  return card;
-}
-
-function createModal() {
-  document.body.insertAdjacentHTML("beforeend", `
-    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsTitle" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title experience-title" id="detailsTitle"></h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img class="d-block w-100 h-auto border rounded mb-4" id="detailsImage" />
-            <p class="text-body-secondary mb-4" id="detailsDescription"></p>
-            <h4 class="skill-title">Technologies Used</h4>
-            <div class="tag-list" id="detailsTech"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `);
-
-  detailsModal = new bootstrap.Modal(document.getElementById("detailsModal"));
+  return `<a href="${url}" target="_blank" rel="noopener" class="card-action ${classes}">${content}</a>`;
 }
 
 function showDetails(project) {
-  const image = document.getElementById("detailsImage");
-
-  image.src = project.image;
-  image.alt = project.alt;
-
-  document.getElementById("detailsTitle").textContent = project.title;
-  document.getElementById("detailsDescription").textContent = project.description;
-  document.getElementById("detailsTech").innerHTML = createTags(project.tech);
+  detailsImage.src = project.image;
+  detailsImage.alt = project.alt;
+  detailsTitle.textContent = project.title;
+  detailsDescription.textContent = project.description;
+  detailsTech.innerHTML = createTags(project.tech);
 
   detailsModal.show();
 }
 
 function selectProject(index, behavior = "smooth") {
-  const track = document.getElementById("deckTrack");
   const cards = track.children;
 
   if (index < 0 || index >= cards.length) {
@@ -162,106 +128,104 @@ function selectProject(index, behavior = "smooth") {
     cards[i].classList.toggle("selected", i === index);
   }
 
-  // Scroll the selected card to the center
+  // Center card
   const card = cards[index];
   const center = (track.clientWidth - card.offsetWidth) / 2;
 
-  track.scrollTo({
-    left: card.offsetLeft - center,
-    behavior,
-  });
+  track.scrollTo({ left: card.offsetLeft - center, behavior });
 
-  document.getElementById("deckCount").textContent = `${index + 1} / ${cards.length}`;
-  document.getElementById("deckPrev").disabled = index === 0;
-  document.getElementById("deckNext").disabled = index === cards.length - 1;
+  deckCount.textContent = `${index + 1} / ${cards.length}`;
+  prevButton.disabled = index === 0;
+  nextButton.disabled = index === cards.length - 1;
 }
 
-function addCardEvents(card, index) {
-  card.addEventListener("click", (event) => {
-    const link = event.target.closest("a");
-    const thumb = event.target.closest(".card-thumb");
-    const isSelected = card.classList.contains("selected");
+function handleCardClick(event, card, index) {
+  const isSelected = card.classList.contains("selected");
 
-    // Links only work on the selected card
-    if (link && !isSelected) {
-      event.preventDefault();
-    }
+  // Block links
+  if (!isSelected) {
+    event.preventDefault();
+  }
 
-    selectProject(index);
+  // Open details
+  if (isSelected && event.target.closest(".card-thumb")) {
+    showDetails(projects[index]);
+  }
 
-    // Clicking the image of the selected card opens the details
-    if (thumb && isSelected) {
+  selectProject(index);
+}
+
+function handleCardKey(event, card, index) {
+  // Ignore link keys
+  if (event.target !== card) {
+    return;
+  }
+
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+
+    // Open details
+    if (card.classList.contains("selected")) {
       showDetails(projects[index]);
+    } else {
+      selectProject(index);
     }
+  }
+}
+
+function createCard(project, index) {
+  const card = document.createElement("article");
+
+  card.className = "play-card position-relative d-flex flex-column flex-shrink-0 p-3";
+  card.tabIndex = 0;
+
+  card.innerHTML = `
+    <div class="card-thumb position-relative overflow-hidden">
+      <img class="d-block w-100 h-100 object-fit-cover" src="${project.image}" alt="${project.alt}" />
+      <span class="thumb-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center gap-2 font-monospace text-white"><i class="bi bi-arrows-fullscreen"></i> View details</span>
+    </div>
+    <h4 class="card-title overflow-hidden">${project.title}</h4>
+    <p class="card-description overflow-hidden text-body-secondary">${shortenText(project.description, 130)}</p>
+    <div class="d-flex flex-wrap gap-2 mt-auto">
+      ${createLink(project.docs, "bi-github", "Documentation")}
+      ${createLink(project.site, "bi-globe2", "View Site")}
+    </div>
+  `;
+
+  card.addEventListener("click", (event) => {
+    handleCardClick(event, card, index);
   });
 
   card.addEventListener("keydown", (event) => {
-    if (event.target !== card) {
-      return;
-    }
-
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-
-      // Enter on the selected card opens the details
-      if (card.classList.contains("selected")) {
-        showDetails(projects[index]);
-      } else {
-        selectProject(index);
-      }
-    }
+    handleCardKey(event, card, index);
   });
+
+  return card;
 }
 
 function renderProjects() {
-  const grid = document.getElementById("projectGrid");
-
-  grid.className = "project-deck";
-
-  grid.innerHTML = `
-    <div class="deck-header">
-      <span class="deck-count" id="deckCount"></span>
-      <div class="deck-controls">
-        <button type="button" class="deck-btn" id="deckPrev" aria-label="Previous project">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <button type="button" class="deck-btn" id="deckNext" aria-label="Next project">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-    <div class="deck-track" id="deckTrack"></div>
-  `;
-
-  const track = document.getElementById("deckTrack");
-
   projects.forEach((project, index) => {
-    const card = createCard(project);
-
-    addCardEvents(card, index);
-    track.appendChild(card);
-  });
-
-  createModal();
-
-  document.getElementById("deckPrev").addEventListener("click", () => {
-    selectProject(selectedIndex - 1);
-  });
-
-  document.getElementById("deckNext").addEventListener("click", () => {
-    selectProject(selectedIndex + 1);
-  });
-
-  track.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
-      selectProject(selectedIndex + 1);
-    } else if (event.key === "ArrowLeft") {
-      selectProject(selectedIndex - 1);
-    }
+    track.appendChild(createCard(project, index));
   });
 
   selectProject(selectedIndex, "auto");
 }
 
 // Events
+prevButton.addEventListener("click", () => {
+  selectProject(selectedIndex - 1);
+});
+
+nextButton.addEventListener("click", () => {
+  selectProject(selectedIndex + 1);
+});
+
+track.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowRight") {
+    selectProject(selectedIndex + 1);
+  } else if (event.key === "ArrowLeft") {
+    selectProject(selectedIndex - 1);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", renderProjects);

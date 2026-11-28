@@ -25,21 +25,26 @@ const skills = [
 // Functions
 function displaySkills() {
   const skillsList = document.getElementById("skillsList");
+  let html = "";
 
   skills.forEach((skill) => {
-    const tags = skill.tags
-      .map((tag) => `<span class="skill-tag">${tag}</span>`)
-      .join("");
-    const skillBox = document.createElement("div");
+    let tags = "";
 
-    skillBox.className = "skill-box";
-    skillBox.innerHTML = `
-      <h3 class="skill-title">${skill.title}</h3>
-      <div class="tag-list">${tags}</div>
+    skill.tags.forEach((tag) => {
+      tags += `<span class="skill-tag font-monospace">${tag}</span>`;
+    });
+
+    html += `
+      <div class="row-item">
+        <div class="row gy-2">
+          <h3 class="skill-title col-md-4 text-body-secondary fw-medium mb-0">${skill.title}</h3>
+          <div class="col-md-8 d-flex flex-wrap row-gap-1 column-gap-3">${tags}</div>
+        </div>
+      </div>
     `;
-
-    skillsList.appendChild(skillBox);
   });
+
+  skillsList.innerHTML = html;
 }
 
 // Events
