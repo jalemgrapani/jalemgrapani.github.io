@@ -1,9 +1,11 @@
+// Variables
+const contentSections = document.querySelectorAll(".content-section");
+
 // Functions
 function revealSections() {
-  const sections = document.querySelectorAll(".content-section");
   const bottomOfScreen = window.scrollY + window.innerHeight - 80;
 
-  sections.forEach((section) => {
+  contentSections.forEach((section) => {
     if (section.offsetTop < bottomOfScreen) {
       section.classList.add("visible");
     }

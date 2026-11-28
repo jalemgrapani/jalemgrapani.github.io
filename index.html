@@ -36,79 +36,90 @@
         class="site-header position-fixed z-3 d-flex align-items-center gap-2 gap-lg-3 border shadow rounded-pill"
       >
         <img
-          class="d-none d-lg-block"
           src="assets/img/J2.svg"
           alt="Jalem Louise Grapani logo"
           height="40"
         />
 
-        <nav
-          class="site-navigation d-flex flex-grow-1 flex-lg-grow-0 justify-content-around gap-1 mx-lg-auto"
-        >
-          <a href="#about" aria-label="About"
-            ><i class="bi bi-person"></i><span>About</span></a
+        <nav id="siteNav" class="site-navigation mx-lg-auto">
+          <a href="#about"
+            ><i class="bi bi-person d-lg-none"></i><span>About</span></a
           >
-          <a href="#skills" aria-label="Skills"
-            ><i class="bi bi-code-slash"></i><span>Skills</span></a
+          <a href="#skills"
+            ><i class="bi bi-code-slash d-lg-none"></i><span>Skills</span></a
           >
-          <a href="#education" class="nav-extra" aria-label="Education"
-            ><i class="bi bi-mortarboard"></i><span>Education</span></a
+          <a href="#education"
+            ><i class="bi bi-mortarboard d-lg-none"></i
+            ><span>Education</span></a
           >
-          <a href="#experience" aria-label="Experience"
-            ><i class="bi bi-briefcase"></i><span>Experience</span></a
+          <a href="#experience"
+            ><i class="bi bi-briefcase d-lg-none"></i
+            ><span>Experience</span></a
           >
-          <a href="#projects" aria-label="Projects"
-            ><i class="bi bi-folder2"></i><span>Projects</span></a
+          <a href="#projects"
+            ><i class="bi bi-folder2 d-lg-none"></i><span>Projects</span></a
           >
-          <a href="#contact" class="nav-extra" aria-label="Contact"
-            ><i class="bi bi-envelope"></i><span>Contact</span></a
+          <a href="#contact"
+            ><i class="bi bi-envelope d-lg-none"></i><span>Contact</span></a
           >
-          <button
-            type="button"
-            class="nav-more"
-            id="moreButton"
-            aria-label="More"
-            aria-expanded="false"
-            aria-controls="moreMenu"
-          >
-            <i class="bi bi-three-dots"></i>
-          </button>
-        </nav>
 
-        <div
-          class="header-actions align-items-center flex-shrink-0 gap-2"
-          id="moreMenu"
-        >
-          <a
-            href="#education"
-            class="small-action more-only"
-            aria-label="Education"
-            title="Education"
-            ><i class="bi bi-mortarboard"></i
-          ></a>
-          <a
-            href="#contact"
-            class="small-action more-only"
-            aria-label="Contact"
-            title="Contact"
-            ><i class="bi bi-envelope"></i
-          ></a>
+          <!-- CV -->
           <a
             href="assets/cv/Jalem-Louise-Grapani-CV.pdf"
             target="_blank"
             rel="noopener"
-            class="small-action cv-button d-none d-sm-flex align-items-center gap-2"
-            aria-label="View CV"
-            title="View CV"
+            class="nav-cv d-lg-none"
+            ><i class="bi bi-file-earmark-person"></i><span>View CV</span></a
+          >
+
+          <!-- Theme -->
+          <div
+            class="nav-theme d-flex d-lg-none align-items-center justify-content-between"
+          >
+            <span class="nav-theme-label"
+              ><i class="bi bi-circle-half"></i><span>Theme</span></span
+            >
+            <button
+              type="button"
+              class="theme-switch"
+              role="switch"
+              aria-checked="false"
+              aria-label="Dark mode"
+              data-theme-toggle
+            >
+              <i class="bi bi-sun-fill"></i>
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </nav>
+
+        <div
+          class="d-flex align-items-center flex-shrink-0 gap-2 ms-auto ms-lg-0"
+        >
+          <a
+            href="assets/cv/Jalem-Louise-Grapani-CV.pdf"
+            target="_blank"
+            rel="noopener"
+            class="small-action cv-button d-none d-lg-flex align-items-center gap-2"
             ><i class="bi bi-file-earmark-person"></i><span>View CV</span></a
           >
           <button
             type="button"
-            class="theme-button d-flex align-items-center justify-content-center p-0 border bg-transparent text-reset rounded-circle"
-            id="themeButton"
+            class="theme-button d-none d-lg-flex align-items-center justify-content-center p-0 border bg-transparent text-reset rounded-circle"
             aria-label="Switch to dark mode"
+            data-theme-toggle
           >
-            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+            <i class="bi bi-moon-stars-fill" data-theme-icon></i>
+          </button>
+          <button
+            type="button"
+            class="menu-toggle d-flex d-lg-none align-items-center justify-content-center p-0 border-0 bg-transparent"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="siteNav"
+          >
+            <i class="bi bi-list"></i>
           </button>
         </div>
       </header>
@@ -144,7 +155,7 @@
                 class="profile-photo position-relative border rounded shadow overflow-hidden"
               >
                 <img
-                  class="position-absolute top-0 start-0 d-block w-100 h-100 object-fit-cover"
+                  class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
                   src="assets/img/Jalem_Pic.jpg"
                   alt="Portrait of Jalem Louise Grapani"
                   width="187"
@@ -172,7 +183,7 @@
 
           <h2 class="section-heading mb-4">Education</h2>
 
-          <div class="information-box p-4">
+          <div class="information-box">
             <div class="row">
               <div class="col-md-9">
                 <h3 class="experience-title">
@@ -205,68 +216,68 @@
           </div>
           <h2 class="section-heading mb-4">Internship and Capstone</h2>
 
-          <div
-            class="experience-box position-relative ms-2 ps-4 pb-4 border-start"
-          >
-            <div class="row">
-              <div class="col-md-7">
-                <h3 class="experience-title">
-                  IT Intern — BoxHive Digital Solutions Co.
-                </h3>
+          <div class="d-flex flex-column">
+            <div class="experience-box">
+              <div class="row">
+                <div class="col-md-7">
+                  <h3 class="experience-title">
+                    IT Intern — BoxHive Digital Solutions Co.
+                  </h3>
+                </div>
+                <div class="col-md-5 text-md-end">
+                  <span class="experience-date font-monospace text-body-secondary"
+                    >Feb 2026 – May 2026 · Quezon City</span
+                  >
+                </div>
               </div>
-              <div class="col-md-5 text-md-end">
-                <span class="experience-date font-monospace text-body-secondary"
-                  >Feb 2026 – May 2026 · Quezon City</span
-                >
-              </div>
+              <ul
+                class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+              >
+                <li>
+                  Developed responsive business websites using WordPress and
+                  created UI/UX designs and mockups using Figma.
+                </li>
+                <li>
+                  Conducted manual, functional, and behavioral testing of web and
+                  mobile applications, identifying issues and validating features.
+                </li>
+                <li>
+                  Managed event registration and provided technical support to
+                  attendees.
+                </li>
+              </ul>
             </div>
-            <ul
-              class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
-            >
-              <li>
-                Developed responsive business websites using WordPress and
-                created UI/UX designs and mockups using Figma.
-              </li>
-              <li>
-                Conducted manual, functional, and behavioral testing of web and
-                mobile applications, identifying issues and validating features.
-              </li>
-              <li>
-                Managed event registration and provided technical support to
-                attendees.
-              </li>
-            </ul>
-          </div>
 
-          <div class="experience-box position-relative ms-2 ps-4 border-start">
-            <div class="row">
-              <div class="col-md-7">
-                <h3 class="experience-title">
-                  Full-Stack Developer — Easechedemy
-                </h3>
-                <p class="small text-body-secondary mb-0 mt-1">
-                  A Web-Based Class Scheduling System Integrating Teacher
-                  Subject Preferences for Almond Academy Foundation Incorporated
-                </p>
+            <div class="experience-box">
+              <div class="row">
+                <div class="col-md-7">
+                  <h3 class="experience-title">
+                    Full-Stack Developer — Easechedemy
+                  </h3>
+                  <p class="small text-body-secondary mb-0 mt-1">
+                    A Web-Based Class Scheduling System Integrating Teacher
+                    Subject Preferences for Almond Academy Foundation Incorporated
+                  </p>
+                </div>
+                <div class="col-md-5 text-md-end">
+                  <span class="experience-date font-monospace text-body-secondary"
+                    >2025 – 2026 · PUP</span
+                  >
+                </div>
               </div>
-              <div class="col-md-5 text-md-end">
-                <span class="experience-date font-monospace text-body-secondary"
-                  >2025 – 2026 · PUP</span
-                >
-              </div>
+              <ul
+                class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
+              >
+                <li>
+                  Designed the UI/UX of a class scheduling system using Figma for
+                  schedule management.
+                </li>
+                <li>
+                  Developed front-end and back-end functionalities using HTML,
+                  CSS, JavaScript, PHP, Bootstrap, and MySQL.
+                </li>
+              </ul>
             </div>
-            <ul
-              class="small text-body-secondary d-flex flex-column gap-2 mt-2 mb-0 ps-3"
-            >
-              <li>
-                Designed the UI/UX of a class scheduling system using Figma for
-                schedule management.
-              </li>
-              <li>
-                Developed front-end and back-end functionalities using HTML,
-                CSS, JavaScript, PHP, Bootstrap, and MySQL.
-              </li>
-            </ul>
           </div>
         </section>
 
@@ -279,7 +290,6 @@
           <div id="projectGrid"></div>
         </section>
 
-        <!-- Contact -->
         <!-- Contact -->
         <section id="contact" class="content-section">
           <div class="section-label font-monospace text-accent mb-2">
@@ -413,7 +423,7 @@
     <script src="assets/js/skills.js"></script>
     <script src="assets/js/projects.js"></script>
     <script src="assets/js/active-navigation.js"></script>
-    <script src="assets/js/more-menu.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
     <script src="assets/js/reveal-sections.js"></script>
     <script>
       document.getElementById("currentYear").textContent =

@@ -1,7 +1,6 @@
 // Variables
 const pageRoot = document.documentElement;
-const themeButton = document.getElementById("themeButton");
-const themeIcon = document.getElementById("themeIcon");
+const themeButtons = document.querySelectorAll("[data-theme-toggle]");
 
 // Tell the CSS that JavaScript is working
 pageRoot.classList.add("js");
@@ -13,16 +12,31 @@ function setTheme(theme) {
 
   pageRoot.setAttribute("data-theme", theme);
   localStorage.setItem("portfolio-theme", theme);
-  themeIcon.className = isDark
-    ? "bi bi-brightness-high-fill"
-    : "bi bi-moon-stars-fill";
-  themeButton.setAttribute("aria-label", label);
-  themeButton.setAttribute("title", label);
+
+  themeButtons.forEach((button) => {
+    const icon = button.querySelector("[data-theme-icon]");
+
+    // The switch reports its state, the round button describes its action
+    if (button.getAttribute("role") === "switch") {
+      button.setAttribute("aria-checked", isDark);
+    } else {
+      button.setAttribute("aria-label", label);
+      button.setAttribute("title", label);
+    }
+
+    if (icon) {
+      icon.className = isDark
+        ? "bi bi-brightness-high-fill"
+        : "bi bi-moon-stars-fill";
+    }
+  });
 }
 
 // Events
-themeButton.addEventListener("click", () => {
-  setTheme(pageRoot.dataset.theme === "dark" ? "light" : "dark");
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setTheme(pageRoot.dataset.theme === "dark" ? "light" : "dark");
+  });
 });
 
 setTheme(localStorage.getItem("portfolio-theme") || "dark");

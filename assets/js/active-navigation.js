@@ -1,17 +1,19 @@
+// Variables
+const navigationSections = document.querySelectorAll(".content-section");
+const navigationLinks = document.querySelectorAll(".site-navigation a");
+
 // Functions
 function updateNavigation() {
-  const sections = document.querySelectorAll(".content-section");
-  const links = document.querySelectorAll(".site-navigation a");
   const scrollPosition = window.scrollY + 180;
   let activeId = "";
 
-  sections.forEach((section) => {
+  navigationSections.forEach((section) => {
     if (section.offsetTop <= scrollPosition) {
       activeId = section.id;
     }
   });
 
-  links.forEach((link) => {
+  navigationLinks.forEach((link) => {
     link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
   });
 }

@@ -63,7 +63,7 @@ const projects = [
 ];
 
 // Variables
-let selectedIndex = 3;
+let selectedIndex = 0;
 let detailsModal;
 
 // Functions
